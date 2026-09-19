@@ -21,7 +21,7 @@
 ## 当前状态
 
 - 已收集 3 篇超辐射相变研究论文，以及其中一篇的补充材料和审稿文件；见 [文献索引](literature/README.md)。
-- 当前暂定课题为含 `A²` 与反压缩的相互作用自旋–腔模型；[研究评估](project/research-assessment.md) 已记录文献重叠、精确映射及可执行路线。最终题目和学校要求尚待确认，见 [项目简述](project/brief.md)。
+- 当前暂定课题为含 `A²` 与反压缩的相互作用自旋–腔模型；[研究评估](project/research-assessment.md)记录文献重叠和精确映射，[执行路线](project/roadmap.md)细化了阶段产物、数值方法及验收门槛。最终题目和学校要求尚待确认，见[项目简述](project/brief.md)。
 - 已建立[文献清单与阅读状态](literature/reading-list.md)、[BibLaTeX 引用库](literature/references.bib)、[平衡态优先的选题建议](project/topic-recommendation.md)和[中文 LaTeX 调研笔记](thesis/notes/main.tex)。
 - 任何图表应能追溯到模型、数据、代码版本和参数。原始数据不要覆盖。
 
