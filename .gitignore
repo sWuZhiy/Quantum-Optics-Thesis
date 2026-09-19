@@ -1,0 +1,38 @@
+# Python and notebooks
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Local tools and editors
+.idea/
+.vscode/
+*.swp
+*~
+
+# LaTeX build files (keep source PDFs in literature/)
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+
+# Generated data and run outputs
+data/raw/*
+!data/raw/README.md
+data/processed/*
+!data/processed/README.md
+results/runs/*
+!results/runs/README.md
+
+# OS files
+.DS_Store
+Thumbs.db
