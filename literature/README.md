@@ -11,3 +11,11 @@
 | `Peer Review File.pdf` | Chen 等的审稿资料 | 结论表述的边界，特别是量子模拟与真实平衡系统的区分 |
 
 后续逐篇笔记放在 `literature/notes/`，建议记录：完整引用、研究问题、哈密顿量与假设、方法、主要图表、局限，以及与毕设题目的关系。
+
+## 本题必读的外部先例
+
+- [Langheld、Hörmann、Schmidt，Dicke–Ising QMC，2025](https://arxiv.org/html/2409.15082)：正文相图，尤其补充材料 §IV 的 `A²` 映射和图 S9 可达区域。
+- [Hörmann 等，针对 Mendonça 等的 Comment，2025](https://arxiv.org/html/2511.08452)：关于反铁磁共存区、铁磁侧跃迁阶数的争议；应与原论文对照阅读。
+- [Nataf、Ciuti，腔 QED 禁戒定理与电路反例，2010](https://www.nature.com/articles/ncomms1069)：核对“平衡”“超越禁戒”的适用前提。
+
+逐篇判断和研究问题见 [项目研究评估](../project/research-assessment.md)。
