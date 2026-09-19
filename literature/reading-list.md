@@ -16,6 +16,7 @@
 | `Mendonca2025Matter` | 用户上传的 Dicke–Ising/XXZ 基态相图、一级边界、XXZ 次线性光子标度 | [作者全文](https://arxiv.org/html/2503.04961)；[本地 PDF](Role%20of%20Matter%20Interactions%20in%20Superradiant%20Phenomena.pdf) | 本地正文已读；Ising 相图要与后续 QMC/Comment 对照 |
 | `Langheld2025Wormhole` | 大尺度 QMC 基准；反铁磁共存相、跃迁阶数；**补充材料 §IV、图 S9 已讨论 `A²` 的可达区** | [作者全文和补充材料](https://arxiv.org/html/2409.15082) | 关键正文段落与补充材料 §IV 已核；本地尚无 PDF |
 | `Hormann2025Comment` | 对 Mendonça 等 Ising 相图提出可核查的异议 | [作者全文](https://arxiv.org/html/2511.08452) | 全文短文已核；预印本状态待追踪 |
+| `Leibig2026SelfConsistent` | 热力学极限的自洽自旋模型及 NLCE+DMRG 零温相图；决定本题计算方法和新颖性基线 | [作者预印本](https://arxiv.org/html/2601.10210v1) | 模型映射、方法与主要结论段落已核；算法细节待复现 |
 | `Koziol2026Criticality` | 铁磁 Dicke–Ising 的一阶/二阶边界、三临界点机制与有限尺寸标度；限制把这些作为新发现 | [作者预印本](https://arxiv.org/abs/2605.27484) | 摘要已核；全文推导及发表状态待核 |
 | `Sur2026Critical` | 自旋临界模增强腔响应和本征压缩；限制“磁临界性协同”的泛泛新颖性表述 | [期刊正文](https://www.nature.com/articles/s41467-026-73112-1) | 摘要和主要结论已核；具体模型需细读 |
 
@@ -26,10 +27,11 @@
 | 引用键 | 与本题的关系 | 原文入口 | 阅读状态 |
 | --- | --- | --- | --- |
 | `Peng2019Unified` | Dicke 类模型的零温与有限温度超辐射相变；说明热平衡研究不限于基态 | [APS 期刊摘要](https://journals.aps.org/pra/abstract/10.1103/PhysRevA.100.063820) | 摘要已核；模型细节待通读 |
+| `Gammelmark2011Thermal` | **量子** Ising 链与单模腔的有限温度自由能、一/二阶超辐射边界；早于近期经典链结果 | [作者全文](https://arxiv.org/html/1102.1905v1)；[期刊记录](https://doi.org/10.1088/1367-2630/13/5/053035) | 模型、自由能方法和主要结论已核；与本题不同的自旋轴约定需逐式比较 |
 | `Otake2026FiniteT` | 腔耦合一维**经典** Ising 链的有限温度超辐射相变与精确临界温度；是有限温度方向的直接先例，但不等同于含量子自旋涨落与反压缩的模型 | [APS 期刊正文](https://doi.org/10.1103/fxml-nv46) | 摘要、模型类型和结论已核；公式待逐项核对 |
 | `Kim2025Magnonic` | ErFeO₃ 磁振子型转变的热平衡光谱证据，含 Fe/Er 自旋交换；不是普通腔光子 A² 问题 | [期刊开放全文](https://pmc.ncbi.nlm.nih.gov/articles/PMC13155478/) | 摘要、模型与实验结果段落已核；补充材料待细读 |
 
-有限温度的热平衡态由配分函数和自由能决定；零温基态仅是 $T\to0$ 极限。静态单模压缩映射在任意温度仍精确成立，因此有限温度本身不能消除“参数重整化”的新颖性问题。
+有限温度的热平衡态由配分函数和自由能决定；零温基态仅是 $T\to0$ 极限。静态单模压缩映射在任意温度仍精确成立。特别是 Gammelmark–Mølmer（2011）已经研究**量子** Ising 链的有限温度 Dicke–Ising 自由能，所以不能把“量子自旋 + 有限温度”本身写成文献空白。
 
 ### 其他背景
 
@@ -70,6 +72,14 @@
 - **A² 与自旋相互作用**：研究的是泵浦诱导的有效长程相互作用，并非本文的静态电偶极 A² + 最近邻 Ising 自旋链问题。
 - **与毕设关系**：作开放系统实验先例；不能当作无泵浦热平衡转变的直接实验实现。
 - **核读状态**：期刊开放摘要与图题已核；实验参数尚待逐图整理。
+
+### Gammelmark 与 Mølmer（2011）：量子 Ising–腔模型的有限温度自由能
+
+- **出处**：*New Journal of Physics* **13**, 053035 (2011)，[DOI](https://doi.org/10.1088/1367-2630/13/5/053035)；引用键 `Gammelmark2011Thermal`。
+- **研究对象**：一维量子 Ising 链与共同的腔模，哈密顿量取自旋 $y$ 轴交换、$z$ 轴静态场、腔耦合 $x$ 轴。自旋算符轴的相对方向与本项目当前拟定的 $z$ 轴交换、$z$ 轴静态场、$x$ 轴腔耦合**不同**，不能只改标签就说模型完全一样。
+- **方法与结果**：在热力学极限使用相干态积分和 Ising 链的可解结构，求自由能并研究有限温度的连续和一级超辐射边界；正文 §3–4 是方法与相图的关键位置。
+- **与毕设关系**：直接否定“有限温度量子 Dicke–Ising 尚无人研究”的说法。若选择有限温度，须指出相对其哈密顿量、物理约束或可观测量的具体增量。
+- **核读状态**：作者全文的式 (1)、§3–4 及摘要已核；正式引用定量相界前仍需复算符号和近似。
 
 ### Zhang 等（2014）：超导量子比特阵列的 Dicke–Ising 相图
 
@@ -178,6 +188,15 @@
 - **与毕设关系**：做一级边界或窄共存区数值计算时必须并读双方结论，检查网格和系统尺寸。
 - **核读状态**：作者短文已核；发表状态及对方正式回复须继续追踪。
 
+### Leibig 等（2026）：自洽物质哈密顿量的热力学极限算法
+
+- **出处**：[arXiv:2601.10210v1](https://arxiv.org/html/2601.10210v1)（预印本，2026），引用键 `Leibig2026SelfConsistent`。
+- **研究对象**：一维铁磁和反铁磁 Dicke–Ising 零温相图。
+- **方法与结果**：证明热力学极限可映射为带自洽横场的纯自旋哈密顿量；用数值关联团簇展开结合密度矩阵重整化群（NLCE+DMRG）求铁磁多临界点及很窄的反铁磁超辐射共存区。主文 §2.2、§3 和图示相界是本题直接的数值方法基线。
+- **A² 与反压缩**：该文已给出无显式二次光场项时的精细相图；对本项目当前的单模静态项可先作压缩映射，再与其数据比较，不能把自洽物质映射本身当作本题发明。
+- **与毕设关系**：推荐先用小尺寸精确对角化、热力学自洽与其 QMC/DMRG 数据做交叉检查；对一级边界必须比较所有自由能极小值，而不能只运行单一初值的自洽迭代。
+- **核读状态**：作者全文的模型映射、方法和主要结果段落已核；NLCE+DMRG 实现细节待逐节复现，发表状态待核。
+
 ### Kim 等（2025）：磁振子型 Dicke 转变的热平衡光谱证据
 
 - **出处**：*Science Advances* **11**, eadt1691 (2025)，[DOI](https://doi.org/10.1126/sciadv.adt1691)；引用键 `Kim2025Magnonic`。
@@ -242,11 +261,13 @@
 | 文献 | 是否有物质内部相互作用 | 本文核到的 A² 处理 | 不能由此推出什么 |
 | --- | --- | --- | --- |
 | [Zhang 等，*Scientific Reports* (2014)](https://www.nature.com/articles/srep04083) | 最近邻电路自旋相互作用 | 最终 Dicke–Ising 有效模型式 (10) 未显式写 $D(a+a^\dagger)^2$；由超导电路推导，应另查其器件参数约束 | 不可将电路的磁/电容耦合直接套用原子电偶极 TRK 公式 |
+| [Gammelmark 与 Mølmer，*New Journal of Physics* (2011)](https://arxiv.org/html/1102.1905v1) | 一维量子 Ising 链 | 有限温度主模型未以独立 A²/反压缩强度扫描；自旋轴相对方向与本题拟定模型不同 | 不可宣称量子 Ising–腔有限温度相图为空白 |
 | [Rohn 等，*Physical Review Research* (2020)](https://doi.org/10.1103/PhysRevResearch.2.023131) | Ising 链 | 所研究的 Dicke–Ising 主模型未将 A² 作为单独扫描参数；此处以论文模型和摘要为据，完整推导仍待逐页核 | 不代表加入 A² 后自动出现新相 |
 | [Mendonça 等，*Physical Review Letters* (2025)](https://arxiv.org/html/2503.04961) | Ising / XXZ 交换 | 本地正文式 (1) 的 Dicke–Heisenberg 模型未显式加入 A²；全文未找到独立的 A² 分析 | 不能说该文已经研究了 $D(g)$ 与独立反压缩 $\xi$ 的联合作用 |
 | [Langheld 等，*Physical Review B* (2025)](https://arxiv.org/html/2409.15082) | 一、二维 Ising | **补充材料 §IV 明确考虑** A²；式 (S35) 给出频率、耦合变换，图 S9 给出 TRK 示例下的可达边界 | 不能把「首次在 Dicke–Ising 中考虑 A²」当作新颖性 |
 | [Román-Roche 等，*Nanophotonics* (2025)](https://onlinelibrary.wiley.com/doi/full/10.1515/nanoph-2024-0568) | Ising 链 | 主文式 (1)–(3) 是磁偶极耦合玩具模型，未以独立 $D(a+a^\dagger)^2$ 研究相图；附录讨论微观电磁耦合及其他二次响应 | 磁偶极方案不能直接等同于电偶极 A² 禁戒问题 |
 | [Otake 与 Bamba，*Physical Review Research* (2026)](https://doi.org/10.1103/fxml-nv46) | 一维经典 Ising 链 | 有限温度主模型聚焦腔诱导全连接相互作用，未将 A² 作为独立扫描量 | 其精确热相变不等于含量子自旋涨落、A²、反压缩的完整问题 |
+| [Leibig 等，arXiv 预印本 (2026)](https://arxiv.org/html/2601.10210v1) | 一维量子 Ising 链 | 自洽纯自旋模型给出无显式二次光场项的精细零温相图；可与本题压缩后的参数比较 | 不可把热力学极限自洽映射本身当作新增理论 |
 
 旁证：[Chen 等（2021）](https://www.nature.com/articles/s41467-021-26573-5)明确同时研究 A² 与反压缩，但对象是**单自旋 Rabi 有效模型**，没有自旋间相互作用。[Nataf 与 Ciuti（2010）](https://www.nature.com/articles/ncomms1069)论证普通电偶极静态腔 QED 中的禁戒；这也不是带 Ising 相互作用的相图论文。
 
@@ -259,6 +280,7 @@
 | *Physical Review Letters* | [Mendonça 等（2025）](https://doi.org/10.1103/z8gv-7yyk) | Ising/XXZ 自旋相互作用与基态超辐射 |
 | *Physical Review B* | [Langheld 等（2025）](https://doi.org/10.1103/lcvj-ksct) | 大规模 Dicke–Ising 相图；补充材料含 A² |
 | *Physical Review Research* | [Rohn 等（2020）](https://doi.org/10.1103/PhysRevResearch.2.023131)、[Otake 与 Bamba（2026）](https://doi.org/10.1103/fxml-nv46) | 量子 Ising 零温、经典 Ising 有限温度 |
+| *New Journal of Physics* | [Gammelmark 与 Mølmer（2011）](https://doi.org/10.1088/1367-2630/13/5/053035) | 量子 Ising–腔模型的有限温度自由能与相图 |
 | *Physical Review A* | [Cortese 等（2017）](https://doi.org/10.1103/PhysRevA.96.053861)、[McKenzie 等（2022）](https://doi.org/10.1103/PhysRevA.106.043716) | 相邻的 Dicke–Ising 极化激元谱、Ising 磁振子–光子谱 |
 | *Nature Communications* | [Sur 等（2026）](https://doi.org/10.1038/s41467-026-73112-1) | 物质临界性辅助平衡超辐射 |
 | *Scientific Reports* | [Zhang 等（2014）](https://doi.org/10.1038/srep04083) | 电路 Dicke–Ising 早期相图 |

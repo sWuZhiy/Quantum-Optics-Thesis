@@ -10,7 +10,7 @@
 | `Supplementary Information-Experimental quantum simulation of superradiant.pdf` | Chen 等的补充材料 | 解析推导、实验映射与测量细节 |
 | `Peer Review File.pdf` | Chen 等的审稿资料 | 结论表述的边界，特别是量子模拟与真实平衡系统的区分 |
 
-[文献综述与阅读状态](reading-list.md)集中介绍引用库中的 18 篇论文、Chen 的两份辅助材料、自旋相互作用文献的 A² 处理方式及相关期刊；[BibLaTeX 引用库](references.bib)保存正式引文。每篇的介绍都标明已核查内容和仍待细读的部分。
+[文献综述与阅读状态](reading-list.md)集中介绍引用库中的 20 篇论文、Chen 的两份辅助材料、自旋相互作用文献的 A² 处理方式及相关期刊；[BibLaTeX 引用库](references.bib)保存正式引文。每篇的介绍都标明已核查内容和仍待细读的部分。
 
 ## 本题必读的外部先例
 
