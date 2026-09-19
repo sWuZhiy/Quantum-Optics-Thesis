@@ -10,7 +10,7 @@
 | `Supplementary Information-Experimental quantum simulation of superradiant.pdf` | Chen 等的补充材料 | 解析推导、实验映射与测量细节 |
 | `Peer Review File.pdf` | Chen 等的审稿资料 | 结论表述的边界，特别是量子模拟与真实平衡系统的区分 |
 
-后续逐篇笔记放在 `literature/notes/`，建议记录：完整引用、研究问题、哈密顿量与假设、方法、主要图表、局限，以及与毕设题目的关系。
+新增的 [13 条可引用文献及阅读状态](reading-list.md) 与 [BibLaTeX 引用库](references.bib) 是后续写作的统一入口。后续逐篇笔记放在 `literature/notes/`，建议记录：完整引用、研究问题、哈密顿量与假设、方法、主要图表、局限，以及与毕设题目的关系。
 
 ## 本题必读的外部先例
 

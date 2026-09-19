@@ -1,0 +1,110 @@
+% 选题阶段工作笔记；正式论文确定后再迁移至 APS REVTeX 模板。
+\documentclass[UTF8,11pt,a4paper]{ctexart}
+\usepackage[margin=2.6cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage[backend=biber,style=numeric,sorting=none,doi=true,url=false,eprint=true]{biblatex}
+\renewcommand*{\bibfont}{\small}
+\setlength{\bibitemsep}{0pt}
+\addbibresource{../../literature/references.bib}
+
+\title{反压缩与自旋相互作用对超辐射相变的影响\\[0.4em]
+\large 选题及国内外研究现状笔记（草稿 v0.1）}
+\author{Quantum Optics Thesis 工作笔记}
+\date{2026 年 9 月 19 日}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+本文是毕业设计准备阶段的文献与模型笔记，尚非已确定的论文题目或研究结论。
+目前拟研究静态、闭合有效哈密顿量的零温基态：在包含 $A^2$ 项、反压缩项及自旋相互作用时，
+哪些超辐射与磁性相区在物理参数约束下可达，以及如何可靠识别其相界和观测特征。
+对外部泵浦产生反压缩的装置，实验室系通常属于受驱动体系，应与真正无泵浦平衡态区分。
+\end{abstract}
+
+\section{问题边界与基本模型}
+
+以单模光场和 $N$ 个自旋为起点，取 $\hbar=1$、$s_i^\alpha=\sigma_i^\alpha/2$，写成
+\begin{equation}
+ H=\omega a^\dagger a+H_{\mathrm{spin}}(\Delta,J)
+ +\frac{2g}{\sqrt N}(a+a^\dagger)S_x
+ +[D(g)-\xi](a+a^\dagger)^2,
+ \qquad S_x=\sum_{i=1}^{N}s_i^x .
+ \label{eq:model}
+\end{equation}
+其中 $D(g)$ 是由选定微观平台决定的 $A^2$ 系数，$\xi$ 是暂时假设可独立控制的反压缩强度。
+目前优先选最近邻 Ising 链作为 $H_{\mathrm{spin}}$；自旋相互作用的符号与归一化在开始计算前统一固定。
+模型~\eqref{eq:model} 存在正常光场基态至少要求
+\begin{equation}
+  \omega+4[D(g)-\xi]>0 . \label{eq:stability}
+\end{equation}
+满足这一条件时，光子压缩变换给出
+\begin{equation}
+ \omega_s=\sqrt{\omega\{\omega+4[D(g)-\xi]\}},\qquad
+ g_s=g\left(\frac{\omega}{\omega+4[D(g)-\xi]}\right)^{1/4}.
+ \label{eq:squeezed}
+\end{equation}
+因此静态单模的二次反压缩项不会单凭自身生成一种新的哈密顿量类别；
+有意义的问题是受约束的 $(g,J,\xi)$ 路径如何穿越既有多体相图，
+以及原光子和自旋观测量在该路径上如何变化。
+
+\section{国内及国内参与的相关研究}
+
+Zhang 等研究超导量子比特阵列与腔模构成的 Dicke--Ising 模型，
+预测正常、超辐射、反铁磁正常及反铁磁超辐射共存等相，说明磁序与光场序可同时存在\cite{Zhang2014CircuitIsing}。
+这为研究自旋相互作用提供早期理论背景，也提醒我们不能把共存相直接宣称为新发现。
+
+Zhu、Ping、Yang 和 Agarwal 讨论参量放大产生的压缩光对集体超辐射相变与三临界点的控制\cite{Zhu2020SqueezedLight}。
+这里的外部泵浦是判断物理体系是否真正处于热平衡的重要条件。
+Chen 等使用核磁共振量子模拟器制备含 $A^2$ 与反压缩项的有效 Rabi 模型基态，
+报告反向超辐射转变、零点涨落增强及有限频率标度\cite{Chen2021Antisqueezing}。
+这项实验研究的是受控模拟器的有效哈密顿量；在引言和讨论中需与真实、无驱动腔体系的热平衡相变分开表述。
+
+Zhu 等随后在双传播方向腔模和定向参量泵浦的模型中讨论非互易、不同阶数的超辐射稳态相变\cite{Zhu2024Nonreciprocal}。
+该工作展示开放系统路线的可能性，但其外部泵浦、损耗及模间耦合使它不能直接作为式~\eqref{eq:model} 的平衡态先例。
+
+\section{国际研究现状}
+
+对普通电偶极腔 QED，Nataf 与 Ciuti 依据振子强度求和规则分析时间独立哈密顿量的超辐射禁戒条件，
+同时指出某些电路 QED 实现的约束不同\cite{Nataf2010NoGo}。
+因此任何关于“绕开禁戒”的结论都必须说明具体平台、规范约束与反压缩的物理来源。
+与闭合平衡问题相对，Baumann 等在外部泵浦的开放腔中实验观察 Dicke 型相变，
+是比较受驱动路线时的重要实验背景\cite{Baumann2010OpenDicke}。
+
+在相互作用自旋方向，Rohn 等分析一维光诱导量子横场 Ising 链的磁序改变与直接相变\cite{Rohn2020QuantizedIsing}；
+Schellenberger 与 Schmidt 给出关联光--物质系统正常相低能部分的映射方法\cite{Schellenberger2024Mapping}。
+Mendonça、Jachymski 与 Wang 研究 Dicke--Ising/XXZ 的基态，报告自旋相互作用对相界及
+XXZ 中间区域次线性光子占据的影响\cite{Mendonca2025Matter}。
+Langheld、Hörmann 与 Schmidt 则用大尺度量子蒙特卡洛给出 Dicke--Ising 的定量相图，
+包括较窄的反铁磁与超辐射共存区；其补充材料第 IV 节已将 $A^2$ 项通过压缩变换吸收，
+并讨论特定求和规则约束下的可达区域\cite{Langheld2025Wormhole}。
+Hörmann 等针对前一组的 Ising 相图提出公开质疑，指出共存区和部分跃迁阶数的遗漏\cite{Hormann2025Comment}。
+这项争议要求后续计算对照大系统数据与解析极限，而非只引用一篇论文的图。
+
+更近的研究显示，直接耦合物质临界模可降低超辐射阈值并增强本征压缩\cite{Sur2026Critical}。
+因此“自旋相互作用与光场压缩协同”必须落在明确的模型、参数约束和可测预测上，不能作为笼统的新颖性主张。
+
+\section{可进一步研究的问题}
+
+本工作的暂定主线是：给定 $D(g)$ 的微观约束、式~\eqref{eq:stability} 的稳定条件和固定的 Ising 相互作用，
+求反压缩启动阈值与稳定窗口，检查随 $g$ 变化是否反向穿越一级边界或进入共存区。
+应同时计算原光场占据 $\langle a^\dagger a\rangle/N$、两个正交分量方差、
+均匀与交错磁化，以及基态能量；一级相界必须由不同候选态的能量比较确定。
+
+如果这些结果仅是现有 Dicke--Ising 相图的重新参数化，则本文将如实定位为
+“受物理约束的相区可达性与有限尺寸可观测量研究”。
+若未来需要强于此的新颖性，应另行调研真正非等价的静态多模或非线性模型，
+或明确转入含泵浦与损耗的驱动稳态问题。
+
+\section{当前待办与核查点}
+
+\begin{enumerate}
+  \item 与导师确认平台、时间表及 $D(g)$、$\xi$ 能否独立调节；未确认前仅称有效模型。
+  \item 统一 $J$ 的符号、光场截断与自旋归一化；复现 $J=0$ 和 $\xi=0$ 两个文献基准。
+  \item 阅读核心论文的具体公式与图，并在正式综述中补充对应页码、图号和定量比较。
+  \item 追踪 2025 年 Ising 相图争议的后续发表与数据，更新引用库。
+\end{enumerate}
+
+\printbibliography[title={参考文献}]
+\end{document}

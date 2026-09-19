@@ -24,6 +24,7 @@ venv/
 *.out
 *.synctex.gz
 *.toc
+thesis/notes/build/
 
 # Generated data and run outputs
 data/raw/*
