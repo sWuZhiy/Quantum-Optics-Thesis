@@ -1,4 +1,4 @@
-name: quantum-optics-thesis
+# Create with an explicit --prefix so the environment stays on D:.
 channels:
   - defaults
 dependencies:

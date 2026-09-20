@@ -44,3 +44,9 @@
 - 原因与证据：用户要求清楚掌握如何启动、产出位置和重点阅读；分散的任务卡片与重复文件不利于长期维护。
 - 对代码和数据的影响：外部输入、单次运行、跨运行汇总与最终图分别放在 `data/raw/`、`results/runs/`、`data/processed/` 和 `results/figures/`；首次实现运行入口时建立受 Git 管理的 `code/configs/`，运行目录另存实际配置快照。
 - 保留边界：当前无数值结果；数据目录受 Git 忽略，独立备份尚未落实。后续大计算开始前需在数据/结果索引记录备份位置。
+
+## 2026-09-20：本机项目 Python 环境与新包缓存放在 D 盘
+
+- 决定：使用 `D:\codex\quantum-optics-env` 作为本机项目 Conda 环境，后续项目依赖的包缓存设在 `D:\codex\quantum-optics-conda-pkgs`；执行 Conda 安装时显式指定环境前缀和缓存路径。
+- 原因与证据：用户希望减少 C 盘占用；项目专用环境原在 C 盘约 161 MB。D 盘 Anaconda 安装目录的 `envs/` 对当前账户只读，而 `D:\codex` 可写；新环境已与原环境核对包清单并执行 Python 验证。
+- 对代码和协作的影响：更新 `code/README.md` 与 `AGENTS.md` 的解释器路径；`code/environment.yml` 保留可重建依赖，不在其中硬编码环境名，以免默认位置回到 C 盘。Conda/Codex 的全局共享缓存不当作本项目文件迁移。

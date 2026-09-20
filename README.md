@@ -11,7 +11,7 @@
 | 文献与选题 | 引用库 20 篇均有本地 PDF，另有 2 份辅助材料；核读深度分别标明 | [统一文献综述与重点阅读顺序](literature/reading-list.md) |
 | 执行计划 | 已拆分 A–F 共 35 项任务；任务有交付和验收要求 | [路线与阶段任务](project/roadmap.md) |
 | 模型与解析 | 已有初步评估；独立模型说明和完整推导待建立 | [理论目录说明](theory/README.md) |
-| 程序与计算 | 已建立并验证 Python 3.12.13 专用 Conda 环境；数值包、程序和计算尚待实施 | [环境及代码说明](code/README.md) |
+| 程序与计算 | 已在 D 盘建立并验证 Python 3.12.13 专用 Conda 环境；数值包、程序和计算尚待实施 | [环境及代码说明](code/README.md) |
 | 结果 | 尚无已验证的运行或最终图 | [结果索引](results/README.md) |
 | 写作 | 已有准备阶段 LaTeX 调研笔记；正式版式待定 | [笔记正文](thesis/notes/main.tex) |
 
