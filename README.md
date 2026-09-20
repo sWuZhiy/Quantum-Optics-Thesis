@@ -8,7 +8,7 @@
 
 | 内容 | 当前状态 | 查看位置 |
 | --- | --- | --- |
-| 文献与选题 | 已有 3 篇本地主论文及辅助材料；引用库 20 条，核读深度分别标明 | [统一文献综述与重点阅读顺序](literature/reading-list.md) |
+| 文献与选题 | 引用库 20 篇均有本地 PDF，另有 2 份辅助材料；核读深度分别标明 | [统一文献综述与重点阅读顺序](literature/reading-list.md) |
 | 执行计划 | 已拆分 A–F 共 35 项任务；任务有交付和验收要求 | [路线与阶段任务](project/roadmap.md) |
 | 模型与解析 | 已有初步评估；独立模型说明和完整推导待建立 | [理论目录说明](theory/README.md) |
 | 程序与计算 | 已建立并验证 Python 3.12.13 专用 Conda 环境；数值包、程序和计算尚待实施 | [环境及代码说明](code/README.md) |
@@ -50,7 +50,7 @@ GitHub 同步文档、引用库、代码、小型配置和已核查图；被忽�
 
 ## 当前状态
 
-- 已收集 3 篇超辐射相变研究论文，以及其中一篇的补充材料和审稿文件；见 [文献索引](literature/README.md)。
+- 20 篇引用论文已有本地 PDF，另有 Chen 的补充材料和审稿文件；原有 3 篇用户上传论文继续保留。文件标题与来源见 [文献索引](literature/README.md)。新增下载文件留在本机，索引和来源随 GitHub 同步。
 - 当前暂定课题为含 `A²` 与反压缩的相互作用自旋–腔模型；[研究评估](project/research-assessment.md)记录文献重叠和精确映射，[执行路线](project/roadmap.md)细化了阶段产物、数值方法及验收门槛。最终题目和学校要求尚待确认，见[项目简述](project/brief.md)。
 - 已建立[文献清单与阅读状态](literature/reading-list.md)、[BibLaTeX 引用库](literature/references.bib)、[平衡态优先的选题建议](project/topic-recommendation.md)和[中文 LaTeX 调研笔记](thesis/notes/main.tex)。
 - 任何图表应能追溯到模型、数据、代码版本和参数。原始数据不要覆盖。

@@ -22,3 +22,4 @@
 - 在统一文献综述开头补充重点阅读顺序、原文段落、读后自查及对应任务：Chen → Langheld → Mendonça 与 Comment 对读 → Leibig；Gammelmark–Mølmer 在选择有限温度前重点阅读。文献说明仍集中在同一文档。
 - 明确中间产物位置：外部原始数据放 `data/raw/`，单次仿真输出放 `results/runs/`，跨运行汇总放 `data/processed/`，核查图放 `results/figures/`。首次实现时增设 `code/configs/` 保存受版本管理的输入；结果索引集中在 `results/README.md`。尚无数值数据或独立备份。
 - 找到本机 Anaconda 安装在 `D:\Anaconda\package`，普通 PowerShell 的 `python` 指向另一套 `D:\python\python.exe`。用 Conda 离线创建独立环境 `quantum-optics-thesis`（Python 3.12.13），直接运行其解释器得到 `sum(range(10))=45`，并核对环境内 `pip` 可用。最小依赖声明与 cmd/PowerShell 调用命令已写入 `code/`；科学计算库和数值程序仍待 C1 实施。
+- 对照 20 条 BibLaTeX 文献记录，补齐全部本地 PDF：原有用户上传 3 篇，Langheld 标题命名 PDF 在下载时已存在且与新获取文件的 SHA-256 相同，另新增 16 份公开期刊/作者预印本或机构库 PDF。新增文件按实际论文标题命名，来源与版本记入 `literature/README.md`；Chen 的补充材料、审稿文件继续保留。用文件头和 `pdfinfo` 检查下载文件；下载不等于精读。新增 PDF 保留本地，索引及来源同步到 GitHub。

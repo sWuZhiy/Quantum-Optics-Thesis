@@ -1,6 +1,6 @@
 # 超辐射相变选题文献综述与阅读清单
 
-更新：2026-09-20。引用键对应 [references.bib](references.bib)；下文集中说明每篇的研究内容及 A² 处理。优先保存稳定 DOI 与作者提供的全文入口。各节标明实际核读深度，不把网页摘要当成已完整阅读的论文，也不擅自将远程论文 PDF 混入本地原始资料。正式引用具体结论时，仍需核对原文公式、图号和版本。
+更新：2026-09-20。引用键对应 [references.bib](references.bib)；[本地 PDF 与来源索引](README.md)列出 20 篇引用论文及两份辅助材料。下文集中说明每篇的研究内容及 A² 处理。各节标明实际核读深度，不把网页摘要当成已完整阅读的论文。下载后仍需核对原文公式、图号和作者预印本/期刊版本的差异；“已下载”不代表“已精读”。
 
 ## 现在重点读什么，以及读完如何推进项目
 
@@ -8,11 +8,11 @@
 
 | 阅读顺序 | 文献与当前优先部分 | 对应构建任务 | 读完应拿出的东西 |
 | --- | --- | --- | --- |
-| 1：立即精读 | [Chen 2021](https://www.nature.com/articles/s41467-021-26573-5) 的 Physical model、图 1 及补充材料中压缩变换/临界条件推导 | A2–A3、B1–B3 | 能写出 `D−ξ`、稳定条件和原光场变换；说清单自旋 Rabi 极限与本项目的差别 |
-| 2：立即精读 | [Langheld 2025](https://arxiv.org/html/2409.15082) 主文式 (1)、相图和补充材料 §IV 式 (S33)–(S35)、图 S9 | A3–A5、B2、C6、D | 统一 `J,g,ε` 的定义；选出一个明确参数的 Ising 基准；知道 A² 部分已有多少结论 |
-| 3：配对阅读 | [Mendonça 2025](https://arxiv.org/html/2503.04961) 的 Ising 模型、相图，与 [Hörmann 等 Comment](https://arxiv.org/html/2511.08452)全文 | A3、D3–D5、E1 | 一张“双方结论—证据—本项目需检验什么”对照表，保存在本文相关段落 |
-| 4：模型部分现在读，算法随阶段 D 深入 | [Leibig 2026](https://arxiv.org/html/2601.10210v1) §2.2；随后读 §3.3–3.4、§4.2 | B4–B5、D2–D4 | 理解自洽方程与能量极值的关系；写出多分支比较方案；不必现在复写整套 NLCE+DMRG |
-| 5：有限温度选择前必读 | [Gammelmark–Mølmer 2011](https://arxiv.org/html/1102.1905v1) §2 的模型、§3–4 的配分函数与自由能 | A3、F1–F3 | 明确其自旋轴与本题不同之处，说明本题打算新增哪个温度问题 |
+| 1：立即精读 | [Chen 2021](https://www.nature.com/articles/s41467-021-26573-5)（[本地 PDF](<Experimental quantum simulation of superradiant phase transition beyond no-go theorem via antisqueezing.pdf>)）的 Physical model、图 1 及补充材料中压缩变换/临界条件推导 | A2–A3、B1–B3 | 能写出 `D−ξ`、稳定条件和原光场变换；说清单自旋 Rabi 极限与本项目的差别 |
+| 2：立即精读 | [Langheld 2025](https://arxiv.org/html/2409.15082)（[本地 PDF](<Quantum phase diagrams of Dicke-Ising models by a wormhole algorithm.pdf>)）主文式 (1)、相图和补充材料 §IV 式 (S33)–(S35)、图 S9 | A3–A5、B2、C6、D | 统一 `J,g,ε` 的定义；选出一个明确参数的 Ising 基准；知道 A² 部分已有多少结论 |
+| 3：配对阅读 | [Mendonça 2025](https://arxiv.org/html/2503.04961)（[本地 PDF](<Role of Matter Interactions in Superradiant Phenomena.pdf>)）的 Ising 模型、相图，与 [Hörmann 等 Comment](https://arxiv.org/html/2511.08452)（[本地 PDF](<Comment on Role of Matter Interactions in Superradiant Phenomena.pdf>)）全文 | A3、D3–D5、E1 | 一张“双方结论—证据—本项目需检验什么”对照表，保存在本文相关段落 |
+| 4：模型部分现在读，算法随阶段 D 深入 | [Leibig 2026](https://arxiv.org/html/2601.10210v1)（[本地 PDF](<Quantitative approach for the Dicke-Ising chain with an effective self-consistent matter Hamiltonian.pdf>)）§2.2；随后读 §3.3–3.4、§4.2 | B4–B5、D2–D4 | 理解自洽方程与能量极值的关系；写出多分支比较方案；不必现在复写整套 NLCE+DMRG |
+| 5：有限温度选择前必读 | [Gammelmark–Mølmer 2011](https://arxiv.org/html/1102.1905v1)（[本地 PDF](<Phase transitions in an Ising chain interacting with a single mode cavity field.pdf>)）§2 的模型、§3–4 的配分函数与自由能 | A3、F1–F3 | 明确其自旋轴与本题不同之处，说明本题打算新增哪个温度问题 |
 
 ### Chen：先掌握反压缩的作用和适用范围
 
@@ -68,7 +68,7 @@ Mendonça 是用户原始选题的重要来源，涉及 Ising/XXZ 和混合变�
 | `Bamba2022Magnonic` | ErFeO₃ 中 Fe 磁振子–Er 自旋耦合的热平衡超辐射转变理论；与光学腔、电偶极 A² 区分 | [期刊正文](https://www.nature.com/articles/s42005-021-00785-z) | 正文摘要、模型及结果段落已核；微观参数待细读 |
 | `Schellenberger2024Mapping` | 有关联光–物质系统正常相的映射方法；可作理论对照 | [开放全文](https://scipost.org/SciPostPhysCore.7.3.038/pdf) | 摘要/结构已核；推导待逐页读 |
 | `Mendonca2025Matter` | 用户上传的 Dicke–Ising/XXZ 基态相图、一级边界、XXZ 次线性光子标度 | [作者全文](https://arxiv.org/html/2503.04961)；[本地 PDF](Role%20of%20Matter%20Interactions%20in%20Superradiant%20Phenomena.pdf) | 本地正文已读；Ising 相图要与后续 QMC/Comment 对照 |
-| `Langheld2025Wormhole` | 大尺度 QMC 基准；反铁磁共存相、跃迁阶数；**补充材料 §IV、图 S9 已讨论 `A²` 的可达区** | [作者全文和补充材料](https://arxiv.org/html/2409.15082) | 关键正文段落与补充材料 §IV 已核；本地尚无 PDF |
+| `Langheld2025Wormhole` | 大尺度 QMC 基准；反铁磁共存相、跃迁阶数；**补充材料 §IV、图 S9 已讨论 `A²` 的可达区** | [作者全文和补充材料](https://arxiv.org/html/2409.15082)；[本地 PDF](<Quantum phase diagrams of Dicke-Ising models by a wormhole algorithm.pdf>) | 关键正文段落与补充材料 §IV 已核；已保存本地 PDF |
 | `Hormann2025Comment` | 对 Mendonça 等 Ising 相图提出可核查的异议 | [作者全文](https://arxiv.org/html/2511.08452) | 全文短文已核；预印本状态待追踪 |
 | `Leibig2026SelfConsistent` | 热力学极限的自洽自旋模型及 NLCE+DMRG 零温相图；决定本题计算方法和新颖性基线 | [作者预印本](https://arxiv.org/html/2601.10210v1) | 模型映射、方法与主要结论段落已核；算法细节待复现 |
 | `Koziol2026Criticality` | 铁磁 Dicke–Ising 的一阶/二阶边界、三临界点机制与有限尺寸标度；限制把这些作为新发现 | [作者预印本](https://arxiv.org/abs/2605.27484) | 摘要已核；全文推导及发表状态待核 |
