@@ -24,3 +24,9 @@
 - 找到本机 Anaconda 安装在 `D:\Anaconda\package`，普通 PowerShell 的 `python` 指向另一套 `D:\python\python.exe`。用 Conda 离线创建独立环境 `quantum-optics-thesis`（Python 3.12.13），直接运行其解释器得到 `sum(range(10))=45`，并核对环境内 `pip` 可用。最小依赖声明与 cmd/PowerShell 调用命令已写入 `code/`；科学计算库和数值程序仍待 C1 实施。
 - 对照 20 条 BibLaTeX 文献记录，补齐全部本地 PDF：原有用户上传 3 篇，Langheld 标题命名 PDF 在下载时已存在且与新获取文件的 SHA-256 相同，另新增 16 份公开期刊/作者预印本或机构库 PDF。新增文件按实际论文标题命名，来源与版本记入 `literature/README.md`；Chen 的补充材料、审稿文件继续保留。用文件头和 `pdfinfo` 检查下载文件；下载不等于精读。新增 PDF 保留本地，索引及来源同步到 GitHub。
 - 按用户要求盘点 C 盘占用：项目工作区、文献和 LaTeX 构建都在 D 盘；项目专用 Conda 环境曾在 `C:\Users\23317\.conda\envs\quantum-optics-thesis`，约 161 MB。将其克隆至 `D:\codex\quantum-optics-env`，验证 Python 3.12.13、`pip` 及 20 个包版本/构建号一致后移除旧环境。D 盘 Anaconda 的 `envs/` 对本账户只读，因此使用可写的 `D:\codex`；另建 D 盘项目包缓存并在代码说明中固定用法。C 盘残留的共享 Conda 缓存及 Codex 全局状态/运行时不属于此项目专用文件，未移动。
+
+## 2026-10-18
+
+- 逐页对照 Gammelmark–Mølmer（2011）、Otake–Bamba（2026）、Leibig 等（2026）和 Koziol（2026）的哈密顿量、温度范围、自由能方法和跃迁阶数。确认 Gammelmark 的 Ising 轴与两个有效场的相对方向允许化为可积横场链，Otake 的主模型为同轴经典链；二者都不等同于本项目同时含纵场和自洽横场的一般非可积量子链。
+- 将“有限温度三临界结构与物理受限可达性”登记为候选投稿延伸 `FT-TC`。它不替换零温毕设主线；进入条件是完成 Leibig/Langheld 零温基准、Koziol 三临界条件核对、全局自由能方案和热力学极限方法选择。
+- 在统一文献综述中建立 `FT-TC` 专题文献包，记录核心公式/图号、各文献已覆盖内容和本项目可能的增量；六篇核心文献均已存在于 BibLaTeX 库和本地 PDF，不重复建立引文条目。
