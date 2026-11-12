@@ -9,13 +9,14 @@
 | 内容 | 当前状态 | 查看位置 |
 | --- | --- | --- |
 | 文献与选题 | 20 篇已有本地 PDF，新增在线引文单列；核读深度分别标明 | [统一文献综述与重点阅读顺序](literature/reading-list.md) |
+| 对话与观点回顾 | 汇总用户提出的研究问题、判断、方案选择及 22 篇主引文入口 | [研究对话与文献总笔记](project/research-notebook.md) |
 | 执行计划 | 现有量子路线 A–F 共 35 项；另有 `FT-TC` 条件延伸和 `CL-AF` 的 CL1–CL7 独立候选任务，均区分计划与验收 | [路线与阶段任务](project/roadmap.md) |
 | 模型与解析 | 已有初步评估；独立模型说明和完整推导待建立 | [理论目录说明](theory/README.md) |
 | 程序与计算 | 已在 D 盘建立并验证 Python 3.12.13 专用 Conda 环境；数值包、程序和计算尚待实施 | [环境及代码说明](code/README.md) |
 | 结果 | 尚无已验证的运行或最终图 | [结果索引](results/README.md) |
 | 写作 | 已有准备阶段 LaTeX 调研笔记；正式版式待定 | [笔记正文](thesis/notes/main.tex) |
 
-**每次工作看这三个入口**：本页了解全局；[进度记录](project/progress.md)查看实际完成和下一步；[执行路线](project/roadmap.md)查看任务细节。计划中的文件和图不算已完成产物。
+**每次工作看这四个入口**：本页了解全局；[研究总笔记](project/research-notebook.md)回顾对话、用户观点和文献；[进度记录](project/progress.md)查看实际完成；[执行路线](project/roadmap.md)查看下一步和验收。计划中的文件和图不算已完成产物。
 
 ## 下一步怎样启动
 
