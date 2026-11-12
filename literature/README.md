@@ -1,6 +1,6 @@
 # 文献文件索引
 
-更新：2026-09-20。[统一文献综述与阅读顺序](reading-list.md)介绍内容和核读状态；[BibLaTeX 引用库](references.bib)保存正式引文。引用库的 20 篇论文目前都有可打开的本地 PDF。下表中的“来源”记录此份 PDF 的获取入口；本地文件中的作者预印本与最终期刊排版、标题或页码可能不同，正式引用以期刊记录和实际使用版本为准。
+更新：2026-11-12。[统一文献综述与阅读顺序](reading-list.md)介绍内容和核读状态；[BibLaTeX 引用库](references.bib)目前收录 22 篇论文。其中下表的 20 篇有本地 PDF；新增 Hörmann（2026）和 Lee–Johnson（2004）仅收录在线原文/期刊记录，尚无本地 PDF。下表中的“来源”记录现有 PDF 的获取入口；本地作者预印本与最终期刊排版、标题或页码可能不同，正式引用以期刊记录和实际使用版本为准。
 
 | 引用键 | 本地 PDF（按文件标题命名） | 此份文件的来源 |
 | --- | --- | --- |
@@ -24,6 +24,10 @@
 | `Kim2025Magnonic` | [Observation of the Magnonic Dicke Superradiant Phase Transition](<Observation of the Magnonic Dicke Superradiant Phase Transition.pdf>) | [arXiv:2401.01873 作者预印本](https://arxiv.org/abs/2401.01873) |
 | `Koziol2026Criticality` | [Quantum criticality of the ferromagnetic Dicke-Ising model](<Quantum criticality of the ferromagnetic Dicke-Ising model.pdf>) | [arXiv:2605.27484 作者预印本](https://arxiv.org/abs/2605.27484) |
 | `Leibig2026SelfConsistent` | [Quantitative approach for the Dicke-Ising chain with an effective self-consistent matter Hamiltonian](<Quantitative approach for the Dicke-Ising chain with an effective self-consistent matter Hamiltonian.pdf>) | [arXiv:2601.10210 作者预印本](https://arxiv.org/abs/2601.10210) |
+
+## 新增在线引文
+
+[Hörmann（2026），arXiv:2606.26081v1](https://arxiv.org/html/2606.26081v1) 与 [Lee–Johnson（2004），DOI 10.1103/PhysRevLett.93.083001](https://doi.org/10.1103/PhysRevLett.93.083001) 的核读深度见[文献综述](reading-list.md)；它们目前不是已下载材料。
 
 ## 用户已有的辅助材料
 
