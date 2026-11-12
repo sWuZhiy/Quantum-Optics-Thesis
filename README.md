@@ -63,6 +63,6 @@ GitHub 同步文档、引用库、代码、小型配置和已核查图；被忽�
 1. 在 `project/brief.md` 确定当前目标；复杂工作拆成可验收的小任务。
 2. 阅读文献时记下出处、页码、模型假设和仍待核查的问题。
 3. 推导或计算完成后，记录参数、验证方法和结果位置。
-4. 重要阶段更新 `project/progress.md`，检查 Git 差异后提交。
+4. 每次项目工作或研究讨论结束前，在 `project/research-notebook.md` 追加简短回顾；有新观点或文献时同步更新索引。重要阶段另更新 `project/progress.md`，检查 Git 差异后提交。
 
 项目协作约定见 [AGENTS.md](AGENTS.md)。
