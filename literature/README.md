@@ -1,6 +1,6 @@
 # 文献文件索引
 
-更新：2026-11-12。[统一文献综述与阅读顺序](reading-list.md)介绍内容和核读状态；[BibLaTeX 引用库](references.bib)目前收录 22 篇论文。其中下表的 20 篇有本地 PDF；新增 Hörmann（2026）和 Lee–Johnson（2004）仅收录在线原文/期刊记录，尚无本地 PDF。下表中的“来源”记录现有 PDF 的获取入口；本地作者预印本与最终期刊排版、标题或页码可能不同，正式引用以期刊记录和实际使用版本为准。
+更新：2026-11-17。[统一文献综述与阅读顺序](reading-list.md)介绍内容和核读状态；[`FT-TC` 缺口矩阵](ft-tc-gap-matrix.md)专门比较当前投稿候选的直接先例。[BibLaTeX 引用库](references.bib)目前收录 22 篇论文。其中下表的 20 篇有本地 PDF；新增在线文献先按核读深度登记，不自动计入本地 PDF 或正式引文。下表中的“来源”记录现有 PDF 的获取入口；本地作者预印本与最终期刊排版、标题或页码可能不同，正式引用以期刊记录和实际使用版本为准。
 
 | 引用键 | 本地 PDF（按文件标题命名） | 此份文件的来源 |
 | --- | --- | --- |
@@ -27,7 +27,7 @@
 
 ## 新增在线引文
 
-[Hörmann（2026），arXiv:2606.26081v1](https://arxiv.org/html/2606.26081v1) 与 [Lee–Johnson（2004），DOI 10.1103/PhysRevLett.93.083001](https://doi.org/10.1103/PhysRevLett.93.083001) 的核读深度见[文献综述](reading-list.md)；它们目前不是已下载材料。
+[Hörmann（2026），arXiv:2606.26081v1](https://arxiv.org/html/2606.26081v1) 与 [Lee–Johnson（2004），DOI 10.1103/PhysRevLett.93.083001](https://doi.org/10.1103/PhysRevLett.93.083001) 的核读深度见[文献综述](reading-list.md)。[Wang、Li、Chen（2026），arXiv:2602.09912v1](https://arxiv.org/abs/2602.09912) 当前仅核元数据与摘要，用于划分开放耗散路线边界；尚未加入正式引文库。它们目前都不是已下载材料。
 
 ## 用户已有的辅助材料
 
