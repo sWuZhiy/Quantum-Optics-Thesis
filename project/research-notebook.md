@@ -48,6 +48,7 @@
 | P16 · 已确认目标与工作方式 | 用户希望项目“达到投稿级潜力”，先删除已判定不行的主张、加入不错的新方向，并整体更新项目文件，形成不断改进的习惯。 | **已确认并执行**：投稿潜力成为方向筛选标准；简单静态加项从当前主线撤下但保留淘汰证据；`FT-TC` 升为首要空白待证候选，`CL-AF` 降为基准。新增[主张台账](claims.md)和 `P0` 止损门槛；这不等于正式题目或创新已经确认。 |
 | P17 · 路线启动与问题 | 用户要求现在开始 `FT-TC`，并核查腔耦合与 Ising 相互作用同向或异向的协同、竞争是否还值得研究。 | **已确认 P0 调研启动**；[逐轴核查](../literature/ft-tc-axis-survey.md)显示同轴协同、异轴热三临界均有先例，候选收窄为非零纵场 `zz/z/x` 的热全局自由能及边界。未决定最终题目，尚无本项目数值结果。 |
 | P18 · 模型创新问题 | 用户问“现在在模型层面上还有值得创新的点吗”。 | [模型级筛选](model-innovation-screen.md)提出需通过算符等价、对称性、已有文献和计算门槛；两子格**幅值**差异是最小的待查重扩展，但尚未升级为活动课题。 |
+| P19 · 文献后续与 P0 问题 | 用户本轮要求调研先前建议的 P0，并问围绕 Mendonça 等（2025）《Role of Matter Interactions in Superradiant Phenomena》还能进一步做什么；随后澄清消息中的“i”是笔误。此为**用户问题的转述**，不是已确认转向 XXZ。 | [专题 P0 预筛](../literature/mendonca-followup-survey.md)区分 Ising 已被后续工作覆盖的部分、XXZ 光子标度的待检验问题和有限温/谱学长线；`FT-TC` 仍是首要已启动候选。引用的旧对话本轮因缺少 `read_thread` 工具未读取，因此没有采用其中未核内容。 |
 
 本机更详细的逐段阅读与用户问题原话保存在 `literature/notes/langheld-2025-wormhole-reading-notes.md`。该笔记及 `assets/` 截图目前未纳入公开 Git 仓库；本页保留无需截图即可理解的观点摘要，公开回查以[文献综述](../literature/reading-list.md)和论文原文为准。
 
@@ -66,7 +67,7 @@
 | 量子 Ising 基线 | [Rohn 等 2020](https://doi.org/10.1103/PhysRevResearch.2.023131) `Rohn2020QuantizedIsing` | 光诱导横场；目前主要核摘要 |
 | 量子 Ising 基线 | [Mendonça 等 2025](https://doi.org/10.1103/z8gv-7yyk) `Mendonca2025Matter` | Ising/XXZ 基态；正文式 (1)、图 2–4；Ising 区需并读 Comment |
 | 量子 Ising 基线 | [Langheld 等 2025](https://doi.org/10.1103/lcvj-ksct) `Langheld2025Wormhole` | QMC 图 3–4；补充 §IV 式 (S33)–(S35)、图 S9 的 `A²` 可达区；已有专题深读 |
-| 量子 Ising 基线 | [Hörmann 等 2025 Comment](https://arxiv.org/abs/2511.08452) `Hormann2025Comment` | 对窄共存区与阶数的异议；短文已核，后续争议待追踪 |
+| 量子 Ising 基线 | [Hörmann 等 2025 Comment](https://arxiv.org/abs/2511.08452) `Hormann2025Comment` | 对窄共存区与阶数的异议；2026-10 已被 PRL 接收，Reply 正文待核 |
 | 量子 Ising 基线 | [Leibig 等 2026](https://doi.org/10.21468/SciPostPhys.21.3.071) `Leibig2026SelfConsistent` | §2.2、§3–4；本地预印本已核读，期刊版差异待核 |
 | 量子 Ising 基线 | [Koziol 2026](https://arxiv.org/abs/2605.27484) `Koziol2026Criticality` | 零温三临界；式 (12)–(14)、图 1–3 已核 |
 | 量子 Ising 基线 | [Hörmann 2026](https://arxiv.org/html/2606.26081v1) `Hormann2026Folds` | §II、§V.3、§VI；零温相界已核相关段落，111 页预印本未全篇复算 |
@@ -89,7 +90,8 @@
 | 经典同轴链的短程/全连接相互作用先例 | [Baker 1963](https://doi.org/10.1103/PhysRev.130.1406) 摘要；[Nagle 1970](https://doi.org/10.1103/PhysRevA.2.2124) 模型；[Henriques–Salinas 2015](https://arxiv.org/abs/1508.03543) 第 2 页式 (1)、第 5–6 页式 (14)–(24)；[Dantchev 等 2024](https://doi.org/10.1103/PhysRevE.110.L062104) 式 (1)、(10)–(11)。模型映射见[研究评估 §8–9](research-assessment.md)。 |
 | 量子链和有效平台解析检查 | [Pfeuty 1970](https://doi.org/10.1016/0003-4916(70)90270-8) 第 84 页式 (3.2)、第 89 页；[Dimer 等 2007](https://doi.org/10.1103/PhysRevA.75.013804) §II 式 (11)、(16)；[Román-Roche 等 2021](https://doi.org/10.1103/PhysRevLett.127.167201) 及其补充材料。阅读过程见[2026-10 的进度](progress.md)。 |
 | 数值方法与 TC 对话 | [Weber 2022](https://doi.org/10.1103/PhysRevB.105.165129) §III–VI 的 wormhole/JC 构造；[Schollwöck 2011](https://doi.org/10.1016/j.aop.2010.09.012) MPS 综述；[Kamar–Maghrebi 2024](https://doi.org/10.1103/PhysRevB.110.075114) 玻色局域维数。算法应用还查过 [Weber–Luitz–Assaad 2022](https://doi.org/10.1103/PhysRevLett.129.056402)、[Weber–Vojta 2023](https://doi.org/10.1103/PhysRevLett.130.186701)、[Ribeiro 等 2024](https://arxiv.org/abs/2311.07683) 和 [Weber 2025](https://doi.org/10.1103/mtq7-n96c)；具体评价在本机 Langheld 深读笔记。 |
-| 2026 年方法与相图争议的后续线索 | [Mendonça 等 2026](https://arxiv.org/abs/2607.17934) 非高斯变分新方法；目前只核摘要，不能据此认定既有 Ising 争议已经解决。 |
+| 2026 年方法与相图争议的后续线索 | [Mendonça 等 2026](https://arxiv.org/html/2607.17934) 非高斯变分新方法；§IV.2.1–IV.2.3、图 3–5 已核：报告 Ising 铁磁三临界和窄 AFM–超辐射共存区。不能据此认定双方 Comment/Reply 争议的全部措辞已解决。 |
+| 指定论文的 2026 后续核查 | [Hörmann 等 Comment 接收记录](https://journals.aps.org/prl/accepted/10.1103/xl66-85fx)（DOI `10.1103/xl66-85fx`）、[原作者 Reply 接收记录](https://journals.aps.org/prl/accepted/10.1103/1xgg-qdyd)（DOI `10.1103/1xgg-qdyd`；尚无可核正文）、[Hörmann 2026](https://arxiv.org/html/2606.26081) §II、§V.4、§VI。模型差异和 XXZ 待证点见[专题预筛](../literature/mendonca-followup-survey.md)。 |
 | `FT-TC` 逐轴查重 | [Rao 等 2025](https://arxiv.org/html/2509.04391) 式 (1)、(11)、图 1、4：`zz/y/x` 量子链的有限温三临界；[Granet 2023](https://arxiv.org/html/2209.08756) 式 (1)、(15)–(17)、§4.2：`zz/x/x` 对应量子链热转变与逆熔化；[Román‑Roche 等 2021](https://arxiv.org/html/2011.03753) 主文式 (5)、图 2、补充 §III：同轴协同与有限温响应。轴向、核读边界及推断见[专题记录](../literature/ft-tc-axis-survey.md)。 |
 | 开放 Dicke–Ising 的近期边界 | [Wang、Li、Chen 2026](https://arxiv.org/abs/2602.09912)；目前只核 arXiv 元数据与摘要。论文报告开放横向/纵向模型的耗散稳态相变、双稳态与四临界结构；在精读正文前不采用更细公式或数值。 |
 
@@ -123,3 +125,4 @@
 | 2026-11-18 | 完成 Chen 等（2021）主文剩余 Results、Methods 及补充材料 Note 1–7 的逐段阅读。 | 在[文献综述](../literature/reading-list.md)补全主文页码、公式、图号及补充材料证据。确认实验是室温四核自旋 NMR 对单自旋 Rabi 有效哈密顿量基态特征的模拟：使用有限振子编码、赝纯态、GRAPE 和逆压缩后处理；严格相变只在 $\Omega/\omega\to\infty$。补充材料进一步显示直接压缩在深 SP 区受截断限制，误差棒主要是谱线拟合统计误差。主张 C02 的解析基线得到加强，但新颖性状态和当前路线未改变；本轮未独立复现实验或数值。 | Chen 阅读任务已闭环；返回投稿门槛 `P0`，优先补完 `FT-TC` 双向引文缺口和方法可行性，不再沿简单静态反压缩加项扩展。 |
 | 2026-11-18 | 开始 `FT-TC` 的 P0 轴向查重，核对不同轴向的协同、竞争和热三临界先例。 | 登记 P17；新增[逐轴核查](../literature/ft-tc-axis-survey.md)，补充[缺口矩阵](../literature/ft-tc-gap-matrix.md)、[主张 C04](claims.md)、[阅读清单](../literature/reading-list.md)及引文库。Rao（2025）、Granet（2023）压缩宽泛热新颖性；同轴协同已有 Román‑Roche（2021）与 Sur（2026）先例。尚无计算。 | 完成双向引文及 Leibig 期刊版核查，再评估非零纵场 `zz/z/x` 的有限温全局自由能是否可控；据此完成新颖性和方法备忘。 |
 | 2026-11-18 | 回答 `FT-TC` 是否还有模型层面创新点，并初筛最小非等价扩展。 | 登记 P18；[模型筛选](model-innovation-screen.md)给出符号交错可由局域旋转消去的算符检查，比较两子格幅值差异、双空间模和受挫交换；核对 Caballero‑Benitez（2026）式 (1)、图 1–2 及 Leibig 等（2026）受挫锯齿链会议摘要。没有新增活动主张或数值结果。 | 先完成当前均匀模型 P0；若失败，再按模型等价、同模型查重和热力学方法三项检验两子格幅值方案。 |
+| 2026-11-18 | 按用户澄清的 P0 建议，独立调研 Mendonça 等（2025）及围绕该文的可继续问题，同时补齐 `FT-TC` P0 的书面预审。 | 登记 P19；新增[专题预筛](../literature/mendonca-followup-survey.md)、[新颖性备忘](novelty-memo.md)、[方法可行性预审](method-feasibility.md)，更新[逐篇综述](../literature/reading-list.md)、[主张 C08](claims.md)和引文库。核实 Comment 与 Reply 已于 2026-10 被 PRL 接收；Comment 原文已核，Reply 仅见接收记录。原作者 2026 预印本已覆盖 Ising 窄共存区；XXZ 图 4 的次线性光子密度在热力学极限的分类是**待反证假说**，尚无本项目计算。引用的旧聊天因当前无 `read_thread` 工具未读取。 | `FT-TC` P0 尚未通过：补同模型前向引文并选有限温求解器做收敛基准；若失败，再对 XXZ 做逐式查重、自洽适用性检查和固定耦合多尺寸基准，决定 C08 是否升级。 |

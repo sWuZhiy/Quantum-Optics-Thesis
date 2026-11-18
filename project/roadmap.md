@@ -1,6 +1,6 @@
 # 投稿潜力导向的执行路线
 
-更新：2026-11-17。本文是当前可执行计划，不是已完成结果，也不表示正式题目已经获得导师确认。项目仍处于选题与基线阶段：尚无独立模型文档、研究程序或已验证数值结果。
+更新：2026-11-18。本文是当前可执行计划，不是已完成结果，也不表示正式题目已经获得导师确认。`P0` 已有[文献差异矩阵](../literature/ft-tc-gap-matrix.md)、[新颖性备忘](novelty-memo.md)和[方法可行性预审](method-feasibility.md)，但同模型前向查重、有限温求解器和收敛基准仍未完成，**P0 尚未通过**。项目仍处于选题与基线阶段：尚无独立模型文档、研究程序或已验证数值结果。
 
 ## 0. 当前路线状态
 
@@ -140,7 +140,7 @@ g_s = g[ω/(ω+4q)]^(1/4).
 ## 8. 下一批可验收工作
 
 1. 补全已建立的 [`literature/ft-tc-gap-matrix.md`](../literature/ft-tc-gap-matrix.md)：做双向引文检索、精读耗散论文并核对 Leibig 期刊版。
-2. 完成 `project/novelty-memo.md` 与 `project/method-feasibility.md`，据证据决定 `FT-TC` 是继续、收窄还是停止。
+2. 按[新颖性备忘](novelty-memo.md)与[方法可行性预审](method-feasibility.md)补足同模型前向查重和有限温求解器收敛基准，再决定 `FT-TC` 是继续、收窄还是停止。
 3. 建立 `theory/model.md` 与 `theory/derivations.md` 的最小版本，复算 Z1。
 
 这三项完成前，不开始大规模参数扫描。

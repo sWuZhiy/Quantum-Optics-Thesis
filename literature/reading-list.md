@@ -71,7 +71,7 @@ Mendonça 是用户原始选题的重要来源，涉及 Ising/XXZ 和混合变�
 | `Schellenberger2024Mapping` | 有关联光–物质系统正常相的映射方法；可作理论对照 | [开放全文](https://scipost.org/SciPostPhysCore.7.3.038/pdf) | 摘要/结构已核；推导待逐页读 |
 | `Mendonca2025Matter` | 用户上传的 Dicke–Ising/XXZ 基态相图、一级边界、XXZ 次线性光子标度 | [作者全文](https://arxiv.org/html/2503.04961)；[本地 PDF](Role%20of%20Matter%20Interactions%20in%20Superradiant%20Phenomena.pdf) | 本地正文已读；Ising 相图要与后续 QMC/Comment 对照 |
 | `Langheld2025Wormhole` | 大尺度 QMC 基准；反铁磁共存相、跃迁阶数；**补充材料 §IV、图 S9 已讨论 `A²` 的可达区** | [作者全文和补充材料](https://arxiv.org/html/2409.15082)；[本地 PDF](<Quantum phase diagrams of Dicke-Ising models by a wormhole algorithm.pdf>) | 关键正文段落与补充材料 §IV 已核；已保存本地 PDF |
-| `Hormann2025Comment` | 对 Mendonça 等 Ising 相图提出可核查的异议 | [作者全文](https://arxiv.org/html/2511.08452) | 全文短文已核；预印本状态待追踪 |
+| `Hormann2025Comment` | 对 Mendonça 等 Ising 相图提出可核查的异议 | [作者全文](https://arxiv.org/html/2511.08452) | arXiv 短文已核；2026-10 PRL 接收，期刊正文待核 |
 | `Leibig2026SelfConsistent` | 热力学极限的自洽自旋模型及 NLCE+DMRG 零温相图；决定本题计算方法和新颖性基线 | [作者预印本](https://arxiv.org/html/2601.10210v1)、[期刊 DOI](https://doi.org/10.21468/SciPostPhys.21.3.071) | 本地 v1 的模型映射、方法与主要结论已核；期刊版已发表，版本差异待核 |
 | `Koziol2026Criticality` | 铁磁 Dicke–Ising 的一阶/二阶边界、三临界点机制与有限尺寸标度；限制把这些作为新发现 | [作者预印本](https://arxiv.org/abs/2605.27484) | 正文式 (1)、式 (12)–(14)、图 1–3 与总结已核；发表状态待追踪 |
 | `Hormann2026Folds` | 零温自洽物质泛函、解析相界及三临界结构；进一步压缩仅画零温相图的创新空间 | [arXiv:2606.26081v1](https://arxiv.org/html/2606.26081v1) | §II、§V.3 与 §VI 相关段落已核；111 页预印本未逐式复算 |
@@ -260,6 +260,7 @@ Mendonça 是用户原始选题的重要来源，涉及 Ising/XXZ 和混合变�
 - **A² 处理**：本地主文式 (1) 未显式纳入 $D(a+a^\dagger)^2$，全文未见独立 A² 参数扫描；也未研究独立静态反压缩 $\xi$。
 - **与毕设关系**：是自旋相互作用部分的直接基线。**Ising 相图结论有公开争议**：Hörmann 等指出窄共存区及转变阶数遗漏；不可直接把文中某张图当成定论。
 - **核读状态**：本地主文已读；Ising 区域须与 Langheld QMC/Comment 对照，XXZ 标度需复核定义和尺寸外推。
+- **2026-11-18 后续核查**：原文式 (1)、图 4(b)–(c) 与正文 XXZ 段、Comment、作者 2026 年方法后续及一般热力学自洽理论已对照。图 4 报告的 `⟨n⟩/N∝N^(−α)` 在固定参数且 `α>0` 时趋零；它是否为真正渐近律或长有限尺寸交叉仍未独立解决。候选问题、最小验证和止损条件见[专题 P0 预筛](mendonca-followup-survey.md)。
 
 ### Langheld 等（2025）：Dicke–Ising 的 QMC 相图和 A² 可达区
 
@@ -272,12 +273,18 @@ Mendonça 是用户原始选题的重要来源，涉及 Ising/XXZ 和混合变�
 
 ### Hörmann 等（2025）：针对 Dicke–Ising 相图的 Comment
 
-- **出处**：[arXiv:2511.08452](https://arxiv.org/html/2511.08452)（核读时为预印本），引用键 `Hormann2025Comment`。
+- **出处**：[arXiv:2511.08452](https://arxiv.org/html/2511.08452)（全文核读版本）；[PRL 于 2026-10-15 接收](https://journals.aps.org/prl/accepted/10.1103/xl66-85fx)，DOI `10.1103/xl66-85fx`；引用键 `Hormann2025Comment`（沿用原 arXiv 年份的稳定键）。
 - **研究对象**：核查 Mendonça 等关于 Dicke–Ising 零温相图的部分结论。
 - **方法与结果**：用较大系统 QMC 等证据指出原论文所研究的参数范围内仍有反铁磁–超辐射共存中间区，且部分边界的跃迁阶数会改变。
 - **A² 处理**：重点是无显式 A² 基线相图的争议；A² 的变换与可达区应查同组 Langheld 等论文补充材料 §IV。
 - **与毕设关系**：做一级边界或窄共存区数值计算时必须并读双方结论，检查网格和系统尺寸。
-- **核读状态**：作者短文已核；发表状态及对方正式回复须继续追踪。
+- **核读状态**：作者 arXiv 短文 §II–III、图 1 已核；期刊版正文尚待核。原作者 [Reply 于 2026-10-26 接收](https://journals.aps.org/prl/accepted/10.1103/1xgg-qdyd)，DOI `10.1103/1xgg-qdyd`；截至本次检索接收页无正文，不能推断其答辩内容。Comment 的 [QMC 原始数据](https://zenodo.org/records/17569121)可回查。
+
+### Mendonça 等（2026）：非高斯方法的 Ising 相图后续
+
+- **出处**：[arXiv:2607.17934v1](https://arxiv.org/html/2607.17934)；引用键 `Mendonca2026NonGaussian`。
+- **核读范围与论文报告**：§IV.2.1–IV.2.3、式 (27)–(29)、图 3 与 §V 图 4–5；以新非高斯变分态结合自旋 DMRG，报告铁磁侧三临界和反铁磁侧很窄的 AFM–超辐射共存窗口，并用直接自旋–光子 DMRG 比较能量及光子密度。该文 §IV.2.3 提到 XXZ 与 Ising 高斯极限有差异，但没有重新给出 2025 年 XXZ 图 4 的大尺寸热力学分类。
+- **与毕设关系**：Ising 漏相及新变分算法已不是本项目独立创新；XXZ 次线性光子标度可作为待预筛问题。该文是预印本，数值未由本项目复算。
 
 ### Leibig 等（2026）：自洽物质哈密顿量的热力学极限算法
 

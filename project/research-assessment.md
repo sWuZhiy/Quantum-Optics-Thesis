@@ -49,7 +49,7 @@ H_s = ω_s b†b + Δ Σ_i s_i^z + H_int(J)
 ## 3. 已有外部结果如何改变新颖性判断
 
 1. [Langheld、Hörmann、Schmidt，*Physical Review B* **112**, L161123 (2025)，全文含补充材料](https://arxiv.org/html/2409.15082)：Dicke–Ising 的大尺度 QMC 给出铁磁侧连续/一级转变和多临界点，反铁磁侧给出磁序与超辐射共存区。补充材料 **§IV、式 (S33)–(S35)、图 S9** 已将 `A²` 通过 Bogoliubov 变换并入 `ω_s,g_s`，且展示微观约束下的可达区域。其示例中 `D=g²/(2ε)`，这里论文的自旋能级参数 `ε` 对应本文 `Δ/2`。特别值得注意：该示例判断铁磁侧超辐射区不可达，而反铁磁侧仍可达四相，包括共存相。故“相互作用在 `A²` 限制下恢复超辐射”亦不能直接宣称原创。
-2. [Hörmann 等对 Mendonça 等的 Comment（2025）](https://arxiv.org/html/2511.08452) 指出后者遗漏窄的反铁磁超辐射共存区及铁磁侧跃迁阶数改变，并用更大系统 QMC 支撑。原 PRL 与 Comment 的说法应并列呈现，基线相图优先以可复核的 QMC 数据与解析极限校验，而不照抄其中任一张图。[Mendonça 等 2026 年新方法预印本](https://arxiv.org/abs/2607.17934) 也在重新基准比较 Dicke–Ising；并不等于此前争议已自动解决。
+2. [Hörmann 等对 Mendonça 等的 Comment（2025）](https://arxiv.org/html/2511.08452) §II–III、图 1 指出后者遗漏窄的反铁磁超辐射共存区及铁磁侧跃迁阶数改变，并用更大系统 QMC 支撑；该 Comment [2026-10 已被 PRL 接收](https://journals.aps.org/prl/accepted/10.1103/xl66-85fx)。原作者 [Reply 也已接收](https://journals.aps.org/prl/accepted/10.1103/1xgg-qdyd)，但本轮只见接收记录，不能推断其答辩内容。[Mendonça 等 2026 年新方法预印本](https://arxiv.org/html/2607.17934) §IV.2、图 3 已报告铁磁三临界和窄反铁磁共存区。因此本项目不能以这些 Ising 特征作新意；基线仍须以可复核的 QMC、直接 DMRG 与解析极限校验。XXZ 图 4 的热力学标度另见[专题 P0 预筛](../literature/mendonca-followup-survey.md)。
 3. [Chen 等 2021 正文](https://www.nature.com/articles/s41467-021-26573-5) 已有无 `J` 时的反压缩、`A²`、反向转变。2026 年 [cavity-coupled quantum-critical systems 的研究](https://pmc.ncbi.nlm.nih.gov/articles/PMC13183903/) 又报告磁性临界模可降低超辐射阈值并增强本征压缩。因此笼统的“磁临界性与光场压缩协同”也不够具体。
 4. [Nataf 与 Ciuti 2010](https://www.nature.com/articles/ncomms1069) 的禁戒讨论有明确的物理前提。加一个独立、可驱动的 `ξ` 不能被表述成推翻原禁戒定理。若 `ξ` 由外部泵浦实现，结果应标为**旋转框架有效哈密顿量的基态或驱动稳态**，并说明损耗与泵浦；不能无条件宣称未受驱动的真实热平衡相变。
 
