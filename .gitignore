@@ -11,6 +11,7 @@ venv/
 # Local tools and editors
 .idea/
 .vscode/
+.codex/project-summaries/
 *.swp
 *~
 
