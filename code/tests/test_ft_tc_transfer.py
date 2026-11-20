@@ -9,9 +9,25 @@ import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from ft_tc_transfer import classical_chain, free_energy, independent_spin
+from ft_tc_ed import free_energy as finite_chain_free_energy
 
 
 class TransferTests(unittest.TestCase):
+    def test_finite_chain_ed_independent_spins(self):
+        expected = independent_spin(0.1, 0.6, 0.45)
+        for n in (4, 8):
+            self.assertAlmostEqual(finite_chain_free_energy(0.1, 0, 0.6, 0.45, n),
+                                   expected, places=11)
+
+    def test_finite_chain_ed_classical_periodic_partition(self):
+        T, J, Delta, n = 0.3, -0.3, 0.6, 6
+        z = np.array([1.0, -1.0])
+        mat = np.exp(-J * z[:, None] * z[None, :] / T
+                     - Delta * (z[:, None] + z[None, :]) / (4 * T))
+        expected = -T * math.log(float(np.trace(np.linalg.matrix_power(mat, n)))) / n
+        self.assertAlmostEqual(finite_chain_free_energy(T, J, Delta, 0, n),
+                               expected, places=11)
+
     def test_zero_transverse_field_is_exact_at_any_trotter_size(self):
         for J in (-0.3, 0.3):
             expected = classical_chain(0.5, J, 1.0)

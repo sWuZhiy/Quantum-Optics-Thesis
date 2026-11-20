@@ -34,5 +34,5 @@
 ## 尚存的检索风险
 
 - OpenAlex 未必收录最新预印本的引用关系；Hörmann 前向数为 0 尤其不能解释为没有后续工作。
-- Leibig 正式期刊 PDF 与本地 arXiv v1 的逐页差异未完成核对。
+- Leibig 正式期刊 PDF 与本地 arXiv v1 的逐页差异未完成核对。2026-11-20 补查[作者单位的期刊题录与摘要](https://cris.fau.de/publications/370578265/)及 [arXiv 版本历史](https://arxiv.org/abs/2601.10210)：前者明确报告 *quantum phase diagram*、多临界点及基态，后者截至检索只列 v1；[预印本 §5](https://arxiv.org/html/2601.10210)把有限温与热相变列为展望。该证据加强“已核内容为零温”的判断，但摘要不能代替期刊正文的逐页核查，也不能证明不存在其他同模型热论文；SciPost 正文在本次访问中未能打开。
 - Rao、Gammelmark 的轴向差异已核到公式，但未把所有参数化论文逐式排除；定题和投稿前应复查 DOI、arXiv 新版本和引用数据库。

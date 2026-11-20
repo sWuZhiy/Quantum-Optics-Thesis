@@ -4,7 +4,7 @@
 
 ## 现在重点读什么，以及读完如何推进项目
 
-目前处于新版[执行路线](../project/roadmap.md)的投稿门槛 `P0`，尚无数值结果。优先任务从“继续扩展反压缩模型”改为验证 `FT-TC` 的文献缺口：先逐式比较 **Gammelmark–Mølmer → Langheld → Leibig → Koziol → Hörmann**，再确定有限温方法。Chen 的反压缩主文和补充材料已完成逐段核读，其作用是解析与实验边界基线，不再决定投稿主线。
+目前处于新版[执行路线](../project/roadmap.md)的投稿门槛 `P0`，已有数值**方法试算**，尚无经验证的新相界或三临界结果。优先任务从“继续扩展反压缩模型”改为验证 `FT-TC` 的文献缺口：先逐式比较 **Gammelmark–Mølmer → Langheld → Leibig → Koziol → Hörmann**，再确定有限温方法。Chen 的反压缩主文和补充材料已完成逐段核读，其作用是解析与实验边界基线，不再决定投稿主线。
 
 | 阅读顺序 | 文献与当前优先部分 | 对应构建任务 | 读完应拿出的东西 |
 | --- | --- | --- | --- |
@@ -72,7 +72,7 @@ Mendonça 是用户原始选题的重要来源，涉及 Ising/XXZ 和混合变�
 | `Mendonca2025Matter` | 用户上传的 Dicke–Ising/XXZ 基态相图、一级边界、XXZ 次线性光子标度 | [作者全文](https://arxiv.org/html/2503.04961)；[本地 PDF](Role%20of%20Matter%20Interactions%20in%20Superradiant%20Phenomena.pdf) | 本地正文已读；Ising 相图要与后续 QMC/Comment 对照 |
 | `Langheld2025Wormhole` | 大尺度 QMC 基准；反铁磁共存相、跃迁阶数；**补充材料 §IV、图 S9 已讨论 `A²` 的可达区** | [作者全文和补充材料](https://arxiv.org/html/2409.15082)；[本地 PDF](<Quantum phase diagrams of Dicke-Ising models by a wormhole algorithm.pdf>) | 关键正文段落与补充材料 §IV 已核；已保存本地 PDF |
 | `Hormann2025Comment` | 对 Mendonça 等 Ising 相图提出可核查的异议 | [作者全文](https://arxiv.org/html/2511.08452) | arXiv 短文已核；2026-10 PRL 接收，期刊正文待核 |
-| `Leibig2026SelfConsistent` | 热力学极限的自洽自旋模型及 NLCE+DMRG 零温相图；决定本题计算方法和新颖性基线 | [作者预印本](https://arxiv.org/html/2601.10210v1)、[期刊 DOI](https://doi.org/10.21468/SciPostPhys.21.3.071) | 本地 v1 的模型映射、方法与主要结论已核；期刊版已发表，版本差异待核 |
+| `Leibig2026SelfConsistent` | 热力学极限的自洽自旋模型及 NLCE+DMRG 零温相图；决定本题计算方法和新颖性基线 | [作者预印本](https://arxiv.org/html/2601.10210v1)、[期刊 DOI](https://doi.org/10.21468/SciPostPhys.21.3.071)、[作者单位期刊题录与摘要](https://cris.fau.de/publications/370578265/) | 本地 v1 的模型映射、方法与主要结论已核；正式摘要同样聚焦基态量子相图，期刊版正文差异仍待核，不能据摘要排除新增内容 |
 | `Koziol2026Criticality` | 铁磁 Dicke–Ising 的一阶/二阶边界、三临界点机制与有限尺寸标度；限制把这些作为新发现 | [作者预印本](https://arxiv.org/abs/2605.27484) | 正文式 (1)、式 (12)–(14)、图 1–3 与总结已核；发表状态待追踪 |
 | `Hormann2026Folds` | 零温自洽物质泛函、解析相界及三临界结构；进一步压缩仅画零温相图的创新空间 | [arXiv:2606.26081v1](https://arxiv.org/html/2606.26081v1) | §II、§V.3 与 §VI 相关段落已核；111 页预印本未逐式复算 |
 | `Sur2026Critical` | 自旋临界模增强腔响应和本征压缩；限制“磁临界性协同”的泛泛新颖性表述 | [期刊正文](https://www.nature.com/articles/s41467-026-73112-1) | 摘要和主要结论已核；具体模型需细读 |

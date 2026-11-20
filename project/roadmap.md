@@ -1,6 +1,8 @@
 # 投稿潜力导向的执行路线
 
-更新：2026-11-20。本文是当前可执行计划，不表示正式题目已经获得导师确认。`P0` 已有[文献差异矩阵](../literature/ft-tc-gap-matrix.md)、[双向引文核查](../literature/ft-tc-citation-audit-2026-11-20.md)、[新颖性备忘](novelty-memo.md)和[方法可行性试算](method-feasibility.md)。中温单点已由 NumPy 转移矩阵做无限链试算，但目标三临界区域、全局自由能分支和低温精度仍未验证，**P0 尚未通过**。项目仍处于选题与基线阶段：尚无独立模型文档或新相图。
+`FT-TC` 是本项目的工作代号，展开为 **Finite-Temperature Tricriticality（有限温三临界结构）**：研究零温量子 Dicke–Ising 三临界结构能否及如何延伸到有限温度。这里的 `TC` 不指 Tavis–Cummings，也不预设有限温三临界点一定存在。
+
+更新：2026-11-20。本文是当前可执行计划，不表示正式题目已经获得导师确认。`P0` 已有[文献差异矩阵](../literature/ft-tc-gap-matrix.md)、[双向引文核查](../literature/ft-tc-citation-audit-2026-11-20.md)、[新颖性备忘](novelty-memo.md)和[方法可行性试算](method-feasibility.md)。NumPy 转移矩阵与周期热 ED 已在一个铁磁目标比值做位移网格和低温尺寸检查；连续全局分支、多个参数窗口和期刊正文查重仍未完成，**P0 尚未通过**。项目仍处于选题与基线阶段：尚无独立模型文档或新相图。
 
 ## 0. 当前路线状态
 
