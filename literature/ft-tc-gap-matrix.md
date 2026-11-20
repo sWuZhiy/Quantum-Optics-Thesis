@@ -1,6 +1,6 @@
 # `FT-TC` 有限温三临界候选：文献缺口矩阵 v1
 
-更新：2026-11-19。状态：**轴向定向检索已补充，尚未完成穷尽查重，不构成新颖性证明**。同轴协同与异轴竞争的逐轴对照见[专题核查](ft-tc-axis-survey.md)。
+更新：2026-11-20。状态：**核心种子论文的双向引文与关键词补查已记录，未命中完整同模型热相图；数据库漏收和版本差异使其仍不构成新颖性证明**。具体题录及排除理由见[双向引文核查](ft-tc-citation-audit-2026-11-20.md)。
 
 ## 1. 候选问题的精确定义
 
@@ -63,16 +63,15 @@ Hq = [D(g)-ξ](a+a†)²
 3. 证明在可获得资源内只能得到小系统交叉，无法控制热力学极限或全局一级边界。
 4. 证明有限温延伸只产生平凡的零温线平滑终止，没有可区分、可验证的新预测；此时可作为毕业设计基准，但不满足投稿潜力目标。
 
-## 5. 仍需完成的查重工作
+## 5. 双向引文核查与剩余风险
 
-- 沿 Gammelmark（2011）、Rao（2025）、Granet（2023）、Langheld（2025）、Leibig（2026）、Koziol（2026）和 Hörmann（2026）的参考文献与引用文献做完整双向检索；本轮只是定向关键词与部分后向引文核查。
-- 组合检索：`finite-temperature / thermal / tricritical / critical endpoint / first-order` 与 `Dicke-Ising / interacting matter / longitudinal field / quantum Ising chain`。
+- 2026-11-20 已对 Gammelmark、Rao、Granet、Langheld、Leibig、Koziol、Hörmann 这七个种子做 OpenAlex 前向引文和参考文献交叉检索，并用 `finite-temperature / thermal / tricritical / critical endpoint / first-order` 与 `Dicke-Ising / interacting matter / longitudinal field / quantum Ising chain` 补查；逐篇排除理由及索引限制见[专题记录](ft-tc-citation-audit-2026-11-20.md)。截至这次检索仍未命中同一 `zz/z/x`、`Δ≠0` 的完整平衡热相图，但不能由数据库未命中推出绝对空白。
 - 精读 Wang–Li–Chen（2026）的哈密顿量、Lindblad 通道、图 1–3 和稳态判据，只用于划分开放系统边界。
 - 核对 Leibig 正式期刊版与本地 arXiv v1 的差异，避免使用旧页码或遗漏新增有限温讨论。
-- 查找 2026-11-17 之后或现有预印本后续版本；定题和投稿前各重新检索一次。
+- 定题和投稿前各重新检索一次新发表工作和预印本后续版本；特别注意新近引用索引滞后。
 
 ## 6. 当前门槛结论
 
-`FT-TC` 通过了“值得做完整缺口审计”的初筛，但**尚未通过投稿新颖性门槛，也未获准进入大规模数值扫描**。[新颖性备忘](../project/novelty-memo.md)与[方法可行性预审](../project/method-feasibility.md)已建立，均明确 P0 尚未通过；第 5 节前向引文和热力学求解器基准仍需完成，才能给出继续/收窄/停止的最终判断。
+`FT-TC` 的核心种子引文核查已做一轮，但**尚未通过投稿新颖性与方法联合门槛，也未获准进入大规模数值扫描**。[新颖性备忘](../project/novelty-memo.md)列出反证条件；[方法可行性记录](../project/method-feasibility.md)已有中温单点的无限链试算，低温与三临界区域仍未验证。找到同模型完整热相图即按 C04 止损；若目标区域误差无法控制，也应收窄。
 
 2026-11-19 复核原文：[Rao 等（2025）式 (1)、式 (11)、图 4 及有限温段](https://arxiv.org/html/2509.04391)已明确给出异轴量子链的低温热三临界与端点消失；[Hörmann（2026）§VI](https://arxiv.org/html/2606.26081)明确说其自身尚未展开热相界和三临界线。后者仅说明该文未做，并不能替代对其他论文、后续版本和前向引文的查重。本文的 G1 仍是待反证假设，P0 状态不变。

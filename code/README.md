@@ -7,7 +7,7 @@
 
 ## 已建立的 Python 环境
 
-2026-09-20 创建独立 Conda 环境，随后迁至 **`D:\codex\quantum-optics-env`**。当前解释器为 Python 3.12.13，`pip` 已验证；与原 C 盘环境的 20 个包版本及构建号一致，原环境已移除。数值包尚未安装，数值程序尚未实现。最小环境声明见 [environment.yml](environment.yml)，以后增加经过实际验证的依赖。环境与仓库分开放，避免提交大体积程序文件。
+2026-09-20 创建独立 Conda 环境，随后迁至 **`D:\codex\quantum-optics-env`**。当前解释器为 Python 3.12.13，`pip` 已验证；与原 C 盘环境的 20 个包版本及构建号一致，原环境已移除。2026-11-20 已用现有 NumPy 2.5.3 实现一个 P0 有限温物质链转移矩阵试点；SciPy 和张量网络包仍未安装。最小环境声明见 [environment.yml](environment.yml)，以后增加经过实际验证的依赖。环境与仓库分开放，避免提交大体积程序文件。
 
 在 **Anaconda Prompt / cmd** 中运行：
 
@@ -26,7 +26,14 @@ python -c "import sys; print(sys.executable)"
 
 本机的 `conda` 未加入普通 PowerShell 的 PATH。需要调用 Conda 时用 `& 'D:\Anaconda\package\Scripts\conda.exe' ...`，并用 `--prefix 'D:\codex\quantum-optics-env'` 指定环境；不能再用旧的 C 盘路径或仅凭环境名安装。项目专用包缓存已建立在 `D:\codex\quantum-optics-conda-pkgs`。**每次安装依赖前**，在该 PowerShell 会话设定 `$env:CONDA_PKGS_DIRS='D:\codex\quantum-optics-conda-pkgs'`，再运行 Conda 安装命令，避免新包缓存落到 C 盘。在 Codex 当前 Windows 沙箱里，Conda 的硬件探测或激活命令创建临时文件时可能遇到权限限制；直接使用上面的解释器绝对路径已验证可运行。GitHub 同步的是 `environment.yml`，不是环境本体。
 
-第一版数值工作计划采用 Python 稀疏 ED。实施 C1 时检查 `numpy`、`scipy` 等实际需求，固定依赖版本并补上可运行的程序命令；不要在数值包尚未安装时将模型测试记为完成。
+P0 有限温试点可直接重跑：
+
+```powershell
+& 'D:\codex\quantum-optics-env\python.exe' code/src/ft_tc_transfer.py --T 0.5 --J -0.3 --Delta 1 --h 0.8 --M 10 12 14 16 18 20
+& 'D:\codex\quantum-optics-env\python.exe' -m unittest discover -s code/tests -p 'test_ft_tc_transfer.py' -v
+```
+
+命令从仓库根目录运行；输出是固定虚时间片数 `M` 下的无限长混合场 Ising 链自由能，仍须 `M→∞` 外推。参数、验证和失败边界见[本次运行记录](../results/runs/2026-11-20-ft-tc-p0/README.md)。后续稀疏 ED 若需要 SciPy，先按实际需求固定依赖版本；不把本次单点试算当成目标相图完成。
 
 启动顺序：先完成 `theory/model.md` 和 B1–B3 的解析基准，再实现 `model.py`、`ed.py` 及独立极限检查。通过后增加观测量和扫描入口；具体任务见[执行路线](../project/roadmap.md)。不要用空模块或未执行的示例命令代表完成。
 

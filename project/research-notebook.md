@@ -1,11 +1,11 @@
 # 研究对话与文献总笔记
 
-更新：2026-11-19。本页供回顾项目对话中的**用户观点、问题和查阅过的文献**。它是导航与观点记录，不替代[逐篇文献综述](../literature/reading-list.md)、[主张台账](claims.md)、[详细研究评估](research-assessment.md)、[阶段任务](roadmap.md)或[工作日志](progress.md)。引用键以[文献库](../literature/references.bib)为准；下文“论文报告”“我们的分析”“用户判断”分别标注，不能互换。
+更新：2026-11-20。本页供回顾项目对话中的**用户观点、问题和查阅过的文献**。它是导航与观点记录，不替代[逐篇文献综述](../literature/reading-list.md)、[主张台账](claims.md)、[详细研究评估](research-assessment.md)、[阶段任务](roadmap.md)或[工作日志](progress.md)。引用键以[文献库](../literature/references.bib)为准；下文“论文报告”“我们的分析”“用户判断”分别标注，不能互换。
 
 ## 一眼看当前状态
 
 - 研究对象仍未正式定题，但优先级已改变：静态同正交分量的“反压缩 + `A²` + 自旋相互作用”简单加项退出创新主线；`FT-TC` 是首要待查重候选，`CL-AF` 只保留为算法基准/后备。均尚未获导师确认或产生本项目相图。
-- 当前有文献综述、模型预判、执行路线、专用 Conda 环境和 LaTeX 调研草稿；`theory/model.md`、数值研究程序及经过验证的运行结果尚未建立。见[项目简述](brief.md)与[项目首页](../README.md)。
+- 当前有文献综述、模型预判、执行路线、专用 Conda 环境和 LaTeX 调研草稿；新增有限温物质链 NumPy 原型与中温单点基准，但 `theory/model.md`、目标热相界和新相图尚未建立。见[项目简述](brief.md)与[方法试算](method-feasibility.md)。
 - 论文查阅深度不一：有些已逐页核读，有些只核摘要。具体范围见[阅读清单的逐篇条目](../literature/reading-list.md)；**“入库”不等于“读完”或“独立复现”**。
 - 本页记录的原话只在有可回查记录时加引号；其余为对用户问题的忠实概括。回答与推断不写成用户已认可的观点。
 
@@ -51,6 +51,7 @@
 | P19 · 文献后续与 P0 问题 | 用户本轮要求调研先前建议的 P0，并问围绕 Mendonça 等（2025）《Role of Matter Interactions in Superradiant Phenomena》还能进一步做什么；随后澄清消息中的“i”是笔误。此为**用户问题的转述**，不是已确认转向 XXZ。 | [专题 P0 预筛](../literature/mendonca-followup-survey.md)区分 Ising 已被后续工作覆盖的部分、XXZ 光子标度的待检验问题和有限温/谱学长线；`FT-TC` 仍是首要已启动候选。引用的旧对话本轮因缺少 `read_thread` 工具未读取，因此没有采用其中未核内容。 |
 | P20 · 研究价值追问 | 用户原话：“所以通过这个文献，我们还能够搞出什么有意义的研究吗”。这是对 Mendonça 等（2025）后续研究价值的追问，**不是已确认更换题目**。 | [专题 P0 预筛](../literature/mendonca-followup-survey.md)新增一个可先验核查的量：原文 XXZ 参数下无腔链的均匀 `x` 磁化率 `χ_x(N)`。若其发散，单模腔连续局部阈值趋零；但全局基态、次线性光子数的渐近性和投稿增量仍需独立验证。`FT-TC` 仍为首要候选。 |
 | P21 · P0 与难度核实 | 用户原话：“什么是P0，我该怎么做，你核实一下我们当前研究问题的水平以及难度”。这是要求解释门槛、给出操作步骤并评估当前 `FT-TC` 的学术与计算难度，**不是已确认正式立项或切换方向**。 | [执行路线 §2](roadmap.md)定义 P0.1 文献差异、P0.2 可证伪增量、P0.3 算法资源与放行条件；[方法备忘](method-feasibility.md)新增 `J=0` 热解析基准和最小可行性实验。当前仍无数值求解器/热相图，投稿潜力是条件性判断。 |
+| P22 · 已确认的下一关 | 用户原话：“下一关是完成同一哈密顿量的双向引文检索，并证明纵、横场 Ising 链的有限温自由能能以现有资源可靠求解；若找到相同模型的完整热相图，就按台账止损。” | **已确认工作顺序和止损规则**；[双向引文核查](../literature/ft-tc-citation-audit-2026-11-20.md)与[中温计算试点](method-feasibility.md)已执行第一轮。未找到同模型完整热相图，但索引漏收与期刊版差异未排除；低温和目标三临界区域的精度未通过，P0 仍不放行。 |
 
 本机更详细的逐段阅读与用户问题原话保存在 `literature/notes/langheld-2025-wormhole-reading-notes.md`。该笔记及 `assets/` 截图目前未纳入公开 Git 仓库；本页保留无需截图即可理解的观点摘要，公开回查以[文献综述](../literature/reading-list.md)和论文原文为准。
 
@@ -95,6 +96,7 @@
 | 2026 年方法与相图争议的后续线索 | [Mendonça 等 2026](https://arxiv.org/html/2607.17934) 非高斯变分新方法；§IV.2.1–IV.2.3、图 3–5 已核：报告 Ising 铁磁三临界和窄 AFM–超辐射共存区。不能据此认定双方 Comment/Reply 争议的全部措辞已解决。 |
 | 指定论文的 2026 后续核查 | [Hörmann 等 Comment 接收记录](https://journals.aps.org/prl/accepted/10.1103/xl66-85fx)（DOI `10.1103/xl66-85fx`）、[原作者 Reply 接收记录](https://journals.aps.org/prl/accepted/10.1103/1xgg-qdyd)（DOI `10.1103/1xgg-qdyd`；尚无可核正文）、[Hörmann 2026](https://arxiv.org/html/2606.26081) §II、§V.4、§VI。模型差异和 XXZ 待证点见[专题预筛](../literature/mendonca-followup-survey.md)。 |
 | `FT-TC` 逐轴查重 | [Rao 等 2025](https://arxiv.org/html/2509.04391) 式 (1)、(11)、图 1、4：`zz/y/x` 量子链的有限温三临界；[Granet 2023](https://arxiv.org/html/2209.08756) 式 (1)、(15)–(17)、§4.2：`zz/x/x` 对应量子链热转变与逆熔化；[Román‑Roche 等 2021](https://arxiv.org/html/2011.03753) 主文式 (5)、图 2、补充 §III：同轴协同与有限温响应。轴向、核读边界及推断见[专题记录](../literature/ft-tc-axis-survey.md)。 |
+| `FT-TC` 双向引文续查 | [Leibig 等 2026](https://arxiv.org/html/2601.10210) §3–4、[Koziol 2026](https://arxiv.org/html/2605.27484) §III–VI、[Hörmann 2026](https://arxiv.org/html/2606.26081) §V–VI 的同轴零温边界；[Caballero-Benitez 2026](https://doi.org/10.1103/yzjp-fy85) 的新发表广义泵浦模型。OpenAlex 前后向题录、原文排除理由及漏收限制见[2026-11-20 核查](../literature/ft-tc-citation-audit-2026-11-20.md)。 |
 | 开放 Dicke–Ising 的近期边界 | [Wang、Li、Chen 2026](https://arxiv.org/abs/2602.09912)；目前只核 arXiv 元数据与摘要。论文报告开放横向/纵向模型的耗散稳态相变、双稳态与四临界结构；在精读正文前不采用更细公式或数值。 |
 
 ## 当前共同认识与仍需验证的地方
@@ -104,7 +106,7 @@
 | 静态单模、同一正交分量上的 `D(a+a†)²-ξ(a+a†)²` 可在稳定域通过压缩变换映射到改参后的模型。 | 文献公式及本项目解析核查；[Langheld 补充 §IV](https://arxiv.org/html/2409.15082)、[Chen 补充 Note 1](https://doi.org/10.1038/s41467-021-26573-5)。 | 在 `theory/derivations.md` 写完整算符、能量常数、原光场观测量及适用条件。 |
 | `FT-TC` 可能研究与现有零温量子链轴向一致的有限温度三临界结构。 | **首要活动候选/我们的推断**；[Gammelmark–Mølmer 2011](https://doi.org/10.1088/1367-2630/13/5/053035)已有另一轴向的热相图；[Koziol 2026](https://arxiv.org/abs/2605.27484)与[Hörmann 2026 §V–VI](https://arxiv.org/html/2606.26081v1)收窄零温空间。 | 先完成 `P0` 的逐式差异、前向引文与方法可行性；不能预称首次或发现新热相。 |
 | `CL-AF` 的反铁磁竞争物理问题成立，但简单静态相图有混合范围 Ising 先例。 | 文献模型对照；[Otake–Bamba 2026](https://doi.org/10.1103/fxml-nv46)、[Nagle 1970](https://doi.org/10.1103/PhysRevA.2.2124) 与 [Dantchev 等 2024](https://doi.org/10.1103/PhysRevE.110.L062104)。 | 已降为全局自由能与一级边界算法基准；只有出现具体光学增量才重启。 |
-| 本项目尚无数值结果，真实无泵浦平衡实现所需的 `D(g)`、`ξ` 微观来源也未固定。 | [项目现状](../README.md)与[未决要求](brief.md)。 | 明确模型/平台、复现基准；把模拟器有效基态、真实平衡相变和驱动稳态分别表述。 |
+| 本项目已有有限温物质链单点算法试算，但尚无热相界或新相图；真实无泵浦平衡实现所需的 `D(g)`、`ξ` 微观来源也未固定。 | [方法试算](method-feasibility.md)与[未决要求](brief.md)。 | 明确模型/平台，验证目标区域全局自由能；把模拟器有效基态、真实平衡相变和驱动稳态分别表述。 |
 
 ## 后续怎样续记
 
@@ -130,3 +132,4 @@
 | 2026-11-18 | 按用户澄清的 P0 建议，独立调研 Mendonça 等（2025）及围绕该文的可继续问题，同时补齐 `FT-TC` P0 的书面预审。 | 登记 P19；新增[专题预筛](../literature/mendonca-followup-survey.md)、[新颖性备忘](novelty-memo.md)、[方法可行性预审](method-feasibility.md)，更新[逐篇综述](../literature/reading-list.md)、[主张 C08](claims.md)和引文库。核实 Comment 与 Reply 已于 2026-10 被 PRL 接收；Comment 原文已核，Reply 仅见接收记录。原作者 2026 预印本已覆盖 Ising 窄共存区；XXZ 图 4 的次线性光子密度在热力学极限的分类是**待反证假说**，尚无本项目计算。引用的旧聊天因当前无 `read_thread` 工具未读取。 | `FT-TC` P0 尚未通过：补同模型前向引文并选有限温求解器做收敛基准；若失败，再对 XXZ 做逐式查重、自洽适用性检查和固定耦合多尺寸基准，决定 C08 是否升级。 |
 | 2026-11-19 | 回答用户对 Mendonça 等（2025）后续研究价值的追问，复核图 4、Comment 与作者 2026 年 Ising 后续。 | 登记 P20；在[专题 P0 预筛](../literature/mendonca-followup-survey.md)明确无腔 XXZ 均匀横向磁化率 `χ_x(N)` 是低成本首检，写出同一归一化下的局部曲率及 `J=0` Dicke 极限。此为待数值验证的推断；没有新相图或计算，也未改变 C04/C08 状态。引用旧聊天仍因缺少 `read_thread` 工具无法读取。 | 先完成 `FT-TC` P0；若评估 XXZ，先核同模型引文，再测 `χ_x(N)` 与固定 `g` 的光子密度、全局基态尺寸收敛。 |
 | 2026-11-19 | 解释 `FT-TC` 的 P0 放行门槛并复核选题水平与实际难度。 | 登记 P21；复核 Rao 等（2025）式 (1)、(11)、图 4 的异轴热三临界与 Hörmann（2026）§VI 的未完成热延伸；在[缺口矩阵](../literature/ft-tc-gap-matrix.md)保留“未找到同轴完整热相图”仅为待反证假设。由候选哈密顿量推得 `J=0` 有限温连续阈值，并以本机 NumPy 检查系数；详见[方法备忘](method-feasibility.md)。当前项目尚无非可积链有限温求解器、收敛结果或新相图，P0 未通过。 | 完成同模型双向引文查重；将 `J=0` 热公式做成脚本，选择有限温链算法并在一个 `J≠0` 截面提交误差与资源记录，再决定继续/收窄/停止。 |
+| 2026-11-20 | 执行用户指定的 FT-TC 下一关：核心文献双向引文检索与本机有限温物质链求解试点。 | 登记 P22；[引文核查](../literature/ft-tc-citation-audit-2026-11-20.md)未命中同模型完整热相图，新增 Caballero-Benitez（2026）正式发表记录但其泵浦关联模型不是平衡热先例。[NumPy 转移矩阵](../code/src/ft_tc_transfer.py)和[运行记录](../results/runs/2026-11-20-ft-tc-p0/README.md)在中温铁磁/反铁磁单点显示稳定虚时间外推，低温切片不够稳定；三个自动检查通过。没有相界、三临界点或新相图，C04 保持活动候选、P0 未通过。 | 核对 Leibig 期刊版和最新索引；在已知零温三临界附近扫描完整 `φ` 自由能、多 `M` 误差和所有竞争分支，无法控制则收窄/止损。 |
