@@ -28,3 +28,23 @@ At `Δ=.6`, the 25-point coarse scan showed an (N=8) small finite-φ grid minimu
 Side-branch refinement: [golden-section script](../../../code/src/ft_tc_minimize.py) SHA-256 `FEA01050F40F8D450A040332A030120D8FBCF265EFC90DB0AC2AB2E93622B77C` minimized the **N=8** side branch in `[.3,.5]` to `φ=.36436552` at `g=.606` and `φ=.39515372` at `.608` (position tolerance `10⁻⁶`). Re-evaluation at these fixed positions with `N=12` gives `ΔΦ=+0.0004271294` and `−0.0005313553`, respectively, leaving the ordering unchanged. This is continuous optimization of the N=8 side branch only; N=12 minima, other extrema and the infinite-chain crossing still require their own checks.
 
 Next: continuously minimize both branches around `g≈.607` at larger `N`, compare against an improved infinite-chain method, then vary `T` and `Δ/J`; reproduce the published zero-temperature boundary before drawing a thermal line.
+
+## Follow-up: larger-chain side minima and infinite-space transfer check
+
+Continuing the P0 gate, run from repository root (same interpreter, units and deterministic settings):
+
+```powershell
+& $py code/src/ft_tc_crosscheck.py --input results/runs/2026-11-21-ft-tc-p0/refined-side.json --M 10 12 14 16 18 20 | Set-Content -Encoding utf8 results/runs/2026-11-21-ft-tc-p0/infinite-chain-crosscheck.json
+& $py code/src/ft_tc_minimize.py --T 0.1 --J -0.3 --Delta 0.3 --omega 1 --g 0.606 0.608 --lo 0.35 --hi 0.41 --N-search 12 --N-verify 10 12 --tol 0.0005 | Set-Content -Encoding utf8 results/runs/2026-11-21-ft-tc-p0/refined-side-N12.json
+```
+
+The new cross-check script is [`code/src/ft_tc_crosscheck.py`](../../../code/src/ft_tc_crosscheck.py), SHA-256 `326E9947FBD9EC79CF7EC13F64DF586E7F0D19675ECCB32019B35C657C0984B7`; the raw JSON contains each `M`, Perron residual and extrapolation window. At the fixed `N=8` side-minimum positions, the **infinite-space-chain at finite M** transfer calculation, extrapolated in `1/M²`, gives the following differences to the exact `φ=0` infinite-chain normal value:
+
+| g | transfer quadratic last 3 M | transfer quadratic last 4 M | ED N=12 at same φ |
+| ---: | ---: | ---: | ---: |
+| .606 | +0.000423779 | +0.000421918 | +0.000427129 |
+| .608 | −0.000535681 | −0.000538071 | −0.000531355 |
+
+Both extrapolation windows preserve the branch ordering and differ from the finite-chain ED values by about `5.2–6.7×10⁻⁶`, much less than the endpoint branch gaps. This is an independent **spatial thermodynamic-limit formulation**, but `M→∞` has only been extrapolated; the fit spread is not a rigorous error bound.
+
+Direct **N=12** golden-section refinement within the preselected side-branch bracket `[.35,.41]` gives `φ≈.364408` at `g=.606`, `Φ_side−Φ_normal≈+0.000427129961`; and `φ≈.395104` at `g=.608`, `Φ_side−Φ_normal≈−0.000531355747`. Position tolerance was `5×10⁻⁴`; energies were recomputed at the resulting positions. The N=12 refinement changes each side energy by less than `6×10⁻¹⁰` relative to the earlier N=8-minimum positions. It does not certify every extremum outside this bracket, the exact crossing g, the finite-temperature tricritical location or novelty. The next gate is a wider multi-start minimization and a tighter independent infinite-chain error estimate near equal free energies.
