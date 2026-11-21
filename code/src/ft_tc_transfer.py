@@ -18,19 +18,26 @@ import numpy as np
 
 def free_energy(T: float, J: float, Delta: float, h: float, M: int,
                 tol: float = 1e-10, maxiter: int = 5000) -> dict:
-    if T <= 0 or M < 2:
-        raise ValueError("Require T>0 and M>=2")
+    if T <= 0 or M < 2 or M > 30:
+        raise ValueError("Require T>0 and 2<=M<=30 (uint32 state labels)")
     beta = 1.0 / T
     step = beta / M
     states = np.arange(1 << M, dtype=np.uint32)
-    bits = ((states[:, None] >> np.arange(M, dtype=np.uint32)) & 1)
-    spins = 1.0 - 2.0 * bits.astype(np.float64)
-    flips = np.count_nonzero(bits != np.roll(bits, -1, axis=1), axis=1)
+    # A bit count avoids the O(M*2**M) array of imaginary-time spins.
+    def count_bits(labels):
+        if hasattr(np, "bitwise_count"):
+            return np.bitwise_count(labels)
+        return np.unpackbits(labels.view(np.uint8)).reshape(-1, 32).sum(axis=1)
+
+    magnetization = M - 2 * count_bits(states).astype(np.int32)
+    mask = np.uint32((1 << M) - 1)
+    rotated = ((states << np.uint32(1)) | (states >> np.uint32(M - 1))) & mask
+    flips = count_bits(states ^ rotated)
     u = step * abs(h) / 2.0
     if u == 0:
-        logw = np.where(flips == 0, -step * Delta * spins.sum(axis=1) / 2, -np.inf)
+        logw = np.where(flips == 0, -step * Delta * magnetization / 2, -np.inf)
     else:
-        logw = (-step * Delta * spins.sum(axis=1) / 2
+        logw = (-step * Delta * magnetization / 2
                 + (M - flips) * math.log(math.cosh(u))
                 + flips * math.log(math.sinh(u)))
     shift = float(np.max(logw))

@@ -1,6 +1,6 @@
 # `FT-TC` 投稿门槛 P0：新颖性备忘（待判定）
 
-更新：2026-11-18。**结论：保留候选，不通过 P0 放行大规模相图。** 本轮依据[逐轴调查](../literature/ft-tc-axis-survey.md)、[差异矩阵](../literature/ft-tc-gap-matrix.md)及对 Mendonça 等（2025）和其 2026 后续的[补充预筛](../literature/mendonca-followup-survey.md)。定向关键词已检索；同一哈密顿量的前向引文与全部新版正文尚未穷尽，因此“未找到”不能提升为“无人做过”。
+更新：2026-11-21。**结论：保留候选；P0 科学预审已有可执行方案，正式放行仍待题目范围确认和期刊正文补核。**依据[逐轴调查](../literature/ft-tc-axis-survey.md)、[差异矩阵](../literature/ft-tc-gap-matrix.md)、[双向引文](../literature/ft-tc-citation-audit-2026-11-20.md)、[方法试算](method-feasibility.md)及对 Mendonça 等（2025）后续的[补充预筛](../literature/mendonca-followup-survey.md)。定向检索尚未命中同模型完整热相图，不能提升为“无人做过”。完整判定见[P0 验收](p0-gate-review-2026-11-21.md)。
 
 ## 核心问题与最近先例
 
@@ -21,10 +21,10 @@ H = ω a†a + Δ Σ_i s_i^z + 4J Σ_i s_i^z s_{i+1}^z
 
 最可能否决：① 同哈密顿量完整热相图已有工作；② 所选区域只给已有一般自洽理论的平凡数值代入，没有明确物理结构或可测预测；③ 非可积物质链的自由能和一级边界在本机可用资源内无法收敛；④ 归一化、符号或极限检查失败。任何一项成立即按[主张 C04](claims.md)降级或停止。
 
-## 本轮可追踪的检索边界
+## 可追踪的检索边界
 
-检索式包括 `"Dicke-Ising" "finite temperature" "longitudinal" "tricritical" 2026`、`"Dicke-Ising" "thermal" "tricritical" 2026`、`"cavity" "Ising" "longitudinal field" "finite temperature" superradiant`，并逐式核对上述定向找到的原文。下一轮仍需：原论文及 Langheld/Leibig/Hörmann 的双向引文、2026 年后的新版本、期刊正式版与相同模型但不同命名的工作。检索覆盖不足时不作“首次”的投稿表述。
+检索式包括 `"Dicke-Ising" "finite temperature" "longitudinal" "tricritical" 2026`、`"Dicke-Ising" "thermal" "tricritical" 2026`、`"cavity" "Ising" "longitudinal field" "finite temperature" superradiant`，并逐式核对上述定向找到的原文。2026-11-20 至 21 已对七篇核心种子作公开索引前后向引文交叉，逐篇排除理由见[引文审计](../literature/ft-tc-citation-audit-2026-11-20.md)。期刊正式版、未收录新稿和同模型异名工作仍可漏检；检索覆盖不足时不作“首次”的投稿表述。
 
 ## 目前决定
 
-`FT-TC` 保持首要活动候选；P0 未通过，仅允许进行服务于查错的零温解析/小尺寸基准。Mendonça 的 XXZ 图 4 光子标度列为[独立备选 P0 预筛](../literature/mendonca-followup-survey.md)，不与 `FT-TC` 混成一个题目。正式题目、导师要求与可用计算资源仍待确认。
+`FT-TC` 保持首要活动候选。方法预审已从“小尺寸基准”推进到一个铁磁截面上由开边界 NLCE 提供的逐阶无限链自由能；此结果**只证明有能力继续做定向 Z 校准**，不证明存在可投稿的热终点或三临界线。正式 P0 暂缓：Leibig 期刊版正文未取得，用户和导师尚未接受具体题目范围。Mendonça 的 XXZ 图 4 光子标度列为[独立备选 P0 预筛](../literature/mendonca-followup-survey.md)，不与 `FT-TC` 混成一个题目。

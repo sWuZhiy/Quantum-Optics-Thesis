@@ -23,4 +23,4 @@
 
 ## 当前下一步
 
-按[新版阶段路线](roadmap.md)继续投稿门槛 `P0`：已有 `FT-TC` 的逐式[文献差异矩阵](../literature/ft-tc-gap-matrix.md)、[双向引文核查](../literature/ft-tc-citation-audit-2026-11-20.md)、[新颖性备忘](novelty-memo.md)和[有限温方法试算](method-feasibility.md)。检索未命中同模型完整热相图，但仍受引文索引漏收及 Leibig 期刊版差异限制；本机 NumPy ED 在一个一级侧截面能分辨候选竞争分支，尚未完成连续极小化和独立无限链交叉，**P0 尚未通过**。下一步统一哈密顿量和符号、复算零温基线，并对目标区域搜索所有自洽分支及误差。只有 `P0` 通过后才启动正式有限温相图；失败则根据主张台账选择下一候选，不以已经投入时间为由继续失效路线。围绕 Mendonça 等（2025）XXZ 光子标度的[独立预筛](../literature/mendonca-followup-survey.md)列为后续候选，不改变当前优先级。
+按[新版阶段路线](roadmap.md)执行[FT-TC P0 验收](p0-gate-review-2026-11-21.md)：逐式[文献差异矩阵](../literature/ft-tc-gap-matrix.md)、[双向引文核查](../literature/ft-tc-citation-audit-2026-11-20.md)、[新颖性备忘](novelty-memo.md)和[有限温方法试算](method-feasibility.md)已具备。检索未命中同模型完整热相图，但仍受索引漏收与 Leibig 期刊正文未核限制；本机 NumPy 的解析正常态曲率、周期 ED 和开边界 NLCE 证明一个铁磁目标截面可定向计算无限链自由能，尚未证明完整热相界或三临界拓扑。**P0 技术预审完成，正式 T 阶段暂缓**：先做已发表零温完整相界的 Z 校准，取得期刊版时补核差异，并由用户与导师确认题目范围。只有正式 `P0` 放行后才启动完整有限温相图；失败则根据主张台账选择下一候选。围绕 Mendonça 等（2025）XXZ 光子标度的[独立预筛](../literature/mendonca-followup-survey.md)列为后续候选，不改变当前优先级。

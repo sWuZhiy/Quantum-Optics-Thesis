@@ -10,9 +10,41 @@ import numpy as np
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from ft_tc_transfer import classical_chain, free_energy, independent_spin
 from ft_tc_ed import free_energy as finite_chain_free_energy
+from ft_tc_normal_curvature import normal_curvature
+from ft_tc_nlce import open_total_free_energy
 
 
 class TransferTests(unittest.TestCase):
+    def test_open_chain_nlce_analytic_limits(self):
+        T, J, Delta, h, length = 0.3, -0.3, 0.6, 0.45, 5
+        self.assertAlmostEqual(open_total_free_energy(T, 0, Delta, h, length)
+                               - open_total_free_energy(T, 0, Delta, h, length - 1),
+                               independent_spin(T, Delta, h), places=11)
+        z = np.array([-1.0, 1.0])
+        transfer = np.exp(-J * z[:, None] * z[None, :] / T
+                          - Delta * (z[:, None] + z[None, :]) / (4 * T))
+        edges = np.exp(-Delta * z / (4 * T))
+        exact_logZ = math.log(float(edges @ np.linalg.matrix_power(transfer, length - 1) @ edges))
+        self.assertAlmostEqual(open_total_free_energy(T, J, Delta, 0, length),
+                               -T * exact_logZ, places=11)
+
+    def test_normal_curvature_independent_spin_threshold(self):
+        T, Delta = 0.5, 1.0
+        result = normal_curvature(T, 0, Delta, 1, 0.5)
+        expected = math.sqrt(Delta / (4 * math.tanh(Delta / (2 * T))))
+        self.assertAlmostEqual(result["g_local"], expected, places=11)
+        self.assertAlmostEqual(result["probability_sum"], 1.0, places=12)
+
+    def test_normal_curvature_mixed_field_against_finite_chain(self):
+        T, J, Delta, h = 0.1, -0.3, 0.3, 0.01
+        result = normal_curvature(T, J, Delta, 1, 0.60693)
+        ed_coefficient = (finite_chain_free_energy(T, J, Delta, h, 10)
+                          - finite_chain_free_energy(T, J, Delta, 0, 10)) / h**2
+        self.assertAlmostEqual(ed_coefficient, -result["chi_x"] / 2, places=5)
+        zero_T_limit = math.sqrt((Delta - 4 * J) / 4)
+        self.assertAlmostEqual(normal_curvature(0.02, J, Delta, 1, 0)["g_local"],
+                               zero_T_limit, places=10)
+
     def test_finite_chain_ed_independent_spins(self):
         expected = independent_spin(0.1, 0.6, 0.45)
         for n in (4, 8):

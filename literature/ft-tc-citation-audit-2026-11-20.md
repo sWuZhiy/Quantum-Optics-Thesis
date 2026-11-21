@@ -38,3 +38,5 @@
 - OpenAlex 未必收录最新预印本的引用关系；Hörmann 前向数为 0 尤其不能解释为没有后续工作。
 - Leibig 正式期刊 PDF 与本地 arXiv v1 的逐页差异未完成核对。2026-11-20 补查[作者单位的期刊题录与摘要](https://cris.fau.de/publications/370578265/)及 [arXiv 版本历史](https://arxiv.org/abs/2601.10210)：前者明确报告 *quantum phase diagram*、多临界点及基态，后者截至检索只列 v1；[预印本 §5](https://arxiv.org/html/2601.10210)把有限温与热相变列为展望。该证据加强“已核内容为零温”的判断，但摘要不能代替期刊正文的逐页核查，也不能证明不存在其他同模型热论文；SciPost 正文在本次访问中未能打开。
 - Rao、Gammelmark 的轴向差异已核到公式，但未把所有参数化论文逐式排除；定题和投稿前应复查 DOI、arXiv 新版本和引用数据库。
+
+2026-11-21 再试 [SciPost 正式文章](https://scipost.org/SciPostPhys.21.3.071)及其 `/pdf`：网页访问未返回可读正文；PowerShell 对 PDF 地址拿到的是约 3.8 KB 的机器人验证 HTML 页面，不是论文 PDF，已删除该误命名文件。本次未绕过验证，故不能声称核对了正式版正文。当前可逐式引用的是 [Leibig 等（2026）arXiv:2601.10210v1 式 (1)、§3–5、图 3–8](https://arxiv.org/html/2601.10210)，其 §5 将有限温延伸作为展望；[作者单位的正式题录摘要](https://cris.fau.de/publications/370578265/)仅支持期刊论文报告量子基态相图。定题前如获得合法可读的正式 PDF，需补做版本差异核查。

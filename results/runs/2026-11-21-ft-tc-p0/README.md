@@ -70,3 +70,38 @@ Use the same deterministic interpreter, Hamiltonian and units as above. `ft_tc_m
 The two methods agree on the **endpoint ordering** at `.6068` and `.6070`; their fixed-displacement differences are about `5.9–6.0×10⁻⁶`, and the transfer quadratic fit-window spread is `2.1–2.2×10⁻⁶`. The `N=10` grid of 81 points over the entire justified interval `[0,g/ω]` identifies two minima at each endpoint: `φ=0` and one near `.38`, with no additional grid minimum. A finite grid cannot exclude a narrow hidden extremum; the side minimum was locally optimized only at `N=8` for these interior g values.
 
 At the near-equal probe `g=.60693`, `φ≈.38108763`, ED gives `ΔΦ_N10≈−3.8553×10⁻⁸` and `ΔΦ_N12≈−2.3858×10⁻⁹`, while the transfer last-4 quadratic extrapolation gives `≈−5.9930×10⁻⁶`. Here **both the N change and the method difference exceed the free-energy signal**. Neither the sign nor an accurate crossing point can be certified from this run. The conservative cross-method bracket supported by these diagnostics is `.6068<g<.6070` for this one slice, still subject to full-extremum and extrapolation checks; do not publish an exact first-order boundary from it.
+
+## P0 method audit: normal curvature and open-chain NLCE
+
+Run from base commit `a6ea3ba` with `D:\codex\quantum-optics-env\python.exe` (Python 3.12, NumPy), `ℏ=k_B=1`, deterministic dense diagonalization and no random seed. Source hashes recorded inside the JSON: NLCE `b575e60b7758895aa765bd46da3b779e4a0fe62f21b7cc324db8ce6035009efd`; transfer `b61ccd212a593dafc4bc3042c22ff4412c423dc810db88b0905e55344c91b21e`. `ft_tc_normal_curvature.py` and `ft_tc_nlce_minimize.py` are versioned with this run. Exact commands:
+
+```powershell
+$py = 'D:\codex\quantum-optics-env\python.exe'
+& $py code/src/ft_tc_normal_curvature.py --T 0.3 0.1 0.05 0.02 --J -0.3 --Delta 0.3 --omega 1 --g 0.60693 | Set-Content -Encoding utf8 results/runs/2026-11-21-ft-tc-p0/normal-curvature-Delta0.3.json
+& $py code/src/ft_tc_normal_curvature.py --T 0.3 0.1 0.05 0.02 --J -0.3 --Delta 0.6 --omega 1 --g 0.6708203932499369 | Set-Content -Encoding utf8 results/runs/2026-11-21-ft-tc-p0/normal-curvature-Delta0.6.json
+& $py code/src/ft_tc_crosscheck.py --input results/runs/2026-11-21-ft-tc-p0/near-equal-ED.json --M 14 16 18 20 22 | Set-Content -Encoding utf8 results/runs/2026-11-21-ft-tc-p0/near-equal-transfer-M22.json
+& $py code/src/ft_tc_crosscheck.py --input results/runs/2026-11-21-ft-tc-p0/near-equal-ED.json --M 16 18 20 22 24 | Set-Content -Encoding utf8 results/runs/2026-11-21-ft-tc-p0/near-equal-transfer-M24.json
+& $py code/src/ft_tc_nlce.py --T 0.1 --J -0.3 --Delta 0.3 --h 0.925174056430028 --L 4 5 6 7 8 9 10 11 12 | Set-Content -Encoding utf8 results/runs/2026-11-21-ft-tc-p0/near-equal-nlce.json
+& $py code/src/ft_tc_nlce.py --T 0.1 --J -0.3 --Delta 0.6 --h 0.45 --L 4 5 6 7 8 9 10 11 12 | Set-Content -Encoding utf8 results/runs/2026-11-21-ft-tc-p0/nlce-tricritical-ratio-probe.json
+& $py code/src/ft_tc_nlce_minimize.py --T 0.1 --J -0.3 --Delta 0.3 --omega 1 --g 0.6069 0.60693 0.6070 --lo 0.35 --hi 0.41 --tol 1e-5 | Set-Content -Encoding utf8 results/runs/2026-11-21-ft-tc-p0/nlce-side-minima.json
+& $py code/src/ft_tc_nlce_minimize.py --T 0.02 --J -0.3 --Delta 0.3 --omega 1 --g 0.60693 --lo 0.35 --hi 0.41 --tol 1e-5 | Set-Content -Encoding utf8 results/runs/2026-11-21-ft-tc-p0/nlce-low-T-side.json
+& $py -m unittest discover -s code/tests -p 'test_ft_tc_transfer.py' -v
+```
+
+`nlce-g0.6068.json`, `nlce-g0.6069.json`, and `nlce-g0.6070.json` use `ft_tc_nlce.py` with the same `T,J,Δ,L` values and, respectively, `h=0.9201186368315218`, `0.9240242248180157`, `0.9278165577247256` (fixed positions from the earlier N=8 side search). These are fixed-field diagnostics; `nlce-side-minima.json` performs the later side-branch optimization.
+
+The bit-count transfer implementation removes the `2^M×M` bit array and permits `M=24` in 76.2 s for the five displayed `M` values. Nevertheless, at `g=.60693` the last-three quadratic transfer estimate differs from the exact normal value by `−1.20×10⁻⁶`, far larger than the near-equal branch signal; the transfer fit cannot certify the crossing. Its last-four cubic fit happens to be closer, but changing polynomial order is not an error bound.
+
+For the open chain, `f_L=F_L−F_(L−1)` is the order-`L` contiguous-cluster NLCE estimate. Aitken acceleration uses three consecutive orders and assumes an approximately geometric leading correction; its agreement across `L=10,11,12` is a **convergence diagnostic**, not a rigorous bound. Exact `J=0` and `h_x=0` limits, mixed-field finite-difference curvature, and the independent `T=.1,Δ=.6,h=.45` periodic ED value were checked. At the latter point, NLCE Aitken `L=12` gives `−0.62811525335676`, against periodic ED `N=12` `−0.6281152533567688`.
+
+At `T=.1,J=−.3,Δ=.3,ω=1`, the selected side-branch bracket `[.35,.41]` gives the following `L=12` accelerated energies relative to the **exact infinite-chain normal free energy** (`−0.45000003219301243`):
+
+| g | side φ after L=10 search | side ΔΦ at L=12 | L=11→12 change in side ΔΦ |
+| ---: | ---: | ---: | ---: |
+| .6069 | .38055061 | `+1.43333601×10⁻⁵` | `9.88×10⁻¹²` |
+| .60693 | .38100484 | `−5.53761×10⁻¹⁰` | `1.01×10⁻¹¹` |
+| .6070 | .38205169 | `−3.35758086×10⁻⁵` | `1.06×10⁻¹¹` |
+
+The `g=.60693` sign is more stable across accelerated orders than in the old transfer or periodic ED runs, but remains a *local side-branch diagnostic*: the search bracket was prespecified; global extrema over `[0,g/ω]`, an independent error bound at near equality, and the exact equal-free-energy coupling have not been established. At `T=.02,g=.60693` the same bracket gives `ΔΦ_L12≈+1.2760×10⁻⁶`, with `L=11→12` change about `6.85×10⁻¹²`; this checks a lower-temperature slice but does not reproduce the full published zero-temperature boundary. The exact normal-branch spinodal tends to `g_local(0)=√0.375≈.6123724357` for `Δ=.3` and `√.45≈.6708203932` for `Δ=.6`, matching the mapped zero-temperature quadratic condition of Koziol (2026), Eq. (10)–(14).
+
+Resource envelope: periodic dense ED `N=12` has Hilbert dimension 4096 and a float64 Hamiltonian of 128 MiB; `N=14` alone would need 2 GiB before eigensolver overhead. The open-chain NLCE uses the same dense `L=12` ceiling and took 39.4 s for three side-minimum searches at `T=.1`, about 19.0 s for one at `T=.02`. The tested points are away from the spin-chain critical regime; these convergence observations do not extend automatically to the thermal tricritical vicinity or antiferromagnetic ordered sector.
