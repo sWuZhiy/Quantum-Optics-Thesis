@@ -1,5 +1,12 @@
 # 进度记录
 
+## 2026-11-21
+
+- 继续 `FT-TC` P0：定向续检近期 `Dicke–Ising + thermal/finite-temperature + longitudinal/tricritical` 题录和三个同轴零温原文，未新增覆盖目标完整热相图的先例；[双向引文核查](../literature/ft-tc-citation-audit-2026-11-20.md)保留检索漏收及 Leibig 期刊正文风险。
+- 新增[粗网格扫描脚本](../code/src/ft_tc_scan.py)，在 `J=-.3,Δ=.3,T=.1,ω=1` 的一级侧找到 `g=.606/.608` 两侧候选分支。选定位移点的周期热 ED `N=10,12` 尺寸差 `2.24×10⁻⁸` 和 `5.07×10⁻⁸`，均远小于相对正常态的自由能差 `+4.27×10⁻⁴` 和 `−5.31×10⁻⁴`。原始 JSON、参数、哈希、命令在[运行记录](../results/runs/2026-11-21-ft-tc-p0/README.md)；五项既有基准检查通过。尚无较大 `N` 连续极小化、热力学极限交叉、相界或三临界点结论；P0 未放行。
+- 随后用[侧分支连续最小化脚本](../code/src/ft_tc_minimize.py)对 `N=8` 侧极小进行黄金分割细化，再在相同位置以 `N=12` 复算；两端排序不变。较大 `N` 的极小位置及其他驻点未连续搜索，故上述粗筛仍非已确认相界。
+
+
 ## 2026-11-18：Mendonça 等论文后续问题 P0 预筛
 
 - 核对原文式 (1)、图 3–4，Hörmann 等 Comment §II–III、图 1，Mendonça 等（2026，arXiv:2607.17934v1）§IV.2，以及 Hörmann（2026，arXiv:2606.26081v1）§II、§V.4、§VI；结果与证据边界见[专题预筛](../literature/mendonca-followup-survey.md)。

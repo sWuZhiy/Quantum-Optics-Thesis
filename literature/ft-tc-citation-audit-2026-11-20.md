@@ -1,5 +1,7 @@
 # FT-TC 同模型双向引文核查（2026-11-20）
 
+2026-11-21 续检：以 `Dicke-Ising` 搭配 `finite-temperature/thermal`、`longitudinal field`、`tricritical/phase diagram` 检索近期公开题录，并复核 [Leibig 等（2026）](https://arxiv.org/html/2601.10210) §5、[Koziol（2026）](https://arxiv.org/html/2605.27484) §VI–VII 与 [Hörmann（2026）](https://arxiv.org/html/2606.26081) §VI 的研究范围。本轮仍未命中同时满足 `zz/z/x`、非零纵场、完整平衡有限温全局相界的原文；返回的同轴核心工作仍以零温为对象，其他近邻工作有轴向或开放稳态差异。搜索引擎与引文索引的未命中不能证明不存在先例；Leibig 正式期刊正文仍未逐页核对。
+
 ## 检索对象与范围
 
 候选是平衡、单模、一维周期链的 `zz/z/x` 哈密顿量：`H=ωa†a+ΔΣsᶻ+4JΣsᶻsᶻ+(2g/√N)(a+a†)Σsˣ`，`s=σ/2`、`Δ≠0`。要找的是同一模型的**完整有限温热力学相图和全局自由能边界**。有限逆温下投影到基态的 QMC、驱动开放稳态及另一轴向的可积模型不算覆盖。

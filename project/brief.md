@@ -23,4 +23,4 @@
 
 ## 当前下一步
 
-按[新版阶段路线](roadmap.md)继续投稿门槛 `P0`：已有 `FT-TC` 的逐式[文献差异矩阵](../literature/ft-tc-gap-matrix.md)、[双向引文核查](../literature/ft-tc-citation-audit-2026-11-20.md)、[新颖性备忘](novelty-memo.md)和[中温有限温试算](method-feasibility.md)。检索未命中同模型完整热相图，但仍受引文索引漏收及 Leibig 期刊版差异限制；本机 NumPy 方法仅在中温单点显示稳定，低温与目标三临界附近的全局自由能误差尚未证明，**P0 尚未通过**。下一步统一哈密顿量和符号、复算零温基线，并对目标区域扫描所有自洽分支及截断误差。只有 `P0` 通过后才启动有限温相图计算；失败则根据主张台账选择下一候选，不以已经投入时间为由继续失效路线。围绕 Mendonça 等（2025）XXZ 光子标度的[独立预筛](../literature/mendonca-followup-survey.md)列为后续候选，不改变当前优先级。
+按[新版阶段路线](roadmap.md)继续投稿门槛 `P0`：已有 `FT-TC` 的逐式[文献差异矩阵](../literature/ft-tc-gap-matrix.md)、[双向引文核查](../literature/ft-tc-citation-audit-2026-11-20.md)、[新颖性备忘](novelty-memo.md)和[有限温方法试算](method-feasibility.md)。检索未命中同模型完整热相图，但仍受引文索引漏收及 Leibig 期刊版差异限制；本机 NumPy ED 在一个一级侧截面能分辨候选竞争分支，尚未完成连续极小化和独立无限链交叉，**P0 尚未通过**。下一步统一哈密顿量和符号、复算零温基线，并对目标区域搜索所有自洽分支及误差。只有 `P0` 通过后才启动正式有限温相图；失败则根据主张台账选择下一候选，不以已经投入时间为由继续失效路线。围绕 Mendonça 等（2025）XXZ 光子标度的[独立预筛](../literature/mendonca-followup-survey.md)列为后续候选，不改变当前优先级。
