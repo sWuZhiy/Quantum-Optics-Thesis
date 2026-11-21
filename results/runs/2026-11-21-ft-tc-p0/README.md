@@ -48,3 +48,25 @@ The new cross-check script is [`code/src/ft_tc_crosscheck.py`](../../../code/src
 Both extrapolation windows preserve the branch ordering and differ from the finite-chain ED values by about `5.2–6.7×10⁻⁶`, much less than the endpoint branch gaps. This is an independent **spatial thermodynamic-limit formulation**, but `M→∞` has only been extrapolated; the fit spread is not a rigorous error bound.
 
 Direct **N=12** golden-section refinement within the preselected side-branch bracket `[.35,.41]` gives `φ≈.364408` at `g=.606`, `Φ_side−Φ_normal≈+0.000427129961`; and `φ≈.395104` at `g=.608`, `Φ_side−Φ_normal≈−0.000531355747`. Position tolerance was `5×10⁻⁴`; energies were recomputed at the resulting positions. The N=12 refinement changes each side energy by less than `6×10⁻¹⁰` relative to the earlier N=8-minimum positions. It does not certify every extremum outside this bracket, the exact crossing g, the finite-temperature tricritical location or novelty. The next gate is a wider multi-start minimization and a tighter independent infinite-chain error estimate near equal free energies.
+
+## Follow-up: narrower bracket and near-equality failure check
+
+Use the same deterministic interpreter, Hamiltonian and units as above. `ft_tc_minimize.py` searches the side branch at `N=8` and re-evaluates at the same displacement with `N=10,12`; `ft_tc_crosscheck.py` uses the saved displacements for the spatially infinite Trotter transfer matrix.
+
+```powershell
+& $py code/src/ft_tc_minimize.py --T 0.1 --J -0.3 --Delta 0.3 --omega 1 --g 0.6068 0.6069 0.6070 --lo 0.35 --hi 0.41 --N-search 8 --N-verify 10 12 --tol 1e-6 | Set-Content -Encoding utf8 results/runs/2026-11-21-ft-tc-p0/refined-interior-N8-N12.json
+& $py code/src/ft_tc_crosscheck.py --input results/runs/2026-11-21-ft-tc-p0/refined-interior-N8-N12.json --M 10 12 14 16 18 20 | Set-Content -Encoding utf8 results/runs/2026-11-21-ft-tc-p0/interior-infinite-chain-crosscheck.json
+& $py code/src/ft_tc_scan.py --T 0.1 --g 0.6068 0.6070 --J -0.3 --Delta 0.3 --omega 1 --N 10 --points 81 | Set-Content -Encoding utf8 results/runs/2026-11-21-ft-tc-p0/interior-full-phi-N10.json
+& $py code/src/ft_tc_minimize.py --T 0.1 --J -0.3 --Delta 0.3 --omega 1 --g 0.60693 --lo 0.35 --hi 0.41 --N-search 8 --N-verify 10 12 --tol 1e-6 | Set-Content -Encoding utf8 results/runs/2026-11-21-ft-tc-p0/near-equal-ED.json
+& $py code/src/ft_tc_crosscheck.py --input results/runs/2026-11-21-ft-tc-p0/near-equal-ED.json --M 10 12 14 16 18 20 | Set-Content -Encoding utf8 results/runs/2026-11-21-ft-tc-p0/near-equal-transfer.json
+```
+
+| g | side φ from N=8 search | ED N=12 ΔΦ at that φ | transfer quadratic last 3 M | transfer quadratic last 4 M |
+| ---: | ---: | ---: | ---: | ---: |
+| .6068 | .37908645 | +6.18665×10⁻⁵ | +5.80743×10⁻⁵ | +5.59736×10⁻⁵ |
+| .6069 | .38063282 | +1.43316×10⁻⁵ | +1.04905×10⁻⁵ | +8.36327×10⁻⁶ |
+| .6070 | .38213203 | −3.35777×10⁻⁵ | −3.74666×10⁻⁵ | −3.96199×10⁻⁵ |
+
+The two methods agree on the **endpoint ordering** at `.6068` and `.6070`; their fixed-displacement differences are about `5.9–6.0×10⁻⁶`, and the transfer quadratic fit-window spread is `2.1–2.2×10⁻⁶`. The `N=10` grid of 81 points over the entire justified interval `[0,g/ω]` identifies two minima at each endpoint: `φ=0` and one near `.38`, with no additional grid minimum. A finite grid cannot exclude a narrow hidden extremum; the side minimum was locally optimized only at `N=8` for these interior g values.
+
+At the near-equal probe `g=.60693`, `φ≈.38108763`, ED gives `ΔΦ_N10≈−3.8553×10⁻⁸` and `ΔΦ_N12≈−2.3858×10⁻⁹`, while the transfer last-4 quadratic extrapolation gives `≈−5.9930×10⁻⁶`. Here **both the N change and the method difference exceed the free-energy signal**. Neither the sign nor an accurate crossing point can be certified from this run. The conservative cross-method bracket supported by these diagnostics is `.6068<g<.6070` for this one slice, still subject to full-extremum and extrapolation checks; do not publish an exact first-order boundary from it.

@@ -1,0 +1,45 @@
+{
+  "parameters": {
+    "T": 0.1,
+    "J": -0.3,
+    "Delta": 0.3,
+    "omega": 1.0,
+    "g": [
+      0.60693
+    ],
+    "lo": 0.35,
+    "hi": 0.41,
+    "N_search": 8,
+    "N_verify": [
+      10,
+      12
+    ],
+    "tol": 1e-06
+  },
+  "ed_sha256": "c9f64b4cb9e2ebaff19ec3e8098d00da115f6cd1ccf907b85cf2b4f6242dad59",
+  "seed": null,
+  "elapsed_seconds": 4.936120599973947,
+  "cases": [
+    {
+      "g": 0.60693,
+      "phi_Nsearch": 0.38108762807491314,
+      "Phi_Nsearch": -0.4500007016505986,
+      "endpoint_Phi": [
+        -0.44994079172609497,
+        -0.44991790576679763
+      ],
+      "evaluations": 26,
+      "Phi_normal_infinite": -0.45000003219301243,
+      "verified_at_same_phi": [
+        {
+          "N": 10,
+          "Phi": -0.4500000707455529
+        },
+        {
+          "N": 12,
+          "Phi": -0.4500000345787931
+        }
+      ]
+    }
+  ]
+}
