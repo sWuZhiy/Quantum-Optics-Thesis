@@ -1,0 +1,166 @@
+{
+  "model": "FT-TC thermal normal-branch threshold diagnostic",
+  "units": "hbar=k_B=1",
+  "parameters": {
+    "T": 0.2,
+    "J": -0.2,
+    "Delta": 0.2,
+    "omega": 1.0,
+    "method": "nlce",
+    "N": [
+      8,
+      10
+    ],
+    "L": [
+      10,
+      11,
+      12
+    ],
+    "h_values": [
+      0.45,
+      0.5,
+      0.55
+    ],
+    "h_min": 0.1,
+    "h_max": 1.0,
+    "points": 10
+  },
+  "h_values": [
+    0.45,
+    0.5,
+    0.55
+  ],
+  "g_local_exact": 0.49401478401018567,
+  "f_normal_infinite_exact": -0.3020861517338464,
+  "minima_on_sampled_h_grid": [
+    {
+      "L": 10,
+      "h_grid_min": 0.5,
+      "g_grid_min": 0.49204520159599097,
+      "boundary_of_h_grid": false
+    },
+    {
+      "L": 11,
+      "h_grid_min": 0.5,
+      "g_grid_min": 0.49202998952026256,
+      "boundary_of_h_grid": false
+    },
+    {
+      "L": 12,
+      "h_grid_min": 0.5,
+      "g_grid_min": 0.4920243612261641,
+      "boundary_of_h_grid": false
+    },
+    {
+      "method": "Aitken_last_three",
+      "h_grid_min": 0.5,
+      "g_grid_min": 0.4920210556389158,
+      "boundary_of_h_grid": false
+    }
+  ],
+  "rows": [
+    {
+      "h": 0.45,
+      "values": [
+        {
+          "L": 10,
+          "f_normal_exact": -0.3020861517338464,
+          "f_normal_order": -0.30207990176203525,
+          "f_h": -0.3543555679228234,
+          "gain": 0.052269416188977014,
+          "g_equal": 0.49207205025343603
+        },
+        {
+          "L": 11,
+          "f_normal_exact": -0.3020861517338464,
+          "f_normal_order": -0.30208394116223714,
+          "f_h": -0.35435977522692674,
+          "gain": 0.052273623493080346,
+          "g_equal": 0.49205224735594144
+        },
+        {
+          "L": 12,
+          "f_normal_exact": -0.3020861517338464,
+          "f_normal_order": -0.30208536988061807,
+          "f_h": -0.3543613263882195,
+          "gain": 0.05227517465437309,
+          "g_equal": 0.49204494696845125
+        }
+      ],
+      "f_Aitken": -0.35436223225116725,
+      "g_equal_Aitken": 0.49204068376420346
+    },
+    {
+      "h": 0.5,
+      "values": [
+        {
+          "L": 10,
+          "f_normal_exact": -0.3020861517338464,
+          "f_normal_order": -0.30207990176203525,
+          "f_h": -0.3666233375990622,
+          "gain": 0.06453718586521578,
+          "g_equal": 0.49204520159599097
+        },
+        {
+          "L": 11,
+          "f_normal_exact": -0.3020861517338464,
+          "f_normal_order": -0.30208394116223714,
+          "f_h": -0.3666273282490464,
+          "gain": 0.06454117651520003,
+          "g_equal": 0.49202998952026256
+        },
+        {
+          "L": 12,
+          "f_normal_exact": -0.3020861517338464,
+          "f_normal_order": -0.30208536988061807,
+          "f_h": -0.3666288048377244,
+          "gain": 0.06454265310387802,
+          "g_equal": 0.4920243612261641
+        }
+      ],
+      "f_Aitken": -0.3666296720855193,
+      "g_equal_Aitken": 0.4920210556389158
+    },
+    {
+      "h": 0.55,
+      "values": [
+        {
+          "L": 10,
+          "f_normal_exact": -0.3020861517338464,
+          "f_normal_order": -0.30207990176203525,
+          "f_h": -0.38012565281528454,
+          "gain": 0.07803950108143815,
+          "g_equal": 0.49220435959720765
+        },
+        {
+          "L": 11,
+          "f_normal_exact": -0.3020861517338464,
+          "f_normal_order": -0.30208394116223714,
+          "f_h": -0.38012933225298395,
+          "gain": 0.07804318051913756,
+          "g_equal": 0.492192756683213
+        },
+        {
+          "L": 12,
+          "f_normal_exact": -0.3020861517338464,
+          "f_normal_order": -0.30208536988061807,
+          "f_h": -0.380130695598603,
+          "gain": 0.07804454386475662,
+          "g_equal": 0.49218845765258334
+        }
+      ],
+      "f_Aitken": -0.380131498119061,
+      "g_equal_Aitken": 0.4921859271216796
+    }
+  ],
+  "sources_sha256": {
+    "ft_tc_thermal_threshold.py": "a100ec059da091d4d5cf5c19476cee6faa8f0a4b5ba5d055a3642186c3a6a074",
+    "ft_tc_ed.py": "c9f64b4cb9e2ebaff19ec3e8098d00da115f6cd1ccf907b85cf2b4f6242dad59",
+    "ft_tc_nlce.py": "b575e60b7758895aa765bd46da3b779e4a0fe62f21b7cc324db8ce6035009efd",
+    "ft_tc_normal_curvature.py": "1bb926f2f347e6230c736a211c832c61cfab37286705308cd303684424e262d7",
+    "ft_tc_transfer.py": "b61ccd212a593dafc4bc3042c22ff4412c423dc810db88b0905e55344c91b21e"
+  },
+  "seed": null,
+  "elapsed_seconds": 21.998271899996325,
+  "limitations": "finite h grid and finite ED/NLCE orders; no continuous-h or independent-method convergence claim"
+}

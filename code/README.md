@@ -45,6 +45,15 @@ P0 有限温试点可直接重跑：
 
 共 18 项自动基准通过；`N=18,maxiter=160` 的 Lanczos 基底默认最多预分配约 320 MiB，建议串行运行大尺寸。参数映射、已发表结果与所有实际运行命令见[Z2 记录](../results/runs/2026-11-22-ft-tc-z/README.md)。这仍是有限尺寸零温校准，完整相界和有限温研究未完成。
 
+2026-11-22 已开始有界有限温预研。[`ft_tc_thermal_threshold.py`](src/ft_tc_thermal_threshold.py)按 `h=4gφ` 计算正常态与有限横场态的等能耦合，支持 `--method ed`（周期热 ED）或 `--method nlce`（开链簇展开）；同时输出解析正常态局部阈值、参数、源码哈希和耗时。示例：
+
+```powershell
+& 'D:\codex\quantum-optics-env\python.exe' code/src/ft_tc_thermal_threshold.py --T 0.1 --J -0.2 --Delta 0.2 --omega 1 --method ed --N 10 12 --h-values 0.605 0.61 0.615 0.62 0.625
+& 'D:\codex\quantum-optics-env\python.exe' -m unittest discover -s code/tests -v
+```
+
+含新脚本共 20 项自动检查通过；全部已运行温度与误差限制见[热预研记录](../results/runs/2026-11-22-ft-tc-t-entry/README.md)。有限 `h` 网格最低值不是连续全局相界，`T≈.3` 的小场 NLCE 尚未收敛。
+
 启动顺序：先完成 `theory/model.md` 和 B1–B3 的解析基准，再实现 `model.py`、`ed.py` 及独立极限检查。通过后增加观测量和扫描入口；具体任务见[执行路线](../project/roadmap.md)。不要用空模块或未执行的示例命令代表完成。
 
 程序输出写到 `results/runs/<日期>-<任务编号>-<短名称>/`。同一脚本接收配置文件，避免为每组参数复制一份程序。探索 notebook 要能从保存的输入重跑；成为论文依据的计算和绘图流程整理到 `src/`，不依赖 notebook 的隐藏执行状态。
