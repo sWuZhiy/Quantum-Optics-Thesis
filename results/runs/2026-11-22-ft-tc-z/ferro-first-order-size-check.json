@@ -1,0 +1,63 @@
+{
+  "parameters": {
+    "J": -0.2,
+    "Delta": 0.2,
+    "h": 0.6165,
+    "N": [
+      12,
+      16,
+      18
+    ],
+    "boundary": "periodic",
+    "tol": 1e-10,
+    "maxiter": 160,
+    "staggered_m2": false
+  },
+  "seed": null,
+  "source_sha256": "7b465a929cc7f9c73bdfd9f63ee741a19ad15031604bf6df44684c06e18425b8",
+  "elapsed_seconds": 1.9143501000944525,
+  "values": [
+    {
+      "N": 12,
+      "J": -0.2,
+      "Delta": 0.2,
+      "h": 0.6165,
+      "boundary": "periodic",
+      "energy_total": -4.760747243003823,
+      "energy_per_site": -0.39672893691698524,
+      "iterations": 30,
+      "residual": 4.903507579525283e-11,
+      "converged": true,
+      "dimension": 4096,
+      "method": "reorthogonalized_lanczos"
+    },
+    {
+      "N": 16,
+      "J": -0.2,
+      "Delta": 0.2,
+      "h": 0.6165,
+      "boundary": "periodic",
+      "energy_total": -6.347662968037807,
+      "energy_per_site": -0.39672893550236293,
+      "iterations": 35,
+      "residual": 4.618774206444906e-10,
+      "converged": true,
+      "dimension": 65536,
+      "method": "reorthogonalized_lanczos"
+    },
+    {
+      "N": 18,
+      "J": -0.2,
+      "Delta": 0.2,
+      "h": 0.6165,
+      "boundary": "periodic",
+      "energy_total": -7.141120838946903,
+      "energy_per_site": -0.3967289354970502,
+      "iterations": 40,
+      "residual": 1.3232455388979438e-10,
+      "converged": true,
+      "dimension": 262144,
+      "method": "reorthogonalized_lanczos"
+    }
+  ]
+}

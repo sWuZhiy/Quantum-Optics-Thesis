@@ -1,0 +1,306 @@
+{
+  "parameters": {
+    "J": 0.2,
+    "Delta": 0.6625,
+    "omega": 1.0,
+    "g": 0.26,
+    "N": [
+      12,
+      16
+    ],
+    "h_min": 0.18,
+    "h_max": 0.2704,
+    "points": 10,
+    "tol": 1e-10,
+    "maxiter": 160,
+    "staggered_m2": false
+  },
+  "seed": null,
+  "source_sha256": {
+    "ft_tc_zero_t_scan.py": "d79e14e9c081064f109f341ff80a81697e1427dbf3a17fbe3ee5e4f195c23ccd",
+    "ft_tc_ground_state.py": "7b465a929cc7f9c73bdfd9f63ee741a19ad15031604bf6df44684c06e18425b8"
+  },
+  "elapsed_seconds": 6.574965400039218,
+  "values": [
+    {
+      "N": 12,
+      "normal_energy": -0.20000000000000004,
+      "minimum_grid_index": 0,
+      "minimum_grid": {
+        "h": 0.18,
+        "e_spin": -0.2289943427261967,
+        "g_equal": 0.2642748771999098,
+        "iterations": 60,
+        "residual": 4.4199620995775925e-11,
+        "phi": 0.17307692307692307,
+        "photon_density_coherent": 0.029955621301775145,
+        "cavity_energy": -0.19903872142442156,
+        "cavity_minus_normal": 0.0009612785755784801
+      },
+      "values": [
+        {
+          "h": 0.18,
+          "e_spin": -0.2289943427261967,
+          "g_equal": 0.2642748771999098,
+          "iterations": 60,
+          "residual": 4.4199620995775925e-11,
+          "phi": 0.17307692307692307,
+          "photon_density_coherent": 0.029955621301775145,
+          "cavity_energy": -0.19903872142442156,
+          "cavity_minus_normal": 0.0009612785755784801
+        },
+        {
+          "h": 0.19004444444444443,
+          "e_spin": -0.23216730886878004,
+          "g_equal": 0.26490357693512173,
+          "iterations": 60,
+          "residual": 2.0680765737125158e-11,
+          "phi": 0.1827350427350427,
+          "photon_density_coherent": 0.033392095843377885,
+          "cavity_energy": -0.19877521302540216,
+          "cavity_minus_normal": 0.001224786974597887
+        },
+        {
+          "h": 0.20008888888888887,
+          "e_spin": -0.23544472564069283,
+          "g_equal": 0.2656973186846819,
+          "iterations": 55,
+          "residual": 1.8479196453800743e-10,
+          "phi": 0.19239316239316237,
+          "photon_density_coherent": 0.037015128935641746,
+          "cavity_energy": -0.1984295967050511,
+          "cavity_minus_normal": 0.001570403294948959
+        },
+        {
+          "h": 0.2101333333333333,
+          "e_spin": -0.2388111459018151,
+          "g_equal": 0.26665929444947417,
+          "iterations": 55,
+          "residual": 7.361235672336315e-11,
+          "phi": 0.20205128205128203,
+          "photon_density_coherent": 0.040824720578566724,
+          "cavity_energy": -0.19798642532324837,
+          "cavity_minus_normal": 0.0020135746767516657
+        },
+        {
+          "h": 0.22017777777777775,
+          "e_spin": -0.24225408300425802,
+          "g_equal": 0.2677806258553164,
+          "iterations": 55,
+          "residual": 4.4318040195553654e-11,
+          "phi": 0.21170940170940167,
+          "photon_density_coherent": 0.044820870772152806,
+          "cavity_energy": -0.19743321223210522,
+          "cavity_minus_normal": 0.002566787767894825
+        },
+        {
+          "h": 0.23022222222222222,
+          "e_spin": -0.2457635755886052,
+          "g_equal": 0.26904645597243987,
+          "iterations": 55,
+          "residual": 2.209056425996221e-11,
+          "phi": 0.22136752136752136,
+          "photon_density_coherent": 0.049003579516400025,
+          "cavity_energy": -0.19675999607220518,
+          "cavity_minus_normal": 0.00324000392779486
+        },
+        {
+          "h": 0.24026666666666666,
+          "e_spin": -0.2493316699049433,
+          "g_equal": 0.27043981084958996,
+          "iterations": 55,
+          "residual": 1.1228516095127136e-11,
+          "phi": 0.23102564102564102,
+          "photon_density_coherent": 0.05337284681130835,
+          "cavity_energy": -0.19595882309363494,
+          "cavity_minus_normal": 0.004041176906365095
+        },
+        {
+          "h": 0.2503111111111111,
+          "e_spin": -0.2529519623438914,
+          "g_equal": 0.27194376569653744,
+          "iterations": 50,
+          "residual": 1.6897778869345188e-10,
+          "phi": 0.24068376068376066,
+          "photon_density_coherent": 0.057928672656877775,
+          "cavity_energy": -0.1950232896870136,
+          "cavity_minus_normal": 0.004976710312986424
+        },
+        {
+          "h": 0.26035555555555556,
+          "e_spin": -0.2566192364819926,
+          "g_equal": 0.27354252636552834,
+          "iterations": 50,
+          "residual": 8.336866886673418e-11,
+          "phi": 0.2503418803418803,
+          "photon_density_coherent": 0.06267105705310833,
+          "cavity_energy": -0.19394817942888426,
+          "cavity_minus_normal": 0.006051820571115779
+        },
+        {
+          "h": 0.2704,
+          "e_spin": -0.26032918772933017,
+          "g_equal": 0.27522187987424135,
+          "iterations": 50,
+          "residual": 3.181932084112795e-11,
+          "phi": 0.25999999999999995,
+          "photon_density_coherent": 0.06759999999999998,
+          "cavity_energy": -0.19272918772933018,
+          "cavity_minus_normal": 0.007270812270669849
+        }
+      ],
+      "minimum_cavity_grid_index": 0,
+      "minimum_cavity_grid": {
+        "h": 0.18,
+        "e_spin": -0.2289943427261967,
+        "g_equal": 0.2642748771999098,
+        "iterations": 60,
+        "residual": 4.4199620995775925e-11,
+        "phi": 0.17307692307692307,
+        "photon_density_coherent": 0.029955621301775145,
+        "cavity_energy": -0.19903872142442156,
+        "cavity_minus_normal": 0.0009612785755784801
+      }
+    },
+    {
+      "N": 16,
+      "normal_energy": -0.2,
+      "minimum_grid_index": 0,
+      "minimum_grid": {
+        "h": 0.18,
+        "e_spin": -0.22888555629667737,
+        "g_equal": 0.2647720547916055,
+        "iterations": 80,
+        "residual": 5.0177672866415503e-11,
+        "phi": 0.17307692307692307,
+        "photon_density_coherent": 0.029955621301775145,
+        "cavity_energy": -0.19892993499490222,
+        "cavity_minus_normal": 0.0010700650050977888
+      },
+      "values": [
+        {
+          "h": 0.18,
+          "e_spin": -0.22888555629667737,
+          "g_equal": 0.2647720547916055,
+          "iterations": 80,
+          "residual": 5.0177672866415503e-11,
+          "phi": 0.17307692307692307,
+          "photon_density_coherent": 0.029955621301775145,
+          "cavity_energy": -0.19892993499490222,
+          "cavity_minus_normal": 0.0010700650050977888
+        },
+        {
+          "h": 0.19004444444444443,
+          "e_spin": -0.23207372809419996,
+          "g_equal": 0.2652897469799731,
+          "iterations": 75,
+          "residual": 2.1370840362479458e-10,
+          "phi": 0.1827350427350427,
+          "photon_density_coherent": 0.033392095843377885,
+          "cavity_energy": -0.19868163225082208,
+          "cavity_minus_normal": 0.0013183677491779358
+        },
+        {
+          "h": 0.20008888888888887,
+          "e_spin": -0.2353666258950642,
+          "g_equal": 0.2659905251910405,
+          "iterations": 75,
+          "residual": 9.381237750332019e-11,
+          "phi": 0.19239316239316237,
+          "photon_density_coherent": 0.037015128935641746,
+          "cavity_energy": -0.19835149695942247,
+          "cavity_minus_normal": 0.0016485030405775439
+        },
+        {
+          "h": 0.2101333333333333,
+          "e_spin": -0.23874700610061575,
+          "g_equal": 0.2668799102292966,
+          "iterations": 70,
+          "residual": 2.0801699572100376e-10,
+          "phi": 0.20205128205128203,
+          "photon_density_coherent": 0.040824720578566724,
+          "cavity_energy": -0.19792228552204902,
+          "cavity_minus_normal": 0.0020777144779509857
+        },
+        {
+          "h": 0.22017777777777775,
+          "e_spin": -0.24220178715057916,
+          "g_equal": 0.2679464894564389,
+          "iterations": 70,
+          "residual": 1.724126448322263e-10,
+          "phi": 0.21170940170940167,
+          "photon_density_coherent": 0.044820870772152806,
+          "cavity_energy": -0.19738091637842636,
+          "cavity_minus_normal": 0.002619083621573655
+        },
+        {
+          "h": 0.23022222222222222,
+          "e_spin": -0.24572101601768975,
+          "g_equal": 0.26917164827210865,
+          "iterations": 70,
+          "residual": 8.63737356396997e-11,
+          "phi": 0.22136752136752136,
+          "photon_density_coherent": 0.049003579516400025,
+          "cavity_energy": -0.19671743650128973,
+          "cavity_minus_normal": 0.0032825634987102836
+        },
+        {
+          "h": 0.24026666666666666,
+          "e_spin": -0.24929698837951733,
+          "g_equal": 0.27053492432846704,
+          "iterations": 65,
+          "residual": 3.443254856826676e-10,
+          "phi": 0.23102564102564102,
+          "photon_density_coherent": 0.05337284681130835,
+          "cavity_energy": -0.19592414156820898,
+          "cavity_minus_normal": 0.004075858431791028
+        },
+        {
+          "h": 0.2503111111111111,
+          "e_spin": -0.2529236113374668,
+          "g_equal": 0.27201659563945607,
+          "iterations": 65,
+          "residual": 2.1082344506485168e-10,
+          "phi": 0.24068376068376066,
+          "photon_density_coherent": 0.057928672656877775,
+          "cavity_energy": -0.19499493868058904,
+          "cavity_minus_normal": 0.005005061319410961
+        },
+        {
+          "h": 0.26035555555555556,
+          "e_spin": -0.2565959636060645,
+          "g_equal": 0.2735987624162245,
+          "iterations": 65,
+          "residual": 1.253221859554812e-10,
+          "phi": 0.2503418803418803,
+          "photon_density_coherent": 0.06267105705310833,
+          "cavity_energy": -0.1939249065529562,
+          "cavity_minus_normal": 0.006075093447043822
+        },
+        {
+          "h": 0.2704,
+          "e_spin": -0.2603099936869836,
+          "g_equal": 0.2752656719545749,
+          "iterations": 65,
+          "residual": 7.058324348937256e-11,
+          "phi": 0.25999999999999995,
+          "photon_density_coherent": 0.06759999999999998,
+          "cavity_energy": -0.1927099936869836,
+          "cavity_minus_normal": 0.007290006313016392
+        }
+      ],
+      "minimum_cavity_grid_index": 0,
+      "minimum_cavity_grid": {
+        "h": 0.18,
+        "e_spin": -0.22888555629667737,
+        "g_equal": 0.2647720547916055,
+        "iterations": 80,
+        "residual": 5.0177672866415503e-11,
+        "phi": 0.17307692307692307,
+        "photon_density_coherent": 0.029955621301775145,
+        "cavity_energy": -0.19892993499490222,
+        "cavity_minus_normal": 0.0010700650050977888
+      }
+    }
+  ]
+}

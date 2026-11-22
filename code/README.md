@@ -35,6 +35,16 @@ P0 有限温试点可直接重跑：
 
 命令从仓库根目录运行；输出是固定虚时间片数 `M` 下的无限长混合场 Ising 链自由能，仍须 `M→∞` 外推。参数、验证和失败边界见[本次运行记录](../results/runs/2026-11-20-ft-tc-p0/README.md)。后续稀疏 ED 若需要 SciPy，先按实际需求固定依赖版本；不把本次单点试算当成目标相图完成。
 
+2026-11-22 的 Z2 零温校准使用现有 NumPy，无新依赖：`ft_tc_zero_t.py` 给 `Δ=0` 可积链精确积分和 Koziol 三临界系数对照；`ft_tc_ground_state.py` 用矩阵自由 Lanczos 算 `N≤18` 物质链基态能、残差和可选交错磁序平方；`ft_tc_zero_t_scan.py` 扫横场的全局等能候选与指定 `g` 的腔位移能量。示例：
+
+```powershell
+& 'D:\codex\quantum-optics-env\python.exe' code/src/ft_tc_zero_t.py --J -0.2 --omega 1 --Delta 0.2 0.4 0.6
+& 'D:\codex\quantum-optics-env\python.exe' code/src/ft_tc_ground_state.py --J 0.2 --Delta 0.6625 --h 0.07 --N 12 16 18 --staggered-m2
+& 'D:\codex\quantum-optics-env\python.exe' -m unittest discover -s code/tests -v
+```
+
+共 18 项自动基准通过；`N=18,maxiter=160` 的 Lanczos 基底默认最多预分配约 320 MiB，建议串行运行大尺寸。参数映射、已发表结果与所有实际运行命令见[Z2 记录](../results/runs/2026-11-22-ft-tc-z/README.md)。这仍是有限尺寸零温校准，完整相界和有限温研究未完成。
+
 启动顺序：先完成 `theory/model.md` 和 B1–B3 的解析基准，再实现 `model.py`、`ed.py` 及独立极限检查。通过后增加观测量和扫描入口；具体任务见[执行路线](../project/roadmap.md)。不要用空模块或未执行的示例命令代表完成。
 
 程序输出写到 `results/runs/<日期>-<任务编号>-<短名称>/`。同一脚本接收配置文件，避免为每组参数复制一份程序。探索 notebook 要能从保存的输入重跑；成为论文依据的计算和绘图流程整理到 `src/`，不依赖 notebook 的隐藏执行状态。

@@ -1,0 +1,77 @@
+{
+  "parameters": {
+    "J": -0.3,
+    "omega": 1.0,
+    "Delta": [
+      0.3,
+      0.6,
+      0.9
+    ],
+    "momenta": 32768,
+    "scan_points": 801
+  },
+  "seed": null,
+  "zero_field": {
+    "J": -0.3,
+    "omega": 1.0,
+    "momenta": 32768,
+    "scan_points": 801,
+    "scan_interval_x": [
+      0.05,
+      8.0
+    ],
+    "x": 1.4524912029918315,
+    "h": 0.8714947217950989,
+    "phi": 0.4349000583198153,
+    "g_crossing": 0.5009741348173274,
+    "g_normal_local": 0.5477225575051661,
+    "normal_energy": -0.3,
+    "side_energy": -0.29999999999999993,
+    "energy_residual": 5.551115123125783e-17,
+    "stationarity_residual": -1.1102230246251565e-16,
+    "scan_min_index": 141
+  },
+  "landau": [
+    {
+      "J": -0.3,
+      "Delta": 0.3,
+      "omega": 1.0,
+      "A": 0.75,
+      "B": 0.44999999999999996,
+      "g_local": 0.6123724356957945,
+      "c2_of_g": "omega - 2*g**2/A",
+      "c4_prefactor_of_g4": -1.580246913580247,
+      "tricritical_Delta": 0.6,
+      "tricritical_g": 0.6708203932499369,
+      "tricritical_c6": 0.4320987654320988
+    },
+    {
+      "J": -0.3,
+      "Delta": 0.6,
+      "omega": 1.0,
+      "A": 0.8999999999999999,
+      "B": 0.6,
+      "g_local": 0.6708203932499369,
+      "c2_of_g": "omega - 2*g**2/A",
+      "c4_prefactor_of_g4": 0.0,
+      "tricritical_Delta": 0.6,
+      "tricritical_g": 0.6708203932499369,
+      "tricritical_c6": 0.4320987654320988
+    },
+    {
+      "J": -0.3,
+      "Delta": 0.9,
+      "omega": 1.0,
+      "A": 1.05,
+      "B": 0.75,
+      "g_local": 0.724568837309472,
+      "c2_of_g": "omega - 2*g**2/A",
+      "c4_prefactor_of_g4": 0.34553503941259045,
+      "tricritical_Delta": 0.6,
+      "tricritical_g": 0.6708203932499369,
+      "tricritical_c6": 0.4320987654320988
+    }
+  ],
+  "source_sha256": "dc69d80d06d3c91570fe18d300f8f1e12fa8c54158eb1fe676af5e135c3e3677",
+  "elapsed_seconds": 0.1255659000016749
+}

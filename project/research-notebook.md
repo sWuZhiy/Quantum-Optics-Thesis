@@ -1,11 +1,11 @@
 # 研究对话与文献总笔记
 
-更新：2026-11-21。本页供回顾项目对话中的**用户观点、问题和查阅过的文献**。它是导航与观点记录，不替代[逐篇文献综述](../literature/reading-list.md)、[主张台账](claims.md)、[详细研究评估](research-assessment.md)、[阶段任务](roadmap.md)或[工作日志](progress.md)。引用键以[文献库](../literature/references.bib)为准；下文“论文报告”“我们的分析”“用户判断”分别标注，不能互换。
+更新：2026-11-22。本页供回顾项目对话中的**用户观点、问题和查阅过的文献**。它是导航与观点记录，不替代[逐篇文献综述](../literature/reading-list.md)、[主张台账](claims.md)、[详细研究评估](research-assessment.md)、[阶段任务](roadmap.md)或[工作日志](progress.md)。引用键以[文献库](../literature/references.bib)为准；下文“论文报告”“我们的分析”“用户判断”分别标注，不能互换。
 
 ## 一眼看当前状态
 
 - 研究对象仍未正式定题：静态同正交分量的“反压缩 + `A²` + 自旋相互作用”简单加项退出创新主线；`FT-TC` 是首要活动候选，`CL-AF` 只保留为算法基准/后备。[P0 技术预审](p0-gate-review-2026-11-21.md)完成，但正式立题待范围确认；尚未产生本项目相图。
-- 当前有文献综述、[统一模型](../theory/model.md)、执行路线、专用 Conda 环境和 LaTeX 调研草稿；解析正常态阈值、周期热 ED 与开边界 NLCE 在一个目标铁磁截面有交叉基准，但完整零温基线、目标热相界和新相图尚未建立。见[项目简述](brief.md)与[方法试算](method-feasibility.md)。
+- 当前有文献综述、[统一模型](../theory/model.md)、执行路线、专用 Conda 环境和 LaTeX 调研草稿；解析正常态阈值、周期热 ED 与开边界 NLCE 在一个目标铁磁截面有交叉基准，[Z2 零温校准](../theory/zero-t-baselines.md)又复现已发表精确一级点、三临界条件和有限链共存内点。完整零温相界、目标热相界和新相图尚未建立。见[项目简述](brief.md)与[运行记录](../results/runs/2026-11-22-ft-tc-z/README.md)。
 - 论文查阅深度不一：有些已逐页核读，有些只核摘要。具体范围见[阅读清单的逐篇条目](../literature/reading-list.md)；**“入库”不等于“读完”或“独立复现”**。
 - 本页记录的原话只在有可回查记录时加引号；其余为对用户问题的忠实概括。回答与推断不写成用户已认可的观点。
 
@@ -61,7 +61,7 @@
 
 本机更详细的逐段阅读与用户问题原话保存在 `literature/notes/langheld-2025-wormhole-reading-notes.md`。该笔记及 `assets/` 截图目前未纳入公开 Git 仓库；本页保留无需截图即可理解的观点摘要，公开回查以[文献综述](../literature/reading-list.md)和论文原文为准。
 
-## 主引文库：按问题查 22 篇
+## 主引文库：按问题查文献与数据集
 
 本表只给“为什么回看它”和最有用的原文入口；实际读到哪里、模型范围、图表与未核内容在[逐篇综述](../literature/reading-list.md)中。原文位置是阅读定位，不表示本项目重算了论文结果。带“摘要”的条目不得引用其尚未核查的具体公式。20 篇已有[本地 PDF 索引](../literature/README.md)；Hörmann（2026）与 Lee–Johnson（2004）目前只有在线引文。
 
@@ -76,6 +76,7 @@
 | 量子 Ising 基线 | [Rohn 等 2020](https://doi.org/10.1103/PhysRevResearch.2.023131) `Rohn2020QuantizedIsing` | 光诱导横场；目前主要核摘要 |
 | 量子 Ising 基线 | [Mendonça 等 2025](https://doi.org/10.1103/z8gv-7yyk) `Mendonca2025Matter` | Ising/XXZ 基态；正文式 (1)、图 2–4；Ising 区需并读 Comment |
 | 量子 Ising 基线 | [Langheld 等 2025](https://doi.org/10.1103/lcvj-ksct) `Langheld2025Wormhole` | QMC 图 3–4；补充 §IV 式 (S33)–(S35)、图 S9 的 `A²` 可达区；已有专题深读 |
+| 量子 Ising 原始数据 | [Langheld 等 2025 Zenodo，DOI 10.5281/zenodo.15774230](https://zenodo.org/records/15774230) `Langheld2025WormholeData` | `results/Ferro_chain_NtoS.csv` 的 `ε=.1,J=−.2` 一级点、`Antiferro_chain_ANAS.csv`/`ASPS.csv` 的 `g=.26,J=.2` 共存窗口，以及 `L=1024,β=512` 内点行；仅核这些原始结果与说明，见[Z2 运行](../results/runs/2026-11-22-ft-tc-z/README.md) |
 | 量子 Ising 基线 | [Hörmann 等 2026 Comment](https://journals.aps.org/prl/pdf/10.1103/xl66-85fx) `Hormann2025Comment` | *PRL* 137, 219301（2026-11-19）；第 1 页式 (1)、图 1；2025 arXiv 年份留在引用键 |
 | 量子 Ising 基线 | [Leibig 等 2026](https://doi.org/10.21468/SciPostPhys.21.3.071) `Leibig2026SelfConsistent` | §2.2、§3–4；本地预印本已核读，期刊版差异待核 |
 | 量子 Ising 基线 | [Koziol 2026](https://arxiv.org/abs/2605.27484) `Koziol2026Criticality` | 零温三临界；式 (12)–(14)、图 1–3 已核 |
@@ -150,3 +151,4 @@
 | 2026-11-21 | 按用户要求细致解释最近一次 FT-TC P0 调研，并重新核对核心验收表、文献定位和原始 JSON；本轮没有新计算或新文献。 | 登记 P26；用同一模型的轴向、`Δ=-2J` 比值、`Φ_T` 的全局极小、`g_local` 的局部含义和三种数值路线说明证据等级。调研结论仍为“定向方法可行，正式 P0 暂缓”，未把 `g≈.60693` 宣称为已证相界或三临界点。 | 先做 Z 阶段发表相界的零温复现；期刊正文可读时补核版本差异，再据用户与导师的题目范围决定 T 阶段。 |
 | 2026-11-21 | 核查有限温超辐射的近期研究价值与本项目数值方法；新增用户问题 P27，并核读 Feiguin–White（2005）与 Sandvik（2003）的算法原文。 | [阅读清单](../literature/reading-list.md)新增方法文献入口；[方法备忘](method-feasibility.md)给出现有 NLCE/ED、MPS 纯化和 SSE/QMC 的适用顺序、方程与误差门槛。未运行新数值、安装新包或发现新相界；`FT-TC` 仍是待证候选，正式 P0 状态不变。 | 先复现已发表零温相界；对有限温少数截面做完整驻点与误差预算，现有 NLCE 精度不足时再升级有限温 MPS，并用独立方法交叉。 |
 | 2026-11-21 | 回答用户“创新点是什么”，重新按原文划分已知零温、已有异轴热结果与 `FT-TC` 的待证增量；发现 Comment/Reply 于 11 月 19 日已正式发表，并核 Araki（1969）摘要。 | 登记 P28；更新[新颖性备忘](novelty-memo.md)、[主张 C04](claims.md)、[文献清单](../literature/reading-list.md)与[正式引文](../literature/references.bib)。主候选是经全局自由能验证的同轴有限温腔相界/热三临界及机制；零温 AFM 共存不新，固定 `φ` 的物质链正温无交错长程序。本轮未计算新相界或确认原创结果。 | 在发表零温基线复现后计算少数热截面的全部驻点和四次响应；若仅见平凡相界平移或误差不可控，按 C04 收窄。 |
+| 2026-11-22 | 按用户“继续我们的研究吧”“继续”推进 `FT-TC` 的 Z2 零温校准；本轮没有新物理观点或正式定题决定。 | [零温推导](../theory/zero-t-baselines.md)与[运行记录](../results/runs/2026-11-22-ft-tc-z/README.md)复现 Koziol（2026）`ε=0` 精确一级点 `g_c≈.4090436682`、解析三临界/连续条件；`N≤18` 核查非零纵场铁磁一级侧和 Langheld 等（2025）[Zenodo 原始数据](https://zenodo.org/records/15774230)中的 AFM 共存内点。18 项测试通过。Leibig arXiv v1 式 (18)–(19) 铁磁符号不一致已记入[阅读清单](../literature/reading-list.md)，期刊版待核。所有新结果是**已发表零温基线复现**，C04 仍待证、正式 P0/T 暂缓。 | 完成非零纵场全局边界和 AFM 无限链磁序外推；补核 Leibig 期刊版与近期同模型论文，再依 P0 决定能否进入有限温主研究。 |
