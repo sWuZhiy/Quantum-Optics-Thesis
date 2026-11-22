@@ -1,0 +1,100 @@
+{
+  "model": "FT-TC thermal normal-branch threshold diagnostic",
+  "units": "hbar=k_B=1",
+  "parameters": {
+    "T": 0.3,
+    "J": -0.2,
+    "Delta": 0.2,
+    "omega": 1.0,
+    "method": "nlce",
+    "N": [
+      8,
+      10
+    ],
+    "L": [
+      10,
+      11,
+      12
+    ],
+    "h_values": [
+      0.025
+    ],
+    "h_min": 0.1,
+    "h_max": 1.0,
+    "points": 10
+  },
+  "h_values": [
+    0.025
+  ],
+  "g_local_exact": 0.48909500412766704,
+  "f_normal_infinite_exact": -0.31881066118989493,
+  "minima_on_sampled_h_grid": [
+    {
+      "L": 10,
+      "h_grid_min": 0.025,
+      "g_grid_min": 0.5141715753456686,
+      "boundary_of_h_grid": true
+    },
+    {
+      "L": 11,
+      "h_grid_min": 0.025,
+      "g_grid_min": 0.49921215650345213,
+      "boundary_of_h_grid": true
+    },
+    {
+      "L": 12,
+      "h_grid_min": 0.025,
+      "g_grid_min": 0.49328781269620753,
+      "boundary_of_h_grid": true
+    },
+    {
+      "method": "Aitken_last_three",
+      "h_grid_min": 0.025,
+      "g_grid_min": 0.489103361926772,
+      "boundary_of_h_grid": true
+    }
+  ],
+  "rows": [
+    {
+      "h": 0.025,
+      "values": [
+        {
+          "L": 10,
+          "f_normal_exact": -0.31881066118989493,
+          "f_normal_order": -0.3187950945725513,
+          "f_h": -0.3189584167751449,
+          "gain": 0.00014775558524998678,
+          "g_equal": 0.5141715753456686
+        },
+        {
+          "L": 11,
+          "f_normal_exact": -0.31881066118989493,
+          "f_normal_order": -0.3188041006093729,
+          "f_h": -0.31896740475833774,
+          "gain": 0.00015674356844280757,
+          "g_equal": 0.49921215650345213
+        },
+        {
+          "L": 12,
+          "f_normal_exact": -0.31881066118989493,
+          "f_normal_order": -0.31880789627974115,
+          "f_h": -0.31897119232001847,
+          "gain": 0.00016053113012354236,
+          "g_equal": 0.49328781269620753
+        }
+      ],
+      "f_Aitken": -0.31897395087015756,
+      "g_equal_Aitken": 0.489103361926772
+    }
+  ],
+  "sources_sha256": {
+    "ft_tc_thermal_threshold.py": "a100ec059da091d4d5cf5c19476cee6faa8f0a4b5ba5d055a3642186c3a6a074",
+    "ft_tc_ed.py": "c9f64b4cb9e2ebaff19ec3e8098d00da115f6cd1ccf907b85cf2b4f6242dad59",
+    "ft_tc_nlce.py": "b575e60b7758895aa765bd46da3b779e4a0fe62f21b7cc324db8ce6035009efd",
+    "ft_tc_normal_curvature.py": "1bb926f2f347e6230c736a211c832c61cfab37286705308cd303684424e262d7",
+    "ft_tc_transfer.py": "b61ccd212a593dafc4bc3042c22ff4412c423dc810db88b0905e55344c91b21e"
+  },
+  "seed": null,
+  "elapsed_seconds": 11.002254700055346,
+  "limitations": "finite h grid and finite ED/NLCE orders; no continuous-h or independent-method convergence claim"
+}

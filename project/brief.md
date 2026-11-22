@@ -24,3 +24,5 @@
 ## 当前下一步
 
 按[新版阶段路线](roadmap.md)执行[FT-TC P0 验收](p0-gate-review-2026-11-21.md)：逐式[文献差异矩阵](../literature/ft-tc-gap-matrix.md)、[双向引文核查](../literature/ft-tc-citation-audit-2026-11-20.md)、[新颖性备忘](novelty-memo.md)和[有限温方法试算](method-feasibility.md)已具备。定向检索未命中同模型完整热相图，但仍受索引漏收与 Leibig 期刊正文未核限制；新补查的 Román Roche（2020）学位论文有异轴近邻热图，未覆盖目标模型。[Z2 零温校准](../theory/zero-t-baselines.md)已复现已发表精确一级点、三临界/连续条件，以及有限链非零纵场铁磁和反铁磁内点。用户要求继续执行后，[有界有限温预研](../results/runs/2026-11-22-ft-tc-t-entry/README.md)已开始：`J=-.2,Δ=.2` 的 `T=.1/.2` 在 ED 与 NLCE 中均见有限横场等能候选低于解析局部阈值；`T=.3` 小场误差尚未控制。**这仍不是完整相图或新颖性证明。**下一步连续搜索全位移驻点、扩多温度与纵场并控制近等能误差，同时继续零温完整边界校准、补核期刊版和确认导师题目范围。完整有限温相图须通过正式 P0 与误差验收后才升级为研究结论；失败则按[主张台账](claims.md)止损。围绕 Mendonça 等（2025）XXZ 光子标度的[独立预筛](../literature/mendonca-followup-survey.md)仍列后续候选。
+
+2026-11-22 同日续算：两个温度的预选有限横场最低已[连续细化](../results/runs/2026-11-22-ft-tc-t-continuous/README.md)，`T=.3` 小场也经[转移矩阵与 NLCE](../results/runs/2026-11-22-ft-tc-t-smallfield/README.md)独立交叉，出现局部连续失稳的候选迹象。当前优先做零场四次系数、有限横场全域连续最低和独立误差预算；尚不能给热三临界温度或投稿级相图。

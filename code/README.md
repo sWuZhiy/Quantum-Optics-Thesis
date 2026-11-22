@@ -54,6 +54,15 @@ P0 有限温试点可直接重跑：
 
 含新脚本共 20 项自动检查通过；全部已运行温度与误差限制见[热预研记录](../results/runs/2026-11-22-ft-tc-t-entry/README.md)。有限 `h` 网格最低值不是连续全局相界，`T≈.3` 的小场 NLCE 尚未收敛。
 
+随后增加 [`ft_tc_thermal_refine.py`](src/ft_tc_thermal_refine.py)：在已由宽网格找到的单个 `h` 括区内，对 `g_equal(h)` 作黄金分割细化，输出每次评价的物质自由能和最终括区。示例：
+
+```powershell
+& 'D:\codex\quantum-optics-env\python.exe' code/src/ft_tc_thermal_refine.py --T 0.2 --J -0.2 --Delta 0.2 --omega 1 --method ed --N 12 --lo 0.42 --hi 0.54 --tol 0.003
+& 'D:\codex\quantum-optics-env\python.exe' -m unittest discover -s code/tests -v
+```
+
+目前全套 22 项测试通过；`T=.1/.2` 预选括区和 `T=.3` 小场的误差记录分别见[连续细化](../results/runs/2026-11-22-ft-tc-t-continuous/README.md)与[小场核查](../results/runs/2026-11-22-ft-tc-t-smallfield/README.md)。单括区优化和加速 NLCE 一致性都不能单独证明全局热相界。
+
 启动顺序：先完成 `theory/model.md` 和 B1–B3 的解析基准，再实现 `model.py`、`ed.py` 及独立极限检查。通过后增加观测量和扫描入口；具体任务见[执行路线](../project/roadmap.md)。不要用空模块或未执行的示例命令代表完成。
 
 程序输出写到 `results/runs/<日期>-<任务编号>-<短名称>/`。同一脚本接收配置文件，避免为每组参数复制一份程序。探索 notebook 要能从保存的输入重跑；成为论文依据的计算和绘图流程整理到 `src/`，不依赖 notebook 的隐藏执行状态。
