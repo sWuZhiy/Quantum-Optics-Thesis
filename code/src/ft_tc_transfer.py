@@ -9,9 +9,11 @@ Trotter limit M -> infinity must be checked separately for each parameter.
 """
 
 import argparse
+import hashlib
 import json
 import math
 import time
+from pathlib import Path
 
 import numpy as np
 
@@ -85,17 +87,27 @@ def main():
     p.add_argument("--Delta", type=float, required=True)
     p.add_argument("--h", type=float, required=True)
     p.add_argument("--M", type=int, nargs="+", default=[6, 8, 10, 12])
+    p.add_argument("--output", type=Path, default=None,
+                   help="optional JSON output path; stdout is used otherwise")
     args = p.parse_args()
     start = time.perf_counter()
     values = [free_energy(args.T, args.J, args.Delta, args.h, m) for m in args.M]
     out = {"model": "mixed_field_ising_infinite_chain", "units": "hbar=kB=1",
            "parameters": {"T": args.T, "J": args.J, "Delta": args.Delta, "h": args.h},
-           "values": values, "wall_seconds": time.perf_counter() - start}
+           "values": values, "wall_seconds": time.perf_counter() - start,
+           "source_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+           "seed": None}
     if args.J == 0:
         out["exact"] = independent_spin(args.T, args.Delta, args.h)
     if args.h == 0:
         out["exact"] = classical_chain(args.T, args.J, args.Delta)
-    print(json.dumps(out, indent=2))
+    payload = json.dumps(out, indent=2)
+    if args.output is None:
+        print(payload)
+    else:
+        args.output.parent.mkdir(parents=True, exist_ok=True)
+        args.output.write_text(payload + "\n", encoding="utf-8")
+        print(args.output)
 
 
 if __name__ == "__main__":

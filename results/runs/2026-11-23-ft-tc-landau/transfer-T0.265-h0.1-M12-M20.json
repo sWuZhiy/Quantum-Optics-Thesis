@@ -1,0 +1,43 @@
+{
+  "model": "mixed_field_ising_infinite_chain",
+  "units": "hbar=kB=1",
+  "parameters": {
+    "T": 0.265,
+    "J": -0.2,
+    "Delta": 0.2,
+    "h": 0.1
+  },
+  "values": [
+    {
+      "M": 12,
+      "f": -0.3131028725652781,
+      "iterations": 26,
+      "residual": 2.1472014993043727e-10,
+      "converged": true
+    },
+    {
+      "M": 16,
+      "f": -0.3130952245626969,
+      "iterations": 26,
+      "residual": 2.2004798546036892e-10,
+      "converged": true
+    },
+    {
+      "M": 18,
+      "f": -0.3130931589160179,
+      "iterations": 26,
+      "residual": 2.2227251765805743e-10,
+      "converged": true
+    },
+    {
+      "M": 20,
+      "f": -0.313091680874985,
+      "iterations": 27,
+      "residual": 9.257223532873915e-11,
+      "converged": true
+    }
+  ],
+  "wall_seconds": 7.12905329989735,
+  "source_sha256": "91aa06c955a83e4c14a3bce4a28f2e8b3198269fdcd171553a439db938532a25",
+  "seed": null
+}

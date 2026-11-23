@@ -11,14 +11,22 @@ has, per model.md:
     a2 = -(T/N) (Z2/Z0),
     a4 = -(T/N) [Z4/Z0 - (Z2/Z0)^2/2].
 
-A spin flip at site i costs  dE_i = -s_i [Delta + 2J (s_{i-1}+s_{i+1})], and in the
-z-diagonal classical chain the imaginary-time pair propagator of site i is a
-c-number:  sigma_x_i(t1) sigma_x_i(t2) = exp(-dE_i |t1-t2|).  Since operators at
-different sites commute, the k=4 time-ordered amplitude factorizes per site, so
-(no interleaved-sequence corrections):
+A spin flip at site i costs dE_i = -s_i [Delta + 2J (s_{i-1}+s_{i+1})].
+For non-neighbouring sites the four-flip amplitude factorises.  For adjacent
+sites it does not: after both spins are flipped their shared Ising bond has its
+original energy, so the intermediate energy is
+
+    dE_ij = dE_i + dE_j + 4 J s_i s_j,
+
+not dE_i+dE_j.  The six ordered i/i/j/j paths are therefore evaluated with
+the confluent-simplex routine in ft_tc_landau_paths.  Omitting this adjacent
+correction gives an O(J^2) error and a wrong finite-temperature sign change.
 
     Z2/Z0 = (1/4) <sum_i B1(dE_i)>,
-    Z4/Z0 = (1/16) < sum_i I(dE_i,dE_i) + sum_{i<j} B1(dE_i) B1(dE_j) >,
+    Z4/Z0 = (1/16) < sum_i I4_i + sum_{i<j} K4_ij >,
+
+where K4_ij=B1(dE_i)B1(dE_j) for non-neighbours and is the exact sum of the
+six ordered paths for neighbours.
 
     B1(x) = int_0^b dt (b-t) e^{-x t} = [b x - 1 + e^{-b x}]/x^2,      b = beta = 1/T
     I(a,c) = int_{u+v+w<=b} (b-u-v-w) e^{-a u - c v} du dv dw
@@ -30,9 +38,9 @@ with closed forms (R(x,y) = [f1(x)-f1(y)]/(x-y), f1(x) = (1-e^{-b x})/x):
     I(0,c)  = [b - f1(c)]/c^3 - b^2/(2 c^2) + b^3/(6 c)
     I(0,0)  = b^4/24.
 
-Both the exact finite chain (enumeration; N>=3) and the exact infinite chain
-(2x2 transfer-matrix spectral decomposition; requires finite correlation
-length) are provided.  The quartic coefficient of the cavity functional
+Both the exact finite chain (classical enumeration; N>=3) and the exact
+infinite chain (2x2 transfer-matrix spectral decomposition; finite
+correlation length) are provided.  The quartic coefficient of the cavity functional
 Phi_T(phi) = omega phi^2 + f_spin(T,4g phi) is (4g)^4 a4; a4 > 0 at g_local
 means a locally continuous transition, a4 < 0 means first order.
 """
@@ -44,6 +52,8 @@ import math
 import time
 
 import numpy as np
+
+from ft_tc_landau_paths import confluent_simplex
 
 SPINS = np.array([-1.0, 1.0])
 _EPS = 1e-6
@@ -119,6 +129,19 @@ def Ipair(beta, a, c):
         + (f1(beta, c) - f1(beta, a)) / (a * a * (a - c))
 
 
+def adjacent_pair_kernel(beta, a, b, double_flip):
+    """Sum the six ordered four-flip paths for neighbouring sites."""
+    nodes = (
+        (0.0, a, 0.0, b, 0.0),
+        (0.0, a, double_flip, b, 0.0),
+        (0.0, a, double_flip, a, 0.0),
+        (0.0, b, double_flip, b, 0.0),
+        (0.0, b, double_flip, a, 0.0),
+        (0.0, b, 0.0, a, 0.0),
+    )
+    return sum(confluent_simplex(beta, path) for path in nodes)
+
+
 # ---------------------------------------------------------------------------
 # triplet bookkeeping
 # ---------------------------------------------------------------------------
@@ -170,7 +193,30 @@ def finite_chain(T, J, Delta, N):
     diag = counts @ idg
 
     z2z0 = 0.25 * float(weights @ nb1)
-    z4z0 = (1.0 / 16.0) * float(weights @ (diag + pair))
+    # Replace the factorised kernel on every nearest-neighbour bond by the
+    # exact six-path kernel with the changed double-flip energy.
+    adjacent_correction = np.zeros(states.size, dtype=float)
+    cache = {}
+    site_dE = dE[idx]
+    for site in range(N):
+        neighbour = (site + 1) % N
+        si = z[:, site]
+        sj = z[:, neighbour]
+        ai = site_dE[:, site]
+        bj = site_dE[:, neighbour]
+        double = ai + bj + 4.0 * J * si * sj
+        keys = np.round(np.column_stack((ai, bj, double)), 12)
+        unique, inverse = np.unique(keys, axis=0, return_inverse=True)
+        values = np.empty(unique.shape[0])
+        for row, (aa, bb, cc) in enumerate(unique):
+            key = (float(aa), float(bb), float(cc))
+            if key not in cache:
+                cache[key] = adjacent_pair_kernel(beta, *key) \
+                    - B1(beta, key[0]) * B1(beta, key[1])
+            values[row] = cache[key]
+        adjacent_correction += values[inverse]
+
+    z4z0 = (1.0 / 16.0) * float(weights @ (diag + pair + adjacent_correction))
     a2 = -(T / N) * z2z0
     a4 = -(T / N) * (z4z0 - 0.5 * z2z0 * z2z0)
     return {"N": N, "a2": a2, "a4": a4, "Z2Z0": z2z0, "Z4Z0": z4z0,
@@ -232,6 +278,22 @@ def infinite_chain(T, J, Delta):
         ub[idx, ia] = K[ia, isp] * K[isp, ib] * v[ib]  # one-hot in s_{r-1} = a
     geom = np.outer(ua @ w, w @ ub.T) / (lam_max ** 3 * (lam_max - lam_sub))
 
+    # Exact adjacent-bond correction.  r1 is also the four-spin probability
+    # needed to average the six ordered paths.
+    adjacent_correction = 0.0
+    for idx in range(8):
+        _, s0, s1 = tri[idx]
+        for jdx in range(8):
+            probability = r1[idx, jdx]
+            if probability == 0.0:
+                continue
+            aa = dE[idx]
+            bb = dE[jdx]
+            double = aa + bb + 4.0 * J * s0 * s1
+            adjacent_correction += probability * (
+                adjacent_pair_kernel(beta, aa, bb, double)
+                - B1(beta, aa) * B1(beta, bb))
+
     # a4^N = -(T/16)<I_00> - (T/16)(1/N) sum_{i<j}<B1 B1>_c + (T/32) B1^2
     # (the N^2 background cancels: -(T/32)(N-1)B1^2 + (T/32) N B1^2); in the
     # infinite chain (1/N) sum_{i<j} -> (1/2) sum_{j!=0} = sum_{r>=1} one-sided,
@@ -240,7 +302,8 @@ def infinite_chain(T, J, Delta):
         + float(np.sum(geom * bbr1))
 
     a2 = -(T / 4.0) * b1_avg
-    a4 = -(T / 16.0) * (float(p @ idg) + conn) + (T / 32.0) * b1_avg * b1_avg
+    a4 = -(T / 16.0) * (float(p @ idg) + conn + adjacent_correction) \
+        + (T / 32.0) * b1_avg * b1_avg
     return {"a2": a2, "a4": a4, "B1_average": b1_avg,
             "lambda_max": lam_max, "lambda_sub": lam_sub,
             "triplet_marginals": p.tolist()}

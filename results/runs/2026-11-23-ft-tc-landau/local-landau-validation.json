@@ -1,0 +1,186 @@
+{
+  "model": "FT-TC zero-field local Landau validation",
+  "units": "hbar=k_B=1",
+  "parameters": {
+    "J": -0.2,
+    "Delta": 0.2,
+    "omega": 1.0,
+    "T_bracket": [
+      0.25,
+      0.27
+    ],
+    "root_tolerance": 1e-13,
+    "N": [
+      6,
+      8,
+      10,
+      12
+    ],
+    "batch_size": 64,
+    "output": "results\\runs\\2026-11-23-ft-tc-landau\\local-landau-validation.json"
+  },
+  "T_star": 0.2572636162746858,
+  "T_star_final_bracket_width": 7.271960811294775e-14,
+  "root_iterations": 38,
+  "a4_infinite_residual": 2.248201624865942e-15,
+  "a2_infinite": -0.26158569604284193,
+  "g_local": 0.4888020431000575,
+  "finite_ring_coefficients": [
+    {
+      "T": 0.2572636162746858,
+      "J": -0.2,
+      "Delta": 0.2,
+      "N": 6,
+      "max_order": 6,
+      "Z2Z0": 6.0988388172269,
+      "a2": -0.2615015548660366,
+      "paths": {
+        "2": {
+          "order": 2,
+          "Z_order_over_Z0": 6.0988388172269,
+          "sequence_count": 6,
+          "simplex_cache_size": 6,
+          "energy_increment_count": 7
+        },
+        "4": {
+          "order": 4,
+          "Z_order_over_Z0": 18.5895021421137,
+          "sequence_count": 96,
+          "simplex_cache_size": 67,
+          "energy_increment_count": 17
+        },
+        "6": {
+          "order": 6,
+          "Z_order_over_Z0": 36.8902777711088,
+          "sequence_count": 2256,
+          "simplex_cache_size": 622,
+          "energy_increment_count": 25
+        }
+      },
+      "Z4Z0": 18.5895021421137,
+      "a4": 0.0003608258200555514,
+      "Z6Z0": 36.8902777711088,
+      "a6": 0.037173114975491375,
+      "g_equal_minus_g_local_h4_coefficient": 0.034731055297147505
+    },
+    {
+      "T": 0.2572636162746858,
+      "J": -0.2,
+      "Delta": 0.2,
+      "N": 8,
+      "max_order": 6,
+      "Z2Z0": 8.133961280690853,
+      "a2": -0.26157153671360045,
+      "paths": {
+        "2": {
+          "order": 2,
+          "Z_order_over_Z0": 8.133961280690853,
+          "sequence_count": 8,
+          "simplex_cache_size": 6,
+          "energy_increment_count": 7
+        },
+        "4": {
+          "order": 4,
+          "Z_order_over_Z0": 33.07880593296162,
+          "sequence_count": 176,
+          "simplex_cache_size": 67,
+          "energy_increment_count": 17
+        },
+        "6": {
+          "order": 6,
+          "Z_order_over_Z0": 88.51305879212379,
+          "sequence_count": 5888,
+          "simplex_cache_size": 942,
+          "energy_increment_count": 27
+        }
+      },
+      "Z4Z0": 33.07880593296162,
+      "a4": 5.9721334336105174e-05,
+      "Z6Z0": 88.51305879212379,
+      "a6": 0.03743548711504379,
+      "g_equal_minus_g_local_h4_coefficient": 0.034976191097395457
+    },
+    {
+      "T": 0.2572636162746858,
+      "J": -0.2,
+      "Delta": 0.2,
+      "N": 10,
+      "max_order": 6,
+      "Z2Z0": 10.167909665112655,
+      "a2": -0.2615833210401211,
+      "paths": {
+        "2": {
+          "order": 2,
+          "Z_order_over_Z0": 10.167909665112655,
+          "sequence_count": 10,
+          "simplex_cache_size": 6,
+          "energy_increment_count": 7
+        },
+        "4": {
+          "order": 4,
+          "Z_order_over_Z0": 51.69281055689741,
+          "sequence_count": 280,
+          "simplex_cache_size": 67,
+          "energy_increment_count": 17
+        },
+        "6": {
+          "order": 6,
+          "Z_order_over_Z0": 173.7428738919803,
+          "sequence_count": 12160,
+          "simplex_cache_size": 942,
+          "energy_increment_count": 27
+        }
+      },
+      "Z4Z0": 51.69281055689741,
+      "a4": 9.851191088486749e-06,
+      "Z6Z0": 173.7428738919803,
+      "a6": 0.037486905168876275,
+      "g_equal_minus_g_local_h4_coefficient": 0.03502423128106327
+    },
+    {
+      "T": 0.2572636162746858,
+      "J": -0.2,
+      "Delta": 0.2,
+      "N": 12,
+      "max_order": 6,
+      "Z2Z0": 12.201583807899102,
+      "a2": -0.2615852978915645,
+      "paths": {
+        "2": {
+          "order": 2,
+          "Z_order_over_Z0": 12.201583807899102,
+          "sequence_count": 12,
+          "simplex_cache_size": 6,
+          "energy_increment_count": 7
+        },
+        "4": {
+          "order": 4,
+          "Z_order_over_Z0": 74.43924797421528,
+          "sequence_count": 408,
+          "simplex_cache_size": 67,
+          "energy_increment_count": 17
+        },
+        "6": {
+          "order": 6,
+          "Z_order_over_Z0": 301.009265983276,
+          "sequence_count": 21792,
+          "simplex_cache_size": 942,
+          "energy_increment_count": 27
+        }
+      },
+      "Z4Z0": 74.43924797421528,
+      "a4": 1.6236845298596282e-06,
+      "Z6Z0": 301.009265983276,
+      "a6": 0.03749671945060762,
+      "g_equal_minus_g_local_h4_coefficient": 0.03503340082097775
+    }
+  ],
+  "seed": null,
+  "elapsed_seconds": 84.47675529995468,
+  "sources_sha256": {
+    "ft_tc_tricritical_validate.py": "4d8e2adbedf869d67797d76b40e8b42ecd6320e4426db5eb45b7ca41c70bdbc5",
+    "ft_tc_landau_paths.py": "7015a7db748e124942a34e9a50631d39f9a2bab73d197b559b915eb5b9970b8e",
+    "ft_tc_quartic.py": "1510de82509051fc6c8e7ca954cf813015f9debe862ac2c2b6df7a1f09e46203"
+  },
+  "limitations": "a4 is an infinite-chain zero-field result; a6 is an exact finite-ring path sequence and requires N convergence. This is a local Landau test, not a global phase-boundary proof."
+}

@@ -100,6 +100,8 @@ def main():
     p.add_argument("--h-min", type=float, default=0.1)
     p.add_argument("--h-max", type=float, default=1.0)
     p.add_argument("--points", type=int, default=10)
+    p.add_argument("--output", type=Path, default=None,
+                   help="optional JSON output path; stdout is used otherwise")
     a = p.parse_args()
     if a.T <= 0 or a.omega <= 0:
         p.error("require T>0, omega>0")
@@ -141,8 +143,10 @@ def main():
     source_dir = Path(__file__).parent
     sources = ["ft_tc_thermal_threshold.py", "ft_tc_ed.py", "ft_tc_nlce.py",
                "ft_tc_normal_curvature.py", "ft_tc_transfer.py"]
+    parameters = vars(a).copy()
+    parameters["output"] = None if a.output is None else str(a.output)
     out = {"model": "FT-TC thermal normal-branch threshold diagnostic",
-           "units": "hbar=k_B=1", "parameters": vars(a),
+           "units": "hbar=k_B=1", "parameters": parameters,
            "h_values": h_values,
            "g_local_exact": normal_curvature(a.T, a.J, a.Delta, a.omega, 0)["g_local"],
            "f_normal_infinite_exact": classical_chain(a.T, a.J, a.Delta),
@@ -151,7 +155,13 @@ def main():
                               for name in sources},
            "seed": None, "elapsed_seconds": time.perf_counter() - start,
            "limitations": "finite h grid and finite ED/NLCE orders; no continuous-h or independent-method convergence claim"}
-    print(json.dumps(out, indent=2))
+    payload = json.dumps(out, indent=2)
+    if a.output is None:
+        print(payload)
+    else:
+        a.output.parent.mkdir(parents=True, exist_ok=True)
+        a.output.write_text(payload + "\n", encoding="utf-8")
+        print(a.output)
 
 
 if __name__ == "__main__":

@@ -63,6 +63,21 @@ P0 有限温试点可直接重跑：
 
 目前全套 22 项测试通过；`T=.1/.2` 预选括区和 `T=.3` 小场的误差记录分别见[连续细化](../results/runs/2026-11-22-ft-tc-t-continuous/README.md)与[小场核查](../results/runs/2026-11-22-ft-tc-t-smallfield/README.md)。单括区优化和加速 NLCE 一致性都不能单独证明全局热相界。
 
+2026-11-23 新增 [`ft_tc_landau_paths.py`](src/ft_tc_landau_paths.py) 与
+[`ft_tc_tricritical_validate.py`](src/ft_tc_tricritical_validate.py)：前者用合流 Hermite
+差商枚举零横场二、四、六阶全部回返路径，后者对无限链 `a4(T)=0` 求根并计算
+有限环 `a6` 收敛。同期修正 [`ft_tc_quartic.py`](src/ft_tc_quartic.py) 的最近邻
+双翻中间能量，给阈值和转移矩阵 CLI 增加可追溯的 `--output` JSON 参数。示例：
+
+```powershell
+& 'D:\codex\quantum-optics-env\python.exe' code/src/ft_tc_tricritical_validate.py --J -0.2 --Delta 0.2 --omega 1 --T-bracket 0.25 0.27 --N 6 8 10 12 --output results/runs/2026-11-23-ft-tc-landau/local-landau-validation.json
+& 'D:\codex\quantum-optics-env\python.exe' -m unittest discover -s code/tests -v
+```
+
+全套 **39 项测试通过**；修正候选、`a6>0`、小场 `h⁴` 标度、邻域两侧与有限域
+粗扫见[六阶/下确界验收](../results/runs/2026-11-23-ft-tc-landau/README.md)。这些脚本给出
+可复核的局部候选与全域诊断，不替代连续全部驻点搜索。
+
 启动顺序：先完成 `theory/model.md` 和 B1–B3 的解析基准，再实现 `model.py`、`ed.py` 及独立极限检查。通过后增加观测量和扫描入口；具体任务见[执行路线](../project/roadmap.md)。不要用空模块或未执行的示例命令代表完成。
 
 程序输出写到 `results/runs/<日期>-<任务编号>-<短名称>/`。同一脚本接收配置文件，避免为每组参数复制一份程序。探索 notebook 要能从保存的输入重跑；成为论文依据的计算和绘图流程整理到 `src/`，不依赖 notebook 的隐藏执行状态。
