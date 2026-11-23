@@ -1,17 +1,12 @@
-"""Anchors for the thermal-tricritical trajectory module (J=-0.2).
-
-The bisection of the corrected infinite-chain a4(T) must reproduce the known
-T*(0.2)=0.2572636..., must find no sign change on the deep continuous side
-(Delta=0.5), and must find the shallow crossing near Delta=0.4 (first-order
-sliver above the zero-T tricritical ratio).
-"""
+"""Anchors for the thermal-tricritical trajectory module (J=-0.2)."""
 
 import sys
 import unittest
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
-from ft_tc_trajectory import bisect_a4_root  # noqa: E402
+from ft_tc_trajectory import (analyze_slice, bisect_a4_root,
+                              locate_tangent_endpoint)  # noqa: E402
 
 
 class TestBisection(unittest.TestCase):
@@ -30,6 +25,25 @@ class TestBisection(unittest.TestCase):
         self.assertIsNotNone(root)
         self.assertGreater(root, 0.08)
         self.assertLess(root, 0.2)
+
+    def test_two_roots_just_above_zero_t_ratio(self):
+        row = analyze_slice(-0.2, 0.4001, 1.0, (0.08, 0.18), 121,
+                            a6_N=0, crosscheck=False)
+        roots = row["roots"]
+        self.assertEqual(len(roots), 2)
+        self.assertAlmostEqual(roots[0]["T_star"], 0.10254856, places=5)
+        self.assertAlmostEqual(roots[1]["T_star"], 0.13823331, places=5)
+        self.assertEqual(roots[0]["branch"],
+                         "continuous_to_first_order_on_heating")
+        self.assertEqual(roots[1]["branch"],
+                         "first_order_to_continuous_on_heating")
+
+    def test_tangent_endpoint(self):
+        endpoint = locate_tangent_endpoint(
+            -0.2, 0.4, 0.4025, 0.09, 0.17,
+            delta_tol=2e-6, temperature_tol=1e-8)
+        self.assertAlmostEqual(endpoint["Delta_endpoint"], 0.4002585, places=4)
+        self.assertAlmostEqual(endpoint["T_endpoint"], 0.1255994, places=3)
 
 
 if __name__ == "__main__":

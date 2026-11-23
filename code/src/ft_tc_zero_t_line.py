@@ -29,23 +29,39 @@ def _sha256(path):
         return hashlib.sha256(f.read()).hexdigest()
 
 
-def g_equal(J, Delta, N, h, tol, maxiter):
-    normal = ground_state_energy(J, Delta, 0.0, N, tol=tol, maxiter=maxiter)
+def g_equal(J, Delta, N, h, tol, maxiter, omega=1.0, normal=None):
+    """Equal-energy coupling at fixed field, with an optional cached normal state."""
+    if omega <= 0:
+        raise ValueError("require omega>0")
+    if normal is None:
+        normal = ground_state_energy(
+            J, Delta, 0.0, N, tol=tol, maxiter=maxiter)
+    if not normal["converged"]:
+        raise RuntimeError(f"normal-state Lanczos failed for N={N}")
     result = ground_state_energy(J, Delta, h, N, tol=tol, maxiter=maxiter)
     if not result["converged"]:
         raise RuntimeError(f"Lanczos failed for N={N}, h={h}")
     gain = normal["energy_per_site"] - result["energy_per_site"]
     if gain <= 0:
         raise RuntimeError(f"non-positive gain for N={N}, h={h}")
-    return math.sqrt(h * h / (16.0 * gain)), result
+    return math.sqrt(omega * h * h / (16.0 * gain)), result
 
 
-def locate_minimum(J, Delta, N, lo, hi, tol, maxiter, coarse=17, golden=30):
+def locate_minimum(J, Delta, N, lo, hi, tol, maxiter, coarse=17, golden=30,
+                   omega=1.0):
     """Coarse scan + golden-section refinement of g_equal(h) on [lo, hi]."""
+    normal = ground_state_energy(J, Delta, 0.0, N, tol=tol, maxiter=maxiter)
+    if not normal["converged"]:
+        raise RuntimeError(f"normal-state Lanczos failed for N={N}")
+
+    def evaluate(field):
+        return g_equal(J, Delta, N, field, tol, maxiter,
+                       omega=omega, normal=normal)
+
     fields = np.linspace(lo, hi, coarse)
     values = []
     for h in fields:
-        values.append(g_equal(J, Delta, N, h, tol, maxiter)[0])
+        values.append(evaluate(h)[0])
     values = np.array(values)
     best = int(values.argmin())
     if best == 0:
@@ -58,35 +74,37 @@ def locate_minimum(J, Delta, N, lo, hi, tol, maxiter, coarse=17, golden=30):
     phi = (math.sqrt(5.0) - 1.0) / 2.0
     c = b - phi * (b - a)
     d = a + phi * (b - a)
-    fc = g_equal(J, Delta, N, c, tol, maxiter)[0]
-    fd = g_equal(J, Delta, N, d, tol, maxiter)[0]
+    fc = evaluate(c)[0]
+    fd = evaluate(d)[0]
     for _ in range(golden):
         if fc <= fd:
             b, d, fd = d, c, fc
             c = b - phi * (b - a)
-            fc = g_equal(J, Delta, N, c, tol, maxiter)[0]
+            fc = evaluate(c)[0]
         else:
             a, c, fc = c, d, fd
             d = a + phi * (b - a)
-            fd = g_equal(J, Delta, N, d, tol, maxiter)[0]
+            fd = evaluate(d)[0]
     h_star = 0.5 * (a + b)
-    g_star, result = g_equal(J, Delta, N, h_star, tol, maxiter)
+    g_star, result = evaluate(h_star)
     return h_star, g_star, result
 
 
-def analyze_slice(J, Delta, sizes, h_range, tol, maxiter):
+def analyze_slice(J, Delta, sizes, h_range, tol, maxiter, omega=1.0):
     row = {"Delta": Delta, "J": J, "N_values": {}}
     for N in sizes:
         h_star, g_star, result = locate_minimum(
-            J, Delta, N, *h_range, tol, maxiter)
+            J, Delta, N, *h_range, tol, maxiter, omega=omega)
         row["N_values"][str(N)] = {
             "h_c": h_star, "g_c": g_star,
             "phi_c": h_star / (4.0 * g_star),
             "e_spin": result["energy_per_site"],
             "residual": result["residual"]}
-    infinite = math.sqrt(-3.0 * J / 2.0) if Delta >= -2.0 * J else None
-    row["kozioL_tricritical_anchor"] = infinite
-    row["local_threshold_T0"] = math.sqrt((Delta - 4.0 * J) / 4.0)
+    infinite = (math.sqrt(-3.0 * omega * J / 2.0)
+                if Delta >= -2.0 * J else None)
+    row["koziol_tricritical_anchor"] = infinite
+    row["local_threshold_T0"] = math.sqrt(
+        omega * (Delta - 4.0 * J) / 4.0)
     return row
 
 
@@ -100,6 +118,8 @@ def main():
     parser.add_argument("--maxiter", type=int, default=160)
     parser.add_argument("--output", type=Path, default=None)
     args = parser.parse_args()
+    if args.omega <= 0:
+        parser.error("require omega>0")
     start = time.perf_counter()
     # default h-ranges (Delta -> (lo, hi)); the minimum retreats to h->0 at
     # the tricritical ratio
@@ -112,7 +132,8 @@ def main():
         if h_range is None:
             raise ValueError(f"no default h-range for Delta={Delta}")
         values.append(analyze_slice(args.J, Delta, args.N, h_range,
-                                    args.tol, args.maxiter))
+                                    args.tol, args.maxiter,
+                                    omega=args.omega))
     parameters = {key: (str(value) if isinstance(value, Path) else value)
                   for key, value in vars(args).items()}
     payload = json.dumps({"parameters": parameters, "seed": None,

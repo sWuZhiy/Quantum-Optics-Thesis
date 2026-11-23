@@ -1,0 +1,248 @@
+{
+  "parameters": {
+    "J": -0.2,
+    "Delta": [
+      0.4,
+      0.4001,
+      0.4002,
+      0.40024,
+      0.400255,
+      0.400258,
+      0.4003
+    ],
+    "omega": 1.0,
+    "T_range": [
+      0.08,
+      0.18
+    ],
+    "scan_points": 501,
+    "a6_N": 0,
+    "crosscheck": false,
+    "endpoint_delta_bracket": [
+      0.4,
+      0.4025
+    ],
+    "endpoint_T_bracket": [
+      0.09,
+      0.17
+    ],
+    "endpoint_finite_N": [
+      8,
+      10,
+      12
+    ],
+    "endpoint_a6_N": [
+      8,
+      10,
+      12
+    ],
+    "output": "results\\runs\\2026-11-23-ft-tc-trajectory\\trajectory-endpoint-refined.json"
+  },
+  "seed": null,
+  "elapsed_seconds": 508.16381070006173,
+  "sources_sha256": {
+    "ft_tc_trajectory.py": "edbf88d8bd193ce395a8285588fcaaa93f1f7d70cefa21d4dcc0a7abbcd22901",
+    "ft_tc_quartic.py": "1510de82509051fc6c8e7ca954cf813015f9debe862ac2c2b6df7a1f09e46203",
+    "ft_tc_landau_paths.py": "7015a7db748e124942a34e9a50631d39f9a2bab73d197b559b915eb5b9970b8e"
+  },
+  "values": [
+    {
+      "Delta": 0.4,
+      "J": -0.2,
+      "status": "candidate_roots",
+      "roots": [
+        {
+          "T_star": 0.14112229241128083,
+          "branch": "first_order_to_continuous_on_heating",
+          "a4_residual": 1.942890293094024e-16,
+          "a4_below": -1.0640457268673575e-05,
+          "a4_above": 2.89280674906911e-05,
+          "probe_dT": 0.01,
+          "a2": -0.20840749161503694,
+          "g_local": 0.5476250999297095
+        }
+      ]
+    },
+    {
+      "Delta": 0.4001,
+      "J": -0.2,
+      "status": "candidate_roots",
+      "roots": [
+        {
+          "T_star": 0.10254856104976498,
+          "branch": "continuous_to_first_order_on_heating",
+          "a4_residual": 5.551115123125783e-17,
+          "a4_below": 2.4584229104118727e-06,
+          "a4_above": -3.383559419783966e-06,
+          "probe_dT": 0.008921186983631917,
+          "a2": -0.2083192770362852,
+          "g_local": 0.5477410359225524
+        },
+        {
+          "T_star": 0.13823330898429265,
+          "branch": "first_order_to_continuous_on_heating",
+          "a4_residual": -1.942890293094024e-16,
+          "a4_below": -6.728545084738746e-06,
+          "a4_above": 1.9210977844102972e-05,
+          "probe_dT": 0.008921186983631917,
+          "a2": -0.20837850034895425,
+          "g_local": 0.5476631935736958
+        }
+      ]
+    },
+    {
+      "Delta": 0.4002,
+      "J": -0.2,
+      "status": "candidate_roots",
+      "roots": [
+        {
+          "T_star": 0.11441601446331479,
+          "branch": "continuous_to_first_order_on_heating",
+          "a4_residual": 1.3877787807814457e-16,
+          "a4_below": 1.9015884664130844e-06,
+          "a4_above": -1.6423719286784433e-06,
+          "probe_dT": 0.004838651218521409,
+          "a2": -0.20830948025166232,
+          "g_local": 0.5477539158881238
+        },
+        {
+          "T_star": 0.13377061933740042,
+          "branch": "first_order_to_continuous_on_heating",
+          "a4_residual": -1.3877787807814457e-16,
+          "a4_below": -2.2770815872041883e-06,
+          "a4_above": 5.066004256648604e-06,
+          "probe_dT": 0.004838651218521409,
+          "a2": -0.208345942911968,
+          "g_local": 0.5477059825359932
+        }
+      ]
+    },
+    {
+      "Delta": 0.40024,
+      "J": -0.2,
+      "status": "candidate_roots",
+      "roots": [
+        {
+          "T_star": 0.11988306706850418,
+          "branch": "continuous_to_first_order_on_heating",
+          "a4_residual": -2.7755575615628914e-16,
+          "a4_below": 7.972368024633525e-07,
+          "a4_above": -5.740171477308653e-07,
+          "probe_dT": 0.002636106530972758,
+          "a2": -0.2083089883002671,
+          "g_local": 0.5477545626872521
+        },
+        {
+          "T_star": 0.13042749319239522,
+          "branch": "first_order_to_continuous_on_heating",
+          "a4_residual": 8.326672684688674e-17,
+          "a4_below": -6.814429618084983e-07,
+          "a4_above": 1.3337791017753453e-06,
+          "probe_dT": 0.002636106530972758,
+          "a2": -0.20832959236651474,
+          "g_local": 0.5477274751999874
+        }
+      ]
+    },
+    {
+      "Delta": 0.400255,
+      "J": -0.2,
+      "status": "candidate_roots",
+      "roots": [
+        {
+          "T_star": 0.1232446610409301,
+          "branch": "continuous_to_first_order_on_heating",
+          "a4_residual": 4.718447854656915e-16,
+          "a4_below": 1.7824842676872343e-07,
+          "a4_above": -1.1527906379482644e-07,
+          "probe_dT": 0.0011362005050061172,
+          "a2": -0.20831164218352324,
+          "g_local": 0.5477510734888636
+        },
+        {
+          "T_star": 0.12778946306095457,
+          "branch": "first_order_to_continuous_on_heating",
+          "a4_residual": -5.551115123125783e-17,
+          "a4_below": -1.2401199656064676e-07,
+          "a4_above": 2.2190360690621524e-07,
+          "probe_dT": 0.0011362005050061172,
+          "a2": -0.20832063408835044,
+          "g_local": 0.5477392518594475
+        }
+      ]
+    },
+    {
+      "Delta": 0.400258,
+      "J": -0.2,
+      "status": "candidate_roots",
+      "roots": [
+        {
+          "T_star": 0.12471950013400059,
+          "branch": "continuous_to_first_order_on_heating",
+          "a4_residual": 4.996003610813204e-16,
+          "a4_below": 2.802497103826518e-08,
+          "a4_above": -1.7294343040985538e-08,
+          "probe_dT": 0.0004339324594475301,
+          "a2": -0.20831378681588544,
+          "g_local": 0.5477482538778333
+        },
+        {
+          "T_star": 0.1264552299717907,
+          "branch": "first_order_to_continuous_on_heating",
+          "a4_residual": 2.7755575615628914e-17,
+          "a4_below": -1.778224106852022e-08,
+          "a4_above": 3.046438284970421e-08,
+          "probe_dT": 0.0004339324594475301,
+          "a2": -0.2083172292808167,
+          "g_local": 0.5477437280593217
+        }
+      ]
+    },
+    {
+      "Delta": 0.4003,
+      "J": -0.2,
+      "status": "no_root_in_range",
+      "roots": []
+    }
+  ],
+  "tangent_endpoint_infinite": {
+    "N": null,
+    "Delta_endpoint": 0.4002585148267099,
+    "T_endpoint": 0.1255994291231842,
+    "a4_at_endpoint": -6.938893903907228e-16,
+    "Delta_bracket_width": 5.820899318109696e-13,
+    "iterations": 32,
+    "g_local": 0.5477461329261936,
+    "a6_by_N": {
+      "8": 0.008860886127451437,
+      "10": 0.008860886719084032,
+      "12": 0.008860886720431019
+    }
+  },
+  "tangent_endpoint_finite_rings": [
+    {
+      "N": 8,
+      "Delta_endpoint": 0.4002585158272996,
+      "T_endpoint": 0.125599494254337,
+      "a4_at_endpoint": -1.8875065446474277e-13,
+      "Delta_bracket_width": 5.820899318109696e-13,
+      "iterations": 32
+    },
+    {
+      "N": 10,
+      "Delta_endpoint": 0.4002585148272919,
+      "T_endpoint": 0.1255992425640844,
+      "a4_at_endpoint": -1.592106348868516e-13,
+      "Delta_bracket_width": 5.820344206597383e-13,
+      "iterations": 32
+    },
+    {
+      "N": 12,
+      "Delta_endpoint": 0.4002585148267099,
+      "T_endpoint": 0.12559906587644995,
+      "a4_at_endpoint": 9.073089560804523e-14,
+      "Delta_bracket_width": 5.820899318109696e-13,
+      "iterations": 32
+    }
+  ]
+}

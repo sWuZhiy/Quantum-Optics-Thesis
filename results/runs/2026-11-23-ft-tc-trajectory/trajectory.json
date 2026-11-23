@@ -1,0 +1,95 @@
+{
+  "parameters": {
+    "J": -0.2,
+    "Delta": [
+      0.15,
+      0.2,
+      0.25,
+      0.3,
+      0.35,
+      0.4,
+      0.45,
+      0.5
+    ],
+    "output": "results\\runs\\2026-11-23-ft-tc-trajectory\\trajectory.json"
+  },
+  "seed": null,
+  "elapsed_seconds": 125.4127015999984,
+  "sources_sha256": {
+    "ft_tc_trajectory.py": "31514ab975b337c3ba6eb015c1e36a7188f3b1ada07d513b6f7ac4c80c819673"
+  },
+  "values": [
+    {
+      "Delta": 0.15,
+      "J": -0.2,
+      "status": "candidate",
+      "T_star": 0.2524650122475122,
+      "a4_residual": -6.9111383282915995e-15,
+      "a2": -0.2811539171782684,
+      "g_local": 0.47148506387561023,
+      "a6_N10": 0.05685839718986709,
+      "small_field_sign_Tstar": 2.9237827664507776e-07,
+      "small_field_sign_below": -1.2309362196927243e-05,
+      "small_field_sign_above": 1.2346743216762324e-05
+    },
+    {
+      "Delta": 0.2,
+      "J": -0.2,
+      "status": "candidate",
+      "T_star": 0.2572636162746858,
+      "a4_residual": 2.248201624865942e-15,
+      "a2": -0.26158569604284193,
+      "g_local": 0.4888020431000575,
+      "a6_N10": 0.037486905168876275,
+      "small_field_sign_Tstar": 2.0987337112643445e-07,
+      "small_field_sign_below": -8.439607506793845e-06,
+      "small_field_sign_above": 8.827815613177137e-06
+    },
+    {
+      "Delta": 0.25,
+      "J": -0.2,
+      "status": "candidate",
+      "T_star": 0.2557266597012926,
+      "a4_residual": -7.396860901565105e-15,
+      "a2": -0.24535958925393883,
+      "g_local": 0.5047060267253793,
+      "a6_N10": 0.02597147101084606,
+      "small_field_sign_Tstar": 1.5208552295309374e-07,
+      "small_field_sign_below": -5.771318089098365e-06,
+      "small_field_sign_above": 6.274114415782961e-06
+    },
+    {
+      "Delta": 0.3,
+      "J": -0.2,
+      "status": "candidate",
+      "T_star": 0.2470823720915007,
+      "a4_residual": -6.245004513516506e-16,
+      "a2": -0.2315228110224222,
+      "g_local": 0.5195688614889489,
+      "a6_N10": 0.018598359961708354,
+      "small_field_sign_Tstar": 1.0257139881897359e-07,
+      "small_field_sign_below": -3.7663524498077194e-06,
+      "small_field_sign_above": 4.266161210408903e-06
+    },
+    {
+      "Delta": 0.35,
+      "J": -0.2,
+      "status": "no_a4_sign_change_in_bracket"
+    },
+    {
+      "Delta": 0.4,
+      "J": -0.2,
+      "status": "no_a4_sign_change_in_bracket"
+    },
+    {
+      "Delta": 0.45,
+      "J": -0.2,
+      "status": "no_a4_sign_change_in_bracket"
+    },
+    {
+      "Delta": 0.5,
+      "J": -0.2,
+      "status": "no_a4_sign_change_in_bracket"
+    }
+  ]
+}
