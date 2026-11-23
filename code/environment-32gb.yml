@@ -1,0 +1,8 @@
+# Reproducible environment for the external N=14 dense-ED handoff.
+# Create it with an explicit --prefix; no GPU package is required.
+channels:
+  - defaults
+dependencies:
+  - python=3.12
+  - numpy>=2.0,<3
+  - pip
