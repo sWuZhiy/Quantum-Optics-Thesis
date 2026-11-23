@@ -1,0 +1,77 @@
+{
+  "status": "complete",
+  "model": "periodic_mixed_field_ising_thermal_dense_ed",
+  "units": "hbar=kB=1",
+  "parameters": {
+    "J": -0.2,
+    "Delta": 0.40024,
+    "omega": 1.0,
+    "T": 0.1256019138572199,
+    "h": 0.006889134658704381,
+    "g_local": 0.5477418934403574,
+    "predicted_depth_below_g_local": 2.6241537140934622e-11,
+    "N": 14
+  },
+  "values": {
+    "f_normal_per_site": -0.4001292724185942,
+    "f_finite_field_per_site": -0.40013915925725974,
+    "g_equal": 0.5477418934972158,
+    "g_equal_minus_g_local": 5.6858406871640454e-11,
+    "observed_depth_below_g_local": -5.6858406871640454e-11,
+    "observed_to_sixth_order_depth_ratio": -2.166733090606421
+  },
+  "existing_reference": {
+    "h": 0.006889134658704381,
+    "ed_g_equal": {
+      "8": 0.5477418934280197,
+      "10": 0.5477418934849143,
+      "12": 0.547741893397266
+    },
+    "nlce_g_equal_aitken": 0.5477418938616483
+  },
+  "finite_size_differences": {
+    "N14_minus_N8": 6.91960932996949e-11,
+    "N14_minus_N10": 1.230149315745166e-11,
+    "N14_minus_N12": 9.994982619332404e-11,
+    "N14_minus_NLCE_Aitken": -3.6443248419004703e-10
+  },
+  "memory_preflight": {
+    "N": 14,
+    "hilbert_dimension": 16384,
+    "dense_matrix_bytes": 2147483648,
+    "dense_matrix_gib": 2.0,
+    "estimated_peak_bytes": 10737418240,
+    "estimated_peak_gib": 10.0,
+    "estimate_kind": "heuristic_5x_dense_float64_matrix_not_a_strict_bound",
+    "required_available_gib": 12.5,
+    "physical_memory_before_case": {
+      "available": true,
+      "total_bytes": 34246139904,
+      "available_bytes": 22135656448,
+      "total_gib": 31.894203186035156,
+      "available_gib": 20.615436553955078
+    }
+  },
+  "runtime": {
+    "elapsed_seconds": 206.11258249997627,
+    "peak_process_memory_bytes": 4354322432,
+    "peak_process_memory_gib": 4.055278778076172,
+    "python": "3.13.14 (main, Jun 11 2026, 04:04:46) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.5.5",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "thread_environment": {
+      "OPENBLAS_NUM_THREADS": "8",
+      "OMP_NUM_THREADS": "8",
+      "MKL_NUM_THREADS": "8",
+      "NUMEXPR_NUM_THREADS": "8"
+    },
+    "seed": null
+  },
+  "sources_sha256": {
+    "ft_tc_32gb_reentrant_ed.py": "366358192e179437e835c688b2692080dad198cddb35581ae7b8bbe05306cc5f",
+    "ft_tc_ed.py": "2945e6bf2b1b12eb99dc7b109061ebb1051bf8dd92cbab2e1e705364869cbc54",
+    "ft_tc_thermal_threshold.py": "9d82b444074d3641cba6606fc21f5d234ae23110e4ec5ded367d67327a5b854b",
+    "preflight_json": "26f9d0056f34b2c53fb598f18b87b3a2011764b39334c1df0082d7d4e8f0cd16",
+    "direct_reference_json": "8327efb97d18fba01b4b90795c51a9d6d0be40c17c3344fe8ba6722b23ff103a"
+  }
+}

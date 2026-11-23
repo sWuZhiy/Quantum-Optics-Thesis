@@ -1,0 +1,259 @@
+{
+  "processor_sha256": "daebc58bdd3ae57b16382d536840fb300feb0124e194b16c23d35ea77fd55498",
+  "raw_archive": "D:\\codex\\Quantum Optics Thesis\\data\\raw\\ft-tc-32gb-2026-11-23\\Quantum-Optics-Thesis-32GB-57b43d5-return.zip",
+  "raw_archive_sha256": "cefaff8d4d0a96c50d37e3767c09085db63704d384b6ad41320cc542fd272698",
+  "seed": null,
+  "source_validation": [
+    {
+      "result": "ed-N14-Delta0.4001.json",
+      "source": "ft_tc_32gb_reentrant_ed.py",
+      "expected": "366358192e179437e835c688b2692080dad198cddb35581ae7b8bbe05306cc5f",
+      "archive_hash": "366358192e179437e835c688b2692080dad198cddb35581ae7b8bbe05306cc5f",
+      "local_hash": "366358192e179437e835c688b2692080dad198cddb35581ae7b8bbe05306cc5f",
+      "archive_match": true,
+      "local_match": true
+    },
+    {
+      "result": "ed-N14-Delta0.4001.json",
+      "source": "ft_tc_ed.py",
+      "expected": "2945e6bf2b1b12eb99dc7b109061ebb1051bf8dd92cbab2e1e705364869cbc54",
+      "archive_hash": "2945e6bf2b1b12eb99dc7b109061ebb1051bf8dd92cbab2e1e705364869cbc54",
+      "local_hash": "2945e6bf2b1b12eb99dc7b109061ebb1051bf8dd92cbab2e1e705364869cbc54",
+      "archive_match": true,
+      "local_match": true
+    },
+    {
+      "result": "ed-N14-Delta0.4001.json",
+      "source": "ft_tc_thermal_threshold.py",
+      "expected": "9d82b444074d3641cba6606fc21f5d234ae23110e4ec5ded367d67327a5b854b",
+      "archive_hash": "9d82b444074d3641cba6606fc21f5d234ae23110e4ec5ded367d67327a5b854b",
+      "local_hash": "9d82b444074d3641cba6606fc21f5d234ae23110e4ec5ded367d67327a5b854b",
+      "archive_match": true,
+      "local_match": true
+    },
+    {
+      "result": "ed-N14-Delta0.4001.json",
+      "source": "preflight_json",
+      "expected": "26f9d0056f34b2c53fb598f18b87b3a2011764b39334c1df0082d7d4e8f0cd16",
+      "archive_hash": "26f9d0056f34b2c53fb598f18b87b3a2011764b39334c1df0082d7d4e8f0cd16",
+      "local_hash": "26f9d0056f34b2c53fb598f18b87b3a2011764b39334c1df0082d7d4e8f0cd16",
+      "archive_match": true,
+      "local_match": true
+    },
+    {
+      "result": "ed-N14-Delta0.4001.json",
+      "source": "direct_reference_json",
+      "expected": "8327efb97d18fba01b4b90795c51a9d6d0be40c17c3344fe8ba6722b23ff103a",
+      "archive_hash": "8327efb97d18fba01b4b90795c51a9d6d0be40c17c3344fe8ba6722b23ff103a",
+      "local_hash": "8327efb97d18fba01b4b90795c51a9d6d0be40c17c3344fe8ba6722b23ff103a",
+      "archive_match": true,
+      "local_match": true
+    },
+    {
+      "result": "ed-N14-Delta0.4002.json",
+      "source": "ft_tc_32gb_reentrant_ed.py",
+      "expected": "366358192e179437e835c688b2692080dad198cddb35581ae7b8bbe05306cc5f",
+      "archive_hash": "366358192e179437e835c688b2692080dad198cddb35581ae7b8bbe05306cc5f",
+      "local_hash": "366358192e179437e835c688b2692080dad198cddb35581ae7b8bbe05306cc5f",
+      "archive_match": true,
+      "local_match": true
+    },
+    {
+      "result": "ed-N14-Delta0.4002.json",
+      "source": "ft_tc_ed.py",
+      "expected": "2945e6bf2b1b12eb99dc7b109061ebb1051bf8dd92cbab2e1e705364869cbc54",
+      "archive_hash": "2945e6bf2b1b12eb99dc7b109061ebb1051bf8dd92cbab2e1e705364869cbc54",
+      "local_hash": "2945e6bf2b1b12eb99dc7b109061ebb1051bf8dd92cbab2e1e705364869cbc54",
+      "archive_match": true,
+      "local_match": true
+    },
+    {
+      "result": "ed-N14-Delta0.4002.json",
+      "source": "ft_tc_thermal_threshold.py",
+      "expected": "9d82b444074d3641cba6606fc21f5d234ae23110e4ec5ded367d67327a5b854b",
+      "archive_hash": "9d82b444074d3641cba6606fc21f5d234ae23110e4ec5ded367d67327a5b854b",
+      "local_hash": "9d82b444074d3641cba6606fc21f5d234ae23110e4ec5ded367d67327a5b854b",
+      "archive_match": true,
+      "local_match": true
+    },
+    {
+      "result": "ed-N14-Delta0.4002.json",
+      "source": "preflight_json",
+      "expected": "26f9d0056f34b2c53fb598f18b87b3a2011764b39334c1df0082d7d4e8f0cd16",
+      "archive_hash": "26f9d0056f34b2c53fb598f18b87b3a2011764b39334c1df0082d7d4e8f0cd16",
+      "local_hash": "26f9d0056f34b2c53fb598f18b87b3a2011764b39334c1df0082d7d4e8f0cd16",
+      "archive_match": true,
+      "local_match": true
+    },
+    {
+      "result": "ed-N14-Delta0.4002.json",
+      "source": "direct_reference_json",
+      "expected": "8327efb97d18fba01b4b90795c51a9d6d0be40c17c3344fe8ba6722b23ff103a",
+      "archive_hash": "8327efb97d18fba01b4b90795c51a9d6d0be40c17c3344fe8ba6722b23ff103a",
+      "local_hash": "8327efb97d18fba01b4b90795c51a9d6d0be40c17c3344fe8ba6722b23ff103a",
+      "archive_match": true,
+      "local_match": true
+    },
+    {
+      "result": "ed-N14-Delta0.40024.json",
+      "source": "ft_tc_32gb_reentrant_ed.py",
+      "expected": "366358192e179437e835c688b2692080dad198cddb35581ae7b8bbe05306cc5f",
+      "archive_hash": "366358192e179437e835c688b2692080dad198cddb35581ae7b8bbe05306cc5f",
+      "local_hash": "366358192e179437e835c688b2692080dad198cddb35581ae7b8bbe05306cc5f",
+      "archive_match": true,
+      "local_match": true
+    },
+    {
+      "result": "ed-N14-Delta0.40024.json",
+      "source": "ft_tc_ed.py",
+      "expected": "2945e6bf2b1b12eb99dc7b109061ebb1051bf8dd92cbab2e1e705364869cbc54",
+      "archive_hash": "2945e6bf2b1b12eb99dc7b109061ebb1051bf8dd92cbab2e1e705364869cbc54",
+      "local_hash": "2945e6bf2b1b12eb99dc7b109061ebb1051bf8dd92cbab2e1e705364869cbc54",
+      "archive_match": true,
+      "local_match": true
+    },
+    {
+      "result": "ed-N14-Delta0.40024.json",
+      "source": "ft_tc_thermal_threshold.py",
+      "expected": "9d82b444074d3641cba6606fc21f5d234ae23110e4ec5ded367d67327a5b854b",
+      "archive_hash": "9d82b444074d3641cba6606fc21f5d234ae23110e4ec5ded367d67327a5b854b",
+      "local_hash": "9d82b444074d3641cba6606fc21f5d234ae23110e4ec5ded367d67327a5b854b",
+      "archive_match": true,
+      "local_match": true
+    },
+    {
+      "result": "ed-N14-Delta0.40024.json",
+      "source": "preflight_json",
+      "expected": "26f9d0056f34b2c53fb598f18b87b3a2011764b39334c1df0082d7d4e8f0cd16",
+      "archive_hash": "26f9d0056f34b2c53fb598f18b87b3a2011764b39334c1df0082d7d4e8f0cd16",
+      "local_hash": "26f9d0056f34b2c53fb598f18b87b3a2011764b39334c1df0082d7d4e8f0cd16",
+      "archive_match": true,
+      "local_match": true
+    },
+    {
+      "result": "ed-N14-Delta0.40024.json",
+      "source": "direct_reference_json",
+      "expected": "8327efb97d18fba01b4b90795c51a9d6d0be40c17c3344fe8ba6722b23ff103a",
+      "archive_hash": "8327efb97d18fba01b4b90795c51a9d6d0be40c17c3344fe8ba6722b23ff103a",
+      "local_hash": "8327efb97d18fba01b4b90795c51a9d6d0be40c17c3344fe8ba6722b23ff103a",
+      "archive_match": true,
+      "local_match": true
+    }
+  ],
+  "all_source_and_input_hashes_match_archive_and_local": true,
+  "environment_validation": {
+    "requested_python_major_minor": "3.12",
+    "runtime_python_versions": [
+      "3.13.14"
+    ],
+    "python_environment_match": false,
+    "interpretation": "runtime_deviates_from_handoff_environment; preserve as a reproducibility caveat, but source and input hashes match"
+  },
+  "values": [
+    {
+      "Delta": 0.4001,
+      "T": 0.12562082637983155,
+      "h": 0.02015678789638982,
+      "N": 14,
+      "g_local": 0.5477098349807782,
+      "g_equal_N14": 0.5477098330889288,
+      "observed_depth_below_g_local": 1.891849343849117e-09,
+      "predicted_depth_below_g_local": 1.9240142705236484e-09,
+      "observed_to_predicted_depth_ratio": 0.9832823866395869,
+      "existing_ed_g_equal": {
+        "8": 0.5477098330540886,
+        "10": 0.5477098330666599,
+        "12": 0.5477098330828228
+      },
+      "existing_nlce_g_equal_aitken": 0.547709833116406,
+      "N14_minus_N12": 6.106004590833436e-12,
+      "N14_minus_NLCE_Aitken": -2.7477131681052924e-11,
+      "finite_size_change_abs": 6.106004590833436e-12,
+      "nlce_difference_abs": 2.7477131681052924e-11,
+      "empirical_resolution": 2.7477131681052924e-11,
+      "signal_to_resolution_ratio": 68.85177702713624,
+      "resolution_status": "resolved_by_n14_and_nlce_spread",
+      "elapsed_seconds": 204.57456590002403,
+      "peak_process_memory_gib": 4.051639556884766,
+      "runtime_python": "3.13.14 (main, Jun 11 2026, 04:04:46) [MSC v.1944 64 bit (AMD64)]",
+      "runtime_numpy": "2.5.5",
+      "runtime_platform": "Windows-11-10.0.26200-SP0",
+      "runtime_threads": {
+        "OPENBLAS_NUM_THREADS": "8",
+        "OMP_NUM_THREADS": "8",
+        "MKL_NUM_THREADS": "8",
+        "NUMEXPR_NUM_THREADS": "8"
+      }
+    },
+    {
+      "Delta": 0.4002,
+      "T": 0.1256072830487596,
+      "h": 0.012247079433882322,
+      "N": 14,
+      "g_local": 0.5477327341923379,
+      "g_equal_N14": 0.5477327339565615,
+      "observed_depth_below_g_local": 2.3577639840510756e-10,
+      "predicted_depth_below_g_local": 2.621293694632796e-10,
+      "observed_to_predicted_depth_ratio": 0.8994657824412013,
+      "existing_ed_g_equal": {
+        "8": 0.5477327339307754,
+        "10": 0.5477327339521828,
+        "12": 0.5477327339502366
+      },
+      "existing_nlce_g_equal_aitken": 0.5477327341351187,
+      "N14_minus_N12": 6.324940571289517e-12,
+      "N14_minus_NLCE_Aitken": -1.7855716905046393e-10,
+      "finite_size_change_abs": 6.324940571289517e-12,
+      "nlce_difference_abs": 1.7855716905046393e-10,
+      "empirical_resolution": 1.7855716905046393e-10,
+      "signal_to_resolution_ratio": 1.320453273642977,
+      "resolution_status": "marginal_against_n14_and_nlce_spread",
+      "elapsed_seconds": 199.73797560000094,
+      "peak_process_memory_gib": 4.051513671875,
+      "runtime_python": "3.13.14 (main, Jun 11 2026, 04:04:46) [MSC v.1944 64 bit (AMD64)]",
+      "runtime_numpy": "2.5.5",
+      "runtime_platform": "Windows-11-10.0.26200-SP0",
+      "runtime_threads": {
+        "OPENBLAS_NUM_THREADS": "8",
+        "OMP_NUM_THREADS": "8",
+        "MKL_NUM_THREADS": "8",
+        "NUMEXPR_NUM_THREADS": "8"
+      }
+    },
+    {
+      "Delta": 0.40024,
+      "T": 0.1256019138572199,
+      "h": 0.006889134658704381,
+      "N": 14,
+      "g_local": 0.5477418934403574,
+      "g_equal_N14": 0.5477418934972158,
+      "observed_depth_below_g_local": -5.6858406871640454e-11,
+      "predicted_depth_below_g_local": 2.6241537140934622e-11,
+      "observed_to_predicted_depth_ratio": -2.166733090606421,
+      "existing_ed_g_equal": {
+        "8": 0.5477418934280197,
+        "10": 0.5477418934849143,
+        "12": 0.547741893397266
+      },
+      "existing_nlce_g_equal_aitken": 0.5477418938616483,
+      "N14_minus_N12": 9.994982619332404e-11,
+      "N14_minus_NLCE_Aitken": -3.6443248419004703e-10,
+      "finite_size_change_abs": 9.994982619332404e-11,
+      "nlce_difference_abs": 3.6443248419004703e-10,
+      "empirical_resolution": 3.6443248419004703e-10,
+      "signal_to_resolution_ratio": -0.15601904149134382,
+      "resolution_status": "unresolved_sign_flip_or_no_finite_field_advantage",
+      "elapsed_seconds": 206.11258249997627,
+      "peak_process_memory_gib": 4.055278778076172,
+      "runtime_python": "3.13.14 (main, Jun 11 2026, 04:04:46) [MSC v.1944 64 bit (AMD64)]",
+      "runtime_numpy": "2.5.5",
+      "runtime_platform": "Windows-11-10.0.26200-SP0",
+      "runtime_threads": {
+        "OPENBLAS_NUM_THREADS": "8",
+        "OMP_NUM_THREADS": "8",
+        "MKL_NUM_THREADS": "8",
+        "NUMEXPR_NUM_THREADS": "8"
+      }
+    }
+  ]
+}
