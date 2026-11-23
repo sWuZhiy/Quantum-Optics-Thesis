@@ -1,0 +1,190 @@
+{
+  "parameters": {
+    "J": -0.2,
+    "Delta": [
+      0.4001,
+      0.4002,
+      0.40024
+    ],
+    "omega": 1.0,
+    "T_range": [
+      0.08,
+      0.18
+    ],
+    "root_points": 501,
+    "temperature_floor": 0.1,
+    "minimum_offset": 0.003,
+    "gap_fraction": 0.2,
+    "a6_N": [
+      8,
+      10,
+      12
+    ],
+    "direct_crosscheck": false,
+    "remote_scan": false,
+    "remote_scan_n": 8,
+    "remote_h_min": 0.03,
+    "remote_points": 160,
+    "reuse_preflight": null,
+    "output": "results\\runs\\2026-11-23-ft-tc-reentrant\\reentrant-preflight.json"
+  },
+  "seed": null,
+  "elapsed_seconds": 304.2059297999367,
+  "sources_sha256": {
+    "ft_tc_reentrant_validate.py": "f2e32920be6eddb8e5c87e8732b35cb432b255dd7c9a12f6e0e1add6cb634f93",
+    "ft_tc_global_stationary.py": "08a4a9e4e957629b0e1d508a5bb6e130e967d4f1c9c4cd22236231eef870878c",
+    "ft_tc_ed.py": "2945e6bf2b1b12eb99dc7b109061ebb1051bf8dd92cbab2e1e705364869cbc54",
+    "ft_tc_nlce.py": "b575e60b7758895aa765bd46da3b779e4a0fe62f21b7cc324db8ce6035009efd",
+    "ft_tc_thermal_threshold.py": "9d82b444074d3641cba6606fc21f5d234ae23110e4ec5ded367d67327a5b854b",
+    "ft_tc_transfer.py": "91aa06c955a83e4c14a3bce4a28f2e8b3198269fdcd171553a439db938532a25",
+    "ft_tc_trajectory.py": "edbf88d8bd193ce395a8285588fcaaa93f1f7d70cefa21d4dcc0a7abbcd22901",
+    "ft_tc_quartic.py": "1510de82509051fc6c8e7ca954cf813015f9debe862ac2c2b6df7a1f09e46203",
+    "ft_tc_landau_paths.py": "7015a7db748e124942a34e9a50631d39f9a2bab73d197b559b915eb5b9970b8e"
+  },
+  "values": [
+    {
+      "J": -0.2,
+      "Delta": 0.4001,
+      "omega": 1.0,
+      "roots": [
+        0.10254856104976498,
+        0.13823330898429265
+      ],
+      "status": "two_root_slice_analyzed",
+      "probe_temperatures": {
+        "below_lower_root": 0.1,
+        "inside_at_minimum_a4": 0.12562082637983155,
+        "above_upper_root": 0.14537025857119817
+      },
+      "probes": {
+        "below_lower_root": {
+          "T": 0.1,
+          "a2": -0.20831843515650192,
+          "a4": 8.201169541255382e-07,
+          "g_local": 0.5477421427176337
+        },
+        "inside_at_minimum_a4": {
+          "T": 0.12562082637983155,
+          "a2": -0.2083430120227738,
+          "a4": -7.205332512860707e-06,
+          "g_local": 0.5477098349807782,
+          "a6_by_N": {
+            "8": 0.008867094780826767,
+            "10": 0.008867095379316344,
+            "12": 0.008867095380694025
+          },
+          "a6_last": 0.008867095380694025,
+          "a6_last_size_change": 1.3776809554277847e-12,
+          "landau_status": "stable_local_finite_field_minimum",
+          "predicted_h_star": 0.02015678789638982,
+          "predicted_depth_below_g_local": 1.9240142705236484e-09,
+          "g_equal_sixth_order_at_h_star": 0.5477098330567639,
+          "sixth_order_depth_below_g_local": 1.924014281229347e-09,
+          "minimum_a4_check": -7.205332512860707e-06
+        },
+        "above_upper_root": {
+          "T": 0.14537025857119817,
+          "a2": -0.20840972272480524,
+          "a4": 1.4065555699271926e-05,
+          "g_local": 0.547622168648568
+        }
+      }
+    },
+    {
+      "J": -0.2,
+      "Delta": 0.4002,
+      "omega": 1.0,
+      "roots": [
+        0.11441601446331479,
+        0.13377061933740042
+      ],
+      "status": "two_root_slice_analyzed",
+      "probe_temperatures": {
+        "below_lower_root": 0.11054509348849766,
+        "inside_at_minimum_a4": 0.1256072830487596,
+        "above_upper_root": 0.13764154031221754
+      },
+      "probes": {
+        "below_lower_root": {
+          "T": 0.11054509348849766,
+          "a2": -0.20830619883574103,
+          "a4": 1.5170009432519116e-06,
+          "g_local": 0.5477582302132664
+        },
+        "inside_at_minimum_a4": {
+          "T": 0.1256072830487596,
+          "a2": -0.20832559188085964,
+          "a4": -2.6587930370136625e-06,
+          "g_local": 0.5477327341923379,
+          "a6_by_N": {
+            "8": 0.008863177330940119,
+            "10": 0.008863177925077277,
+            "12": 0.008863177926441482
+          },
+          "a6_last": 0.008863177926441482,
+          "a6_last_size_change": 1.3642056234663968e-12,
+          "landau_status": "stable_local_finite_field_minimum",
+          "predicted_h_star": 0.012247079433882322,
+          "predicted_depth_below_g_local": 2.621293694632796e-10,
+          "g_equal_sixth_order_at_h_star": 0.5477327339302085,
+          "sixth_order_depth_below_g_local": 2.621294292737275e-10,
+          "minimum_a4_check": -2.6587930370136625e-06
+        },
+        "above_upper_root": {
+          "T": 0.13764154031221754,
+          "a2": -0.20835887716453733,
+          "a4": 3.786179185671923e-06,
+          "g_local": 0.547688982354498
+        }
+      }
+    },
+    {
+      "J": -0.2,
+      "Delta": 0.40024,
+      "omega": 1.0,
+      "roots": [
+        0.11988306706850418,
+        0.13042749319239522
+      ],
+      "status": "two_root_slice_analyzed",
+      "probe_temperatures": {
+        "below_lower_root": 0.11688306706850418,
+        "inside_at_minimum_a4": 0.1256019138572199,
+        "above_upper_root": 0.13342749319239522
+      },
+      "probes": {
+        "below_lower_root": {
+          "T": 0.11688306706850418,
+          "a2": -0.2083051531465566,
+          "a4": 9.20318961122879e-07,
+          "g_local": 0.5477596050811695
+        },
+        "inside_at_minimum_a4": {
+          "T": 0.1256019138572199,
+          "a2": -0.20831862476793955,
+          "a4": -8.4114730120044e-07,
+          "g_local": 0.5477418934403574,
+          "a6_by_N": {
+            "8": 0.008861611034815,
+            "10": 0.008861611627243946,
+            "12": 0.008861611628583344
+          },
+          "a6_last": 0.008861611628583344,
+          "a6_last_size_change": 1.3393973430364525e-12,
+          "landau_status": "stable_local_finite_field_minimum",
+          "predicted_h_star": 0.006889134658704381,
+          "predicted_depth_below_g_local": 2.6241537140934622e-11,
+          "g_equal_sixth_order_at_h_star": 0.5477418934141158,
+          "sixth_order_depth_below_g_local": 2.6241564476947588e-11,
+          "minimum_a4_check": -8.4114730120044e-07
+        },
+        "above_upper_root": {
+          "T": 0.13342749319239522,
+          "a2": -0.2083379403133551,
+          "a4": 1.576581377477071e-06,
+          "g_local": 0.5477165015730926
+        }
+      }
+    }
+  ]
+}

@@ -12,14 +12,32 @@ import time
 import numpy as np
 
 
-def free_energy(T, J, Delta, h, N):
-    if T <= 0 or N < 3:
-        raise ValueError("require T>0, N>=3")
+def _classical_energies(J, Delta, N):
+    """Diagonal energies of the periodic zero-transverse-field chain."""
     states = np.arange(1 << N, dtype=np.int64)
     bits = (states[:, None] >> np.arange(N)) & 1
     z = 1 - 2 * bits
-    diag = J * (z * np.roll(z, -1, axis=1)).sum(axis=1) + Delta / 2 * z.sum(axis=1)
-    H = np.diag(diag.astype(float))
+    energies = (J * (z * np.roll(z, -1, axis=1)).sum(axis=1)
+                + Delta / 2 * z.sum(axis=1))
+    return states, energies.astype(float)
+
+
+def classical_periodic_free_energy(T, J, Delta, N):
+    """Exact finite-ring free energy at h=0 without dense diagonalization."""
+    if T <= 0 or N < 3:
+        raise ValueError("require T>0, N>=3")
+    _, energies = _classical_energies(J, Delta, N)
+    logZ = float(np.logaddexp.reduce(-energies / T))
+    return -T * logZ / N
+
+
+def free_energy(T, J, Delta, h, N):
+    if T <= 0 or N < 3:
+        raise ValueError("require T>0, N>=3")
+    if h == 0.0:
+        return classical_periodic_free_energy(T, J, Delta, N)
+    states, diag = _classical_energies(J, Delta, N)
+    H = np.diag(diag)
     for site in range(N):
         H[states, states ^ (1 << site)] = h / 2
     eig = np.linalg.eigvalsh(H)

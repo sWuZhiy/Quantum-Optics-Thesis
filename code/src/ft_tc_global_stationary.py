@@ -1,5 +1,5 @@
-"""Continuous all-branch stationary-point search for g_equal(h) on the bounded
-h interval, with cross-method error diagnostics.
+"""Bounded dense stationary-point search for g_equal(h), with cross-method
+error diagnostics and local continuous refinement.
 
 For the FT-TC equilibrium effective model (hbar=k_B=1) and fixed T, J, Delta,
 omega, the equality coupling of the normal branch and a finite field phi=h/(4g)
@@ -194,10 +194,21 @@ def main():
                       scan_cfg, refine_cfg, cross_cfg) for T in args.T]
     parameters = vars(args).copy()
     parameters["output"] = None if args.output is None else str(args.output)
+    source_dir = Path(__file__).parent
     payload = json.dumps({"parameters": parameters, "seed": None,
                           "elapsed_seconds": time.perf_counter() - start,
                           "sources_sha256": {
-                              "ft_tc_global_stationary.py": _sha256(__file__)},
+                              "ft_tc_global_stationary.py": _sha256(__file__),
+                              "ft_tc_ed.py": _sha256(source_dir / "ft_tc_ed.py"),
+                              "ft_tc_nlce.py": _sha256(
+                                  source_dir / "ft_tc_nlce.py"),
+                              "ft_tc_normal_curvature.py": _sha256(
+                                  source_dir / "ft_tc_normal_curvature.py"),
+                              "ft_tc_thermal_threshold.py": _sha256(
+                                  source_dir / "ft_tc_thermal_threshold.py"),
+                              "ft_tc_transfer.py": _sha256(
+                                  source_dir / "ft_tc_transfer.py"),
+                          },
                           "values": values}, indent=2)
     if args.output is None:
         print(payload)

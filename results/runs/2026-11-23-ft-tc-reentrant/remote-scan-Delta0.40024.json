@@ -1,0 +1,76 @@
+{
+  "parameters": {
+    "T": [
+      0.116883067068504,
+      0.12560191385722,
+      0.133427493192395
+    ],
+    "J": -0.2,
+    "Delta": 0.40024,
+    "omega": 1.0,
+    "scan_n": 8,
+    "scan_h_min": 0.03,
+    "scan_points": 160,
+    "refine_n": 8,
+    "refine_tol": 0.0002,
+    "crosscheck": false,
+    "output": "results\\runs\\2026-11-23-ft-tc-reentrant\\remote-scan-Delta0.40024.json"
+  },
+  "seed": null,
+  "elapsed_seconds": 12.944103499990888,
+  "sources_sha256": {
+    "ft_tc_global_stationary.py": "08a4a9e4e957629b0e1d508a5bb6e130e967d4f1c9c4cd22236231eef870878c",
+    "ft_tc_ed.py": "2945e6bf2b1b12eb99dc7b109061ebb1051bf8dd92cbab2e1e705364869cbc54",
+    "ft_tc_nlce.py": "b575e60b7758895aa765bd46da3b779e4a0fe62f21b7cc324db8ce6035009efd",
+    "ft_tc_normal_curvature.py": "1bb926f2f347e6230c736a211c832c61cfab37286705308cd303684424e262d7",
+    "ft_tc_thermal_threshold.py": "9d82b444074d3641cba6606fc21f5d234ae23110e4ec5ded367d67327a5b854b",
+    "ft_tc_transfer.py": "91aa06c955a83e4c14a3bce4a28f2e8b3198269fdcd171553a439db938532a25"
+  },
+  "values": [
+    {
+      "T": 0.116883067068504,
+      "J": -0.2,
+      "Delta": 0.40024,
+      "omega": 1.0,
+      "g_local": 0.5477596050811697,
+      "h_max": 2.400324679669432,
+      "scan_h_min": 0.03,
+      "scan_points": 160,
+      "minima": [],
+      "depth_below_g_local": null,
+      "left_edge_g_equal": 0.5477596155693284,
+      "scan_g_min": 0.5477596155693284,
+      "scan_g_min_h": 0.03
+    },
+    {
+      "T": 0.12560191385722,
+      "J": -0.2,
+      "Delta": 0.40024,
+      "omega": 1.0,
+      "g_local": 0.5477418934403575,
+      "h_max": 2.4001694546370236,
+      "scan_h_min": 0.03,
+      "scan_points": 160,
+      "minima": [],
+      "depth_below_g_local": null,
+      "left_edge_g_equal": 0.5477419018799136,
+      "scan_g_min": 0.5477419018799136,
+      "scan_g_min_h": 0.03
+    },
+    {
+      "T": 0.133427493192395,
+      "J": -0.2,
+      "Delta": 0.40024,
+      "omega": 1.0,
+      "g_local": 0.5477165015730925,
+      "h_max": 2.399946928763739,
+      "scan_h_min": 0.03,
+      "scan_points": 160,
+      "minima": [],
+      "depth_below_g_local": null,
+      "left_edge_g_equal": 0.547716512911201,
+      "scan_g_min": 0.547716512911201,
+      "scan_g_min_h": 0.03
+    }
+  ]
+}
