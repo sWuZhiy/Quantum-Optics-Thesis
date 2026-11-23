@@ -44,3 +44,6 @@ Thumbs.db
 
 # local-only personal reading notes (not for the public repo)
 literature/notes/
+
+# scratch working area (screenshots, tool bundles)
+tmp/
