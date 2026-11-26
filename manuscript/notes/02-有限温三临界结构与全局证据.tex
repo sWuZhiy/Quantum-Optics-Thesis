@@ -1,0 +1,173 @@
+% 阶段研究汇总（第二阶段）；AI 起草，待用户过目后定稿编译。
+\documentclass[UTF8,11pt,a4paper]{ctexart}
+\usepackage[margin=2.6cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage[backend=biber,style=numeric,sorting=none,doi=true,url=false,eprint=true]{biblatex}
+\renewcommand*{\bibfont}{\small}
+\setlength{\bibitemsep}{0pt}
+\addbibresource{../../literature/references.bib}
+
+\title{第二阶段：有限温三临界结构与全局证据\\[0.4em]
+\large 热三临界候选、相图拓扑与证据分级}
+\author{Quantum Optics Thesis 工作笔记}
+\date{2026 年 11 月 26 日}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+本阶段研究 $zz$ 交换、$z$ 纵场、$x$ 腔耦合的量子 Dicke--Ising 链在非零纵场下的
+有限温临界结构，即零温一级/二级边界与三临界点如何延伸到 $T>0$。用零场 Dyson 展开
+（二、四、六阶，含最近邻双翻修正）、正常态等能判据与严格有限域的全域驻点搜索，
+得到 $J=-0.2,\Delta=0.2$ 的热三临界候选 $(T^\ast,g^\ast)=(0.2572636,0.4888020)$，
+其六阶系数恒正且小场按 $h^4$ 标度。多 $\Delta$ 的高温根形成非单调上支，低温在
+$0.4<\Delta<0.4002585$ 出现由上下双根夹住的重入一级候选窄袋，两根在
+$(\Delta_{\rm end},T_{\rm end})=(0.4002585,0.1255994)$ 切触汇合。按证据分级：
+热三临界候选为数值强支持；上支与 $\Delta=0.4001$ 的重入截面获全局数值支持；
+切触端点仍只是局部 Landau 候选。全部结果来自平衡有效哈密顿量，不涉及开放系统稳态。
+\end{abstract}
+
+\section{问题与相对先例}
+
+在单模集体耦合的 Dicke--Ising 类模型中，零温的超辐射相变、铁磁三临界点与窄反铁磁
+共存区近年已被定量厘清\cite{Langheld2025Wormhole,Leibig2026SelfConsistent,
+Koziol2026Criticality,Hormann2026Folds,Mendonca2025Matter}。有限温度一侧，异轴
+量子链\cite{Gammelmark2011Thermal,Rao2025Unilateral,Granet2023Exact}与同轴经典
+链\cite{Otake2026FiniteT}已有先例，但定向检索未命中非零纵场 $zz/z/x$ 同模型完整
+热相图（索引漏收与 Leibig 期刊正文缺口保留）。本阶段的物理问题是：零温三临界点
+$(\Delta,J)$ 附近，一级/二级边界向有限温延伸时是否形成热三临界线与重入结构，
+而非平凡的边界平移。若最终只得到已知结构的重新参数化，该候选即降级。
+
+\section{模型与判据}
+
+取 $\hbar=k_B=1$、$s_i^\alpha=\sigma_i^\alpha/2$、周期链、$J<0$ 铁磁，物质自旋链为
+\begin{equation}
+  H_{\rm spin}(h)=J\sum_i\sigma_i^z\sigma_{i+1}^z+\frac{\Delta}{2}\sum_i\sigma_i^z
+  +\frac{h}{2}\sum_i\sigma_i^x,\qquad h=4g\varphi,\ \varphi=\mathrm{Re}\langle a\rangle/\sqrt N,
+  \label{eq:Hspin}
+\end{equation}
+并作单模集体耦合的热力学自洽处理，得到候选腔位移泛函
+\begin{equation}
+  \Phi_T(\varphi)=\omega\varphi^2+f_{\rm spin}(T,4g\varphi),\qquad
+  f_{\rm spin}(T,h)=-\lim_{N\to\infty}\frac{T}{N}\log\operatorname{Tr}e^{-H_{\rm spin}(h)/T}.
+  \label{eq:Phi}
+\end{equation}
+有限 $N$ 的完整光子--自旋配分函数不能直接用 $\Phi_T$ 代替；一级边界必须比较
+$\varphi$ 允许区间 $[0,g/\omega]$ 内全部极小值的自由能。
+
+正常态与有限位移态等能的耦合由变量替换给出
+\begin{equation}
+  g_{\rm equal}^2(h)=\frac{\omega h^2}{16\big[f_{\rm spin}(T,0)-f_{\rm spin}(T,h)\big]},
+  \qquad g_{\rm onset}(T)=\inf_{h>0}g_{\rm equal}(T,h),
+  \label{eq:gequal}
+\end{equation}
+配合 $0\le f_{\rm spin}(T,0)-f_{\rm spin}(T,h)\le h/2$，可证凡 $h>8g_{\rm ref}^2/\omega$
+都不能给出更小的等能耦合，从而给连续搜索一个有限上界。若下确界在有限 $h$ 取得，即为
+一级跃迁候选；只在 $h\to0$ 取得则退化为正常态局部失稳阈值 $g_{\rm local}$，后者由
+$h=0$ 的经典链转移矩阵与三自旋概率精确给出。小横场下的 Landau 系数
+$f=f_0+a_2h^2+a_4h^4+a_6h^6+\cdots$ 由零场回返路径的 Hermite 合流差商精确枚举；
+其中最近邻双翻的中间能量差为
+\begin{equation}
+  dE_{ij}=dE_i+dE_j+4J s_i s_j,
+  \label{eq:dEij}
+\end{equation}
+这一项从 $O(J^2)$ 起贡献，早期实现漏掉它导致 $T^\ast\approx0.3094$ 的旧结论被撤回。
+详细推导与实现见 \texttt{manuscript/theory/model.md} 与 \texttt{manuscript/theory/numerics.md}。
+
+\section{热三临界候选}
+
+对 $J=-0.2,\Delta=0.2,\omega=1$，修正后的无限链四次根给出
+\begin{equation}
+  T^\ast=0.2572636163,\qquad g^\ast=g_{\rm local}(T^\ast)=0.4888020431,
+  \label{eq:candidate}
+\end{equation}
+$a_2(T^\ast)=-0.2615856960$，$a_4(T^\ast)=0$（二分残差括区宽 $7.3\times10^{-14}$）。
+精确有限环回返路径给 $a_6(N{=}6,8,10,12)=0.0371731,0.0374355,0.0374869,0.0374967$，
+末两尺寸差 $9.8\times10^{-6}$，稳定为正——这正是热三临界点局部存在的必要条件
+（二次、四次系数同时为零且六次系数为正）。
+
+在候选点附近，小场行为应为
+\begin{equation}
+  g_{\rm equal}(T^\ast,h)-g_{\rm local}
+  =\frac{g_{\rm local}\,a_6}{2(-a_2)}\,h^4+O(h^6),
+  \label{eq:h4}
+\end{equation}
+其 $N=12$ 预测系数为 $0.0350334$。无限空间转移矩阵在 $h=0.025,0.05,0.1$ 给出的差
+$1.3\times10^{-8},2.18\times10^{-7},3.49\times10^{-6}$ 与该 $h^4$ 标度一致；
+$T=0.25<T^\ast$ 时小场差为负（有限场侧为下确界），$T=0.265>T^\ast$ 时为正（零场侧
+为下确界），两侧符号切换由周期 ED 与无限空间转移矩阵共同确认。在可证有限域
+$0<h\le8g_{\rm local}^2/\omega\approx1.911$ 内的全域驻点扫描中，$T=0.245,0.25,0.255$
+的内点极小深度按 Landau 预测
+\begin{equation}
+  \mathrm{depth}=g_{\rm local}-g_{\rm equal}(h^\ast)
+  \approx g_{\rm local}\,\frac{a_4^2}{8a_6\,|a_2|},\qquad h^{\ast\,2}=-\frac{a_4}{2a_6}
+  \label{eq:depth}
+\end{equation}
+定量塌缩（实测 $1.23\times10^{-4},4.39\times10^{-5},4.05\times10^{-6}$，比值
+$1.01/1.00/0.93$），而 $T\ge T^\ast$ 无低于 $g_{\rm local}$ 的采样点。综合六阶收敛、
+$h^4$ 标度、邻域符号切换与有限域驻点，该点可称为\textbf{数值强支持的热三临界候选}，
+但离散扫描不能排除任意窄的远场极小，故不称已证明点。
+
+\section{相图拓扑：上支、重入窄袋与切触端点}
+
+对多个 $\Delta$ 求四次根 $a_4(T)=0$，得到高温上支 $T_{\rm upper}(\Delta)$ 的非单调
+拱形：$\Delta=0.15,0.2,0.25,0.3,0.35,0.38,0.4$ 对应
+$T_{\rm upper}=0.252465,0.257264,0.255727,0.247082,0.227322,0.202548,0.141122$。
+在四个切片（$\Delta=0.15,0.2$ 完整三方法、$0.3,0.38$ 轻量）上，上支下侧（一级侧）
+均出现低于 $g_{\rm local}$ 的内点极小且深度按式~\eqref{eq:depth} 塌缩，上侧（连续侧）
+无内点极小——与上支的“一级→连续”结构一致。
+
+低温一侧，全区间多根搜索发现 $0.4<\Delta<0.4002585$ 内 $a_4(T)$ 按正→负→正变化，
+即上下两根夹出一个重入一级候选窄袋。两根随 $\Delta$ 增大而逼近，最终在
+\begin{equation}
+  (\Delta_{\rm end},T_{\rm end},g_{\rm end})=(0.4002585148,0.1255994291,0.5477461329)
+  \label{eq:endpoint}
+\end{equation}
+切触汇合；端点由无限链与有限环 $N=8,10,12$ 独立收敛，端点
+$a_6=0.00886088613,0.00886088672,0.00886088672>0$。拓扑解释为：零温三临界点
+$(\Delta=0.4,T=0)$ 锚定低温下支；$\Delta<0.4$ 的一级区从 $T=0$ 延伸到上支；
+$0.4<\Delta<\Delta_{\rm end}$ 则只在上下两根之间出现重入一级窄袋。
+
+\section{重入窄袋的全局证据分级}
+
+重入窄袋的六阶预测深度随 $\Delta\to\Delta_{\rm end}$ 急剧缩小，必须以方法差对信号
+的分辨率逐点分级，而不是把局部候选写成全局相界：
+
+\begin{center}
+\begin{tabular}{lccc}
+\hline
+$\Delta$ & 六阶预测深度 & ED/NLCE 实测 & 信号/经验分辨率 \\
+\hline
+$0.4001$ & $1.92\times10^{-9}$ & $-1.898/-1.864\times10^{-9}$ & $57.3\to68.85$ \\
+$0.4002$ & $2.62\times10^{-10}$ & 同号 & $1.42\to1.32$ \\
+$0.40024$ & $2.62\times10^{-11}$ & $N=12\to14$ 翻号 & $<1$ \\
+\hline
+\end{tabular}
+\end{center}
+
+$\Delta=0.4001$ 的 $N=14$ 周期 ED（外部 32\,GB 机器，源码与输入哈希全匹配）给深度
+$1.891849\times10^{-9}$，为六阶预测的 $98.3\%$，且 $N=8,10$ 从 $h=0.03$ 扫至严格
+上界约 $2.40$ 均无远场内点极小——该截面可称\textbf{全局数值支持}。$\Delta=0.4002$
+仍仅边缘，$\Delta=0.40024$ 在 $N=12\to14$ 翻号，转移矩阵外推在 $10^{-11}$ 深度下的
+窗口漂移约 $3.9\times10^{-6}$，大 3--5 个量级，不具裁决力。因此切触端点
+式~\eqref{eq:endpoint} 仍是\textbf{局部 Landau 候选}，不能升级为已确认相界。
+
+\section{验证边界与下一步}
+
+本阶段的误差均为\textbf{数值诊断级}（ED 尺寸收敛、NLCE 与 ED 差、转移矩阵两窗口差），
+不是严格误差界；结论的适用范围与可证伪条件如下。
+
+\begin{enumerate}
+  \item 热三临界候选与上支以 $a_4,a_6$ 的零场系数为局部判据，配合有限域驻点与
+        多方法交叉；已获数值强支持，但未证明热力学极限的唯一性。
+  \item 重入窄袋只在 $\Delta=0.4001$ 一段获全局数值支持；$\Delta=0.4002$ 边缘、
+        $\Delta=0.40024$ 及切触端点未分辨。
+  \item 若要把真实切触端点写成强主张，须另建能稳定处理 $10^{-10}$--$10^{-11}$
+        深度的高精度响应、有限温 MPS 或 SSE 基准，而不是继续堆同类双精度 ED 尺寸。
+  \item Leibig 期刊正文与最新引文仍须补核；若发现同模型完整热相图或独立方法不收敛，
+        按主张台账 C04 降级或止损。
+\end{enumerate}
+
+\printbibliography[title={参考文献}]
+\end{document}
