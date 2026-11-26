@@ -28,3 +28,4 @@
 | 2026-11-24 | 汇总 P0 阶段全部工作为完整报告（P37）。 | 新增 P0 报告：内容清单、理论框架、14 个求解器、四级证据数值表、7 项误差边界；59 项测试通过。理论部分已并入 [manuscript/theory/](../manuscript/theory)，全文归档在 [archive/p0-report-2026-11-24.md](archive/p0-report-2026-11-24.md)。 | 写作阶段以 `manuscript/theory/` 为底稿；端点证据等级不升级。 |
 | 2026-11-25 | 内存采购调研（P38–P49，另一会话）。 | 结论记入 [viewpoints.md](viewpoints.md) 对应条目；属设备事项，不改变计算路线。 | 到货后核对 SPD/Rank。 |
 | 2026-11-26 | 项目结构重整（P50）：拆分冗余元文档、目录对齐通行科研模板。 | 三份并行流水账 → 本页 + `archive/`；`project/` → `docs/`；`theory/` → `manuscript/theory/`；`thesis/notes/` → `manuscript/notes/`；6 份退役快照移入 `docs/archive/`；用户观点表独立为 `viewpoints.md`，文献地图并入 `literature/README.md`；新增 [numerics.md](../manuscript/theory/numerics.md)。同步重写 README 与 AGENTS 的更新规则。无新文献、无新数值，证据等级不变。 | 按新的单一流水规则继续；下一研究步骤见 [roadmap.md](roadmap.md)。 |
+| 2026-11-26 | 明确归档规则（同 P50 跟进，无新编号）。 | 在 [AGENTS.md](../AGENTS.md) 增加约束：归档只能由用户要求或记入 `decisions.md` 的决定触发，禁止自动归档/删除，归档用 `git mv` 并记行。 | 无。 |
