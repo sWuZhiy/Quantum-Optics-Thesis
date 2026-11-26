@@ -39,6 +39,9 @@
 - 详细阅读证据写在 `literature/reading-list.md`，不在 `log.md` 复制整篇综述。
 - 阶段汇总（`manuscript/notes/NN-主题.tex`）：一个研究阶段完成后可按需起草论文文本汇总；
   起草后**必须等用户过目并敲定**才编译成 PDF，不得覆盖已定稿内容；命名按内容定，不固定周期。
+  文件名用 ASCII（英文/拼音简写），中文主题写在 `\title` 与 notes/README 索引里——本机 biber
+  不认中文文件名。编译在项目根目录用 latexmk（`-outdir=build`），临时目录指到
+  `manuscript/notes/build` 规避 `C:\Windows\Temp` 权限问题。
 
 ## 科学规范
 
