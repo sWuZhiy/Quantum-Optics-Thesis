@@ -1,12 +1,12 @@
 # FT-TC 有界有限温预研：从正常态到全局等能筛查
 
-日期：2026-11-22。研究对象是 [`theory/model.md`](../../../theory/model.md) 的**平衡有效哈密顿量**，取 `ℏ=k_B=1`、`ω=1`、`J=-0.2`（铁磁）。这里记录求解器校准和少数截面，不是审查通过的有限温相图、真实无驱动腔平台证明或开放系统稳态相图。
+日期：2026-11-22。研究对象是 [`theory/model.md`](../../../manuscript/theory/model.md) 的**平衡有效哈密顿量**，取 `ℏ=k_B=1`、`ω=1`、`J=-0.2`（铁磁）。这里记录求解器校准和少数截面，不是审查通过的有限温相图、真实无驱动腔平台证明或开放系统稳态相图。
 
 ## 复现与版本
 
 - 执行时 Git `HEAD=93578ed498c99b17acd7ac5e8ef59d380232ef30`；本轮新脚本在运行时未提交，故以源码 SHA-256 固定版本。`ft_tc_thermal_threshold.py`: `A100EC059DA091D4D5CF5C19476CEE6FAA8F0A4B5BA5D055A3642186C3A6A074`；`ft_tc_ed.py`: `C9F64B4CB9E2EBAFF19EC3E8098D00DA115F6CD1CCF907B85CF2B4F6242DAD59`；`ft_tc_nlce.py`: `B575E60B7758895AA765BD46DA3B779E4A0FE62F21B7CC324DB8CE6035009EFD`；`ft_tc_normal_curvature.py`: `1BB926F2F347E6230C736A211C832C61CFAB37286705308CD303684424E262D7`；`ft_tc_transfer.py`: `B61CCD212A593DAFC4BC3042C22FF4412C423DC810DB88B0905E55344C91B21E`；`ft_tc_landscape.py`: `879E9401918D471394DD5100FCB43593D3DB2235C6D821FCABB21288FB611085`。阈值 JSON 内还保存各依赖的哈希、完整命令参数、耗时与 `seed=null`。本轮没有随机数。
 - 项目解释器：`D:\codex\quantum-optics-env\python.exe`，Python 3.12.13、NumPy 2.5.3；未安装新包。工作目录为仓库根目录。数据由脚本标准输出转存到本目录 JSON，未改动 `data/raw/`。
-- 所有阈值 JSON 的 `g_equal` 用同一温度的 `f_spin(T,0)-f_spin(T,h)` 构造。ED 采用同一 `N` 的两个自由能；NLCE 的正常态用无限链经典转移矩阵精确值。公式与其适用范围见[模型文档](../../../theory/model.md)。
+- 所有阈值 JSON 的 `g_equal` 用同一温度的 `f_spin(T,0)-f_spin(T,h)` 构造。ED 采用同一 `N` 的两个自由能；NLCE 的正常态用无限链经典转移矩阵精确值。公式与其适用范围见[模型文档](../../../manuscript/theory/model.md)。
 
 示例命令（PowerShell；其余文件的全部参数见各 JSON 的 `parameters`）：
 
@@ -47,6 +47,6 @@ $py = 'D:\codex\quantum-optics-env\python.exe'
 
 ### 2026-11-22 续算：有限搜索域的高场尾部
 
-续算时 Git `HEAD=2a0604490e95e79c078ba4b2bac30c400f45d854`；数值脚本源 SHA 与上表相同，新增的只是本说明及[模型判据](../../../theory/model.md)。由于 `A_T(h)=f_spin(T,0)−f_spin(T,h)≤h/2`，`g_equal²≥ωh/8`。以 `T=.1/.2,Δ=.2` 的已查 `g_ref≈.49547/.49202`，要找比参考点更小的正常态等能耦合，只需连续检索 `h≤8g_ref²≈1.964/1.937`。新添 `threshold-T0.1-Delta0.2-ED-N8-N10-tail.json` 和 `threshold-T0.2-Delta0.2-ED-N8-N10-tail.json`，用同一脚本、`--N 8 10 --h-values 1.3 1.4 1.5 1.6 1.7 1.8 1.9 2.0` 分别运行约 `4` 秒；参数、源哈希和 `seed=null` 在 JSON 中。在所查高场点，`N=10` 的 `g_equal` 自 `h=1.3` 时约 `.52682/.52796` 单调升到 `h=2.0` 时约 `.59020/.59105`，远高于参考候选。高场尾部粗网格与严格上界共同约束搜索域，但仍不能排除 `0<h<1.964/1.937` 的未采样窄极小。
+续算时 Git `HEAD=2a0604490e95e79c078ba4b2bac30c400f45d854`；数值脚本源 SHA 与上表相同，新增的只是本说明及[模型判据](../../../manuscript/theory/model.md)。由于 `A_T(h)=f_spin(T,0)−f_spin(T,h)≤h/2`，`g_equal²≥ωh/8`。以 `T=.1/.2,Δ=.2` 的已查 `g_ref≈.49547/.49202`，要找比参考点更小的正常态等能耦合，只需连续检索 `h≤8g_ref²≈1.964/1.937`。新添 `threshold-T0.1-Delta0.2-ED-N8-N10-tail.json` 和 `threshold-T0.2-Delta0.2-ED-N8-N10-tail.json`，用同一脚本、`--N 8 10 --h-values 1.3 1.4 1.5 1.6 1.7 1.8 1.9 2.0` 分别运行约 `4` 秒；参数、源哈希和 `seed=null` 在 JSON 中。在所查高场点，`N=10` 的 `g_equal` 自 `h=1.3` 时约 `.52682/.52796` 单调升到 `h=2.0` 时约 `.59020/.59105`，远高于参考候选。高场尾部粗网格与严格上界共同约束搜索域，但仍不能排除 `0<h<1.964/1.937` 的未采样窄极小。
 
 同次续算另存 `threshold-T0.1-Delta0.2-ED-N10-dense.json`（`--N 10 --h-min .02 --h-max 1.98 --points 99`，约 32.5 秒）和 `threshold-T0.2-Delta0.2-ED-N10-dense.json`（`--N 10 --h-min .02 --h-max 1.94 --points 97`，约 33.0 秒）。每隔 `Δh=.02` 的已采样点各只出现一个严格相邻网格内点极小：`T=.1` 在 `h=.62,g_equal=.495469665`，`T=.2` 在 `h=.48,g_equal=.492007885`。这把原来 `T=.2` 的三点 `h=.5` 粗网格最低位置修正到约 `.48`；**有限网格的“只有一个”不是连续函数唯一性证明**。新 JSON 同样记录无随机种子、参数和源哈希。

@@ -1,15 +1,59 @@
-# Project instructions for Codex
+# 项目协作规则（AGENTS.md）
 
-- 与用户默认使用中文交流；专业术语首次出现时可附英文名称。
-- 项目目标以 `project/brief.md` 为准。该文件中的待定项不能擅自当作已确认要求。
-- 阅读或引用文献时核对原文，标明作者/年份或 DOI，以及关键结论所在的页码、公式或图号；区分论文报告的结果、作者的解释和我们的推断。
-- 每次完成与本项目有关的实质工作或研究讨论，在回复用户前更新 `project/research-notebook.md` 的“每次项目工作记录”：简述本轮做了什么、结果或文件位置、下一步；即使没有新文献或新观点也要记录。新提出的用户观点、问题和已查文献另在该笔记的相应索引追加回顾入口；原话、转述、助手推断及已确认决定分开标注。详细阅读证据仍写在 `literature/reading-list.md`，不要在总笔记复制整篇综述。纯状态查询或无项目内容的闲聊无需新增记录。
-- 明确区分真实系统的平衡超辐射相变、受驱动开放系统的稳态相变，以及量子模拟器中有效哈密顿量的基态性质。
+## 目录与事实来源
+
+| 内容 | 唯一位置 |
+| --- | --- |
+| 目标、范围、待定项 | `docs/brief.md` |
+| 主张、证据、反证条件 | `docs/claims.md` |
+| 下一步与验收标准 | `docs/roadmap.md` |
+| 影响方向或结构的选择及理由 | `docs/decisions.md` |
+| 用户观点与问题（`P` 编号） | `docs/viewpoints.md` |
+| 按日期的工作流水 | `docs/log.md` |
+| 推导、方法、误差边界 | `manuscript/theory/` |
+| 文献核读与引用 | `literature/reading-list.md`、`literature/references.bib` |
+| 单次运行记录 | `results/runs/` |
+| 历史归档 | `docs/archive/`（默认不读） |
+
+**一件事只写一处。** 同一结论不复制到多个文件；需要引用时用链接。发现同一内容出现在
+两处，保留权威位置的那份，另一处改为链接。`docs/brief.md` 中的待定项不能当作已确认要求。
+
+## 记录
+
+- 每轮实质工作或研究讨论结束前，在 `docs/log.md` 表尾追加**一行**：日期、做了什么、
+  结果与文件位置、下一步。即使没有新文献或新观点也记；纯状态查询和闲聊不记。
+- 新出现的用户观点、问题或偏好，在 `docs/viewpoints.md` 末尾追加 `P` 编号行，
+  保留原话或标为概括，并写“已回答／待核／候选／已确认”；原话、转述、推断分开标注。
+- 只有结论或路线真的改变时才更新 `claims.md`、`roadmap.md`、`brief.md`；
+  影响方向或结构的选择写入 `decisions.md`，说明理由与代价。
+- 详细阅读证据写在 `literature/reading-list.md`，不在 `log.md` 复制整篇综述。
+
+## 科学规范
+
+- 与用户默认使用中文交流；专业术语首次出现时附英文名称。
+- 阅读或引用文献时核对原文，标明作者/年份或 DOI，以及关键结论所在的页码、公式或图号；
+  区分论文报告的结果、作者的解释和我们的推断。
+- 明确区分真实系统的平衡超辐射相变、受驱动开放系统的稳态相变，以及量子模拟器中
+  有效哈密顿量的基态性质。
 - 推导写明哈密顿量、参数定义、近似、适用范围和所用单位；改变符号约定时同步更新相关说明。
-- `data/raw/` 中的原始数据不可覆盖。处理流程应从原始数据生成 `data/processed/`；计算记录写入 `results/runs/`，包含代码版本、参数、随机种子和运行说明。
-- 探索性 notebook 可以放在 `code/notebooks/`；需要重复使用的计算和绘图逻辑应整理到 `code/src/`。
-- 本机项目解释器位于 `D:\codex\quantum-optics-env\python.exe`。安装项目 Conda 依赖时用环境的 `--prefix`，并把该命令会话的 `CONDA_PKGS_DIRS` 设为 `D:\codex\quantum-optics-conda-pkgs`；不要误用 PATH 中另一套 Python 或把新环境建回 C 盘。
-- 不编造数据、引用或实验结果。数值结论应进行适当的收敛、极限或基准检查，并说明验证边界。
-- 论文中的每张最终图应能追溯到生成脚本和输入。只把审查过的图放入 `results/figures/`。
-- 对项目结构或研究方向有实质影响的选择记入 `project/decisions.md`；完成阶段性工作后更新 `project/progress.md`。
-- 每次新文献、推导或数值基准实质改变新颖性判断时，复核 `project/claims.md`：活动主张必须写明证据、反证条件和下一项检验；被否定的主张从 `brief.md`、`roadmap.md` 等当前入口移除，但在主张台账和决策记录中保留淘汰理由，不静默删除历史。
+- 不编造数据、引用或实验结果。数值结论应有收敛、极限或基准检查，并说明验证边界；
+  不得把数值诊断当成严格误差界。
+- 每张最终图应能追溯到生成脚本和输入；只把审查过的图放入 `results/figures/`。
+- 被否定的主张从当前入口移除，但在 `claims.md` 与 `decisions.md` 中保留淘汰理由，
+  不静默删除历史。
+
+## 计算与数据
+
+- `data/raw/` 中的原始数据不可覆盖；处理流程从原始数据生成 `data/processed/`。
+- 计算记录写入 `results/runs/`，包含代码版本、参数、随机种子和运行说明。
+- 探索性 notebook 放在 `code/notebooks/`；可重复使用的计算和绘图逻辑整理到 `code/src/`，
+  关键数值实现配 `code/tests/` 测试。
+- 本机项目解释器为 `D:\codex\quantum-optics-env\python.exe`。安装 Conda 依赖时用该环境的
+  `--prefix`，并把该命令会话的 `CONDA_PKGS_DIRS` 设为 `D:\codex\quantum-optics-conda-pkgs`；
+  不要误用 PATH 中另一套 Python，也不要把新环境建回 C 盘。
+
+## 版本控制
+
+- 有改动时推送到 `git@github.com:sWuZhiy/Quantum-Optics-Thesis.git`。
+- 提交前跑 `D:\codex\quantum-optics-env\python.exe -m unittest discover -s code/tests`。
+- `literature/notes/` 是本地私有笔记，不得进入公开仓库；`tmp/` 为临时工作区，不入库。

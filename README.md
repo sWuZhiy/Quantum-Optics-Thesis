@@ -1,68 +1,34 @@
 # Quantum Optics Thesis
 
-量子光学毕业设计工作区。具体研究问题、导师要求和论文格式尚待确定；这里先保存文献、推导、代码、数据与写作过程，避免结论和图表失去出处。
+量子光学毕业设计工作区：一维量子 Dicke–Ising 链（`zz` 交换、`z` 纵场、`x` 腔耦合）的
+零温与有限温临界结构。本仓库保存文献、推导、代码、数据与写作过程，使每个结论和图表
+都能追溯到模型、代码版本、参数与运行记录。
 
-## 从这里掌握构建情况
+## 目录
 
-更新：2026-11-22。当前仍在选题与模型准备阶段：[FT-TC P0 技术预审](project/p0-gate-review-2026-11-21.md)已完成定向文献查重、解析校准与本机有限温自由能方法试算；[Z2 零温校准](theory/zero-t-baselines.md)已复现已发表精确一级点及解析三临界条件，并核查有限链共存内点。正式进入完整热相图阶段仍暂缓，尚无新的有限温相界或三临界结果。静态同正交分量“反压缩 + `A²` + 自旋相互作用”的简单加项已退出创新主线；`FT-TC` 保持首要活动候选，尚未成为正式题目。
-
-| 内容 | 当前状态 | 查看位置 |
+| 路径 | 内容 | 什么时候看 |
 | --- | --- | --- |
-| 文献与选题 | 20 篇已有本地 PDF，新增在线引文单列；核读深度分别标明 | [统一文献综述与重点阅读顺序](literature/reading-list.md) |
-| 对话与观点回顾 | 汇总用户提出的研究问题、判断、方案选择及文献/原始数据入口 | [研究对话与文献总笔记](project/research-notebook.md) |
-| 活动主张 | 已建立主张—证据—反证—去留台账；失效主张不再占用当前路线 | [研究主张台账](project/claims.md) |
-| 执行计划 | P0 技术预审完成；先做零温校准 `Z`，正式放行后再做有限温任务 `T` | [投稿潜力导向路线](project/roadmap.md) |
-| 模型与解析 | 已有统一哈密顿量、自由能泛函、正常态局部阈值和部分零温基线；完整推导待补 | [统一模型](theory/model.md)、[零温校准](theory/zero-t-baselines.md) |
-| 程序与计算 | D 盘专用 Conda 环境中已有有限温试算和零温矩阵自由 Lanczos；18 项基准检查通过 | [环境及代码说明](code/README.md) |
-| 结果 | 有有限温竞争分支方法试算及已发表零温相图基线复现；尚无最终图或新热相图 | [零温运行记录](results/runs/2026-11-22-ft-tc-z/README.md)、[P0 验收](project/p0-gate-review-2026-11-21.md) |
-| 写作 | 已有准备阶段 LaTeX 调研笔记；正式版式待定 | [笔记正文](thesis/notes/main.tex) |
+| [`docs/`](docs/) | 项目元文档：目标、主张、路线、决定、流水、用户观点 | 每轮开始 |
+| [`manuscript/`](manuscript/) | 论文素材：`theory/`（推导与方法）、`notes/`（LaTeX 调研草稿） | 推导、写作 |
+| [`literature/`](literature/) | PDF、引用库、逐篇综述、缺口矩阵与引文核查 | 查文献、写作引用 |
+| [`code/`](code/) | `src/` 计算代码、`tests/` 自动测试、`notebooks/` 探索 | 计算 |
+| [`data/`](data/) | `raw/` 原始输入（只读）、`processed/` 处理结果 | 数据 |
+| [`results/`](results/) | `runs/` 每次运行记录、`figures/` 已核查图 | 查结果、出图 |
 
-**每次工作看这五个入口**：本页了解全局；[项目简述](project/brief.md)确认目标；[主张台账](project/claims.md)确认哪些结论仍有效；[进度记录](project/progress.md)查看实际完成；[执行路线](project/roadmap.md)查看下一步和验收。[研究总笔记](project/research-notebook.md)用于回顾对话、用户观点和文献。计划中的文件和图不算已完成产物。
+数据流：**配置与代码 → 单次运行记录 → 跨运行汇总 → 已核查图 → LaTeX 引用**。
+`data/raw/` 不覆盖；`results/runs/` 与 `data/` 默认不进 Git，只有审查过的图进入
+`results/figures/`。约定详见 [数据说明](data/README.md)、[结果说明](results/README.md)、
+[代码说明](code/README.md)。
 
-## 下一步怎样启动
+## 每轮开始读什么
 
-| 次序 | 具体工作 | 交付物（待建立） | 完成依据 |
-| --- | --- | --- | --- |
-| 1：投稿门槛 `P0` | 核对同模型前后向引文，证明目标三临界附近的有限温自由能及全局分支可控 | [缺口矩阵](literature/ft-tc-gap-matrix.md)、[双向引文核查](literature/ft-tc-citation-audit-2026-11-20.md)、[新颖性备忘](project/novelty-memo.md)、[中温方法试算](project/method-feasibility.md)已写；低温和相界误差仍待核 | 同模型完整热相图出现即止损；否则须给出目标区域的收敛自由能和具体最小增量才放行 |
-| 2：解析校准 `Z1` | 固定算符、单位和边界；复算稳定条件、压缩变换、能量常数、配分函数及原观测量 | `theory/model.md`、`theory/derivations.md` | 退化极限一致，有限截断能谱核对通过；不把映射当创新 |
-| 3：零温校准 `Z2` | 已复现精确铁磁一级点、解析连续/三临界条件及 AFM 共存内点；继续完整边界与无限链外推 | [推导](theory/zero-t-baselines.md)、[代码](code/src/)、[运行目录](results/runs/2026-11-22-ft-tc-z/README.md) | 符号、分支、尺寸/截断检查通过；仅在 `P0` 放行后进入有限温主计算 |
+1. [项目简述](docs/brief.md)——目标、范围与待定项。
+2. [主张台账](docs/claims.md)——哪些结论仍有效、反证条件是什么。
+3. [执行路线](docs/roadmap.md)——下一步做什么、怎样算完成。
+4. [工作流水](docs/log.md) 末尾两行——上一轮做到哪里。
 
-一次工作围绕一个可验收产物推进。先验证问题值得做，再投入完整程序和参数扫描。`CL-AF` 暂只作为全局自由能与一级边界算法的基准；耗散或非等价光场模型若要重启，必须单独完成查重门槛。
+其余按需：已作决定看 [decisions.md](docs/decisions.md)，回顾用户观点看
+[viewpoints.md](docs/viewpoints.md)，历史细节在 [`docs/archive/`](docs/archive/)。
+**计划中的文件和图不算已完成产物。**
 
-## 中间产出放在哪里
-
-| 路径 | 用途 |
-| --- | --- |
-| `project/` | 课题范围、阶段计划、决策与进度 |
-| `literature/` | 原始文献、补充材料、审稿资料及阅读索引 |
-| `theory/` | 模型定义、符号约定和解析推导 |
-| `code/src/` | 可复用的计算与绘图代码 |
-| `code/notebooks/` | 探索性计算；确认后的方法移入 `src/` |
-| `code/tests/` | 数值实现的关键验证 |
-| `code/configs/`（首次运行时建立） | 小型可复现输入配置，提交 Git；每次运行另存实际配置快照 |
-| `data/raw/` | 外部原始数值输入，如实验数据、作者共享数据；保留原貌，默认不提交 Git |
-| `data/processed/` | 外部数据处理结果或多个运行的汇总表；默认不提交 Git |
-| `results/runs/` | 每次计算的实际配置、环境、日志、原始输出和探索图；默认不提交 Git |
-| `results/figures/` | 经过检查、准备引用到论文的图 |
-| `thesis/` | 当前 LaTeX 调研笔记；后续论文正文、模板与提交材料 |
-
-数据流：**配置与代码 → 单次运行记录 → 必要的跨运行汇总 → 已核查图 → LaTeX 引用**。单次仿真输出保留在对应运行目录，不再整套复制进 `data/raw/`；外部原始输入仍存 `data/raw/`。目录详细约定见[数据说明](data/README.md)和[结果说明](results/README.md)。
-
-GitHub 同步文档、引用库、代码、小型配置和已核查图；被忽略的运行与数据目录需要另外备份，**目前尚未配置数据备份**。正式大计算前先记录备份位置和恢复方式。原始 PDF、文献解释、推导与论文分别保留一份主要版本，避免各处复制后内容不一致。
-
-## 当前状态
-
-- 20 篇论文已有本地 PDF，另有 Chen 的补充材料和审稿文件；原有 3 篇用户上传论文继续保留。新收录的在线文献与本地文件分开计数，见[文献索引](literature/README.md)。新增下载文件留在本机，索引和来源随 GitHub 同步。
-- 当前不再把“含 `A²`、反压缩和自旋相互作用的简单静态加项”作为投稿题目；[研究评估](project/research-assessment.md)保留其淘汰证据，[主张台账](project/claims.md)记录当前可说与不可说的结论，[执行路线](project/roadmap.md)以 `FT-TC` 的缺口验证为第一关。最终题目和学校要求尚待确认，见[项目简述](project/brief.md)。
-- 已建立[文献清单与阅读状态](literature/reading-list.md)、[BibLaTeX 引用库](literature/references.bib)、[路线与投稿潜力评估](project/research-assessment.md)和[中文 LaTeX 调研笔记](thesis/notes/main.tex)。
-- 任何图表应能追溯到模型、数据、代码版本和参数。原始数据不要覆盖。
-
-## 日常工作方式
-
-1. 在 `project/brief.md` 确定当前目标；复杂工作拆成可验收的小任务。
-2. 在 `project/claims.md` 检查活动主张、证据和止损条件；新证据否定主张时及时清理当前入口并保留决策历史。
-3. 阅读文献时记下出处、页码/公式/图号、模型假设和仍待核查的问题。
-4. 推导或计算完成后，记录参数、验证方法和结果位置。
-5. 每次项目工作或研究讨论结束前，在 `project/research-notebook.md` 追加简短回顾；有新观点或文献时同步更新索引。重要阶段另更新 `project/progress.md`，检查 Git 差异后提交。
-
-项目协作约定见 [AGENTS.md](AGENTS.md)。
+协作规则见 [AGENTS.md](AGENTS.md)；环境与解释器路径见 [code/README.md](code/README.md)。

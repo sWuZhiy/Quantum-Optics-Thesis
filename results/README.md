@@ -30,6 +30,6 @@ results/runs/<运行编号>/
   plots/            尚未验收的探索图
 ```
 
-这是后续正式计算的计划格式；本次 P0 试点只保存一份简短的可复算运行记录。详细字段见[路线](../project/roadmap.md)。小型输入配置另存 `code/configs/` 并提交 Git；这里保存的是该次实际运行快照。跨运行汇总放 `data/processed/`，在本页记录输入运行编号和生成程序。
+这是后续正式计算的计划格式；本次 P0 试点只保存一份简短的可复算运行记录。详细字段见[路线](../docs/roadmap.md)。小型输入配置另存 `code/configs/` 并提交 Git；这里保存的是该次实际运行快照。跨运行汇总放 `data/processed/`，在本页记录输入运行编号和生成程序。
 
-最终图通过截断、尺寸及适用极限检查后进入 `figures/`，图源与数据仍保留原位置。结果解释写入 `theory/derivations.md` 或 LaTeX 笔记；任务是否完成写入 `project/progress.md`。本页负责让每个结果找到来源，不重复全部推导和进度。
+最终图通过截断、尺寸及适用极限检查后进入 `figures/`，图源与数据仍保留原位置。结果解释写入 `manuscript/theory/derivations.md` 或 LaTeX 笔记；任务是否完成写入 `project/progress.md`。本页负责让每个结果找到来源，不重复全部推导和进度。

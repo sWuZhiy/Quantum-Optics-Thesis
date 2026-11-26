@@ -7,15 +7,15 @@
 在项目根目录的 PowerShell 中运行：
 
 ```powershell
-$buildDir = Join-Path (Resolve-Path -LiteralPath 'thesis/notes').Path 'build'
+$buildDir = Join-Path (Resolve-Path -LiteralPath 'manuscript/notes').Path 'build'
 New-Item -ItemType Directory -Path $buildDir -Force | Out-Null
 $env:PAR_GLOBAL_TEMP = $buildDir
 $env:TEMP = $buildDir
 $env:TMP = $buildDir
-latexmk -cd -xelatex -interaction=nonstopmode -halt-on-error -outdir=build thesis/notes/main.tex
+latexmk -cd -xelatex -interaction=nonstopmode -halt-on-error -outdir=build manuscript/notes/main.tex
 ```
 
-本机 `C:\Windows\Temp` 的访问权限有问题，以上设置使 Biber 的临时文件落在项目内的 `build` 目录。生成的 PDF 位于 `thesis/notes/build/main.pdf`，整个 `build` 目录不提交 Git。
+本机 `C:\Windows\Temp` 的访问权限有问题，以上设置使 Biber 的临时文件落在项目内的 `build` 目录。生成的 PDF 位于 `manuscript/notes/build/main.pdf`，整个 `build` 目录不提交 Git。
 
 若需清理编译中间文件，先确认目标确实是本目录下的 `build`；不要删除 `main.tex` 或引用库。
 

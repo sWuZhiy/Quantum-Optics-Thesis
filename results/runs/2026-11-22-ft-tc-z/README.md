@@ -1,6 +1,6 @@
 # FT-TC Z：零温已发表相图基线（2026-11-22）
 
-这轮仅校准**平衡有效哈密顿量的零温**，不宣称新的有限温相界。基线提交为 `3eb4640`；运行使用 `D:\codex\quantum-optics-env\python.exe`（Python 3.12、NumPy 2.5.3），`ℏ=k_B=1`，所有算法确定性运行、随机种子不适用（`null`）。模型和归一化见[推导](../../../theory/zero-t-baselines.md)。本目录 JSON 各自保存完整参数、运行时间、源文件 SHA-256、有限尺寸能量或积分结果、Lanczos 残差。
+这轮仅校准**平衡有效哈密顿量的零温**，不宣称新的有限温相界。基线提交为 `3eb4640`；运行使用 `D:\codex\quantum-optics-env\python.exe`（Python 3.12、NumPy 2.5.3），`ℏ=k_B=1`，所有算法确定性运行、随机种子不适用（`null`）。模型和归一化见[推导](../../../manuscript/theory/zero-t-baselines.md)。本目录 JSON 各自保存完整参数、运行时间、源文件 SHA-256、有限尺寸能量或积分结果、Lanczos 残差。
 
 | 源文件 | 此轮 SHA-256 |
 | --- | --- |

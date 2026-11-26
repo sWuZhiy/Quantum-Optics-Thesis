@@ -1,6 +1,6 @@
 # `FT-TC` 投稿门槛 P0：新颖性备忘（待判定）
 
-更新：2026-11-23。**结论：保留首要候选并对毕设/定向 T 阶段条件放行；一个铁磁截面的热三临界候选已获六阶、下确界和独立无限链方法的数值强支持，双根重入窄袋也至少在 `Δ=.4001` 获得全局数值支持，但切触端点和完整相图尚未闭环。**依据[逐轴调查](../literature/ft-tc-axis-survey.md)、[差异矩阵](../literature/ft-tc-gap-matrix.md)、[双向引文](../literature/ft-tc-citation-audit-2026-11-20.md)、[方法试算](method-feasibility.md)、[六阶/下确界验收](../results/runs/2026-11-23-ft-tc-landau/README.md)、[更正轨迹](../results/runs/2026-11-23-ft-tc-trajectory/README.md)及[重入全局预检](../results/runs/2026-11-23-ft-tc-reentrant/README.md)。导师题目范围已确认；定向检索仍未命中同模型完整热相图，但不能据此写成“无人做过”，Leibig 期刊正文仍待核。完整判定见[P0 验收](p0-gate-review-2026-11-21.md)。
+更新：2026-11-23。**结论：保留首要候选并对毕设/定向 T 阶段条件放行；一个铁磁截面的热三临界候选已获六阶、下确界和独立无限链方法的数值强支持，双根重入窄袋也至少在 `Δ=.4001` 获得全局数值支持，但切触端点和完整相图尚未闭环。**依据[逐轴调查](../../literature/ft-tc-axis-survey.md)、[差异矩阵](../../literature/ft-tc-gap-matrix.md)、[双向引文](../../literature/ft-tc-citation-audit-2026-11-20.md)、[方法试算](method-feasibility.md)、[六阶/下确界验收](../../results/runs/2026-11-23-ft-tc-landau/README.md)、[更正轨迹](../../results/runs/2026-11-23-ft-tc-trajectory/README.md)及[重入全局预检](../../results/runs/2026-11-23-ft-tc-reentrant/README.md)。导师题目范围已确认；定向检索仍未命中同模型完整热相图，但不能据此写成“无人做过”，Leibig 期刊正文仍待核。完整判定见[P0 验收](p0-gate-review-2026-11-21.md)。
 
 ## 核心问题与最近先例
 
@@ -19,11 +19,11 @@ H = ω a†a + Δ Σ_i s_i^z + 4J Σ_i s_i^z s_{i+1}^z
 
 最低应给出：在同一 `H` 的固定参数和热力学极限下，受控确定一条零温一级/二级边界在 `T>0` 的连接方式；比较全部自由能极小值并识别真实共存线/终点；`T→0` 回到 Langheld、Leibig、Hörmann 的基线；用独立算法或解析极限检查。仅绘制低分辨率热相图、复述温度改变临界耦合、或加入静态同正交分量的 `A²−ξ` 重标定均不满足投稿增量。
 
-最可能否决：① 同哈密顿量完整热相图已有工作；② 所选区域只给已有一般自洽理论的平凡数值代入，没有明确物理结构或可测预测；③ 非可积物质链的自由能和一级边界在本机可用资源内无法收敛；④ 归一化、符号或极限检查失败。任何一项成立即按[主张 C04](claims.md)降级或停止。
+最可能否决：① 同哈密顿量完整热相图已有工作；② 所选区域只给已有一般自洽理论的平凡数值代入，没有明确物理结构或可测预测；③ 非可积物质链的自由能和一级边界在本机可用资源内无法收敛；④ 归一化、符号或极限检查失败。任何一项成立即按[主张 C04](../claims.md)降级或停止。
 
 ## 可追踪的检索边界
 
-检索式包括 `"Dicke-Ising" "finite temperature" "longitudinal" "tricritical" 2026`、`"Dicke-Ising" "thermal" "tricritical" 2026`、`"cavity" "Ising" "longitudinal field" "finite temperature" superradiant`，并逐式核对上述定向找到的原文。2026-11-20 至 21 已对七篇核心种子作公开索引前后向引文交叉，逐篇排除理由见[引文审计](../literature/ft-tc-citation-audit-2026-11-20.md)。期刊正式版、未收录新稿和同模型异名工作仍可漏检；检索覆盖不足时不作“首次”的投稿表述。
+检索式包括 `"Dicke-Ising" "finite temperature" "longitudinal" "tricritical" 2026`、`"Dicke-Ising" "thermal" "tricritical" 2026`、`"cavity" "Ising" "longitudinal field" "finite temperature" superradiant`，并逐式核对上述定向找到的原文。2026-11-20 至 21 已对七篇核心种子作公开索引前后向引文交叉，逐篇排除理由见[引文审计](../../literature/ft-tc-citation-audit-2026-11-20.md)。期刊正式版、未收录新稿和同模型异名工作仍可漏检；检索覆盖不足时不作“首次”的投稿表述。
 
 ## 2026-11-21 新证据与更严格的创新边界
 
@@ -35,4 +35,4 @@ Hörmann 等 [Comment（*PRL* **137**, 219301）](https://journals.aps.org/prl/p
 
 ## 目前决定
 
-`FT-TC` 保持首要活动候选，题目范围已获用户与导师接受。P0 对毕设立题和定向 T 验证条件放行；`a_6>0`、小场下确界、单截面全域驻点、多 `Δ` 局部轨迹、零温回接和一个可分辨重入截面均已完成到当前方法边界。近期主线是以 `.4001` 为锚点复核代表性上支并形成收窄生产图。切触端点只保留局部候选；若要升级，必须增加能分辨 `1e-10–1e-11` 深度的高精度/MPS/SSE 路线。近等能可报告误差预算、Leibig 期刊正文及最新引文仍须补核。Mendonça 的 XXZ 图 4 光子标度保留为[独立备选 P0 预筛](../literature/mendonca-followup-survey.md)，不与 `FT-TC` 混成一个题目。
+`FT-TC` 保持首要活动候选，题目范围已获用户与导师接受。P0 对毕设立题和定向 T 验证条件放行；`a_6>0`、小场下确界、单截面全域驻点、多 `Δ` 局部轨迹、零温回接和一个可分辨重入截面均已完成到当前方法边界。近期主线是以 `.4001` 为锚点复核代表性上支并形成收窄生产图。切触端点只保留局部候选；若要升级，必须增加能分辨 `1e-10–1e-11` 深度的高精度/MPS/SSE 路线。近等能可报告误差预算、Leibig 期刊正文及最新引文仍须补核。Mendonça 的 XXZ 图 4 光子标度保留为[独立备选 P0 预筛](../../literature/mendonca-followup-survey.md)，不与 `FT-TC` 混成一个题目。
