@@ -11,6 +11,7 @@
 | 用户观点与问题（`P` 编号） | `docs/viewpoints.md` |
 | 按日期的工作流水 | `docs/log.md` |
 | 推导、方法、误差边界 | `manuscript/theory/` |
+| 阶段研究汇总（论文文本） | `manuscript/notes/`（AI 起草，用户过目后定稿编译） |
 | 文献核读与引用 | `literature/reading-list.md`、`literature/references.bib` |
 | 单次运行记录 | `results/runs/` |
 | 历史归档（退役的原文件） | `docs/archive/`（默认不读） |
@@ -36,6 +37,8 @@
 - 只有结论或路线真的改变时才更新 `claims.md`、`roadmap.md`、`brief.md`；
   影响方向或结构的选择写入 `decisions.md`，说明理由与代价。
 - 详细阅读证据写在 `literature/reading-list.md`，不在 `log.md` 复制整篇综述。
+- 阶段汇总（`manuscript/notes/NN-主题.tex`）：一个研究阶段完成后可按需起草论文文本汇总；
+  起草后**必须等用户过目并敲定**才编译成 PDF，不得覆盖已定稿内容；命名按内容定，不固定周期。
 
 ## 科学规范
 

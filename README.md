@@ -9,7 +9,7 @@
 | 路径 | 内容 | 什么时候看 |
 | --- | --- | --- |
 | [`docs/`](docs/) | 项目元文档：目标、主张、路线、决定、流水、用户观点 | 每轮开始 |
-| [`manuscript/`](manuscript/) | 论文素材：`theory/`（推导与方法）、`notes/`（LaTeX 调研草稿） | 推导、写作 |
+| [`manuscript/`](manuscript/) | 论文素材：`theory/`（推导与方法）、`notes/`（阶段汇总 PDF） | 推导、审阅、汇报 |
 | [`literature/`](literature/) | PDF、引用库、逐篇综述、缺口矩阵与引文核查 | 查文献、写作引用 |
 | [`code/`](code/) | `src/` 计算代码、`tests/` 自动测试、`notebooks/` 探索 | 计算 |
 | [`data/`](data/) | `raw/` 原始输入（只读）、`processed/` 处理结果 | 数据 |

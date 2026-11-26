@@ -31,3 +31,4 @@
 | 2026-11-26 | 明确归档规则（同 P50 跟进，无新编号）。 | 在 [AGENTS.md](../AGENTS.md) 增加约束：归档只能由用户要求或记入 `decisions.md` 的决定触发，禁止自动归档/删除，归档用 `git mv` 并记行。 | 无。 |
 | 2026-11-26 | 新增解释材料层（同 P50 跟进，无新编号）。 | 新建 [`docs/explainers/`](explainers/README.md)：存放为用户理解而整理的说明，非权威、默认不读、不得作为证据；规则写入 [AGENTS.md](../AGENTS.md)。现有文档无需迁移。 | 无。 |
 | 2026-11-26 | 整理 `literature/`（P50 跟进，无新编号）：PDF 分目录、索引加目录小节。 | 20 篇论文 PDF 移入 `literature/papers/`，Chen 补充材料与审稿文件移入 `literature/papers/supplementary/`（5 个已跟踪文件用 `git mv` 保历史）；顶层只剩 8 个索引文档。README 加目录表，`reading-list` 的 `%20` 编码链接统一为尖括号真实空格（本地可点击跳转），`.gitignore` 改为 `literature/papers/*.pdf`。链接已脚本校验，仅剩公式文本假阳性。无文献、数值或证据等级变化。 | 无。 |
+| 2026-11-26 | 重定位 `manuscript/notes/` 为阶段研究汇总（P50 跟进，无新编号）。 | 原 `main.tex` 改名 `01-选题与文献调研.tex`（标题加“第一阶段”）；新增 `template.tex`（阶段汇总模板）与 `notes/README.md`（工作流：一个阶段完成后 AI 起草论文文本 → 用户过目敲定 → 编译 PDF）。约定写入 AGENTS.md 与 README。无文献、数值或证据等级变化。 | 下一研究阶段完成后按需起草第二份阶段汇总。 |
