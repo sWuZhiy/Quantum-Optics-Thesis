@@ -13,7 +13,8 @@
 | 推导、方法、误差边界 | `manuscript/theory/` |
 | 文献核读与引用 | `literature/reading-list.md`、`literature/references.bib` |
 | 单次运行记录 | `results/runs/` |
-| 历史归档 | `docs/archive/`（默认不读） |
+| 历史归档（退役的原文件） | `docs/archive/`（默认不读） |
+| 解释材料（为用户理解而写） | `docs/explainers/`（默认不读、非证据） |
 
 **一件事只写一处。** 同一结论不复制到多个文件；需要引用时用链接。发现同一内容出现在
 两处，保留权威位置的那份，另一处改为链接。`docs/brief.md` 中的待定项不能当作已确认要求。
@@ -21,6 +22,10 @@
 **归档只能显式决定。** 只有用户要求，或本轮作出并记入 `decisions.md` 的结构决定，才可把
 文件移入 `docs/archive/`。不得自动归档、自动删除或凭“看起来过期”移动文件；归档用
 `git mv`，内容保留，并在 `docs/log.md` 记一行。
+
+**解释材料与证据分开。** 仅为用户理解而整理的说明写入 `docs/explainers/`，属非权威材料，
+不得被 `claims.md`、`roadmap.md` 或论文引用；其中若产生新结论或新数值，必须移入对应的
+权威位置（`results/runs/`、`manuscript/theory/` 等），不能只留在解释材料里。
 
 ## 记录
 
