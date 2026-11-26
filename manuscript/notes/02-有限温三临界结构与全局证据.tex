@@ -10,7 +10,7 @@
 \addbibresource{../../literature/references.bib}
 
 \title{第二阶段：有限温三临界结构与全局证据\\[0.4em]
-\large 一维量子 Dicke--Ising 链的热三临界候选、相图拓扑与证据分级}
+\large 热三临界候选、相图拓扑与证据分级}
 \author{Quantum Optics Thesis 工作笔记}
 \date{2026 年 11 月 26 日}
 
@@ -18,170 +18,146 @@
 \maketitle
 
 \begin{abstract}
-本文研究 $zz$ 交换、$z$ 纵场、$x$ 腔耦合的量子 Dicke--Ising 链在非零纵场下的
-有限温临界结构，即零温一级/二级边界与三临界点如何延伸到 $T>0$。通过零场 Dyson 展开
-（二、四、六阶，含最近邻双翻修正）、正常态等能判据与严格有限域的全域驻点搜索，
-得到 $J=-0.2,\Delta=0.2$ 的热三临界候选 $(T^\ast,g^\ast)=(0.2572636,0.4888020)$，
-其六阶系数恒正且小场按 $h^4$ 标度。多 $\Delta$ 的高温根形成非单调上支，低温在
-$0.4<\Delta<0.4002585$ 出现由上下双根夹住的重入一级候选窄袋，两根在
-$(\Delta_{\rm end},T_{\rm end})=(0.4002585,0.1255994)$ 切触汇合。证据分级：
-热三临界候选为数值强支持；上支与 $\Delta=0.4001$ 的重入截面获全局数值支持；
-切触端点仍是局部 Landau 候选。全部结果来自平衡有效哈密顿量，不涉及开放系统稳态。
+这一阶段做的是：在 $zz$ 交换、$z$ 纵场、$x$ 腔耦合的量子 Dicke--Ising 链里，看零温的
+一级/二级边界和三临界点怎么延伸到有限温。主要结果有三个：$J=-0.2,\Delta=0.2$ 处找到
+热三临界候选 $(T^\ast,g^\ast)=(0.2572636,0.4888020)$，六阶系数恒正、小场按 $h^4$ 标度，
+属于数值强支持；多 $\Delta$ 的高温根排成非单调上支，低温在 $0.4<\Delta<0.4002585$ 出现
+由上下双根夹住的重入一级窄袋，两根在 $(0.4002585,0.1255994)$ 切触；其中 $\Delta=0.4001$
+一段截面拿到全局数值支持（分辨率 68.85），而切触端点仍只是局部候选。全部来自平衡有效
+哈密顿量，不涉及开放系统。
 \end{abstract}
 
-\section{引言}
+\section{背景与问题}
 
-光与物质的集体耦合在达到临界强度时可产生超辐射相变，其存在条件受振子强度求和规则
-约束\cite{Nataf2010NoGo}，而在外部泵浦的开放腔中已观察到 Dicke 型转变\cite{Baumann2010OpenDicke}。
-Dicke 类模型在零温与有限温的一般理论已由 Peng 等系统讨论\cite{Peng2019Unified}。
-当自旋之间存在 Ising 交换时，磁序与光场序可以共存：Zhang 等在电路 QED 框架下预测了
-正常、超辐射、反铁磁正常与反铁磁超辐射共存等相\cite{Zhang2014CircuitIsing}。
+光与物质集体耦合达到临界强度会发生超辐射相变，但能不能在真实腔里实现受求和规则约束
+\cite{Nataf2010NoGo}；开放腔里已经看到 Dicke 型转变\cite{Baumann2010OpenDicke}。这类模型
+零温和有限温的一般理论早有人系统梳理\cite{Peng2019Unified}。加上 Ising 交换后，磁序和
+光场序可以共存，电路 QED 框架下就预测过正常、超辐射、反铁磁正常、反铁磁超辐射共存这些相
+\cite{Zhang2014CircuitIsing}。
 
-近年来该体系的零温相图得到显著厘清。Langheld 等用大尺度量子蒙特卡洛给出 Dicke--Ising
-的定量相图，并识别出狭窄的反铁磁--超辐射共存区\cite{Langheld2025Wormhole}；
-Leibig 等以热力学极限的自洽纯自旋模型配合 NLCE 与 DMRG 独立确认该共存区\cite{Leibig2026SelfConsistent}；
-Koziol 给出铁磁三临界点的 Landau 展开\cite{Koziol2026Criticality}；Hörmann 等进一步报告
-零温解析相界、三临界条件与反铁磁四相交会结构\cite{Hormann2026Folds}。围绕 Mendonça 等
-关于 Ising/XXZ 基态的结论\cite{Mendonca2025Matter}，已有一轮公开的 Comment/Reply 争议\cite{Hormann2025Comment}。
-这些工作把零温结构研究得相当充分，仅重绘零温相图不构成独立创新。
+零温这一侧，近几年已经被做得很透：Langheld 等用大尺度 QMC 给出定量相图、认出狭窄的反铁磁--
+超辐射共存区\cite{Langheld2025Wormhole}，Leibig 等用自洽纯自旋模型加 NLCE/DMRG 独立确认
+\cite{Leibig2026SelfConsistent}，Koziol 给出铁磁三临界点的 Landau 展开\cite{Koziol2026Criticality}，
+Hörmann 等进一步报零温解析相界和三临界条件\cite{Hormann2026Folds}。围绕 Mendonça 等的
+Ising/XXZ 基态结论还有一轮 Comment/Reply 争议\cite{Mendonca2025Matter,Hormann2025Comment}。
+所以零温相图本身不剩什么新东西，重画一遍不是创新。
 
-有限温度一侧，已有先例集中在不同自旋轴向或不同模型：Gammelmark 与 Mølmer 早在 2011 年
-就对量子 Ising 链与单模腔的有限温自由能及一、二阶超辐射边界开展研究，但其自旋轴向与
-本模型不同\cite{Gammelmark2011Thermal}；Otake 与 Bamba 给出腔耦合一维\emph{经典} Ising 链
-有限温相变与临界温度的精确解\cite{Otake2026FiniteT}；Rao 等研究可积 $zz/y/x$ 量子链的
-有限温三临界\cite{Rao2025Unilateral}；Granet 讨论 $zz/x/x$ 量子链的热转变\cite{Granet2023Exact}；
-Román--Roche 等研究腔与 Ising 序参量同轴协同的有限温响应\cite{RomanRoche2021Photon}。
-相互作用多量子比特腔的一级跃迁也有较早先例\cite{Lee2004FirstOrder}。然而，定向检索
-未命中非零纵场 $zz/z/x$ 同模型完整热相图（索引漏收与 Leibig 期刊正文访问缺口保留）。
+有限温这一侧，已有的先例要么轴向不同、要么模型不同：Gammelmark--Mølmer 最早做量子 Ising 链
+与单模腔的有限温自由能和一、二阶超辐射边界，但轴向不一样\cite{Gammelmark2011Thermal}；
+Otake--Bamba 解的是同轴\emph{经典} Ising 链的有限温\cite{Otake2026FiniteT}；Rao 等做可积
+$zz/y/x$ 链的有限温三临界\cite{Rao2025Unilateral}；Granet 做 $zz/x/x$ 的热转变\cite{Granet2023Exact}；
+Román--Roche 等做同轴协同的有限温响应\cite{RomanRoche2021Photon}；相互作用多比特腔的一级跃迁
+也有早先例\cite{Lee2004FirstOrder}。定向检索下来，非零纵场 $zz/z/x$ 这个同模型的完整热相图
+还没人做过（索引漏收和 Leibig 期刊正文没核到，这点保留）。
 
-本阶段的问题因此收窄为：在非零纵场的 $zz/z/x$ 链中，零温一级/二级边界与三临界点向
-有限温延伸时，是否形成热三临界线与重入结构，而非平凡的边界平移。若最终只得到已知
-结构的重新参数化，该候选即按主张台账降级。
+所以这一阶段的问题很清楚：零温三临界点 $(\Delta,J)$ 附近，一级/二级边界往有限温延伸的时候，
+是形成一个热三临界线和重入结构，还是只是边界平凡地平移一下？如果是后者，这个候选就该降级。
 
-\section{模型与自由能泛函}
+\section{模型与判据}
 
-取 $\hbar=k_B=1$、$s_i^\alpha=\sigma_i^\alpha/2$、周期链、$J<0$ 铁磁，物质自旋链为
+取 $\hbar=k_B=1$、$s_i^\alpha=\sigma_i^\alpha/2$、周期链、$J<0$ 铁磁，物质自旋链是
 \begin{equation}
   H_{\rm spin}(h)=J\sum_i\sigma_i^z\sigma_{i+1}^z+\frac{\Delta}{2}\sum_i\sigma_i^z
   +\frac{h}{2}\sum_i\sigma_i^x,\qquad h=4g\varphi,\ \varphi=\mathrm{Re}\langle a\rangle/\sqrt N,
   \label{eq:Hspin}
 \end{equation}
-并作单模集体耦合的热力学自洽处理（有限 $N$ 的完整光子--自旋配分函数不能直接用
-$\Phi_T$ 代替），得到候选腔位移泛函
+单模集体耦合做热力学自洽后，得到腔位移泛函
 \begin{equation}
   \Phi_T(\varphi)=\omega\varphi^2+f_{\rm spin}(T,4g\varphi),\qquad
   f_{\rm spin}(T,h)=-\lim_{N\to\infty}\frac{T}{N}\log\operatorname{Tr}e^{-H_{\rm spin}(h)/T}.
   \label{eq:Phi}
 \end{equation}
-$\Phi_T$ 为偶函数，一级边界必须比较 $\varphi\in[0,g/\omega]$ 内全部极小值的自由能。
+注意有限 $N$ 的完整光子--自旋配分函数不能直接拿 $\Phi_T$ 代替；一级边界必须比较
+$\varphi\in[0,g/\omega]$ 里全部极小值的自由能。
 
-正常态与有限位移态等能的耦合由变量替换给出
+正常态和某个有限位移态等能所需的耦合，做个变量替换就是
 \begin{equation}
   g_{\rm equal}^2(h)=\frac{\omega h^2}{16\big[f_{\rm spin}(T,0)-f_{\rm spin}(T,h)\big]},
-  \qquad g_{\rm onset}(T)=\inf_{h>0}g_{\rm equal}(T,h),
+  \qquad g_{\rm onset}(T)=\inf_{h>0}g_{\rm equal}(T,h).
   \label{eq:gequal}
 \end{equation}
-配合 $0\le f_{\rm spin}(T,0)-f_{\rm spin}(T,h)\le h/2$，可证凡 $h>8g_{\rm ref}^2/\omega$
-都不能给出更小的等能耦合，从而给连续搜索一个有限上界。若下确界在有限 $h$ 取得，即为
-一级跃迁候选；只在 $h\to0$ 取得则退化为正常态局部失稳阈值 $g_{\rm local}$，后者由
-$h=0$ 的经典链转移矩阵与三自旋概率精确给出。
+配合 $0\le f_{\rm spin}(T,0)-f_{\rm spin}(T,h)\le h/2$，能证明凡是 $h>8g_{\rm ref}^2/\omega$
+都不可能给出更小的等能耦合——这就给连续搜索一个有限的上界，不用扫到无穷。下确界在有限
+$h$ 取得，就是一级跃迁候选；只在 $h\to0$ 取得，就退化成正常态局部失稳阈值 $g_{\rm local}$，
+后者由 $h=0$ 的经典链转移矩阵加三自旋概率精确算出来。
 
-小横场下的 Landau 系数 $f=f_0+a_2h^2+a_4h^4+a_6h^6+\cdots$ 由零场回返路径的 Hermite
-合流差商精确枚举。其中最近邻双翻的中间能量差为
+小横场下 $f=f_0+a_2h^2+a_4h^4+a_6h^6+\cdots$，这些 Landau 系数用零场回返路径的合流差商
+精确枚举。这里有个踩过的坑：最近邻双翻的中间能量差是
 \begin{equation}
   dE_{ij}=dE_i+dE_j+4J s_i s_j,
   \label{eq:dEij}
 \end{equation}
-这一项从 $O(J^2)$ 起贡献；早期实现漏掉它，导致 $T^\ast\approx0.3094$ 的旧结论被撤回
-（详细推导见 \texttt{manuscript/theory/model.md}）。
+这一项从 $O(J^2)$ 起贡献，早期实现漏了它，导致 $T^\ast\approx0.3094$ 的旧结论算错，后来
+撤回了（推导细节见 \texttt{manuscript/theory/model.md}）。
 
-\section{数值方法}
+数值上用了四套互相独立的方法交叉：周期热 ED（$N\le12$，外部 32\,GB 机器扩到 $N=14$）、
+开边界 NLCE（$L\le12$ 加 Aitken）、Suzuki--Trotter 无限空间转移矩阵（$M\le20$ 加 $1/M^2$
+双窗口外推）、以及 60 位精度的精确 Dyson 回返路径。一级边界的 $g_{\rm equal}(h)$ 在有限域里
+做粗扫、检出全部内点极小、黄金分割细化，再对每个极小做三方法诊断（细节和误差边界见
+\texttt{manuscript/theory/numerics.md}）。
 
-本阶段使用四类相互独立的方法交叉核对（实现与误差边界见 \texttt{manuscript/theory/numerics.md}）：
+\section{热三临界候选}
 
-\begin{enumerate}
-  \item \textbf{周期热精确对角化}（ED，$N\le12$；外部 32\,GB 机器扩展到 $N=14$）直接
-        对角化 $H_{\rm spin}(h)$，给出有限链 $f_{\rm spin}$，用于有限尺寸收敛估计。
-  \item \textbf{开边界数值连续簇展开}（NLCE，$L\le12$）以连续簇 $f_L=F_L-F_{L-1}$ 加
-        末三阶 Aitken 加速逼近无限链，与 ED 交叉。
-  \item \textbf{Suzuki--Trotter 转移矩阵}（$M\le20$）取无限空间转移矩阵的 Perron 根，
-        以 $1/M^2$ 双窗口外推，提供独立的无限空间交叉。
-  \item \textbf{精确 Dyson 回返路径}（二、四、六阶）用 Decimal 60 位精度的合流差商给出
-        $a_2,a_4,a_6$，是所有专用模块的对照基准；零温基线另用矩阵自由 Lanczos（$N\le18$）。
-\end{enumerate}
+先做零温校准。$\Delta=0$ 是横场 Ising 可积极限，全局一级点 $g_c=0.4090436682$，和 Koziol 的
+数值逐位一致\cite{Koziol2026Criticality}。$\Delta>0$ 时小场展开给 $g_{\rm local}^2=\omega(\Delta-4J)/4$，
+四次系数在 $\Delta=-2J$ 变号，零温三临界点 $g_{tc}^2=-3\omega J/2$，$J=-0.2$ 时就是
+$(0.4,\sqrt{0.3})$——和 Langheld 等的相图对得上\cite{Langheld2025Wormhole}。零温一级线
+$g_c(\Delta)$ 在 $\Delta=0.15$--$0.4$ 单调升到 $\sqrt{0.3}$、深度单调降到零。
 
-一级边界的等能耦合 $g_{\rm equal}(h)$ 在可证有限域内做对数均匀粗扫、全部内点极小检出、
-黄金分割细化，并对每个极小做 ED/NLCE/转移矩阵三方法诊断。
-
-\section{结果}
-
-\subsection{零温校准}
-
-$\Delta=0$ 的横场 Ising 可积极限由 Jordan--Wigner 变换给出单位点基态能
-$e_{\rm spin}(0,h)=-(1/\pi)\int_0^\pi\sqrt{K^2+\Gamma^2-2K\Gamma\cos k}\,dk$
-（$K=-J$，$\Gamma=h/2$），全局一级点 $g_c=0.4090436682$ 与 Koziol 的
-$g_c/\omega=0.4090436682$ 逐位一致\cite{Koziol2026Criticality}。对 $\Delta>0$，
-极化正常态附近的小场展开给 $g_{\rm local}^2=\omega(\Delta-4J)/4$，四次系数在
-$\Delta=-2J$ 变号，零温三临界点为 $g_{tc}^2=-3\omega J/2$；$J=-0.2$ 时
-$(\Delta_{tc},g_{tc})=(0.4,\sqrt{0.3})$。这些是局部 Landau 校准，与 Langheld 等的
-相图一致\cite{Langheld2025Wormhole}。零温一级线 $g_c(\Delta)$ 在 $\Delta=0.15$--$0.4$
-单调升至 $\sqrt{0.3}$、深度 $g_{\rm local}-g_c$ 单调降为零，$h_c$ 退缩至零。
-
-\subsection{热三临界候选}
-
-对 $J=-0.2,\Delta=0.2,\omega=1$，修正后的无限链四次根给出
+然后是核心。对 $J=-0.2,\Delta=0.2,\omega=1$，修正后的无限链四次根给
 \begin{equation}
   T^\ast=0.2572636163,\qquad g^\ast=g_{\rm local}(T^\ast)=0.4888020431,
   \label{eq:candidate}
 \end{equation}
-$a_2(T^\ast)=-0.2615856960$，$a_4(T^\ast)=0$（二分残差括区宽 $7.3\times10^{-14}$）。
-精确有限环回返路径给 $a_6(N{=}6,8,10,12)=0.0371731,0.0374355,0.0374869,0.0374967$，
-末两尺寸差 $9.8\times10^{-6}$，稳定为正——这正是热三临界点局部存在的必要条件。
+$a_2(T^\ast)=-0.2615856960$，$a_4(T^\ast)=0$（二分残差括区宽 $7.3\times10^{-14}$）。精确
+有限环回返路径给 $a_6(N{=}6,8,10,12)=0.0371731,0.0374355,0.0374869,0.0374967$，末两尺寸差
+$9.8\times10^{-6}$，恒正——这正是热三临界点局部存在的必要条件（二次、四次系数同时为零、
+六次为正）。
 
-在候选点附近，小场行为应为
+候选点附近小场应该按
 \begin{equation}
   g_{\rm equal}(T^\ast,h)-g_{\rm local}
   =\frac{g_{\rm local}\,a_6}{2(-a_2)}\,h^4+O(h^6),
   \label{eq:h4}
 \end{equation}
-$N=12$ 预测系数为 $0.0350334$。无限空间转移矩阵在 $h=0.025,0.05,0.1$ 给出的差
-$1.3\times10^{-8},2.18\times10^{-7},3.49\times10^{-6}$ 与该 $h^4$ 标度一致；
-$T=0.25<T^\ast$ 时小场差为负、$T=0.265>T^\ast$ 时为正，两侧符号切换由周期 ED 与
-无限空间转移矩阵共同确认。在有限域 $0<h\le8g_{\rm local}^2/\omega\approx1.911$ 的
-全域驻点扫描中，$T=0.245,0.25,0.255$ 的内点极小深度按 Landau 预测
+走，$N=12$ 预测系数 $0.0350334$。无限空间转移矩阵在 $h=0.025,0.05,0.1$ 给的差
+$1.3\times10^{-8},2.18\times10^{-7},3.49\times10^{-6}$ 正好对上这个 $h^4$；$T=0.25<T^\ast$
+小场差为负、$T=0.265>T^\ast$ 为正，两侧符号切换被周期 ED 和无限空间转移矩阵一起确认。
+有限域 $0<h\le8g_{\rm local}^2/\omega\approx1.911$ 的全域驻点扫描里，$T=0.245,0.25,0.255$
+的内点极小深度按 Landau 预测
 \begin{equation}
   \mathrm{depth}\approx g_{\rm local}\,\frac{a_4^2}{8a_6\,|a_2|},\qquad h^{\ast\,2}=-\frac{a_4}{2a_6}
   \label{eq:depth}
 \end{equation}
-定量塌缩（实测 $1.23\times10^{-4},4.39\times10^{-5},4.05\times10^{-6}$，比值
-$1.01/1.00/0.93$），而 $T\ge T^\ast$ 无低于 $g_{\rm local}$ 的采样点。综合六阶收敛、
-$h^4$ 标度、邻域符号切换与有限域驻点，该点可称为\textbf{数值强支持的热三临界候选}，
-但离散扫描不能排除任意窄的远场极小，故不称已证明点。
+塌缩（实测 $1.23\times10^{-4},4.39\times10^{-5},4.05\times10^{-6}$，比值 $1.01/1.00/0.93$），
+而 $T\ge T^\ast$ 没有低于 $g_{\rm local}$ 的采样点。六阶收敛、$h^4$ 标度、邻域符号切换、有限域
+驻点四条合起来，这个点可以叫\emph{数值强支持的热三临界候选}——但离散扫描排除不了任意窄的
+远场极小，所以还不能叫已证明。
 
-\subsection{相图拓扑}
+\section{相图拓扑}
 
-对多个 $\Delta$ 求四次根 $a_4(T)=0$，得到高温上支 $T_{\rm upper}(\Delta)$ 的非单调
-拱形：$\Delta=0.15,0.2,0.25,0.3,0.35,0.38,0.4$ 对应
+对多个 $\Delta$ 求 $a_4(T)=0$ 的根，高温上支 $T_{\rm upper}(\Delta)$ 排成一个非单调的拱：
+$\Delta=0.15,0.2,0.25,0.3,0.35,0.38,0.4$ 对应
 $T_{\rm upper}=0.252465,0.257264,0.255727,0.247082,0.227322,0.202548,0.141122$。
-在 $\Delta=0.15,0.2$（完整三方法）与 $0.3,0.38$（轻量）四个切片上，上支下侧（一级侧）
-均出现低于 $g_{\rm local}$ 的内点极小且深度按式~\eqref{eq:depth} 塌缩，上侧（连续侧）
-无内点极小——与上支的“一级→连续”结构一致。
+在 $\Delta=0.15,0.2$（完整三方法）和 $0.3,0.38$（轻量）四个切片上，上支下侧（一级侧）
+都有低于 $g_{\rm local}$ 的内点极小、深度按式~\eqref{eq:depth} 塌缩，上侧（连续侧）没有
+内点极小——对上"一级→连续"这个结构。
 
-低温一侧，全区间多根搜索发现 $0.4<\Delta<0.4002585$ 内 $a_4(T)$ 按正→负→正变化，
-上下两根夹出一个重入一级候选窄袋，两根随 $\Delta$ 增大而逼近，最终在
+低温这边更细：全区间多根搜索发现 $0.4<\Delta<0.4002585$ 里 $a_4(T)$ 按正→负→正变化，
+上下两根夹出一个重入一级窄袋，两根随 $\Delta$ 增大越靠越近，最后在
 \begin{equation}
   (\Delta_{\rm end},T_{\rm end},g_{\rm end})=(0.4002585148,0.1255994291,0.5477461329)
   \label{eq:endpoint}
 \end{equation}
-切触汇合；端点由无限链与有限环 $N=8,10,12$ 独立收敛，端点
-$a_6=0.00886088613,0.00886088672,0.00886088672>0$。拓扑解释为：零温三临界点
-$(\Delta=0.4,T=0)$ 锚定低温下支；$\Delta<0.4$ 的一级区从 $T=0$ 延伸到上支；
-$0.4<\Delta<\Delta_{\rm end}$ 则只在上下两根之间出现重入一级窄袋。
+切触。端点由无限链和有限环 $N=8,10,12$ 独立收敛，端点
+$a_6=0.00886088613,0.00886088672,0.00886088672>0$。整个拓扑是：零温三临界点 $(\Delta=0.4,T=0)$
+锚住低温下支；$\Delta<0.4$ 的一级区从 $T=0$ 一直延伸到上支；$0.4<\Delta<\Delta_{\rm end}$ 只在
+上下两根之间有一级窄袋（重入）。
 
-\subsection{重入窄袋的证据分级}
+\section{证据分级}
 
-重入窄袋的六阶预测深度随 $\Delta\to\Delta_{\rm end}$ 急剧缩小，须以方法差对信号的分辨率
-逐点分级，而非把局部候选写成全局相界：
+重入窄袋的深度随 $\Delta\to\Delta_{\rm end}$ 掉得极快，所以必须按"方法差对信号的分辨率"逐点
+分级，不能把局部候选直接写成全局相界：
 
 \begin{center}
 \begin{tabular}{lccc}
@@ -195,44 +171,25 @@ $0.40024$ & $2.62\times10^{-11}$ & $N=12\to14$ 翻号 & $<1$ \\
 \end{tabular}
 \end{center}
 
-$\Delta=0.4001$ 的 $N=14$ 周期 ED（外部 32\,GB 机器，源码与输入哈希全匹配）给深度
-$1.891849\times10^{-9}$，为六阶预测的 $98.3\%$，且 $N=8,10$ 从 $h=0.03$ 扫至严格
-上界约 $2.40$ 均无远场内点极小——该截面可称\textbf{全局数值支持}。$\Delta=0.4002$
-仍仅边缘，$\Delta=0.40024$ 在 $N=12\to14$ 翻号，转移矩阵外推在 $10^{-11}$ 深度下的
-窗口漂移约 $3.9\times10^{-6}$，大 3--5 个量级，不具裁决力。因此切触端点
-式~\eqref{eq:endpoint} 仍是\textbf{局部 Landau 候选}。
+$\Delta=0.4001$ 的 $N=14$ 周期 ED（外部 32\,GB 机器，源码和输入哈希全对上）给深度
+$1.891849\times10^{-9}$，是六阶预测的 $98.3\%$，而且 $N=8,10$ 从 $h=0.03$ 扫到严格上界
+约 $2.40$ 都没有远场内点极小——这一截面可以叫\emph{全局数值支持}。$\Delta=0.4002$ 还只是
+边缘，$\Delta=0.40024$ 在 $N=12\to14$ 翻号，转移矩阵外推在 $10^{-11}$ 深度下的窗口漂移约
+$3.9\times10^{-6}$，大出 3--5 个量级，没有裁决力。所以切触端点式~\eqref{eq:endpoint} 仍只是
+\emph{局部 Landau 候选}。
 
-\section{讨论}
+\section{还差什么与下一步}
 
-本阶段结果与先例的关系需要区分清楚。零温结构（三临界点、窄共存区）与
-Langheld、Leibig、Koziol、Hörmann 的工作一致\cite{Langheld2025Wormhole,Leibig2026SelfConsistent,
-Koziol2026Criticality,Hormann2026Folds}，不构成新发现。本工作的候选增量在于
-有限温一侧：非零纵场 $zz/z/x$ 链的热三临界候选与重入一级窄袋拓扑，尚未在定向检索中
-命中同模型完整热图；但这一"空白"仍是可反证的假设。
+几个要说清楚的边界。第一，所有近等能误差都是\emph{数值诊断级}（ED 尺寸收敛、NLCE 与 ED 差、
+转移矩阵两窗口差），不是严格误差界。第二，固定 $\varphi$ 的一维短程链在 $T>0$ 没有自身有限温
+相变\cite{Araki1969Gibbs}，所以零温的交错磁长程序不能当 $T>0$ 的独立共存热相；但完整腔系统的
+超辐射热转变不受这个限制。第三，零温的三临界点、窄共存区这些跟 Langheld、Leibig、Koziol、
+Hörmann 一致\cite{Langheld2025Wormhole,Leibig2026SelfConsistent,Koziol2026Criticality,Hormann2026Folds}，
+不是新东西；本工作的候选增量只在有限温这一侧的拓扑，而且"空白"本身还是可反证的假设。
 
-误差方面，所有近等能误差均为\textbf{数值诊断级}（ED 尺寸收敛、NLCE 与 ED 差、转移矩阵
-两窗口差），而非严格误差界。固定 $\varphi$ 的一维短程物质链在 $T>0$ 无自身有限温相变
-\cite{Araki1969Gibbs}，因此零温交错磁长程序不能作为 $T>0$ 的独立共存热相；完整腔系统的
-超辐射热转变不受此推断否定。若要把真实切触端点写成强主张，须另建能稳定处理
-$10^{-10}$--$10^{-11}$ 深度的高精度响应、有限温 MPS 或 SSE 基准，而非继续堆同类双精度
-ED 尺寸。
-
-\section{结论}
-
-本阶段在非零纵场 $zz/z/x$ 量子 Dicke--Ising 链中得到：
-
-\begin{enumerate}
-  \item $J=-0.2,\Delta=0.2$ 的热三临界候选 $(T^\ast,g^\ast)=(0.2572636,0.4888020)$，
-        获六阶收敛、$h^4$ 标度、邻域符号切换与有限域驻点的\textbf{数值强支持}。
-  \item 高温上支 $T_{\rm upper}(\Delta)$ 的非单调拱形与低温重入一级窄袋的\textbf{局部
-        Landau 拓扑}，两根在 $(\Delta_{\rm end},T_{\rm end})=(0.4002585,0.1255994)$ 切触。
-  \item $\Delta=0.4001$ 一段重入截面获\textbf{全局数值支持}（信号/分辨率 $68.85$）；
-        $\Delta=0.4002$ 边缘、$\Delta=0.40024$ 与切触端点未分辨。
-\end{enumerate}
-
-下一步：补核 Leibig 期刊正文与最新引文；若要把切触端点升级为已确认相界，先立高精度
-响应/有限温 MPS/SSE 方法基准；若独立方法不收敛或发现同模型完整先例，按主张台账 C04
-降级或止损。
+下一步三件事：补核 Leibig 期刊正文和最新引文；真想把切触端点写成强主张，先立一个能处理
+$10^{-10}$--$10^{-11}$ 深度的高精度响应/有限温 MPS/SSE 基准，而不是继续堆同类双精度 ED 的
+尺寸；如果独立方法不收敛或撞见同模型完整先例，按主张台账 C04 降级或止损。
 
 \printbibliography[title={参考文献}]
 \end{document}
