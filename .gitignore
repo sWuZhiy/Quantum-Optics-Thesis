@@ -36,7 +36,8 @@ results/runs/*
 !results/runs/README.md
 
 # Newly downloaded article PDFs stay local; already tracked user files remain tracked.
-literature/*.pdf
+literature/papers/*.pdf
+literature/papers/supplementary/*.pdf
 
 # OS files
 .DS_Store

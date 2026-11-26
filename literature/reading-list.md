@@ -8,11 +8,11 @@
 
 | 阅读顺序 | 文献与当前优先部分 | 对应构建任务 | 读完应拿出的东西 |
 | --- | --- | --- | --- |
-| 1：缺口基准 | [Gammelmark–Mølmer 2011](https://arxiv.org/html/1102.1905v1)（[本地 PDF](<Phase transitions in an Ising chain interacting with a single mode cavity field.pdf>)）第 4–10 页 §2–4、式 (1)、(7)–(9) 与图 1–4 | P0.1、T1 | 写清交换轴/静态场/腔耦合轴、有限温自由能和一/二阶判据；说明与候选模型的逐算符差别 |
-| 2：零温直接先例 | [Langheld 2025](https://arxiv.org/html/2409.15082)（[本地 PDF](<Quantum phase diagrams of Dicke-Ising models by a wormhole algorithm.pdf>)）主文式 (1)、图 3–4、补充 §IV 式 (S33)–(S35)、图 S9 | P0.1、Z2 | 统一 `J,g,ε`；选定零温校准截面；明确 `A²` 可达性已覆盖的范围 |
-| 3：零温高精度与热方法入口 | [Leibig 2026](https://arxiv.org/html/2601.10210v1)（[本地预印本 PDF](<Quantitative approach for the Dicke-Ising chain with an effective self-consistent matter Hamiltonian.pdf>)）§2.1–2.2、§3.3–3.4、§4 | P0.1、P0.3、Z2 | 写出自洽能量分支与全局比较；标出零温结论，避免把 NLCE+DMRG 名称本身当作有限温方案 |
+| 1：缺口基准 | [Gammelmark–Mølmer 2011](https://arxiv.org/html/1102.1905v1)（[本地 PDF](<papers/Phase transitions in an Ising chain interacting with a single mode cavity field.pdf>)）第 4–10 页 §2–4、式 (1)、(7)–(9) 与图 1–4 | P0.1、T1 | 写清交换轴/静态场/腔耦合轴、有限温自由能和一/二阶判据；说明与候选模型的逐算符差别 |
+| 2：零温直接先例 | [Langheld 2025](https://arxiv.org/html/2409.15082)（[本地 PDF](<papers/Quantum phase diagrams of Dicke-Ising models by a wormhole algorithm.pdf>)）主文式 (1)、图 3–4、补充 §IV 式 (S33)–(S35)、图 S9 | P0.1、Z2 | 统一 `J,g,ε`；选定零温校准截面；明确 `A²` 可达性已覆盖的范围 |
+| 3：零温高精度与热方法入口 | [Leibig 2026](https://arxiv.org/html/2601.10210v1)（[本地预印本 PDF](<papers/Quantitative approach for the Dicke-Ising chain with an effective self-consistent matter Hamiltonian.pdf>)）§2.1–2.2、§3.3–3.4、§4 | P0.1、P0.3、Z2 | 写出自洽能量分支与全局比较；标出零温结论，避免把 NLCE+DMRG 名称本身当作有限温方案 |
 | 4：三临界边界 | [Koziol 2026](https://arxiv.org/abs/2605.27484) 式 (12)–(14)、图 1–3；[Hörmann 2026](https://arxiv.org/html/2606.26081v1) §II、§V.3、§VI | P0.1–P0.2、Z2 | 列出已知零温 Landau 系数、三临界机制与作者明确留下的有限温开放问题；不把展望当作新颖性证明 |
-| 5：反压缩基线已完成 | [Chen 2021](https://www.nature.com/articles/s41467-021-26573-5)（[本地 PDF](<Experimental quantum simulation of superradiant phase transition beyond no-go theorem via antisqueezing.pdf>)）主文全部科学内容及补充 Note 1–7 | Z1、论文边界 | 已完成 `D−ξ`、稳定条件、原光场变换、有限截断、赝纯态与 NMR 有效基态/真实平衡体系的区分；不再据此扩展主线 |
+| 5：反压缩基线已完成 | [Chen 2021](https://www.nature.com/articles/s41467-021-26573-5)（[本地 PDF](<papers/Experimental quantum simulation of superradiant phase transition beyond no-go theorem via antisqueezing.pdf>)）主文全部科学内容及补充 Note 1–7 | Z1、论文边界 | 已完成 `D−ξ`、稳定条件、原光场变换、有限截断、赝纯态与 NMR 有效基态/真实平衡体系的区分；不再据此扩展主线 |
 
 近期路线边界还需记录 [Wang、Li、Chen 2026，arXiv:2602.09912v1](https://arxiv.org/abs/2602.09912)：目前只核对元数据与摘要。作者在开放横向/纵向 Dicke–Ising 的平均场与稳定性分析中报告非平衡稳态、双稳态和四临界结构；在未精读正文公式前不引用更细结论。它说明“转向耗散”不是未经研究的空白，也说明该路线不能与平衡有限温 `FT-TC` 混写。
 
@@ -66,11 +66,11 @@ Mendonça 是用户原始选题的重要来源，涉及 Ising/XXZ 和混合变�
 | `Zhang2014CircuitIsing` | 国内团队参与的 Dicke–Ising 电路方案；四相与 AFM–超辐射共存的早期理论 | [期刊正文](https://www.nature.com/articles/srep04083) | 摘要、模型和结论已核 |
 | `Rohn2020QuantizedIsing` | 一维 Dicke–Ising 中光诱导磁序转变与一级边界 | [期刊页面](https://journals.aps.org/prresearch/abstract/10.1103/PhysRevResearch.2.023131) | 摘要已核；公式待逐页读 |
 | `Zhu2020SqueezedLight` | 国内团队参与的参量压缩光调控超辐射及三临界点；受泵浦情形 | [作者预印本](https://arxiv.org/abs/1907.00522) | 摘要已核；不要当作无泵浦平衡实验 |
-| `Chen2021Antisqueezing` | `A²` 与独立反压缩项、反向相变、NMR 有效基态模拟 | [期刊正文](https://www.nature.com/articles/s41467-021-26573-5)；[本地 PDF](Experimental%20quantum%20simulation%20of%20superradiant%20phase%20transition%20beyond%20no-go%20theorem%20via%20antisqueezing.pdf) | 本地正文、补充材料和审稿文件已读；引文须区分“模拟基态”与真实热平衡 |
+| `Chen2021Antisqueezing` | `A²` 与独立反压缩项、反向相变、NMR 有效基态模拟 | [期刊正文](https://www.nature.com/articles/s41467-021-26573-5)；[本地 PDF](<papers/Experimental quantum simulation of superradiant phase transition beyond no-go theorem via antisqueezing.pdf>) | 本地正文、补充材料和审稿文件已读；引文须区分“模拟基态”与真实热平衡 |
 | `Bamba2022Magnonic` | ErFeO₃ 中 Fe 磁振子–Er 自旋耦合的热平衡超辐射转变理论；与光学腔、电偶极 A² 区分 | [期刊正文](https://www.nature.com/articles/s42005-021-00785-z) | 正文摘要、模型及结果段落已核；微观参数待细读 |
 | `Schellenberger2024Mapping` | 有关联光–物质系统正常相的映射方法；可作理论对照 | [开放全文](https://scipost.org/SciPostPhysCore.7.3.038/pdf) | 摘要/结构已核；推导待逐页读 |
-| `Mendonca2025Matter` | 用户上传的 Dicke–Ising/XXZ 基态相图、一级边界、XXZ 次线性光子标度 | [作者全文](https://arxiv.org/html/2503.04961)；[本地 PDF](Role%20of%20Matter%20Interactions%20in%20Superradiant%20Phenomena.pdf) | 本地正文已读；Ising 相图要与后续 QMC/Comment 对照 |
-| `Langheld2025Wormhole` | 大尺度 QMC 基准；反铁磁共存相、跃迁阶数；**补充材料 §IV、图 S9 已讨论 `A²` 的可达区** | [作者全文和补充材料](https://arxiv.org/html/2409.15082)；[本地 PDF](<Quantum phase diagrams of Dicke-Ising models by a wormhole algorithm.pdf>) | 关键正文段落与补充材料 §IV 已核；已保存本地 PDF |
+| `Mendonca2025Matter` | 用户上传的 Dicke–Ising/XXZ 基态相图、一级边界、XXZ 次线性光子标度 | [作者全文](https://arxiv.org/html/2503.04961)；[本地 PDF](<papers/Role of Matter Interactions in Superradiant Phenomena.pdf>) | 本地正文已读；Ising 相图要与后续 QMC/Comment 对照 |
+| `Langheld2025Wormhole` | 大尺度 QMC 基准；反铁磁共存相、跃迁阶数；**补充材料 §IV、图 S9 已讨论 `A²` 的可达区** | [作者全文和补充材料](https://arxiv.org/html/2409.15082)；[本地 PDF](<papers/Quantum phase diagrams of Dicke-Ising models by a wormhole algorithm.pdf>) | 关键正文段落与补充材料 §IV 已核；已保存本地 PDF |
 | `Hormann2025Comment` | 对 Mendonça 等 Ising 相图提出可核查的异议 | [作者全文](https://arxiv.org/html/2511.08452) | arXiv 短文已核；2026-10 PRL 接收，期刊正文待核 |
 | `Leibig2026SelfConsistent` | 热力学极限的自洽自旋模型及 NLCE+DMRG 零温相图；决定本题计算方法和新颖性基线 | [作者预印本](https://arxiv.org/html/2601.10210v1)、[期刊 DOI](https://doi.org/10.21468/SciPostPhys.21.3.071)、[作者单位期刊题录与摘要](https://cris.fau.de/publications/370578265/) | 本地 v1 的模型映射、方法与主要结论已核；正式摘要同样聚焦基态量子相图，期刊版正文差异仍待核，不能据摘要排除新增内容 |
 | `Koziol2026Criticality` | 铁磁 Dicke–Ising 的一阶/二阶边界、三临界点机制与有限尺寸标度；限制把这些作为新发现 | [作者预印本](https://arxiv.org/abs/2605.27484) | 正文式 (1)、式 (12)–(14)、图 1–3 与总结已核；发表状态待追踪 |
@@ -134,13 +134,13 @@ Mendonça 是用户原始选题的重要来源，涉及 Ising/XXZ 和混合变�
 | 引用键 | 使用边界 | 原文入口 |
 | --- | --- | --- |
 | `Baumann2010OpenDicke` | 驱动开放腔 Dicke 相变的经典实验；与静态热平衡区分 | [期刊正文](https://www.nature.com/articles/nature09009) |
-| `Zhu2024Nonreciprocal` | 用户上传的双模、旋转、定向泵浦与驱动耗散稳态相变；文中 `J` 为模间跳跃，不是自旋相互作用 | [期刊页面](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.132.193602)；[本地 PDF](Nonreciprocal%20Superradiant%20Phase%20Transitions%20and%20Multicriticality%20in%20a%20Cavity%20QED%20System.pdf) |
+| `Zhu2024Nonreciprocal` | 用户上传的双模、旋转、定向泵浦与驱动耗散稳态相变；文中 `J` 为模间跳跃，不是自旋相互作用 | [期刊页面](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.132.193602)；[本地 PDF](<papers/Nonreciprocal Superradiant Phase Transitions and Multicriticality in a Cavity QED System.pdf>) |
 | `RomanRoche2025Bound` | Dicke–Ising 的平衡激发与束缚极化激元；如后续研究能谱再细读 | [开放全文](https://onlinelibrary.wiley.com/doi/full/10.1515/nanoph-2024-0568) |
 
 ## 本地辅助材料
 
-- [Chen 补充材料](Supplementary%20Information-Experimental%20quantum%20simulation%20of%20superradiant.pdf)：压缩变换、参数条件、实验编码；引用时应引用主论文并注明补充材料位置。
-- [Chen 审稿资料](Peer%20Review%20File.pdf)：关于“真正平衡态”与模拟有效基态的表述争论；帮助把握措辞，不代替正式论文引用。
+- [Chen 补充材料](<papers/supplementary/Supplementary Information-Experimental quantum simulation of superradiant.pdf>)：压缩变换、参数条件、实验编码；引用时应引用主论文并注明补充材料位置。
+- [Chen 审稿资料](<papers/supplementary/Peer Review File.pdf>)：关于“真正平衡态”与模拟有效基态的表述争论；帮助把握措辞，不代替正式论文引用。
 
 ## 引用核查规则
 
@@ -215,7 +215,7 @@ Mendonça 是用户原始选题的重要来源，涉及 Ising/XXZ 和混合变�
 
 ### Chen 等（2021）：A² 与反压缩的 Rabi 基态模拟
 
-- **出处**：*Nature Communications* **12**, 6281 (2021)，[DOI](https://doi.org/10.1038/s41467-021-26573-5)；引用键 `Chen2021Antisqueezing`；[本地主论文](Experimental%20quantum%20simulation%20of%20superradiant%20phase%20transition%20beyond%20no-go%20theorem%20via%20antisqueezing.pdf)。
+- **出处**：*Nature Communications* **12**, 6281 (2021)，[DOI](https://doi.org/10.1038/s41467-021-26573-5)；引用键 `Chen2021Antisqueezing`；[本地主论文](<papers/Experimental quantum simulation of superradiant phase transition beyond no-go theorem via antisqueezing.pdf>)。
 - **研究对象**：单个两能级自由度的 Rabi 有效模型，含 $A^2$ 项与独立的 $-\xi(a+a^\dagger)^2$；相变极限为 $\Omega/\omega\to\infty$，不是多自旋 $N\to\infty$。
 - **论文报告**：正文第 2–3 页式 (1)–(3) 与图 1 给出含 $A^2$ 和反压缩项的目标哈密顿量、稳定域及 NP/SP/UP 相区；第 3–5 页图 2–4 报告反压缩零点涨落、序参量、临界标度、纠缠和条件猫态。实验用一个 $^{13}\mathrm C$ 核编码二能级系统、三个 $^{19}\mathrm F$ 核编码 8 级截断振子；主文 Methods 第 6–7 页式 (4)–(14) 给出二进制映射和原光场观测量重构。
 - **作者解释**：独立、固定的 $\xi$ 与随 $\lambda^2$ 增长的 $A^2$ 系数形成不同扫参路径，使 $\alpha=1.1,\xi/\omega=0.26$ 时出现 UP–SP–NP 的反向路径；作者把临界点附近序参量突增、$\gamma\simeq-2/3$ 和负 Wigner 函数视为恢复相变特征的证据（正文图 3–4；补充 Note 1–3）。
@@ -243,7 +243,7 @@ Mendonça 是用户原始选题的重要来源，涉及 Ising/XXZ 和混合变�
 
 ### Zhu 等（2024）：非互易、受泵浦超辐射相变
 
-- **出处**：*Physical Review Letters* **132**, 193602 (2024)，[DOI](https://doi.org/10.1103/PhysRevLett.132.193602)；引用键 `Zhu2024Nonreciprocal`；[本地 PDF](Nonreciprocal%20Superradiant%20Phase%20Transitions%20and%20Multicriticality%20in%20a%20Cavity%20QED%20System.pdf)。
+- **出处**：*Physical Review Letters* **132**, 193602 (2024)，[DOI](https://doi.org/10.1103/PhysRevLett.132.193602)；引用键 `Zhu2024Nonreciprocal`；[本地 PDF](<papers/Nonreciprocal Superradiant Phase Transitions and Multicriticality in a Cavity QED System.pdf>)。
 - **研究对象**：一个两能级原子耦合旋转微腔的两个反向传播模式，含定向的 $\chi^{(2)}$ 参量泵浦。
 - **方法与结果**：分析旋转导致的方向频移与单向压缩的联合作用，得到方向相关的一、二阶超辐射边界和多临界点。
 - **A² 与自旋相互作用**：论文中的 $J$ 是**两个光学模式之间的跳跃**，不是自旋–自旋交换；也不是本文拟研究的静态单模 A² 与 Ising 联合作用。
@@ -261,7 +261,7 @@ Mendonça 是用户原始选题的重要来源，涉及 Ising/XXZ 和混合变�
 
 ### Mendonça 等（2025）：物质相互作用对超辐射的作用
 
-- **出处**：*Physical Review Letters* **135**, 133601 (2025)，[DOI](https://doi.org/10.1103/z8gv-7yyk)；引用键 `Mendonca2025Matter`；[本地 PDF](Role%20of%20Matter%20Interactions%20in%20Superradiant%20Phenomena.pdf)。
+- **出处**：*Physical Review Letters* **135**, 133601 (2025)，[DOI](https://doi.org/10.1103/z8gv-7yyk)；引用键 `Mendonca2025Matter`；[本地 PDF](<papers/Role of Matter Interactions in Superradiant Phenomena.pdf>)。
 - **研究对象**：Dicke–Heisenberg 模型的 Ising 与 XXZ 极限，研究自旋交换和集体光耦合的竞争。
 - **方法与结果**：采用光子变分态与自旋 DMRG 的混合方法研究零温基态；报告 Ising 相边界及 XXZ 情形中光场与面内自旋关联共存、次线性光子标度等结果（正文式 (1)，图 2–4）。
 - **A² 处理**：本地主文式 (1) 未显式纳入 $D(a+a^\dagger)^2$，全文未见独立 A² 参数扫描；也未研究独立静态反压缩 $\xi$。
@@ -367,7 +367,7 @@ Mendonça 是用户原始选题的重要来源，涉及 Ising/XXZ 和混合变�
 
 ### Chen 等（2021）补充材料：反压缩变换与实验编码
 
-- **材料**：[本地补充 PDF](Supplementary%20Information-Experimental%20quantum%20simulation%20of%20superradiant.pdf)，附属于 [Chen 等主论文](https://doi.org/10.1038/s41467-021-26573-5)，**不单独计为一篇研究论文**。
+- **材料**：[本地补充 PDF](<papers/supplementary/Supplementary Information-Experimental quantum simulation of superradiant.pdf>)，附属于 [Chen 等主论文](https://doi.org/10.1038/s41467-021-26573-5)，**不单独计为一篇研究论文**。
 - **Note 1–2（补充 pp.1–4，式 (1)–(20)）**：完整压缩变换含常数项，推得正常相软模、超辐射位移分支、临界条件、零点涨落奇异性和条件宇称猫态；所有严格相变结论均使用经典振子极限。Supplementary Fig. 1 的大频率比/大截断曲线主要是数值结果，不是 NMR 实验数据。
 - **Note 3–4（补充 pp.5–7，式 (21)，Supplementary Fig. 3–4）**：比较直接施加截断压缩与理论后处理。三振子比特在大压缩、深 SP 区明显失真，增加编码维数后恢复；所谓压缩算符保真度只在真空输入上定义，不是全空间过程保真度。后处理在理想无限维变换下严格，但实验序参量仍是模型依赖的重构量。
 - **Note 5（补充 pp.7–8，式 (22)–(24)）**：室温 $9.6\,\mathrm T$ 热态极化约 $10^{-5}$，制成赝纯态后忽略 NMR 不可见的恒等部分。将 PPS“视作真空”是偏差密度矩阵的操作等价，不是实际纯态制备或基态冷却；Eq. (24) 的“fidelity”是归一化 Hilbert–Schmidt 重叠。
@@ -378,7 +378,7 @@ Mendonça 是用户原始选题的重要来源，涉及 Ising/XXZ 和混合变�
 
 ### Chen 等（2021）审稿资料：平衡态用语的边界
 
-- **材料**：[本地审稿 PDF](Peer%20Review%20File.pdf)，附属于 [Chen 等主论文](https://doi.org/10.1038/s41467-021-26573-5)，**不是独立论文，也不是物理结论的正式引文来源**。
+- **材料**：[本地审稿 PDF](<papers/supplementary/Peer Review File.pdf>)，附属于 [Chen 等主论文](https://doi.org/10.1038/s41467-021-26573-5)，**不是独立论文，也不是物理结论的正式引文来源**。
 - **主要内容**：审稿人与作者就「模拟有效 Rabi 哈密顿量的基态」能否称为真实无驱动腔 QED 的平衡超辐射相变、以及 A² 与反压缩项的物理解释进行讨论。
 - **与毕设关系**：帮助规范论文措辞：静态有效模型的平衡态、受控量子模拟得到的有效基态、受泵浦开放系统的稳态应分开表述。
 - **核读状态**：相关审稿段落已读；不以审稿意见代替已发表正文或新的微观推导。
