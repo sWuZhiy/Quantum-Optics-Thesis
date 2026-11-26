@@ -1,7 +1,9 @@
 % 阶段研究汇总模板：复制为 NN-主题.tex 后填写，主题按内容定。
+% 要求：正式论文风格，逐节引用文献（\cite 引用键须在 references.bib 中存在）。
 \documentclass[UTF8,11pt,a4paper]{ctexart}
 \usepackage[margin=2.6cm]{geometry}
 \usepackage{amsmath,amssymb}
+\usepackage{booktabs}
 \usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
 \usepackage[backend=biber,style=numeric,sorting=none,doi=true,url=false,eprint=true]{biblatex}
 \renewcommand*{\bibfont}{\small}
@@ -15,26 +17,25 @@
 \begin{document}
 \maketitle
 
-% 一段话概括本阶段做了什么、得到什么结论、结论的证据等级。
+% 摘要：一段话概括问题、方法、主要结果与证据等级。
 \begin{abstract}
-本阶段围绕……展开。主要结论是……（并注明是数值诊断、数值强支持还是局部候选）。
+本阶段围绕……展开，得到……（注明是数值诊断、数值强支持还是局部候选）。
 \end{abstract}
 
-\section{本阶段的问题}
+\section{引言}
+% 正式论文式文献综述：背景、近年前人工作（逐篇 \cite）、本阶段问题的增量与动机。
 
-% 叙述式：这一阶段要回答什么问题、为什么值得做、相对先例的增量。
-
-\section{方法}
-
-% 用了哪些模型/判据/求解器，关键公式与近似，指向 manuscript/theory/ 或 results/runs/ 的依据。
+\section{模型与方法}
+% 哈密顿量、自由能泛函、判据、数值方法（\cite 方法先例，指向 theory/ 与 results/runs/）。
 
 \section{结果}
+% 分小节叙述；关键数值附误差边界与证据等级，不把诊断写成严格界。
 
-% 论文文本叙述结果；数值附误差边界与证据等级，不把诊断写成严格界。
+\section{讨论}
+% 与先例的对比、误差与适用范围、可证伪条件。
 
-\section{问题与下一步}
-
-% 仍未解决、需补核（如 Leibig 期刊正文）、下一步验收。
+\section{结论}
+% 能说什么、不能说什么、下一步。
 
 \printbibliography[title={参考文献}]
 \end{document}
