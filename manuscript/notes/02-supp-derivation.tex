@@ -1,0 +1,125 @@
+% 第二阶段补充材料：推导链路与数值实现。AI 起草，逐阶段经用户过目后写入。
+% 文件名 ASCII（本机 biber 不认中文文件名）；中文主题见 notes/README.md 索引。
+\documentclass[UTF8,11pt,a4paper]{ctexart}
+\usepackage[margin=2.6cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage[backend=biber,style=numeric,sorting=none,doi=true,url=false,eprint=true]{biblatex}
+\renewcommand*{\bibfont}{\small}
+\setlength{\bibitemsep}{0pt}
+\addbibresource{../../literature/references.bib}
+
+\title{第二阶段补充材料：推导链路与数值实现\\[0.4em]
+\large 从模型建立到热三临界候选与相图拓扑的完整过程}
+\author{Quantum Optics Thesis 工作笔记}
+\date{2026 年 11 月 27 日}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+本材料是[第二阶段研究汇总]的推导补充：正文面向汇报、给出结论与证据分级，本材料
+面向"每个结论是如何一步步得到的"。按阶段展开系统选择、模型建立、热力学自洽、
+相边界判据、零场 Landau 系数、零温校准、数值方法、热三临界候选与相图拓扑，每个阶段
+区分理论推导、数值实现与所得物理内容。符号统一见阶段 0 的约定表。
+\end{abstract}
+
+\section{阶段 0：系统选择与模型建立}
+
+\subsection{研究对象与轴向选择}
+
+我们研究的是一维\textbf{量子 Dicke--Ising 链}：$N$ 个自旋 $1/2$ 排成周期链，自旋之间
+最近邻 Ising 交换、外加静态纵场，并集体耦合到单个腔模。用三元组
+$(\text{交换轴}/\text{静场轴}/\text{腔耦合轴})$ 标记轴向，本项目取
+\textbf{$zz/z/x$}：交换与静场都沿 $z$（同轴），腔耦合沿 $x$（横向）。
+
+选这个轴向由三点决定：
+
+\begin{enumerate}
+  \item \textbf{三轴夹角是不变量。} 全局自旋旋转同时转动三个轴，不能改变任意两轴的
+        夹角。$zz/z/x$ 中交换轴与静场轴\textbf{重合}（夹角 $0^\circ$），而三轴两两
+        正交的 $yy/z/x$（Gammelmark--Mølmer 2011）与 $zz/y/x$（Rao 2025）夹角是
+        $90^\circ$，二者严格等价，且已被有限温一/二级边界与三临界研究覆盖。我们选的
+        是未被覆盖的另一等价类。
+  \item \textbf{零场极限的物理不同。} $h=0$ 时，本模型的物质链是
+        $J\sigma^z\sigma^z+(\Delta/2)\sigma^z$，两项对易、纯对角，是\textbf{经典}
+        Ising 链；而 $yy/z/x$ 是 $J\sigma^y\sigma^y+(\Delta/2)\sigma^z$，不对易，是
+        \textbf{量子}横场 Ising 链。这决定可积性分界与求解方法。
+  \item \textbf{平台可实现性。} 交换轴由相互作用的各向异性决定、最难调，静场轴由外加
+        DC 场决定；让二者同轴是磁偶极原子、Rydberg 修饰、超导比特、磁振子晶体等平台的
+        默认配置。（详细论证见轴向等价类与平台对应说明，标注为待核推断。）
+\end{enumerate}
+
+\subsection{哈密顿量}
+
+取自然单位 $\hbar=k_B=1$、自旋 $s_i^\alpha=\sigma_i^\alpha/2$（$\sigma^\alpha$ 为泡利
+矩阵）。完整哈密顿量为
+\begin{equation}
+  H_N=\omega a^\dagger a+\Delta\sum_i s_i^z+4J\sum_i s_i^z s_{i+1}^z
+  +\frac{2g}{\sqrt N}(a+a^\dagger)\sum_i s_i^x .
+  \label{eq:HN}
+\end{equation}
+四项依次是腔模能量（$\omega>0$）、静态纵场（自旋能级劈裂/失谐）、最近邻 Ising 交换
+（$J<0$ 铁磁、$J>0$ 反铁磁）、腔--自旋耦合（沿 $x$，$1/\sqrt N$ 保证热力学极限良好
+定义）。本项目主要取铁磁 $J=-0.2$、$\omega=1$；纵场 $\Delta>0$ 可经全局 $z$ 翻转选为正。
+
+\subsection{符号约定}
+
+下表是后续所有推导的统一依据，改符号时须同步更新本表与相关公式。
+
+{\footnotesize
+\begin{longtable}{@{}p{2.1cm}p{6.0cm}p{6.2cm}@{}}
+\toprule
+符号 & 含义 & 约定 / 取值 \\
+\midrule
+\endhead
+\multicolumn{3}{l}{\textbf{基础}} \\
+$N$ & 自旋（位点）数 & 周期链，$N\to\infty$ 为热力学极限 \\
+$\sigma_i^\alpha,\ s_i^\alpha$ & 泡利矩阵 / 自旋算符 & $s_i^\alpha=\sigma_i^\alpha/2$，$\alpha=x,y,z$ \\
+$\omega$ & 腔模频率 & $\omega>0$，取 $\omega=1$ \\
+$a,\ a^\dagger$ & 腔模湮灭 / 产生算符 & 玻色子 \\
+$\Delta$ & 纵场（失谐） & $\Delta>0$ 可经全局 $z$ 翻转选定 \\
+$J$ & 最近邻 Ising 交换 & $J<0$ 铁磁（取 $-0.2$），$J>0$ 反铁磁 \\
+$g$ & 腔--自旋耦合强度 & 单模集体耦合 \\
+$T,\ \beta$ & 温度 / 逆温 & $\beta=1/T$ \\
+\midrule
+\multicolumn{3}{l}{\textbf{自洽量}} \\
+$\varphi$ & 腔位移序参量 & $\varphi=\mathrm{Re}\langle a\rangle/\sqrt N$，实数 \\
+$h$ & 等效横场 & $h=4g\varphi\ge0$ \\
+$f_{\rm spin}(T,h)$ & 冻结腔后的无限链单位点自旋自由能 & $f_{\rm spin}=-\lim_{N\to\infty}(T/N)\log\operatorname{Tr}e^{-H_{\rm spin}(h)/T}$ \\
+$\Phi_T(\varphi)$ & 总自由能泛函 & $\Phi_T(\varphi)=\omega\varphi^2+f_{\rm spin}(T,4g\varphi)$ \\
+$A_T(h)$ & 正常态与有限场自由能差 & $A_T(h)=f_{\rm spin}(T,0)-f_{\rm spin}(T,h)$ \\
+\midrule
+\multicolumn{3}{l}{\textbf{判据}} \\
+$g_{\rm equal}(h)$ & 正常态与有限位移态等能耦合 & $g_{\rm equal}^2=\omega h^2/[16A_T(h)]$ \\
+$g_{\rm onset}(T)$ & 等能耦合下确界 & $g_{\rm onset}=\inf_{h>0}g_{\rm equal}(h)$ \\
+$g_{\rm local}(T)$ & 正常态局部失稳阈值 & 由零场曲率决定（阶段 2） \\
+$Q$ & 三自旋概率加权因子 & 见阶段 2 \\
+$\chi_x$ & 横向磁化率 & $\chi_x=Q/4$ \\
+$g_c(\Delta)$ & 零温一级线 & 全局等能最小值（阶段 4） \\
+\midrule
+\multicolumn{3}{l}{\textbf{Landau 系数}} \\
+$a_2,a_4,a_6$ & $f_{\rm spin}(T,h)$ 在 $h=0$ 的展开系数 & $f=f_0+a_2h^2+a_4h^4+a_6h^6+\cdots$ \\
+$Z(h),\ Z_m$ & 配分函数及其展开 & $Z(h)=Z_0+h^2Z_2+h^4Z_4+h^6Z_6+\cdots$，$z_m=Z_m/Z_0$ \\
+$dE_i$ & 翻转单自旋的能量差 & 见阶段 3 \\
+$dE_{ij}$ & 翻转相邻两自旋的能量差 & $dE_{ij}=dE_i+dE_j+4Js_is_j$ \\
+$B_1,\ I_4,\ F_m$ & 虚时间积分核 / 合流差商 & 见阶段 3 \\
+\midrule
+\multicolumn{3}{l}{\textbf{零温基线}} \\
+$K,\ \Gamma$ & 横场 Ising 的交换 / 横场 & $K=-J>0$，$\Gamma=h/2$ \\
+$A,\ B$ & 零温展开辅助量 & $A=\Delta/2-2J$，$B=\Delta/2-J$ \\
+$e_{\rm spin}(0,h)$ & 零温基态能密度 & 见阶段 4 \\
+\midrule
+\multicolumn{3}{l}{\textbf{证据量}} \\
+$h^\ast$ & 一级前驱极小位置 & $h^{\ast\,2}=-a_4/(2a_6)$ \\
+$\mathrm{depth}$ & 一级前驱极小深度 & $\mathrm{depth}=g_{\rm local}-g_{\rm equal}(h^\ast)$ \\
+$T^\ast,\ g^\ast$ & 热三临界候选 & $a_4(T^\ast)=0$，$g^\ast=g_{\rm local}(T^\ast)$ \\
+$T_{\rm upper},\ T_{\rm lower}$ & 上支 / 下支 & $a_4(T)=0$ 的高温根 / 低温根 \\
+$\Delta_{\rm end},T_{\rm end},g_{\rm end}$ & 切触端点 & 上下支汇合点 \\
+\bottomrule
+\end{longtable}
+}
+
+\end{document}

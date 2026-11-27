@@ -29,6 +29,7 @@
 | --- | --- | --- |
 | [01-topic-and-literature.tex](01-topic-and-literature.tex) | 选题与国内外研究现状 | 已定稿 |
 | [02-finite-T-tricritical.tex](02-finite-T-tricritical.tex) | 热三临界候选、相图拓扑与证据分级 | 起草待定稿 |
+| [02-supp-derivation.tex](02-supp-derivation.tex) | 推导补充：从模型到结论的完整过程 | 逐阶段写作中（阶段 0 已定稿） |
 
 ## 本地编译
 
