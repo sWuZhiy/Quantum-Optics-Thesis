@@ -18,11 +18,13 @@ venv/
 # LaTeX build files (keep source PDFs in literature/)
 *.aux
 *.bbl
+*.bcf
 *.blg
 *.fdb_latexmk
 *.fls
 *.log
 *.out
+*.run.xml
 *.synctex.gz
 *.toc
 manuscript/notes/build/
