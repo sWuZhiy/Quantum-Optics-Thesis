@@ -122,6 +122,29 @@ $\Delta_{\rm end},T_{\rm end},g_{\rm end}$ & 切触端点 & 上下支汇合点 \
 \end{longtable}
 }
 
+\subsection{零场与加场：经典与量子}
+
+一个容易混淆、需要一开始就澄清的点：本模型\textbf{不是经典模型}，只有零场极限是经典的。
+记 $h=4g\varphi$，则
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+& $h=0$（零场，正常态） & $h\neq0$（有腔场） \\
+\midrule
+$zz/z/x$（本项目） & $J\sigma^z\sigma^z+(\Delta/2)\sigma^z$ 对易，\textbf{经典} & 加 $(h/2)\sigma^x$，不对易，\textbf{量子}，纵场破坏可积 \\
+$yy/z/x$（B 类） & 量子横场 Ising（Jordan--Wigner 可积） & 两场合成一个横场，\textbf{可积} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+"转移矩阵精确解"只对 $h=0$ 的经典（对角）链成立：此时
+$Z=\operatorname{Tr}(T^N)\to\lambda_1^N$，$f=-T\ln\lambda_1$（$\lambda_1$ 是 $2\times2$
+转移矩阵的最大本征值），是精确而非近似的。它只用来给零场锚点（$g_{\rm local}$、零场展开
+系数）。因此"难易"要分段：\textbf{零场我们比 B 类更容易（经典精确解）}，这正是
+$a_2/a_4/a_6$ 能用经典组合路径精确枚举的原因；\textbf{加场后我们比 B 类更难（不可积）}。
+整个项目的求解难点在后者。
+
 \section{阶段 1：热力学自洽与自由能泛函}
 
 \subsection{目标与思路}
@@ -136,6 +159,12 @@ $\Delta_{\rm end},T_{\rm end},g_{\rm end}$ & 切触端点 & 上下支汇合点 \
 单模集体耦合的热力学自洽处理是标准做法：Gammelmark–Mølmer 最早用于量子 Ising 链的有限温
 自由能\cite{Gammelmark2011Thermal}，Hörmann 给出一般自洽泛函\cite{Hormann2026Folds}，
 Leibig 等用自洽纯自旋模型计算零温相图\cite{Leibig2026SelfConsistent}。
+
+还需区分两类自旋算符：腔耦合项 $(2g/\sqrt N)(a+a^\dagger)\sum_i s_i^x$ 是\textbf{集体}算符
+（腔只看到总自旋 $S_x=\sum_i s_i^x$，不区分单个自旋）；而交换项 $4J\sum_i s_i^zs_{i+1}^z$ 和
+纵场项 $\Delta\sum_i s_i^z$ 是\textbf{局域}的。正是"腔耦合集体、交换局域"的混合，使本模型
+既不能像纯 Dicke 模型那样只用总自旋描述，又必须处理自旋链的局域结构——这是"Dick--Ising"
+比"Dicke"难的原因，也是本项目有限温研究的新意所在。
 
 \subsection{从 $H_N$ 推出 $H_{\rm spin}(h)$}
 
@@ -161,6 +190,13 @@ a=\sqrt N\,\varphi+\delta a,\qquad \varphi\in\mathbb R\ \text{实数序参量},\
 \]
 $\varphi$ 取实数是一种规范选择（腔位移沿实轴）。这一步把腔的"集体相干部分"（$\sqrt N
 \varphi$）和"量子涨落部分"（$\delta a$）分开——相变研究的就是前者何时从 $0$ 变成非零。
+
+\textbf{物理解释：} 腔位移 $\varphi$ 是"腔被点亮多少"的量度，由自旋集体作用产生——当自旋集体
+沿 $x$ 极化，宏观横向磁化 $\langle S_x\rangle$ 像一个驱动力，把腔从真空"推"到相干态。"确定"
+二字来自 $N\to\infty$：单腔模的量子涨落被 $N$ 个自旋稀释，腔的态趋于位移确定的相干态而非
+涨落模糊的量子态。这正是平衡超辐射（自发、无外部泵浦）区别于开放泵浦体系的本质。另外，
+$a=\sqrt N\varphi+\delta a$ 这种"算符 = 经典值 + 涨落算符"的分解，就是\textbf{平均场}
+（Hartree/鞍点）的核心操作：把算符的期望值分离出来当经典量，涨落当小量。
 
 \textbf{步骤 3 —— 逐项代入展开。} 腔能量项
 \[
@@ -202,32 +238,51 @@ $O(1)$（单腔模涨落不随 $N$ 增长）。单位点自由能 $=F/N$，涨�
 
 \subsection{配分函数 $\to$ 自由能泛函}
 
-\textbf{步骤 1 —— 迹分解。} $Z_N=\operatorname{Tr}_{\text{腔},\text{自旋}}e^{-\beta H_N}$。
-
-\textbf{步骤 2 —— 腔取相干态鞍点。} 由步骤 5，腔自由度的迹由相干态 $|\sqrt N\varphi\rangle$
-主导，腔贡献确定性能量 $\omega N\varphi^2$，迹退耦为
+\textbf{步骤 1 —— 相干态完备性。} 相干态 $|\alpha\rangle$ 是湮灭算符的本征态
+$a|\alpha\rangle=\alpha|\alpha\rangle$，由位移算符 $D(\alpha)=e^{\alpha a^\dagger-\alpha^\ast a}$
+作用在真空上得到。它们满足完备性 $1=\int d^2\alpha/\pi\,|\alpha\rangle\langle\alpha|$。
+用它把腔自由度的迹展开成对 $\alpha$ 的积分：
 \[
-Z_N(\varphi)\approx e^{-\beta\omega N\varphi^2}\,\operatorname{Tr}_{\text{自旋}}
-e^{-\beta H_{\rm spin}(4g\varphi)}
-=e^{-\beta\omega N\varphi^2}Z_{\rm spin}(N,T,4g\varphi),
+Z_N=\operatorname{Tr}_{\text{自旋}}\operatorname{Tr}_{\text{腔}}e^{-\beta H_N}
+=\operatorname{Tr}_{\text{自旋}}\int\frac{d^2\alpha}{\pi}\,\langle\alpha|e^{-\beta H_N}|\alpha\rangle .
 \]
-其中 $Z_{\rm spin}(N,T,h)=\operatorname{Tr}_{\text{自旋}}e^{-\beta H_{\rm spin}(h)}$。
-物理图像：冻结腔位移在 $\varphi$，让自旋链在等效横场 $h=4g\varphi$ 下自己达到热平衡
-（给出 $Z_{\rm spin}$），腔本身贡献确定性 $\omega N\varphi^2$，两者相乘是因为鞍点近似下
-腔和自旋不再纠缠。
 
-\textbf{步骤 3 —— 自由能。} $F_N(\varphi)=-T\ln Z_N(\varphi)=\omega N\varphi^2-T\ln
-Z_{\rm spin}(N,T,4g\varphi)$。
+\textbf{步骤 2 —— 在相干态里算腔（换复数）。} 相干态是 $a$ 的本征态，$a|\alpha\rangle=\alpha|\alpha\rangle$、
+$\langle\alpha|a^\dagger=\langle\alpha|\alpha^\ast$。把腔算符换成复数，并取 $\alpha=\sqrt N\varphi$
+（$\varphi$ 实数，位移沿实轴），则
+\[
+\langle\alpha|H_N|\alpha\rangle
+=\omega|\alpha|^2+J\sum_i\sigma_i^z\sigma_{i+1}^z+\frac{\Delta}{2}\sum_i\sigma_i^z
++\frac{g}{\sqrt N}(\alpha+\alpha^\ast)\sum_i\sigma_i^x
+=\omega N\varphi^2+H_{\rm spin}(4g\varphi),
+\]
+最后一步用了 $|\alpha|^2=N\varphi^2$ 与 $(\alpha+\alpha^\ast)/\sqrt N=2\varphi$，方括号正是
+$H_{\rm spin}(4g\varphi)$（回忆 $h=4g\varphi$）。
 
-\textbf{步骤 4 —— 单位点自由能与热力学极限。} 除以 $N$ 取 $N\to\infty$：
+\textbf{步骤 3 —— 分离自旋迹，Laplace 鞍点。} 上式方括号里只剩自旋算符，自旋迹可以拿进去，
+腔的积分只剩一个相位（高斯型）积分：
+\[
+Z_N=\int[\text{测度}]\,e^{-\beta\omega N\varphi^2}\operatorname{Tr}_{\text{自旋}}
+e^{-\beta H_{\rm spin}(4g\varphi)}
+=\int d\varphi\,[\text{测度}]\,\exp\Big[-\beta N\big(\omega\varphi^2+f_{\rm spin}^N(T,4g\varphi)\big)\Big],
+\]
+其中 $f_{\rm spin}^N(T,h)=-(T/N)\ln\operatorname{Tr}e^{-\beta H_{\rm spin}(h)}$ 是有限 $N$ 的
+自旋自由能密度。被积函数形如 $\exp[-\beta N\Phi^N(\varphi)]$，指数带 $N$；$N\to\infty$ 时它在
+$\Phi^N(\varphi)$ 的极小处\textbf{指数级锐化}，积分由鞍点（Laplace 方法）主导：
+\[
+\lim_{N\to\infty}\frac1N\ln Z_N=-\beta\min_\varphi\big[\omega\varphi^2+f_{\rm spin}(T,4g\varphi)\big].
+\]
+
+\textbf{步骤 4 —— 自由能泛函。} 定义
 \begin{equation}
-\Phi_T(\varphi)=\lim_{N\to\infty}\frac{F_N(\varphi)}{N}=\omega\varphi^2+f_{\rm spin}(T,4g\varphi),
+\Phi_T(\varphi)=\omega\varphi^2+f_{\rm spin}(T,4g\varphi),
 \qquad f_{\rm spin}(T,h)=-\lim_{N\to\infty}\frac TN\ln\operatorname{Tr}e^{-\beta H_{\rm spin}(h)} .
 \label{eq:Phi}
 \end{equation}
 式~\eqref{eq:Phi} 的自由能泛函结构与 Hörmann\cite{Hormann2026Folds}、Leibig 等
 \cite{Leibig2026SelfConsistent} 的自洽纯自旋模型一致。物理平衡态由 $f(T)=\min_\varphi
-\Phi_T(\varphi)$ 给出。
+\Phi_T(\varphi)$ 给出，鞍点条件 $\partial\Phi_T/\partial\varphi=0$ 即"腔位移取到使自由能极小
+的值"的自洽方程——这正回应了 1.2 步骤 5 里"线性项消失即自洽条件"的说法。
 
 \textbf{必须强调}：上式里的 $\varphi$ 是试探值，不是物理值。物理腔位移是使 $\Phi_T$ 取
 \textbf{全局极小}的 $\varphi$。$\Phi_T(\varphi)$ 可能同时存在多个极小——一级相变正是"正常态
@@ -258,10 +313,50 @@ $\Phi_T(-\varphi)=\Phi_T(\varphi)$。物理上是超辐射相变的 $Z_2$ 对称
 增长；$\varphi>g/\omega$ 后成本超过收益，继续增大只会升自由能。故全局极小必在
 $\varphi\in[0,g/\omega]$，这是第一个有限搜索上界（阶段 2 给出更紧的 $h\le8g_{\rm ref}^2/\omega$）。
 
+\textbf{两个性质的物理含义（直白版）。} 性质 1 的"偶函数"来自 $h\to-h$ 在物理上等价于
+$R_z(\pi)$（绕 z 轴转 $180^\circ$，把 $\sigma^x\to-\sigma^x$）：这个旋转是系统对称性（交换和
+纵场都不变，只有横场变号），所以自由能对 $h$ 偶、进而对 $\varphi$ 偶——$\varphi\to-\varphi$
+是腔相位翻转 $\pi$，即超辐射 $Z_2$ 对称的两个等价方向。性质 2 的
+$\partial f_{\rm spin}/\partial h=-\langle s^x\rangle$ 是热力学 Hellmann--Feynman 定理：
+自由能对外场参数的偏导等于"广义力"（横向磁化）的负期望值。物理上横场越强自旋越往 $x$ 倒、
+$\langle s^x\rangle$ 越大、自由能越下降；而 $|\langle s^x\rangle|\le1/2$ 的有界性就是"自旋
+收益有限、腔成本无界"的定量来源。
+
 \subsection{本阶段输出}
 
 纯推导，无数值。输出三样：$H_{\rm spin}(h)$（式~\eqref{eq:Hspin}，可数值求解）、
 $\Phi_T(\varphi)$（式~\eqref{eq:Phi}，需极小化的目标函数）、搜索域 $\varphi\in[0,g/\omega]$
 及"必须全局比较极小"的提醒。
+
+\subsection{方法边界与两类超辐射极限}
+
+\textbf{(1) 平均场只对腔做，自旋链是精确求解的。} 本阶段的自洽/鞍点只作用于\textbf{腔}
+（冻结成经典位移 $\varphi$），对自旋链 $f_{\rm spin}(T,h)$ 是\textbf{精确}求解的（ED/NLCE/转移
+矩阵，见阶段 5），没有对自旋做平均场。而且腔的鞍点在 $N\to\infty$ 是严格的（单模涨落 $O(1)$
+被 $N$ 稀释），不是漏细节的来源。Leibig 等也做同样的自洽纯自旋映射\cite{Leibig2026SelfConsistent}、
+Hörmann 给同样的自洽泛函\cite{Hormann2026Folds}，所以"自洽/平均场"不是本项目与文献的区别。
+
+\textbf{(2) 与文献 DMRG 的区别在自旋求解器与温区，不在框架。} 文献（Leibig 的 NLCE+DMRG、
+Langheld 的 wormhole QMC 到 $L=1024$）是\textbf{零温}、自旋部分用大系统方法；本项目是
+\textbf{有限温}、自旋部分用 ED（$N\le12/14$）/NLCE/转移矩阵。真正的误差来源是自旋求解器的
+有限尺寸/截断，这正是 claims 里"数值诊断级误差"的含义。
+
+\textbf{(3) 鞍点主导的正确性分两层。} $N\to\infty$ 层面：Leibig 已证明热力学极限可映射为自洽
+纯自旋哈密顿量\cite{Leibig2026SelfConsistent}，故腔冻结是\textbf{严格极限结果}，可直接采信。
+有限 $N$ 层面：自洽映射不覆盖腔涨落的 $1/N$ 修正，且\textbf{非鞍点的有限温完整腔+自旋计算
+（纯化有限温 DMRG/SSE）在文献中空缺}——这一层不能解析判断，须未来立独立 DMRG/SSE 基准去交叉
+验证。这是本项目所有结论止步于"数值诊断级"而非"严格证明"的根本原因。
+
+\textbf{(4) 两类超辐射极限。} 本项目（及 Gammelmark/Langheld/Leibig）的超辐射是多自旋
+\textbf{$N\to\infty$ 热力学极限}；而 Chen 等（2021）\cite{Chen2021Antisqueezing} 用反压缩项抵消
+$A^2$、研究的是\textbf{单自旋 Rabi 模型的 $\Omega/\omega\to\infty$ 频率比极限}，两者序参量、
+机制、物理对象都不同，不可混写。论文中必须区分：真实平衡相变（$N\to\infty$）、量子模拟器有效
+基态（$\Omega/\omega\to\infty$）、开放系统稳态相变。
+
+\textbf{(5) 有限 $N$ 的两条处理路线。} 文献要么用热力学极限直接方法（NLCE、可积精确解、自洽
+方程）绕开有限 $N$，要么用有限尺寸标度外推。判定超辐射的关键是看光子密度
+$\langle a^\dagger a\rangle/N$ 的标度是否趋于非零常数，而非序参量本身（有限 $N$ 下
+$\langle a\rangle=0$ 恒为零）。Mendonça 争议正是"次线性标度
+$\langle n\rangle/N\propto N^{-\alpha}$ 是真渐近还是假交叉"未判清。
 
 \end{document}
