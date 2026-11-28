@@ -395,4 +395,108 @@ $\langle a^\dagger a\rangle/N$ 的标度是否趋于非零常数，而非序参�
 $\langle a\rangle=0$ 恒为零）。Mendonça 争议正是"次线性标度
 $\langle n\rangle/N\propto N^{-\alpha}$ 是真渐近还是假交叉"未判清。
 
+\section{阶段 2：相边界判据}
+
+阶段 1 把不可解的原问题翻译成可操作的优化问题，产出三样：辅助哈密顿量 $H_{\rm spin}(h)$、
+自由能泛函 $\Phi_T(\varphi)=\omega\varphi^2+f_{\rm spin}(T,4g\varphi)$、以及两个性质（偶函数与
+有限搜索域）。本阶段的三个判据就是\textbf{对这三样产出做分析}：$g_{\rm equal}$ 比较
+$\Phi_T(\varphi)$ 与 $\Phi_T(0)$（用产出②）；有限上界复用 $\partial f_{\rm spin}/\partial h
+=-\langle s^x\rangle$（用产出③）；$g_{\rm local}$ 用 $H_{\rm spin}(0)$ 的经典转移矩阵（用产出①
+的零场极限）。一句话：阶段 1 造"自由能机器"，阶段 2 用它找相变边界。
+
+\subsection{等能判据 $g_{\rm equal}$}
+
+\textbf{问题}：正常态（$\varphi=0$）在什么耦合 $g$ 下首次失去全局优势？这决定一级跃迁的
+边界，与 Gammelmark--Mølmer 的有限温自由能比较同类\cite{Gammelmark2011Thermal}。
+
+\textbf{步骤 1 —— 自由能差。} 比较 $\Phi_T(\varphi)$ 与 $\Phi_T(0)$，记
+\[
+A_T(h)=f_{\rm spin}(T,0)-f_{\rm spin}(T,h)\ge0
+\]
+为正常态（$h=0$）与横场 $h$ 的自旋自由能差（非负：$h=0$ 是 $f_{\rm spin}$ 的最小点）。
+
+\textbf{步骤 2 —— 换变量。} 由 $\varphi=h/(4g)$，
+\[
+\Phi_T(\varphi)-\Phi_T(0)=\omega\varphi^2-A_T(4g\varphi)=\frac{\omega h^2}{16g^2}-A_T(h),
+\]
+第一项是腔的能量成本，第二项是自旋从横场 $h$ 获得的收益。
+
+\textbf{步骤 3 —— 等能条件。} 令上式为零，即正常态与位移 $\varphi=h/(4g)$ 态自由能相等：
+\[
+g_{\rm equal}^2(h)=\frac{\omega h^2}{16A_T(h)},\qquad g_{\rm onset}(T)=\inf_{h>0}g_{\rm equal}(T,h).
+\]
+
+\textbf{物理含义}：若下确界在有限 $h^\ast$ 取得，则 $g=g_{\rm equal}(h^\ast)$ 处正常态与一个有限
+位移态等能、序参量跳变，是\textbf{一级跃迁候选}；若只在 $h\to0$ 取得，则退化为正常态局部失稳
+阈值（2.3 的 $g_{\rm local}$），是\textbf{连续（二级）}。注意 $g_{\rm equal}$ 只找"正常态首次
+失去全局优势"的耦合，不给两个非零位移相之间的边界，也不单独证明热三临界点（后者需阶段 3 的
+$a_4$ 与阶段 6 的全局验证）。
+
+\subsection{有限搜索上界}
+
+目的：给 $g_{\rm equal}$ 的连续搜索一个可证明的有限域，不必扫到无穷。
+
+\textbf{步骤 1 —— $A_T(h)\le h/2$。} 用微积分基本定理和横磁化有界（阶段 1 性质 2 的
+$\partial f_{\rm spin}/\partial h=-\langle s^x\rangle$）：
+\[
+A_T(h)=f_{\rm spin}(0)-f_{\rm spin}(h)=-\int_0^h\frac{\partial f_{\rm spin}}{\partial h'}\,dh'
+=\int_0^h\langle s^x\rangle_{h'}\,dh'\le\int_0^h\frac12\,dh'=\frac h2.
+\]
+
+\textbf{步骤 2 —— 上界。} 代入 $g_{\rm equal}^2=\omega h^2/(16A_T)$：
+\[
+g_{\rm equal}^2\ge\frac{\omega h^2}{16\cdot h/2}=\frac{\omega h}{8}.
+\]
+若 $h\ge8g_{\rm ref}^2/\omega$，则 $g_{\rm equal}^2\ge g_{\rm ref}^2$，即 $g_{\rm equal}\ge g_{\rm ref}$。
+故任何比参考值 $g_{\rm ref}$ 更小的等能耦合只能在 $h<8g_{\rm ref}^2/\omega$ 内取得。
+
+\textbf{与阶段 1 的 $\varphi\in[0,g/\omega]$ 区分}：前者是 $\Phi_T$ 全局极小所在域（单调性证明），
+这里是"可能给出更小等能耦合的 $h$ 上界"（针对 $g_{\rm equal}$ 搜索，通常更紧），两者互补。
+
+\subsection{局部阈值 $g_{\rm local}$}
+
+\textbf{问题}：正常态在 $g$ 多大时局部失稳（曲率消失）？这只需零场 $h=0$ 的经典链。
+
+\textbf{步骤 1 —— 零场经典链。} $h=0$ 时 $H_{\rm spin}(0)=J\sum_i\sigma_i^z\sigma_{i+1}^z
++(\Delta/2)\sum_i\sigma_i^z$ 对易、纯对角。转移矩阵
+\[
+K(a,b)=\exp\big\{-\beta\big[J\,ab+\Delta(a+b)/4\big]\big\},\qquad a,b=\pm1,
+\]
+最大本征值 $\lambda$ 给精确自由能 $f_{\rm spin}(T,0)=-T\ln\lambda$。
+
+\textbf{步骤 2 —— 三自旋概率。} 归一化 Perron 矢 $v$ 给无限链三自旋概率
+\[
+P(a,s,b)=\frac{v_a K_{as}K_{sb}v_b}{\lambda^2}.
+\]
+
+\textbf{步骤 3 —— 翻转能量差。} 中央自旋 $s$ 翻到 $-s$ 的能量变化（纵场 + 两个交换键）：
+\[
+\delta E(a,s,b)=-s\big[\Delta+2J(a+b)\big].
+\]
+
+\textbf{步骤 4 —— Kubo 二阶响应。} 把横场 $(h/2)\sum_i\sigma_i^x$ 当微扰。横场翻转中央自旋，
+其虚时间传播子 $e^{-\delta E\,\tau}$ 在 $\tau\in[0,\beta]$ 积分给 $(1-e^{-\beta\delta E})/\delta E$，
+对所有三自旋构型按概率加权：
+\[
+Q(T,J,\Delta)=\sum_{a,s,b}P(a,s,b)\frac{1-e^{-\beta\delta E}}{\delta E},\qquad \chi_x=\frac Q4,
+\]
+其中 $\delta E=0$ 时分数取极限 $\beta$。
+
+\textbf{步骤 5 —— 曲率与失稳阈值。} 腔泛函在 $\varphi=0$ 附近展开：
+\[
+\Phi_T(\varphi)=\Phi_T(0)+\big[\omega-2g^2Q\big]\varphi^2+O(\varphi^4),
+\]
+二次系数 $\omega-2g^2Q$ 变号即正常态失稳，于是
+\[
+g_{\rm local}(T)=\sqrt{\frac{\omega}{2Q}}.
+\]
+
+\textbf{两个校验极限}：$J=0$ 时 $g_{\rm local}^2=\omega\Delta/[4\tanh(\Delta/(2T))]$（标准 Dicke
+结果\cite{Peng2019Unified}）；$T\to0$（铁磁极化）时 $g_{\rm local}^2\to\omega(\Delta-4J)/4$，对应
+Koziol 的零温二次系数消失条件\cite{Koziol2026Criticality}。
+
+\textbf{物理含义}：$g_{\rm local}$ 只是正常态局部失稳阈值，一级跃迁可发生在 $g<g_{\rm local}$
+（负四次系数时势垒先于曲率消失出现），故 $g_{\rm local}\neq$ 真实一级边界——这正是 2.1 的
+$g_{\rm equal}$ 要做的。
+
 \end{document}
