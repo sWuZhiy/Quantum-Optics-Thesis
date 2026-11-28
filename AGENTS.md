@@ -36,6 +36,10 @@
   保留原话或标为概括，并写“已回答／待核／候选／已确认”；原话、转述、推断分开标注。
 - 只有结论或路线真的改变时才更新 `claims.md`、`roadmap.md`、`brief.md`；
   影响方向或结构的选择写入 `decisions.md`，说明理由与代价。
+- **对话中发现的、对后续项目有影响的内容，要及时补进对应的 `docs/` 权威文件**（`claims.md`
+  更新规则、`roadmap.md`、`brief.md` 或 `decisions.md`），不要等到收尾才做。判断标准：
+  是否影响方法定位、新颖性判断、下一步或证据等级。理解性/讲解性内容只进 `docs/explainers/`
+  或 `manuscript/notes/` 的补充 PDF，不写入 docs 权威文件。
 - 详细阅读证据写在 `literature/reading-list.md`，不在 `log.md` 复制整篇综述。
 - 阶段汇总（`manuscript/notes/NN-主题.tex`）：一个研究阶段完成后可按需起草论文文本汇总；
   起草后**必须等用户过目并敲定**才编译成 PDF，不得覆盖已定稿内容；命名按内容定，不固定周期。
