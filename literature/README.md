@@ -34,7 +34,7 @@
 | `Otake2026FiniteT` | [Exactly Solvable Phase Transition in a Cavity-Coupled One-Dimensional Ising Chain](<papers/Exactly Solvable Phase Transition in a Cavity-Coupled One-Dimensional Ising Chain.pdf>) | [arXiv:2507.01486 作者预印本](https://arxiv.org/abs/2507.01486) |
 | `Kim2025Magnonic` | [Observation of the Magnonic Dicke Superradiant Phase Transition](<papers/Observation of the Magnonic Dicke Superradiant Phase Transition.pdf>) | [arXiv:2401.01873 作者预印本](https://arxiv.org/abs/2401.01873) |
 | `Koziol2026Criticality` | [Quantum criticality of the ferromagnetic Dicke-Ising model](<papers/Quantum criticality of the ferromagnetic Dicke-Ising model.pdf>) | [arXiv:2605.27484 作者预印本](https://arxiv.org/abs/2605.27484) |
-| `Leibig2026SelfConsistent` | [Quantitative approach for the Dicke-Ising chain with an effective self-consistent matter Hamiltonian](<papers/Quantitative approach for the Dicke-Ising chain with an effective self-consistent matter Hamiltonian.pdf>) | [arXiv:2601.10210 作者预印本](https://arxiv.org/abs/2601.10210) |
+| `Leibig2026SelfConsistent` | [SciPost 正式版本记录](<papers/Quantitative approach for the Dicke-Ising chain with an effective self-consistent matter Hamiltonian - SciPost version of record.pdf>)；[arXiv v1](<papers/Quantitative approach for the Dicke-Ising chain with an effective self-consistent matter Hamiltonian.pdf>) | [期刊 DOI](https://doi.org/10.21468/SciPostPhys.21.3.071)；[arXiv:2601.10210](https://arxiv.org/abs/2601.10210) |
 
 ## 新增在线引文
 
@@ -66,7 +66,7 @@
 | 量子 Ising 基线 | [Langheld 等 2025](https://doi.org/10.1103/lcvj-ksct) `Langheld2025Wormhole` | QMC 图 3–4；补充 §IV 式 (S33)–(S35)、图 S9 的 `A²` 可达区；已有专题深读 |
 | 量子 Ising 原始数据 | [Langheld 等 2025 Zenodo，DOI 10.5281/zenodo.15774230](https://zenodo.org/records/15774230) `Langheld2025WormholeData` | `results/Ferro_chain_NtoS.csv` 的 `ε=.1,J=−.2` 一级点、`Antiferro_chain_ANAS.csv`/`ASPS.csv` 的 `g=.26,J=.2` 共存窗口，以及 `L=1024,β=512` 内点行；仅核这些原始结果与说明，见[Z2 运行](../results/runs/2026-11-22-ft-tc-z/README.md) |
 | 量子 Ising 基线 | [Hörmann 等 2026 Comment](https://journals.aps.org/prl/pdf/10.1103/xl66-85fx) `Hormann2025Comment` | *PRL* 137, 219301（2026-11-19）；第 1 页式 (1)、图 1；2025 arXiv 年份留在引用键 |
-| 量子 Ising 基线 | [Leibig 等 2026](https://doi.org/10.21468/SciPostPhys.21.3.071) `Leibig2026SelfConsistent` | §2.2、§3–4；本地预印本已核读，期刊版差异待核 |
+| 量子 Ising 基线 | [Leibig 等 2026](https://doi.org/10.21468/SciPostPhys.21.3.071) `Leibig2026SelfConsistent` | 正式版第 4–7 页式 (1)–(11)、第 13–20 页图 3–10、第 21 页展望已与 v1 对照；只覆盖零温相图，有限温仍为后续；式 (23)–(24) 的铁磁符号不一致仍在 |
 | 量子 Ising 基线 | [Koziol 2026](https://arxiv.org/abs/2605.27484) `Koziol2026Criticality` | 零温三临界；式 (12)–(14)、图 1–3 已核 |
 | 量子 Ising 基线 | [Hörmann 2026](https://arxiv.org/html/2606.26081v1) `Hormann2026Folds` | §II、§V.3、§VI；零温相界已核相关段落，111 页预印本未全篇复算 |
 | 近邻学位论文 | [Román Roche 2020](https://zaguan.unizar.es/record/97667/files/TAZ-TFM-2020-206.pdf) `RomanRoche2020Thesis` | §3.3 第 19–23 页式 (81)、(83)、(87)、(91)、图 6–7；腔/Ising 同轴、静场横向的有限温均场及 `N=8` 边界，非本项目 `zz/z/x`；详见[差异矩阵](ft-tc-gap-matrix.md) |

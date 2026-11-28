@@ -1,6 +1,6 @@
 # 超辐射相变选题文献综述与阅读清单
 
-更新：2026-11-22。引用键对应 [references.bib](references.bib)；[本地 PDF 与来源索引](README.md)列出本地论文及辅助材料。新增文献可先有经核查的在线原文与引文记录，不将其误计为本地 PDF。各节标明实际核读深度，不把摘要当作完整阅读；本地预印本与最终期刊版本的公式和页码仍需对照。
+更新：2026-11-28。引用键对应 [references.bib](references.bib)；[本地 PDF 与来源索引](README.md)列出本地论文及辅助材料。新增文献可先有经核查的在线原文与引文记录，不将其误计为本地 PDF。各节标明实际核读深度，不把摘要当作完整阅读；预印本与最终期刊版本的差异须单独记录。
 
 ## 现在重点读什么，以及读完如何推进项目
 
@@ -10,7 +10,7 @@
 | --- | --- | --- | --- |
 | 1：缺口基准 | [Gammelmark–Mølmer 2011](https://arxiv.org/html/1102.1905v1)（[本地 PDF](<papers/Phase transitions in an Ising chain interacting with a single mode cavity field.pdf>)）第 4–10 页 §2–4、式 (1)、(7)–(9) 与图 1–4 | P0.1、T1 | 写清交换轴/静态场/腔耦合轴、有限温自由能和一/二阶判据；说明与候选模型的逐算符差别 |
 | 2：零温直接先例 | [Langheld 2025](https://arxiv.org/html/2409.15082)（[本地 PDF](<papers/Quantum phase diagrams of Dicke-Ising models by a wormhole algorithm.pdf>)）主文式 (1)、图 3–4、补充 §IV 式 (S33)–(S35)、图 S9 | P0.1、Z2 | 统一 `J,g,ε`；选定零温校准截面；明确 `A²` 可达性已覆盖的范围 |
-| 3：零温高精度与热方法入口 | [Leibig 2026](https://arxiv.org/html/2601.10210v1)（[本地预印本 PDF](<papers/Quantitative approach for the Dicke-Ising chain with an effective self-consistent matter Hamiltonian.pdf>)）§2.1–2.2、§3.3–3.4、§4 | P0.1、P0.3、Z2 | 写出自洽能量分支与全局比较；标出零温结论，避免把 NLCE+DMRG 名称本身当作有限温方案 |
+| 3：零温高精度与热方法入口 | [Leibig 2026 正式版](https://doi.org/10.21468/SciPostPhys.21.3.071)（[本地正式版 PDF](<papers/Quantitative approach for the Dicke-Ising chain with an effective self-consistent matter Hamiltonian - SciPost version of record.pdf>)；[本地 arXiv v1](<papers/Quantitative approach for the Dicke-Ising chain with an effective self-consistent matter Hamiltonian.pdf>)）第 4–7 页式 (1)–(11)、第 13–20 页图 3–10、第 21 页展望 | P0.1、P0.3、Z2 | 写出自洽能量分支与全局比较；正式版证明范围是广延基态观测量与零温相图，有限温仍是展望，不能把 NLCE+DMRG 名称本身当作有限温方案 |
 | 4：三临界边界 | [Koziol 2026](https://arxiv.org/abs/2605.27484) 式 (12)–(14)、图 1–3；[Hörmann 2026](https://arxiv.org/html/2606.26081v1) §II、§V.3、§VI | P0.1–P0.2、Z2 | 列出已知零温 Landau 系数、三临界机制与作者明确留下的有限温开放问题；不把展望当作新颖性证明 |
 | 5：反压缩基线已完成 | [Chen 2021](https://www.nature.com/articles/s41467-021-26573-5)（[本地 PDF](<papers/Experimental quantum simulation of superradiant phase transition beyond no-go theorem via antisqueezing.pdf>)）主文全部科学内容及补充 Note 1–7 | Z1、论文边界 | 已完成 `D−ξ`、稳定条件、原光场变换、有限截断、赝纯态与 NMR 有效基态/真实平衡体系的区分；不再据此扩展主线 |
 
@@ -36,7 +36,7 @@ Mendonça 是用户原始选题的重要来源，涉及 Ising/XXZ 和混合变�
 
 ### Leibig：为热力学计算选方法
 
-这篇已发表于 *SciPost Physics* **21**, 071（2026），本地仍为作者 arXiv v1。它把零温热力学相图问题转为自洽的量子自旋模型，并结合 NLCE+DMRG 求解。现在重点读 §2.2 的映射和能量极值条件；进入 D 阶段后再读自洽分支、反铁磁处理和结果比较。
+这篇已发表于 *SciPost Physics* **21**, 071（2026），正式版本记录与 arXiv v1 均已保存并对照。它把零温热力学相图问题转为自洽的量子自旋模型，并结合 NLCE+DMRG 求解；正式版第 6–7 页的证明对象是广延基态观测量与零温相图，并未直接给出有限温自由能映射。现在重点读式 (4)–(11) 的映射和能量极值条件；进入 D 阶段后再读自洽分支、反铁磁处理和结果比较。
 
 读后自查：求得一个自洽根是否就找到基态？保留了哪些自旋关联？哪些有限系统的光子涨落不能由热力学静态解直接替代？产物是 `f(x)` 的求解流程和验收点；方法难度较高时先采用小系统校验，不以完整实现该算法作为开始研究的条件。
 
@@ -72,7 +72,7 @@ Mendonça 是用户原始选题的重要来源，涉及 Ising/XXZ 和混合变�
 | `Mendonca2025Matter` | 用户上传的 Dicke–Ising/XXZ 基态相图、一级边界、XXZ 次线性光子标度 | [作者全文](https://arxiv.org/html/2503.04961)；[本地 PDF](<papers/Role of Matter Interactions in Superradiant Phenomena.pdf>) | 本地正文已读；Ising 相图要与后续 QMC/Comment 对照 |
 | `Langheld2025Wormhole` | 大尺度 QMC 基准；反铁磁共存相、跃迁阶数；**补充材料 §IV、图 S9 已讨论 `A²` 的可达区** | [作者全文和补充材料](https://arxiv.org/html/2409.15082)；[本地 PDF](<papers/Quantum phase diagrams of Dicke-Ising models by a wormhole algorithm.pdf>) | 关键正文段落与补充材料 §IV 已核；已保存本地 PDF |
 | `Hormann2025Comment` | 对 Mendonça 等 Ising 相图提出可核查的异议 | [作者全文](https://arxiv.org/html/2511.08452) | arXiv 短文已核；2026-10 PRL 接收，期刊正文待核 |
-| `Leibig2026SelfConsistent` | 热力学极限的自洽自旋模型及 NLCE+DMRG 零温相图；决定本题计算方法和新颖性基线 | [作者预印本](https://arxiv.org/html/2601.10210v1)、[期刊 DOI](https://doi.org/10.21468/SciPostPhys.21.3.071)、[作者单位期刊题录与摘要](https://cris.fau.de/publications/370578265/) | 本地 v1 的模型映射、方法与主要结论已核；正式摘要同样聚焦基态量子相图，期刊版正文差异仍待核，不能据摘要排除新增内容 |
+| `Leibig2026SelfConsistent` | 热力学极限的自洽自旋模型及 NLCE+DMRG 零温相图；决定本题计算方法和新颖性基线 | [期刊 DOI](https://doi.org/10.21468/SciPostPhys.21.3.071)、[本地正式版](<papers/Quantitative approach for the Dicke-Ising chain with an effective self-consistent matter Hamiltonian - SciPost version of record.pdf>)、[作者预印本](https://arxiv.org/html/2601.10210v1) | 正式版 24 页已与 v1 逐页比较：仍只计算零温相图，第 21 页把有限温性质与热相变列为后续；铁磁多临界值更新，式 (23)–(24) 的符号不一致仍在 |
 | `Koziol2026Criticality` | 铁磁 Dicke–Ising 的一阶/二阶边界、三临界点机制与有限尺寸标度；限制把这些作为新发现 | [作者预印本](https://arxiv.org/abs/2605.27484) | 正文式 (1)、式 (12)–(14)、图 1–3 与总结已核；发表状态待追踪 |
 | `Hormann2026Folds` | 零温自洽物质泛函、解析相界及三临界结构；进一步压缩仅画零温相图的创新空间 | [arXiv:2606.26081v1](https://arxiv.org/html/2606.26081v1) | §II、§V.3 与 §VI 相关段落已核；111 页预印本未逐式复算 |
 | `Sur2026Critical` | 自旋临界模增强腔响应和本征压缩；限制“磁临界性协同”的泛泛新颖性表述 | [期刊正文](https://www.nature.com/articles/s41467-026-73112-1) | 摘要和主要结论已核；具体模型需细读 |
@@ -305,13 +305,13 @@ Mendonça 是用户原始选题的重要来源，涉及 Ising/XXZ 和混合变�
 
 ### Leibig 等（2026）：自洽物质哈密顿量的热力学极限算法
 
-- **出处**：*SciPost Physics* **21**, 071（2026），[DOI](https://doi.org/10.21468/SciPostPhys.21.3.071)；本地阅读版本为 [arXiv:2601.10210v1](https://arxiv.org/html/2601.10210v1)，引用键 `Leibig2026SelfConsistent`。
+- **出处**：*SciPost Physics* **21**, 071（2026），[DOI](https://doi.org/10.21468/SciPostPhys.21.3.071)；正式版本记录 24 页已与 [arXiv:2601.10210v1](https://arxiv.org/html/2601.10210v1) 对照，引用键 `Leibig2026SelfConsistent`。
 - **研究对象**：一维铁磁和反铁磁 Dicke–Ising 零温相图。
-- **方法与结果**：证明热力学极限可映射为带自洽横场的纯自旋哈密顿量；用数值关联团簇展开结合密度矩阵重整化群（NLCE+DMRG）求铁磁多临界点及很窄的反铁磁超辐射共存区。主文 §2.2、§3 和图示相界是本题直接的数值方法基线。
+- **方法与结果（论文报告）**：正式版第 6–7 页式 (4)–(11) 证明热力学极限下广延**基态**观测量可映射为带自洽横场的纯自旋哈密顿量；用数值关联团簇展开结合密度矩阵重整化群（NLCE+DMRG）求铁磁多临界点及很窄的反铁磁超辐射共存区。正式版第 13–16 页图 3–6 把 `J=-0.2` 的多临界纵场从 v1 的 `0.19992±0.00005` 更新为 `ε_mult/ω_c=0.200000±1.3×10^-6`，并增加拟合窗口与幂律检查。
 - **A² 与反压缩**：该文已给出无显式二次光场项时的精细相图；对本项目当前的单模静态项可先作压缩映射，再与其数据比较，不能把自洽物质映射本身当作本题发明。
-- **与毕设关系**：推荐先用小尺寸精确对角化、热力学自洽与其 QMC/DMRG 数据做交叉检查；对一级边界必须比较所有自由能极小值，而不能只运行单一初值的自洽迭代。
-- **核读状态**：作者预印本的模型映射、方法和主要结果段落已核；NLCE+DMRG 实现细节及期刊版与 v1 的差异待核。
-- **Z2 复核提示（仅限 arXiv v1）**：第 11–12 页式 (18) 的弱耦合能和式 (19) 的 `g_MF`，若直接代入该文式 (1) 所定 `J<0` 铁磁符号，会分别出现正常态能量符号错误和 `J=−0.2,ε=0.2` 时的虚数阈值。由式 (1) 的极化态与二次响应独立计算应为 `e_weak=Jc/2−ε`、`g_MF=√(2ε−2cJ)`（该文 `c=2`）。这是**预印本 v1 内部的符号不一致**，尚未核期刊版是否修正；零温代码以明确哈密顿量和其他独立原文交叉为准。该文图 3 的 `J=−0.2` 三临界纵场估计 `ε/ω=0.19992±0.00005` 是有限分辨率数值结果，与解析 `0.2` 很接近，但其印刷误差区间并不包含 `0.2`；不写成严格误差条内一致。
+- **与毕设关系（我们的判断）**：正式版第 21 页明确把有限温性质、动力学响应和热相变列为后续工作，因此没有命中本项目同模型完整热相图的止损条件。有限温腔鞍点的严格性仍须归于本项目的相干态积分/Laplace 极限推导或一般集体模论证，不能写成 Leibig 已直接证明。一级边界必须比较所有自由能极小值，而不能只运行单一初值的自洽迭代。
+- **符号复核**：正式版第 12–13 页式 (23)–(24) 仍保留 v1 的内部符号不一致：按第 4 页式 (1) 的 `J<0` 铁磁约定，独立计算应为 `e_weak=Jc/2−ε`、`g_MF=√(2ε−2cJ)`（`c=2`），不得照抄印刷式。
+- **核读状态**：正式版模型、证明范围、铁磁/反铁磁结果、结论与附录已核，并与 v1 比较；本轮不独立重现全部 NLCE+DMRG 原始数据。
 
 ### Kim 等（2025）：磁振子型 Dicke 转变的热平衡光谱证据
 
