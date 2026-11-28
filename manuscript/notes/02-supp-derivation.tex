@@ -265,24 +265,42 @@ Z_N=\operatorname{Tr}_{\text{自旋}}\operatorname{Tr}_{\text{腔}}e^{-\beta H_N
 =\operatorname{Tr}_{\text{自旋}}\int\frac{d^2\alpha}{\pi}\,\langle\alpha|e^{-\beta H_N}|\alpha\rangle .
 \]
 
-\textbf{步骤 2 —— 在相干态里算腔（换复数）。} 相干态是 $a$ 的本征态，$a|\alpha\rangle=\alpha|\alpha\rangle$、
-$\langle\alpha|a^\dagger=\langle\alpha|\alpha^\ast$。把腔算符换成复数，并取 $\alpha=\sqrt N\varphi$
-（$\varphi$ 实数，位移沿实轴），则
+\textbf{步骤 2 —— 相干态下的鞍点（换复数）。} 精确计算 $\langle\alpha|e^{-\beta H_N}|\alpha\rangle$
+需要路径积分；鞍点近似（即 1.2 步骤 5 忽略 $\delta a$ 涨落在相干态表象的等价形式）把指数里的算符
+换成它的相干态期望值：
+\[
+\langle\alpha|e^{-\beta H_N}|\alpha\rangle\approx e^{-\beta\langle\alpha|H_N|\alpha\rangle}.
+\]
+于是只需算期望值。相干态是 $a$ 的本征态，$a|\alpha\rangle=\alpha|\alpha\rangle$、
+$\langle\alpha|a^\dagger=\langle\alpha|\alpha^\ast$，把 $H_N$（式~\eqref{eq:HN-sigma}）里的腔算符换成
+复数：
 \[
 \langle\alpha|H_N|\alpha\rangle
 =\omega|\alpha|^2+J\sum_i\sigma_i^z\sigma_{i+1}^z+\frac{\Delta}{2}\sum_i\sigma_i^z
-+\frac{g}{\sqrt N}(\alpha+\alpha^\ast)\sum_i\sigma_i^x
-=\omega N\varphi^2+H_{\rm spin}(4g\varphi),
++\frac{g}{\sqrt N}(\alpha+\alpha^\ast)\sum_i\sigma_i^x .
 \]
-最后一步用了 $|\alpha|^2=N\varphi^2$ 与 $(\alpha+\alpha^\ast)/\sqrt N=2\varphi$，方括号正是
-$H_{\rm spin}(4g\varphi)$（回忆 $h=4g\varphi$）。
-
-\textbf{步骤 3 —— 分离自旋迹，Laplace 鞍点。} 上式方括号里只剩自旋算符，自旋迹可以拿进去，
-腔的积分只剩一个相位（高斯型）积分：
+取 $\alpha=\sqrt N\varphi$（$\varphi$ 实数，位移沿实轴），逐项代入：腔项
+$\omega|\alpha|^2=\omega N\varphi^2$；耦合项系数
+$\frac{g}{\sqrt N}(\alpha+\alpha^\ast)=\frac{g}{\sqrt N}\cdot2\sqrt N\varphi=2g\varphi$。于是自旋部分
+（后三项）为
 \[
-Z_N=\int[\text{测度}]\,e^{-\beta\omega N\varphi^2}\operatorname{Tr}_{\text{自旋}}
+J\sum_i\sigma_i^z\sigma_{i+1}^z+\frac{\Delta}{2}\sum_i\sigma_i^z+2g\varphi\sum_i\sigma_i^x
+=J\sum_i\sigma_i^z\sigma_{i+1}^z+\frac{\Delta}{2}\sum_i\sigma_i^z+\frac{h}{2}\sum_i\sigma_i^x
+=H_{\rm spin}(h),\qquad h=4g\varphi,
+\]
+第二步用了 $2g\varphi=h/2$。因此
+\[
+\langle\alpha|H_N|\alpha\rangle=\omega N\varphi^2+H_{\rm spin}(4g\varphi).
+\]
+
+\textbf{步骤 3 —— 分离自旋迹，Laplace 鞍点。} 上式中自旋算符只出现在 $H_{\rm spin}(4g\varphi)$ 里，
+与腔积分无关，可把自旋迹拿进去。相干态测度 $d^2\alpha=d(\operatorname{Re}\alpha)d(\operatorname{Im}\alpha)$；
+取 $\alpha=\sqrt N\varphi$（实数）后，对虚部的积分是高斯型、只给常数（吸收进测度），剩下对实位移
+$\varphi$ 的一维积分：
+\[
+Z_N=\int d\varphi\,[\text{常数测度}]\,e^{-\beta\omega N\varphi^2}\operatorname{Tr}_{\text{自旋}}
 e^{-\beta H_{\rm spin}(4g\varphi)}
-=\int d\varphi\,[\text{测度}]\,\exp\Big[-\beta N\big(\omega\varphi^2+f_{\rm spin}^N(T,4g\varphi)\big)\Big],
+=\int d\varphi\,[\text{常数测度}]\,\exp\Big[-\beta N\big(\omega\varphi^2+f_{\rm spin}^N(T,4g\varphi)\big)\Big],
 \]
 其中 $f_{\rm spin}^N(T,h)=-(T/N)\ln\operatorname{Tr}e^{-\beta H_{\rm spin}(h)}$ 是有限 $N$ 的
 自旋自由能密度。被积函数形如 $\exp[-\beta N\Phi^N(\varphi)]$，指数带 $N$；$N\to\infty$ 时它在
